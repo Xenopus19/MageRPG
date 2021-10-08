@@ -74,11 +74,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void InternalLockUpdate()
         {
-            if(Input.GetKeyUp(KeyCode.Escape))
+            if(Input.GetMouseButtonUp(1) && m_cursorIsLocked)
             {
                 m_cursorIsLocked = false;
             }
-            else if(Input.GetMouseButtonUp(0))
+            else if(Input.GetMouseButtonUp(1) && !m_cursorIsLocked)
             {
                 m_cursorIsLocked = true;
             }
