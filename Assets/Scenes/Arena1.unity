@@ -509,7 +509,7 @@ GameObject:
   - component: {fileID: 77561394}
   - component: {fileID: 77561393}
   - component: {fileID: 77561392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -604,8 +604,16 @@ PrefabInstance:
       value: MageFirstPerson
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_RootOrder
@@ -1187,7 +1195,7 @@ GameObject:
   - component: {fileID: 416193823}
   - component: {fileID: 416193822}
   - component: {fileID: 416193821}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1539,7 +1547,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 520317380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InvicibleWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3524,7 +3532,7 @@ GameObject:
   - component: {fileID: 1226431726}
   - component: {fileID: 1226431725}
   - component: {fileID: 1226431724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4816,7 +4824,7 @@ GameObject:
   - component: {fileID: 1670655825}
   - component: {fileID: 1670655824}
   - component: {fileID: 1670655823}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5028,7 +5036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8daf26e485a7a8e4bb57d357e678a948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireBall: {fileID: 141530, guid: 369eee557c4d41c479225bf744fa6a5f, type: 3}
+  FireBall: {fileID: 2762361141048217686, guid: e115bcdfebadc8b4f8461d5de192bd51, type: 3}
+  force: 5000
   SpellCode: 0
 --- !u!1 &1966452507
 GameObject:

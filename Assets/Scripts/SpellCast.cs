@@ -10,6 +10,7 @@ public class SpellCast : MonoBehaviour
     private static SpellCast Instance;
     public Dictionary<int, string> Spells = new Dictionary<int, string>();
     public GameObject FireBall;
+    public float force;
     public static SpellCast GetInstance() => Instance;
     private void Awake()
     {
@@ -38,6 +39,12 @@ public class SpellCast : MonoBehaviour
     }
     public void CastFireball()
     {
-        Instantiate(FireBall, gameObject.transform.position, Quaternion.identity);
+        Ray ray = new Ray();
+        ray.origin = Camera.main.transform.position;
+        ray.direction = Camera.main.transform.forward;
+
+        GameObject Fireball = Instantiate(FireBall, gameObject.transform.position, Quaternion.identity);
+        Rigidbody FireBallPhysics = Fireball.GetComponent<Rigidbody>();
+        FireBallPhysics.AddForce(ray.direction * force);
     }
 }

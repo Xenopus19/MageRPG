@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8228610}
   - component: {fileID: 11462752}
   - component: {fileID: 11450262}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Fireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 5453920}
   - component: {fileID: 10860366}
   - component: {fileID: 11437010}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: FireballCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 419864}
   - component: {fileID: 19886674}
   - component: {fileID: 19993248}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: FireballProjectiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5262,7 +5262,7 @@ GameObject:
   - component: {fileID: 492682}
   - component: {fileID: 19810394}
   - component: {fileID: 19908910}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: FireballTail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9874,7 +9874,7 @@ GameObject:
   - component: {fileID: 407174}
   - component: {fileID: 19899590}
   - component: {fileID: 19998884}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: FireballExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
