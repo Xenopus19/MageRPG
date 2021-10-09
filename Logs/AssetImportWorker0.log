@@ -1,6 +1,10 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.10f1 (297d780c91bc) revision 2719096'; Using compiler version '192528614'; Build Type 'Release'
+<<<<<<< HEAD
 OS: 'Windows 10 Enterprise; OS build 19042.1237; Version 2009; 64bit' Language: 'ru' Physical Memory: 16367 MB
+=======
+OS: 'Windows 10 Pro; OS build 19042.1237; Version 2009; 64bit' Language: 'ru' Physical Memory: 16303 MB
+>>>>>>> Xenopus
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -11,6 +15,7 @@ D:\unity_projects\2020.3.10f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
+<<<<<<< HEAD
 C:/Users/Vlad/Documents/MageRPG
 -logFile
 Logs/AssetImportWorker0.log
@@ -91,10 +96,131 @@ Received Import Request.
   artifactKey: Guid(e115bcdfebadc8b4f8461d5de192bd51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/NewFireball.prefab using Guid(e115bcdfebadc8b4f8461d5de192bd51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0040021b38e1891bce32b97cc5eb3495') in 0.018053 seconds
   Import took 0.022239 seconds .
+=======
+D:/Projects/MageRPG
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+62579
+Successfully changed project path to: D:/Projects/MageRPG
+D:/Projects/MageRPG
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 31.80 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.10f1 (297d780c91bc)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Projects/MageRPG/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA Quadro K600 (ID=0xffa)
+    Vendor:   
+    VRAM:     973 MB
+    Driver:   10.18.13.5330
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56288
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002010 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 30.48 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.246 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002830 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.129 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.39 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1439 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 78.6 MB.
+System memory in use after: 78.6 MB.
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 1887.
+Total: 2.479700 ms (FindLiveObjects: 0.190200 ms CreateObjectMapping: 0.100100 ms MarkObjects: 2.056500 ms  DeleteObjects: 0.132100 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Prefabs/circleWithADot.png
+  artifactKey: Guid(6c175fb0a42f4d14eaf2fa8decf3d0f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/circleWithADot.png using Guid(6c175fb0a42f4d14eaf2fa8decf3d0f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e7259684d4d99ea2832d9b8aa05f485') in 0.106054 seconds
+  Import took 0.108984 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.532178 seconds.
+  path: Assets/Prefabs/TestPrefabs
+  artifactKey: Guid(6abf3375c83c84d41844095de1502dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs using Guid(6abf3375c83c84d41844095de1502dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f5b9c962920161a61cd79e5dd69f0da') in 0.010060 seconds
+  Import took 0.013162 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.915352 seconds.
+  path: Assets/Prefabs/TestPrefabs/New Prefab.prefab
+  artifactKey: Guid(a3eab90e253b3da48b67083b8e0b8699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/New Prefab.prefab using Guid(a3eab90e253b3da48b67083b8e0b8699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5c2b13d4c4fae0c2d6a9959bd440128') in 0.018104 seconds
+  Import took 0.021363 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.038156 seconds.
+  path: Assets/Prefabs/TestPrefabs/New Prefab.prefab
+  artifactKey: Guid(a3eab90e253b3da48b67083b8e0b8699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/New Prefab.prefab using Guid(a3eab90e253b3da48b67083b8e0b8699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5c2b13d4c4fae0c2d6a9959bd440128') in 0.004513 seconds
+  Import took 0.007509 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 54.248677 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2398be534332009097b29dbf7829d8a8') in 0.042365 seconds
+  Import took 0.045758 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.012693 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2398be534332009097b29dbf7829d8a8') in 0.009358 seconds
+  Import took 0.012984 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.761628 seconds.
+  path: Assets/Scripts/TestScripts
+  artifactKey: Guid(0662342098913e34880f7ceb62a842aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/TestScripts using Guid(0662342098913e34880f7ceb62a842aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c1b240e39701049170b868605240582') in 0.008981 seconds
+  Import took 0.011977 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.463996 seconds.
+  path: Assets/Scripts/TestScripts/CastFireball.cs
+  artifactKey: Guid(e9fa10b3bffd01b4eaadd243f95a7a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/TestScripts/CastFireball.cs using Guid(e9fa10b3bffd01b4eaadd243f95a7a2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78ab6cca5ba174a4376d9c3757c0c58b') in 0.019012 seconds
+  Import took 0.021666 seconds .
+>>>>>>> Xenopus
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.007523 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -162,10 +288,189 @@ Received Import Request.
   artifactKey: Guid(e115bcdfebadc8b4f8461d5de192bd51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Prefabs/NewFireball.prefab using Guid(e115bcdfebadc8b4f8461d5de192bd51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c594b4a04cf4d850901e9a211eb1daa') in 0.087245 seconds
   Import took 0.091506 seconds .
+=======
+Registered in 0.002577 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.40 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.095 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.42 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1435 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.7 MB.
+System memory in use after: 81.7 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 1902.
+Total: 3.043100 ms (FindLiveObjects: 0.193000 ms CreateObjectMapping: 0.111800 ms MarkObjects: 2.660100 ms  DeleteObjects: 0.077000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 69.426835 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf9459a47a38816e77395c104fa2f06a') in 0.068212 seconds
+  Import took 0.071284 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.331186 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34656702a6d045167169f2a207e5c67a') in 0.016282 seconds
+  Import took 0.020321 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.198844 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '424955bac2e8852bd50b667b7de8f026') in 0.015687 seconds
+  Import took 0.018652 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.599481 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90a006c8e019b2d9c87054bd3ff55cbb') in 0.022905 seconds
+  Import took 0.026520 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.455551 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a74a74d35c8540e4b14b1a259029330') in 0.020486 seconds
+  Import took 0.025854 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.561150 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14f078ce1d1686075847660b0bd8a9fb') in 0.024578 seconds
+  Import took 0.028834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.845216 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a64b6720f178968449424a11194b084') in 0.019389 seconds
+  Import took 0.025122 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.182466 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '859d4885efbed832394ef3c5312f9ed8') in 0.018268 seconds
+  Import took 0.022131 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.882188 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '129b8fdc2f8466ff10051f90defe848b') in 0.015405 seconds
+  Import took 0.022219 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.490376 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc55b82149865e10fbc0482dfd40c8ff') in 0.019835 seconds
+  Import took 0.026768 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.436241 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6729496ee0a43da6de50591447924a8a') in 0.020797 seconds
+  Import took 0.040496 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.042350 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f56df502afb3009a5d06b1e60607a4d9') in 0.018631 seconds
+  Import took 0.024169 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.405074 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6049aa1e983644d2548b95ba583394b3') in 0.017191 seconds
+  Import took 0.022351 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.211636 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '040690d56458c05ced3f94db99e842e3') in 0.017238 seconds
+  Import took 0.020941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.055278 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29c1d053ef52cb61e4773b39775d8bfe') in 0.016869 seconds
+  Import took 0.020299 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.032870 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '057ea92f3a0a55a219563fa391736019') in 0.015821 seconds
+  Import took 0.019112 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.670268 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc284f03d81ce70f717fd44b38a0a63b') in 0.022397 seconds
+  Import took 0.028080 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.482018 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22a39e940747afdc2b01933fac2530dd') in 0.021220 seconds
+  Import took 0.025057 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.287771 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac4f3c01d7dd81c99936fb1f56dd518e') in 0.014645 seconds
+  Import took 0.020806 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.227422 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e717a6fd5e64191fbcfcf3912f05ffb3') in 0.018997 seconds
+  Import took 0.022828 seconds .
+>>>>>>> Xenopus
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
+<<<<<<< HEAD
 Registered in 0.010193 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
@@ -397,4 +702,46 @@ System memory in use after: 81.6 MB.
 
 Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1941.
 Total: 2.600400 ms (FindLiveObjects: 0.269300 ms CreateObjectMapping: 0.086600 ms MarkObjects: 2.222600 ms  DeleteObjects: 0.020200 ms)
+=======
+Registered in 0.003037 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.100 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.47 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1435 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.6 MB.
+System memory in use after: 81.7 MB.
+
+Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 1908.
+Total: 2.150100 ms (FindLiveObjects: 0.158900 ms CreateObjectMapping: 0.053300 ms MarkObjects: 1.833000 ms  DeleteObjects: 0.103700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 291.927431 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9737fe7f32b0a6550b7cfc37928c50c') in 0.076732 seconds
+  Import took 0.081857 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.173006 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b2bdff274eb6b63daf1d47a36824794') in 0.016573 seconds
+  Import took 0.022051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.015266 seconds.
+  path: Assets/Prefabs/TestPrefabs/FireballDummy.prefab
+  artifactKey: Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/TestPrefabs/FireballDummy.prefab using Guid(364e6244a8a099d48ba284fc11bf1087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd22de025fba2f0b69e7641f7dde77dfe') in 0.016527 seconds
+  Import took 0.020268 seconds .
+>>>>>>> Xenopus
 
