@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2363580833669782944}
   - component: {fileID: 8674606539628812473}
   - component: {fileID: 5711021955820162999}
-  - component: {fileID: 8653105274060599737}
+  - component: {fileID: 5980573064592748552}
   m_Layer: 7
   m_Name: NewFireball
   m_TagString: Untagged
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8653105274060599737
+--- !u!114 &5980573064592748552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e45a636abc9dad4595da1dc75b62fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  force: 5000

@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireballDestroyOnTouch : MonoBehaviour
+public class FireballScript : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        if(collision.gameObject.tag != "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }
