@@ -11,6 +11,7 @@ public class CastFireball : MonoBehaviour
 
     [SerializeField]
     private float TimeBetweenShots;
+    public float force;
     void Start()
     {
         InvokeRepeating("CreateFireball", TimeBetweenShots, 0);
@@ -18,7 +19,8 @@ public class CastFireball : MonoBehaviour
 
     private void CreateFireball()
     {
-        print("Piu");
-        Instantiate(Fireball, ShotSpawnPoint.transform.position, Quaternion.identity);
+        GameObject FireBall = Instantiate(Fireball, ShotSpawnPoint.transform.position, Quaternion.identity);
+        Rigidbody FireBallPhysics = Fireball.GetComponent<Rigidbody>();
+        FireBallPhysics.AddForce(gameObject.transform.GetChild(1).transform.forward * force);
     }
 }

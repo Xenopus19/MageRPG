@@ -15,7 +15,7 @@ public class SpellCast : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        Spells.Add(7896321, "Fireball");
+        Spells.Add(7896321, "FireBall");
     }
     public int SpellCode;
     private void Start()
@@ -28,10 +28,10 @@ public class SpellCast : MonoBehaviour
         {
             int newSpellCode = SpellCode;
             SpellCode = 0;
-            string SpellName = Spells[newSpellCode];
-            switch (SpellName)
+
+            switch (Spells[newSpellCode])
             {
-                case "Fireball":
+                case "FireBall":
                     CastFireball();
                     break;
             }
@@ -39,12 +39,15 @@ public class SpellCast : MonoBehaviour
     }
     public void CastFireball()
     {
+        gameObject.GetComponent<ManaPlayer>().DecrementMana();
+
+        GameObject NewFireball = Instantiate(FireBall, gameObject.transform.position, Quaternion.identity);
+
         Ray ray = new Ray();
         ray.origin = Camera.main.transform.position;
         ray.direction = Camera.main.transform.forward;
 
-        GameObject Fireball = Instantiate(FireBall, gameObject.transform.position, Quaternion.identity);
-        Rigidbody FireBallPhysics = Fireball.GetComponent<Rigidbody>();
+        Rigidbody FireBallPhysics = NewFireball.GetComponent<Rigidbody>();
         FireBallPhysics.AddForce(ray.direction * force);
     }
 }

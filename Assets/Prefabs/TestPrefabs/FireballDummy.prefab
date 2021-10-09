@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6127725972098609746}
   - component: {fileID: 2262348075768672824}
   - component: {fileID: 945087935953567212}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FireballDummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9fa10b3bffd01b4eaadd243f95a7a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fireball: {fileID: 0}
+  Fireball: {fileID: 2762361141048217686, guid: e115bcdfebadc8b4f8461d5de192bd51, type: 3}
   ShotSpawnPoint: {fileID: 7874383281256643138}
   TimeBetweenShots: 5
 --- !u!1 &7874383281256643138
@@ -122,7 +122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5381108381682572742}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FireballSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 589706381827400148}
   - component: {fileID: 7217250136825947211}
   - component: {fileID: 3751370557912438833}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GUN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7937185010556506420}
   m_LocalRotation: {x: -0, y: -0, z: -0.71440774, w: 0.6997297}
-  m_LocalPosition: {x: -0.62, y: 0.299, z: -0.085}
+  m_LocalPosition: {x: -0.62, y: 0.299, z: -0.02}
   m_LocalScale: {x: 0.20968238, y: 0.64391077, z: 0.3943077}
   m_Children: []
   m_Father: {fileID: 5018244956091331052}
