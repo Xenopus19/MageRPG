@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.UI;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -72,7 +73,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 InternalLockUpdate();
         }
 
-        private void InternalLockUpdate()
+        public void InternalLockUpdate()
         {
             if(Input.GetMouseButtonUp(1) && m_cursorIsLocked)
             {

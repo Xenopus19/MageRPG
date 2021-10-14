@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OnButtonHover : MonoBehaviour
 {
-    public int AmountToAdd;
+    public ulong AmountToAdd;
 
     public void ifHoveredOn()
     {

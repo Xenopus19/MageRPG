@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 public class SpellCast : MonoBehaviour
 {
     private static SpellCast Instance;
-    public Dictionary<int, string> Spells = new Dictionary<int, string>();
+    public Dictionary<ulong, string> Spells = new Dictionary<ulong, string>();
     public GameObject FireBall;
     public float force;
     public static SpellCast GetInstance() => Instance;
@@ -17,7 +17,7 @@ public class SpellCast : MonoBehaviour
         Instance = this;
         Spells.Add(7896321, "FireBall");
     }
-    public int SpellCode;
+    public ulong SpellCode;
     private void Start()
     {
         SpellCode = 0;
@@ -26,7 +26,7 @@ public class SpellCast : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            int newSpellCode = SpellCode;
+            ulong newSpellCode = SpellCode;
             SpellCode = 0;
 
             switch (Spells[newSpellCode])
@@ -42,6 +42,7 @@ public class SpellCast : MonoBehaviour
         gameObject.GetComponent<ManaPlayer>().DecrementMana();
 
         GameObject NewFireball = Instantiate(FireBall, gameObject.transform.position, Quaternion.identity);
+        NewFireball.GetComponent<FireballScript>().Caster = gameObject;
 
         Ray ray = new Ray();
         ray.origin = Camera.main.transform.position;

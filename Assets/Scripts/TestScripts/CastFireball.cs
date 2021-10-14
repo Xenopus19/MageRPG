@@ -20,7 +20,8 @@ public class CastFireball : MonoBehaviour
     private void CreateFireball()
     {
         GameObject FireBall = Instantiate(Fireball, ShotSpawnPoint.transform.position, Quaternion.identity);
+        FireBall.GetComponent<FireballScript>().Caster = gameObject;
         Rigidbody FireBallPhysics = Fireball.GetComponent<Rigidbody>();
-        FireBallPhysics.AddForce(gameObject.transform.GetChild(1).transform.forward * force);
+        FireBallPhysics.AddForce(gameObject.transform.forward * force);
     }
 }
