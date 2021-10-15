@@ -7,6 +7,6 @@ public class DummyHPText : MonoBehaviour
 {
     private void Update()
     {
-        gameObject.transform.GetChild(2).gameObject.GetComponent<TextMesh>().text = "" + gameObject.GetComponent<DummyHP>().DummyHPs;
+        gameObject.transform.GetChild(1).gameObject.GetComponent<TextMesh>().text = "" + gameObject.GetComponent<DummyHP>().DummyHPs;
     }
 }

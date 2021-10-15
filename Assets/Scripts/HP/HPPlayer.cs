@@ -20,6 +20,7 @@ public class HPPlayer : MonoBehaviour {
     }*/
     private void Update()
     {
+        PlayerHPText.ChangeHealthText(hpPlayer);
         if (hpPlayer <= 0)
         {
             Destroy(gameObject);

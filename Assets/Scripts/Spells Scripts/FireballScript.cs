@@ -8,6 +8,10 @@ public class FireballScript : MonoBehaviour
     private void Start()
     {
         Physics.IgnoreCollision(Caster.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+        for(int i = 0; i < Caster.transform.childCount; i++)
+        {
+            Physics.IgnoreCollision(Caster.transform.GetChild(i).GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -16,7 +20,7 @@ public class FireballScript : MonoBehaviour
             collision.gameObject.GetComponent<HPPlayer>().hpPlayer -= 20f;
             Destroy(gameObject);
         }
-        else if(collision.gameObject.tag == "Dummy")
+        else if(collision.gameObject.tag == "Dummy" && Caster.tag != "Dummy")
         {
             collision.gameObject.GetComponent<DummyHP>().DummyHPs -= 20f;
             Destroy(gameObject);
