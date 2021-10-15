@@ -8,8 +8,8 @@ public class HPPlayer : MonoBehaviour {
         GetDamage();
     } */
     public float hpPlayer = 100f;
-    public void GetDamage(float damage) 
-{
+    /*public void GetDamage(float damage) 
+    {
         if (hpPlayer > 0) {
             hpPlayer -= damage;
         } else {
@@ -17,5 +17,12 @@ public class HPPlayer : MonoBehaviour {
             Destroy(gameObject);
         }
         HPText.ChangeHealthText(hpPlayer);
+    }*/
+    private void Update()
+    {
+        if (hpPlayer <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

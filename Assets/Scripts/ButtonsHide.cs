@@ -5,28 +5,22 @@ using UnityEngine.UI;
 
 public class ButtonsHide : MonoBehaviour
 {
-    bool shown;
+    bool shown = false;
     public GameObject buttons;
-    public GameObject buttonsPrefab;
-    public GameObject Canvas;
-    Vector3 buttonsPosition;
-    private void Start()
+    public void Start()
     {
-        buttonsPosition = buttons.transform.position;
-        Destroy(buttons);
-        shown = false;
+        buttons.SetActive(false);
     }
-    void Update()
+    public void Update()
     {
-        if(Input.GetMouseButtonDown(1) && !shown)
+        if(Input.GetMouseButtonDown(1) && shown == false)
         {
-            buttons = Instantiate(buttonsPrefab, buttonsPosition, Quaternion.identity);
-            buttons.transform.SetParent(Canvas.transform);
+            buttons.SetActive(true);
             shown = true;
         }
-        if(Input.GetMouseButtonDown(1) && shown)
+        else if(Input.GetMouseButtonDown(1) && shown == true)
         {
-            Destroy(buttons);
+            buttons.SetActive(false);
             shown = false;
         }
     }
