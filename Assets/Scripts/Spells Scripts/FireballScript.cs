@@ -17,7 +17,7 @@ public class FireballScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<HPPlayer>().hpPlayer -= 20f;
+            collision.gameObject.GetComponent<HPPlayer>().GetDamage(20f);
             Destroy(gameObject);
         }
         else if(collision.gameObject.tag == "Dummy" && Caster.tag != "Dummy")
