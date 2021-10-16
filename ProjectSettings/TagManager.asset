@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Fire
   - dummy
+  - Dummy
   layers:
   - Default
   - TransparentFX

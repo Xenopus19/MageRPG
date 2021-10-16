@@ -14,13 +14,19 @@ public class CastFireball : MonoBehaviour
     public float force;
     void Start()
     {
-        InvokeRepeating("CreateFireball", TimeBetweenShots, 0);
+        InvokeRepeating("CreateFireball", 1, TimeBetweenShots);
     }
 
     private void CreateFireball()
     {
-        GameObject FireBall = Instantiate(Fireball, ShotSpawnPoint.transform.position, Quaternion.identity);
-        Rigidbody FireBallPhysics = Fireball.GetComponent<Rigidbody>();
-        FireBallPhysics.AddForce(gameObject.transform.GetChild(1).transform.forward * force);
+        GameObject NewFireball = Instantiate(Fireball, ShotSpawnPoint.transform.position, Quaternion.identity);
+        NewFireball.GetComponent<FireballScript>().Caster = gameObject;
+
+        Ray ray = new Ray();
+        ray.origin = ShotSpawnPoint.transform.position;
+        ray.direction = gameObject.transform.forward;
+
+        Rigidbody FireBallPhysics = NewFireball.GetComponent<Rigidbody>();
+        FireBallPhysics.AddForce(ray.direction * force);
     }
 }
