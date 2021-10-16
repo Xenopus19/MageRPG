@@ -13,8 +13,11 @@ public class PlayerMovement : MonoBehaviour {
 
     }
     public void TryJump() {
-        // if (CanJump())
-        Jump();
+        if (CanJump())
+            Jump();
+    }
+    private bool CanJump() {
+        return true;
     }
 
     private void Jump() {

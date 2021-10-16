@@ -4,19 +4,19 @@ public class InputComponent : MonoBehaviour
 {
     public KeyCode JumpCode = KeyCode.Space;
 
-    private PlayerMovement _playerMovement;
-    private ButtonsHide _buttonsHide;
+    private PlayerMovement playerMovement;
+    private ButtonsHide buttonsHide;
 
     private bool _buttonsShowing = false;
 
     private void Start() {
-        _playerMovement = GetComponent<PlayerMovement>();
-        _buttonsHide = GetComponent<ButtonsHide>();
+        playerMovement = GetComponent<PlayerMovement>();
+        buttonsHide = GetComponent<ButtonsHide>();
     }
 
     void Update() {
         if (Input.GetKeyDown(JumpCode)) {
-            _playerMovement.TryJump();
+            playerMovement.TryJump();
         }
 
         if (Input.GetMouseButton(1)) {
