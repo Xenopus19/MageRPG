@@ -402,7 +402,7 @@ GameObject:
   - component: {fileID: 153737226}
   - component: {fileID: 153737225}
   m_Layer: 0
-  m_Name: Sphere (8)
+  m_Name: LayingDecoration7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 303799494}
   - component: {fileID: 303799493}
   m_Layer: 0
-  m_Name: Sphere (10)
+  m_Name: LayingDecoration9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,7 +839,7 @@ GameObject:
   - component: {fileID: 475046679}
   - component: {fileID: 475046678}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: StairBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 551441081}
   - component: {fileID: 551441080}
   m_Layer: 0
-  m_Name: Sphere (6)
+  m_Name: LayingDecoration5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1129,7 +1129,7 @@ GameObject:
   - component: {fileID: 601987770}
   - component: {fileID: 601987769}
   m_Layer: 0
-  m_Name: Sphere (2)
+  m_Name: LayingDecoration1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1224,7 +1224,7 @@ GameObject:
   - component: {fileID: 610165741}
   - component: {fileID: 610165740}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Decoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1388,7 +1388,7 @@ GameObject:
   - component: {fileID: 617431399}
   - component: {fileID: 617431398}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: StairSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1483,7 +1483,7 @@ GameObject:
   - component: {fileID: 675493880}
   - component: {fileID: 675493879}
   m_Layer: 0
-  m_Name: Sphere (9)
+  m_Name: LayingDecoration8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1687,7 +1687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 803437096}
   m_Layer: 0
-  m_Name: Platform
+  m_Name: DecorativePlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1847,7 +1847,7 @@ GameObject:
   - component: {fileID: 1018362293}
   - component: {fileID: 1018362292}
   m_Layer: 0
-  m_Name: Sphere (3)
+  m_Name: LayingDecoration2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2157,7 +2157,7 @@ GameObject:
   - component: {fileID: 1302840365}
   - component: {fileID: 1302840364}
   m_Layer: 0
-  m_Name: Sphere (4)
+  m_Name: LayingDecoration3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2252,7 +2252,7 @@ GameObject:
   - component: {fileID: 1355453373}
   - component: {fileID: 1355453372}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: StairMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2346,7 +2346,7 @@ GameObject:
   - component: {fileID: 1370865907}
   - component: {fileID: 1370865906}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: Arena
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2423,7 +2423,7 @@ GameObject:
   - component: {fileID: 1405676379}
   - component: {fileID: 1405676378}
   m_Layer: 0
-  m_Name: Sphere (12)
+  m_Name: LayingDecoration11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2515,7 +2515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1440565145}
   m_Layer: 0
-  m_Name: SomeSht
+  m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2659,7 +2659,7 @@ GameObject:
   - component: {fileID: 1529677801}
   - component: {fileID: 1529677800}
   m_Layer: 0
-  m_Name: Sphere (13)
+  m_Name: LayingDecoration12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2754,7 +2754,7 @@ GameObject:
   - component: {fileID: 1582663367}
   - component: {fileID: 1582663366}
   m_Layer: 0
-  m_Name: Sphere (11)
+  m_Name: LayingDecoration10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2850,7 +2850,7 @@ GameObject:
   - component: {fileID: 1584707046}
   - component: {fileID: 1584707049}
   m_Layer: 0
-  m_Name: Sphere (14)
+  m_Name: FlyingDecoration1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3043,102 +3043,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670655821}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1726226319
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1726226323}
-  - component: {fileID: 1726226322}
-  - component: {fileID: 1726226321}
-  - component: {fileID: 1726226320}
-  m_Layer: 0
-  m_Name: Cylinder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!136 &1726226320
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726226319}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!23 &1726226321
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726226319}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1726226322
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726226319}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1726226323
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726226319}
-  m_LocalRotation: {x: 0.6532815, y: 0.27059805, z: -0.27059805, w: 0.6532815}
-  m_LocalPosition: {x: 15, y: 15, z: 15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -45}
 --- !u!1 &1770996591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,7 +3057,7 @@ GameObject:
   - component: {fileID: 1770996593}
   - component: {fileID: 1770996596}
   m_Layer: 0
-  m_Name: Sphere (15)
+  m_Name: FlyingDecoration2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3264,7 +3168,7 @@ GameObject:
   - component: {fileID: 1966452510}
   - component: {fileID: 1966452509}
   m_Layer: 0
-  m_Name: Sphere (7)
+  m_Name: LayingDecoration6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3364,7 +3268,7 @@ GameObject:
   - component: {fileID: 2056688478}
   - component: {fileID: 2056688477}
   m_Layer: 0
-  m_Name: Sphere (5)
+  m_Name: LayingDecoration4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3554,7 +3458,7 @@ GameObject:
   - component: {fileID: 2142614835}
   - component: {fileID: 2142614834}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: BigDecoration
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3707,7 +3611,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1023994232203003413, guid: b236a4ce5be37364a9eec670d724c29e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b236a4ce5be37364a9eec670d724c29e, type: 3}
 --- !u!1001 &6557593799921278794
 PrefabInstance:
