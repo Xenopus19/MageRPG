@@ -1,77 +1,39 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
-    public bool isWalking;
-    private bool isJumping;
-    private float walkSpeed;
-    private float runSpeed;
-    private float jumpSpeed;
+public class PlayerMovement : MonoBehaviour
+{
+    public CharacterController controller;
+    public Transform groundCheck;
 
-    private Camera cameraCharacter;
-    private bool m_Jump;
-    private float m_YRotation;
-    private Vector2 input;
-    private Vector3 m_MoveDir = Vector3.zero;
-    private CharacterController characterController;
-    private CollisionFlags m_CollisionFlags;
-    private bool m_PreviouslyGrounded;
-    private Vector3 originalCameraPosition;
-    //private float stepCycle;
-    //private float nextStep;
-    private AudioSource audioSource;
+    public float speed = 12f;
+    public float gravity = -9.81f;
+    public float jumpHeigh = 3f;
 
-    //private FOVKick fovKick = new FOVKick();
-    //private bool useHeadBob;
-    //private CurveControlledBob m_HeadBob = new CurveControlledBob();
-    //private LerpControlledBob m_JumpBob = new LerpControlledBob();
-    //private MouseLook m_MouseLook;
-    //private float stepInterval;
-    void Start() {
-        characterController = GetComponent<CharacterController>();
-        cameraCharacter = Camera.main;
-        originalCameraPosition = cameraCharacter.transform.localPosition;
-        //fovKick.Setup(camera);
-        //m_HeadBob.Setup(cameraCharacter, stepInterval);
-        //stepCycle = 0f;
-        //nextStep = stepCycle / 2f;
-        isJumping = false;
-        audioSource = GetComponent<AudioSource>();
-        //m_MouseLook.Init(transform, cameraCharacter.transform);
-    }
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+    public KeyCode jumpCode = KeyCode.Space;
+    
+    Vector3 velocity;
+    public bool isGrounded;
+    void Update()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if (isGrounded && velocity.y < 0) {
+            velocity.y = -2f;
+        }
 
-    void Update() {
+        float directionX = Input.GetAxis("Horizontal");
+        float directionZ = Input.GetAxis("Vertical");
 
-    }
-    public void Walk(float horizontal, float vertical, bool wasWalking) {
-        float speed = isWalking ? walkSpeed : runSpeed;
-        input = new Vector2(horizontal, vertical);
-        if (input.sqrMagnitude > 1)
-            input.Normalize();
-        //if (isWalking != wasWalking && m_UseFovKick && characterController.velocity.sqrMagnitude > 0) {
-        //    StopAllCoroutines();
-        //    StartCoroutine(!isWalking ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
-        //}
-    }
-    public void TryJump() {
-        if (CanJump())
-            Jump();
-    }
-    private bool CanJump() {
-        return true;
-    }
+        Vector3 move = transform.right * directionX + transform.forward * directionZ;
+        controller.Move(move * speed * Time.deltaTime);
 
-    private void Jump() {
-        /*if (m_CharacterController.isGrounded)  <--- CanJump
-        {
-            m_MoveDir.y = -m_StickToGroundForce;
+        if (Input.GetKeyDown(jumpCode) && isGrounded) {
+            velocity.y = Mathf.Sqrt(jumpHeigh * -2f * gravity);
+        }
 
-            if (m_Jump)                         <---- delete this if
-            {
-                m_MoveDir.y = m_JumpSpeed;
-                PlayJumpSound();
-                m_Jump = false;                 <---- delete this if
-                m_Jumping = true;
-            }
-        }*/
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
     }
 }

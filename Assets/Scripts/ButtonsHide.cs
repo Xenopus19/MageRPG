@@ -1,10 +1,8 @@
 using UnityEngine;
 
-public class ButtonsHide : MonoBehaviour
-{
+public class ButtonsHide : MonoBehaviour {
     public GameObject buttons;
-    public void Start()
-    {
+    public void Start() {
         buttons.SetActive(false);
     }
     public void CloseButtons() {
