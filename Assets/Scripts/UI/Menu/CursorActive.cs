@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class CursorActive : MonoBehaviour
-{
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.None;
+public class CursorActive : MonoBehaviour {
+    void Start() {
+        Cursor.visible = (true);
     }
 }
