@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Spell))]
-public class FireballScript : MonoBehaviour
+public class FireballScript : Spell
 {
     public GameObject Caster;
 
-    [SerializeField] private Spell FireballData;
     private void Start()
     {
         Physics.IgnoreCollision(Caster.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
@@ -21,7 +20,7 @@ public class FireballScript : MonoBehaviour
 
         if (Target.GetComponent<Health>()!=null)
         {
-            Target.GetComponent<Health>().ReceiveDamage(FireballData.Damage);
+            Target.GetComponent<Health>().ReceiveDamage(Damage);
             Destroy(gameObject);
         }
         else

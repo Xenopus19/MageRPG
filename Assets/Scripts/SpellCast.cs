@@ -67,10 +67,12 @@ public class SpellCast : MonoBehaviour
 
             Rigidbody SpellPhysics = NewSpell.GetComponent<Rigidbody>();
             SpellPhysics.AddForce(ray.direction * force);
+
+            CurrentSpell = null;
         }
     }
     private bool CanCast()
     {
-        return manaPlayer.manaPlayer>=20f; 
+        return manaPlayer.manaPlayer>=CurrentSpell.GetComponent<Spell>().ManaConsumption; 
     }
 }

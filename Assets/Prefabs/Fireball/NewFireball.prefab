@@ -125,5 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e45a636abc9dad4595da1dc75b62fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 20
+  ManaConsumption: 20
+  SpellIcon: {fileID: 0}
   Caster: {fileID: 0}
-  FireballData: {fileID: 11400000, guid: 2092492047046314d8848ab785e930e2, type: 2}
