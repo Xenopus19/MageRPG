@@ -11,6 +11,7 @@ public class SpellCast : MonoBehaviour
     public Dictionary<ulong, string> Spells = new Dictionary<ulong, string>();
     public GameObject FireBall;
     public float force;
+    private ManaPlayer manaPlayer;
     public static SpellCast GetInstance() => Instance;
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class SpellCast : MonoBehaviour
     private void Start()
     {
         SpellCode = 0;
+        manaPlayer = gameObject.GetComponent<ManaPlayer>();
     }
     private void Update()
     {
@@ -39,7 +41,8 @@ public class SpellCast : MonoBehaviour
     }
     public void CastFireball()
     {
-        gameObject.GetComponent<ManaPlayer>().DecrementMana();
+        if (CanCast()) {
+        manaPlayer.DecrementMana();
 
         GameObject NewFireball = Instantiate(FireBall, gameObject.transform.position, Quaternion.identity);
         NewFireball.GetComponent<FireballScript>().Caster = gameObject;
@@ -50,5 +53,9 @@ public class SpellCast : MonoBehaviour
 
         Rigidbody FireBallPhysics = NewFireball.GetComponent<Rigidbody>();
         FireBallPhysics.AddForce(ray.direction * force);
+        }
+    }
+    private bool CanCast() {
+        return manaPlayer.manaPlayer - 20f > 0; 
     }
 }
