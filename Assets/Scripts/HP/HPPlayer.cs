@@ -15,6 +15,6 @@ public class HPPlayer : MonoBehaviour {
         } else {
             SceneManager.LoadScene("Death");
         }
-        PlayerHPText.ChangeHealthText(hpPlayer);
+        //PlayerHPText.ChangeHealthText(hpPlayer);
     }
 }

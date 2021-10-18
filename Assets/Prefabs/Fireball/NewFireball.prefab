@@ -126,3 +126,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Caster: {fileID: 0}
+  FireballData: {fileID: 11400000, guid: 2092492047046314d8848ab785e930e2, type: 2}
