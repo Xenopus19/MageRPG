@@ -1,10 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
-<<<<<<< HEAD:Assets/Column/Prefabs/Column3/Column3P1.prefab
 --- !u!1 &7305633651931940964
-=======
---- !u!1 &1468205292910114168
->>>>>>> main:Assets/Prefabs/AboveHpText.prefab
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12,36 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD:Assets/Column/Prefabs/Column3/Column3P1.prefab
   - component: {fileID: 4697886787376991379}
   - component: {fileID: 4999246845367280267}
   - component: {fileID: 2914522088712877763}
   - component: {fileID: -6176059274660119217}
   m_Layer: 0
   m_Name: Column3P1
-=======
-  - component: {fileID: 5345925193566025125}
-  - component: {fileID: 148997337892727655}
-  - component: {fileID: 8316467678710895997}
-  m_Layer: 9
-  m_Name: AboveHpText
->>>>>>> main:Assets/Prefabs/AboveHpText.prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD:Assets/Column/Prefabs/Column3/Column3P1.prefab
 --- !u!4 &4697886787376991379
-=======
---- !u!4 &5345925193566025125
->>>>>>> main:Assets/Prefabs/AboveHpText.prefab
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD:Assets/Column/Prefabs/Column3/Column3P1.prefab
   m_GameObject: {fileID: 7305633651931940964}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -59,27 +42,12 @@ MeshFilter:
   m_GameObject: {fileID: 7305633651931940964}
   m_Mesh: {fileID: 8078584625269776395, guid: b230417a4b71c1e419a9fe3c01cb0c46, type: 3}
 --- !u!23 &2914522088712877763
-=======
-  m_GameObject: {fileID: 1468205292910114168}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0, y: 1.324, z: 0.02}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!23 &148997337892727655
->>>>>>> main:Assets/Prefabs/AboveHpText.prefab
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD:Assets/Column/Prefabs/Column3/Column3P1.prefab
   m_GameObject: {fileID: 7305633651931940964}
-=======
-  m_GameObject: {fileID: 1468205292910114168}
->>>>>>> main:Assets/Prefabs/AboveHpText.prefab
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -92,11 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-<<<<<<< HEAD:Assets/Column/Prefabs/Column3/Column3P1.prefab
   - {fileID: 2100000, guid: da3cc6f16a1b86f4b88cc50e1c63b172, type: 2}
-=======
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> main:Assets/Prefabs/AboveHpText.prefab
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,19 +82,12 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
-<<<<<<< HEAD:Assets/Column/Prefabs/Column3/Column3P1.prefab
 --- !u!64 &-6176059274660119217
 MeshCollider:
-=======
---- !u!102 &8316467678710895997
-TextMesh:
-  serializedVersion: 3
->>>>>>> main:Assets/Prefabs/AboveHpText.prefab
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD:Assets/Column/Prefabs/Column3/Column3P1.prefab
   m_GameObject: {fileID: 7305633651931940964}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -139,20 +96,3 @@ TextMesh:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8078584625269776395, guid: b230417a4b71c1e419a9fe3c01cb0c46, type: 3}
-=======
-  m_GameObject: {fileID: 1468205292910114168}
-  m_Text: Hello World
-  m_OffsetZ: 0
-  m_CharacterSize: 1
-  m_LineSpacing: 1
-  m_Anchor: 4
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 150
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278190335
->>>>>>> main:Assets/Prefabs/AboveHpText.prefab
