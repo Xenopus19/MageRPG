@@ -2248,8 +2248,13 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -299.9206, y: -236.21036}
   m_SizeDelta: {x: 192.46661, y: 33.183014}
+=======
+  m_AnchoredPosition: {x: -299.9206, y: -273.84622}
+  m_SizeDelta: {x: 192.4666, y: 108.4547}
+>>>>>>> main
 =======
   m_AnchoredPosition: {x: -299.9206, y: -273.84622}
   m_SizeDelta: {x: 192.4666, y: 108.4547}
@@ -2865,8 +2870,13 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 145.0794, y: -236.21036}
   m_SizeDelta: {x: 192.46661, y: 33.183014}
+=======
+  m_AnchoredPosition: {x: 145.0794, y: -273.85}
+  m_SizeDelta: {x: 192.4666, y: 108.45}
+>>>>>>> main
 =======
   m_AnchoredPosition: {x: 145.0794, y: -273.85}
   m_SizeDelta: {x: 192.4666, y: 108.45}

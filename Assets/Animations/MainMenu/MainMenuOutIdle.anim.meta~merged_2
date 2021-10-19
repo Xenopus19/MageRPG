@@ -1,15 +1,21 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Animations/MainMenu/MainMenuOutIdle.anim.meta
+=======
+>>>>>>> main
 guid: 17269a5c79ec827449b687becd60dfea
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
+<<<<<<< HEAD
 =======
 guid: 8e7fc01a5bf3259459d31c1f82b31e58
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 9100000
 >>>>>>> main:Assets/Animations/MainMenu/Controllers/Settings.controller.meta
+=======
+>>>>>>> main
   userData: 
   assetBundleName: 
   assetBundleVariant: 

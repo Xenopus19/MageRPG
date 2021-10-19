@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/buildings/Materials/buildings.mat.meta
 guid: 851bab95ee12735428f69ec37b215bd0
 timeCreated: 1446208182
 licenseType: Store
+=======
+guid: dda8711dee4e1ec499e32ef23bbb362a
+>>>>>>> main:Assets/Animations/MainMenu/MainMenuIdle.anim.meta
 NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

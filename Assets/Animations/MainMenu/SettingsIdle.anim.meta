@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Animations/MainMenu/SettingsIdle.anim.meta
 guid: b441f28f50f139648bff82831f67de36
+=======
+guid: 17269a5c79ec827449b687becd60dfea
+>>>>>>> main:Assets/Animations/MainMenu/MainMenuOutIdle.anim.meta
+=======
+guid: b441f28f50f139648bff82831f67de36
+>>>>>>> main
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

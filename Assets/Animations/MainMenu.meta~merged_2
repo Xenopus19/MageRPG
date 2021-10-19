@@ -1,21 +1,14 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD
-guid: 7a17836fd81d3454fb3181ac6ebfca3a
-=======
-<<<<<<< HEAD:Assets/Scenes/Arena2.unity.meta
-guid: aeb4e51d6aa5bc244adb5bb79c4f0d91
-=======
-guid: 7a17836fd81d3454fb3181ac6ebfca3a
->>>>>>> main:Assets/Scenes/Death.unity.meta
->>>>>>> main
-=======
 <<<<<<< HEAD:Assets/Animations/MainMenu.meta
 guid: cff1402f471422f4b8c230a155afb3a1
 folderAsset: yes
 =======
 guid: 7a17836fd81d3454fb3181ac6ebfca3a
 >>>>>>> main:Assets/Scenes/Death.unity.meta
+=======
+guid: cff1402f471422f4b8c230a155afb3a1
+folderAsset: yes
 >>>>>>> main
 DefaultImporter:
   externalObjects: {}

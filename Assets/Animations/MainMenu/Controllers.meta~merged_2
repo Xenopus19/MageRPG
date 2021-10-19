@@ -1,12 +1,12 @@
 fileFormatVersion: 2
 <<<<<<< HEAD
-<<<<<<< HEAD:Assets/Audio/AudioMixer.meta
-guid: 6bb733f343c97a241a62b7db7b04b976
+<<<<<<< HEAD:Assets/Animations/MainMenu/Controllers.meta
+guid: 0ddffc1a6f896094ab5b01188fb08181
+=======
+guid: cff1402f471422f4b8c230a155afb3a1
+>>>>>>> main:Assets/Animations/MainMenu.meta
 =======
 guid: 0ddffc1a6f896094ab5b01188fb08181
->>>>>>> main:Assets/Animations/MainMenu/Controllers.meta
-=======
-guid: 6bb733f343c97a241a62b7db7b04b976
 >>>>>>> main
 folderAsset: yes
 DefaultImporter:

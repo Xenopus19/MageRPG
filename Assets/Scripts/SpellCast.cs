@@ -13,6 +13,11 @@ public class SpellCast : MonoBehaviour
     public float force;
     private ManaPlayer manaPlayer;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+    private GameObject CurrentSpell;
+>>>>>>> main
 =======
 
     private GameObject CurrentSpell;
@@ -46,9 +51,12 @@ public class SpellCast : MonoBehaviour
     private void PickSpell(ulong SpellCode)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (CanCast()) {
         manaPlayer.DecrementMana();
 =======
+=======
+>>>>>>> main
         if (Spells.ContainsKey(SpellCode))
         {
             CurrentSpell = Spells[SpellCode];
@@ -58,6 +66,9 @@ public class SpellCast : MonoBehaviour
             Debug.LogWarning("Incorrect spell code.");
         }
     }
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
 
     public void CastSpell()
@@ -68,6 +79,7 @@ public class SpellCast : MonoBehaviour
             manaPlayer.DecrementMana();
             GameObject NewSpell = Instantiate(CurrentSpell, gameObject.transform.position, Quaternion.identity);
             NewSpell.GetComponent<FireballScript>().Caster = gameObject;
+<<<<<<< HEAD
 
             Ray ray = new Ray();
             ray.origin = Camera.main.transform.position;
@@ -84,12 +96,25 @@ public class SpellCast : MonoBehaviour
     private bool CanCast() {
         return manaPlayer.manaPlayer - 20f > 0; 
 =======
+=======
+
+            Ray ray = new Ray();
+            ray.origin = Camera.main.transform.position;
+            ray.direction = Camera.main.transform.forward;
+
+            Rigidbody SpellPhysics = NewSpell.GetComponent<Rigidbody>();
+            SpellPhysics.AddForce(ray.direction * force);
+
+>>>>>>> main
             CurrentSpell = null;
         }
     }
     private bool CanCast()
     {
         return manaPlayer.manaPlayer>=CurrentSpell.GetComponent<Spell>().ManaConsumption; 
+<<<<<<< HEAD
+>>>>>>> main
+=======
 >>>>>>> main
     }
 }
