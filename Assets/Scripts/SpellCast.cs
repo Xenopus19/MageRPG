@@ -8,19 +8,28 @@ using UnityEngine.EventSystems;
 public class SpellCast : MonoBehaviour
 {
     private static SpellCast Instance;
-    public Dictionary<ulong, string> Spells = new Dictionary<ulong, string>();
+    public Dictionary<ulong, GameObject> Spells = new Dictionary<ulong, GameObject>();
     public GameObject FireBall;
     public float force;
+    private ManaPlayer manaPlayer;
+<<<<<<< HEAD
+=======
+
+    private GameObject CurrentSpell;
+>>>>>>> main
     public static SpellCast GetInstance() => Instance;
     private void Awake()
     {
         Instance = this;
-        Spells.Add(7896321, "FireBall");
+        Spells.Add(7896321, FireBall);
     }
+
     public ulong SpellCode;
+
     private void Start()
     {
         SpellCode = 0;
+        manaPlayer = gameObject.GetComponent<ManaPlayer>();
     }
     private void Update()
     {
@@ -29,26 +38,58 @@ public class SpellCast : MonoBehaviour
             ulong newSpellCode = SpellCode;
             SpellCode = 0;
 
-            switch (Spells[newSpellCode])
-            {
-                case "FireBall":
-                    CastFireball();
-                    break;
-            }
+            PickSpell(newSpellCode);
+            if(CurrentSpell != null)
+                CastSpell();
         }
     }
-    public void CastFireball()
+    private void PickSpell(ulong SpellCode)
     {
-        gameObject.GetComponent<ManaPlayer>().DecrementMana();
+<<<<<<< HEAD
+        if (CanCast()) {
+        manaPlayer.DecrementMana();
+=======
+        if (Spells.ContainsKey(SpellCode))
+        {
+            CurrentSpell = Spells[SpellCode];
+        }
+        else
+        {
+            Debug.LogWarning("Incorrect spell code.");
+        }
+    }
+>>>>>>> main
 
-        GameObject NewFireball = Instantiate(FireBall, gameObject.transform.position, Quaternion.identity);
-        NewFireball.GetComponent<FireballScript>().Caster = gameObject;
+    public void CastSpell()
+    {
+        if (CanCast()) 
+        {
 
-        Ray ray = new Ray();
-        ray.origin = Camera.main.transform.position;
-        ray.direction = Camera.main.transform.forward;
+            manaPlayer.DecrementMana();
+            GameObject NewSpell = Instantiate(CurrentSpell, gameObject.transform.position, Quaternion.identity);
+            NewSpell.GetComponent<FireballScript>().Caster = gameObject;
 
+            Ray ray = new Ray();
+            ray.origin = Camera.main.transform.position;
+            ray.direction = Camera.main.transform.forward;
+
+            Rigidbody SpellPhysics = NewSpell.GetComponent<Rigidbody>();
+            SpellPhysics.AddForce(ray.direction * force);
+
+<<<<<<< HEAD
         Rigidbody FireBallPhysics = NewFireball.GetComponent<Rigidbody>();
         FireBallPhysics.AddForce(ray.direction * force);
+        }
+    }
+    private bool CanCast() {
+        return manaPlayer.manaPlayer - 20f > 0; 
+=======
+            CurrentSpell = null;
+        }
+    }
+    private bool CanCast()
+    {
+        return manaPlayer.manaPlayer>=CurrentSpell.GetComponent<Spell>().ManaConsumption; 
+>>>>>>> main
     }
 }

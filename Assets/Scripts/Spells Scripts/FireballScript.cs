@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class FireballScript : MonoBehaviour
+[RequireComponent(typeof(Spell))]
+public class FireballScript : Spell
 {
     public GameObject Caster;
+
     private void Start()
     {
         Physics.IgnoreCollision(Caster.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
@@ -15,9 +16,21 @@ public class FireballScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        GameObject Target = collision.gameObject;
+
+        if (Target.GetComponent<Health>()!=null)
         {
-            collision.gameObject.GetComponent<HPPlayer>().hpPlayer -= 20f;
+            Target.GetComponent<Health>().ReceiveDamage(Damage);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        /*if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<HPPlayer>().GetDamage(20f);
             Destroy(gameObject);
         }
         else if(collision.gameObject.tag == "Dummy" && Caster.tag != "Dummy")
@@ -28,6 +41,6 @@ public class FireballScript : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 }

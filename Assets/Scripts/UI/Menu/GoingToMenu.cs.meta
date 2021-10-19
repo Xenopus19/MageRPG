@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Scripts/UI/Menu/GoingToMenu.cs.meta
+guid: 7f0c53259b35ef04ca182d8ba6d43df5
+=======
+guid: 298fc084dc37cf04fbdb9bb9ae34b6e0
+>>>>>>> main:Assets/Scripts/Movement/PlayerMovement.cs.meta
+=======
+guid: 7f0c53259b35ef04ca182d8ba6d43df5
+>>>>>>> main
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HPPlayer : MonoBehaviour {
     /*public GameObject objectOfAttackPrefab;
@@ -8,22 +9,12 @@ public class HPPlayer : MonoBehaviour {
         GetDamage();
     } */
     public float hpPlayer = 100f;
-    /*public void GetDamage(float damage) 
-    {
-        if (hpPlayer > 0) {
+    public void GetDamage(float damage) {
+        if (hpPlayer - damage > 0) {
             hpPlayer -= damage;
         } else {
-            print("You are not deathless, so game over");
-            Destroy(gameObject);
+            SceneManager.LoadScene("Death");
         }
-        HPText.ChangeHealthText(hpPlayer);
-    }*/
-    private void Update()
-    {
         PlayerHPText.ChangeHealthText(hpPlayer);
-        if (hpPlayer <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }
