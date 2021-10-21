@@ -7,36 +7,27 @@ public class SpellIconsChange : MonoBehaviour
 {
     [SerializeField] private Sprite DefaultImage;
 
-    private GameObject IconPanel;
-    private Image IconImage;
-    private Sprite CurrentSpellIcon;
+    [SerializeField] private GameObject IconPanel;
+    [SerializeField]private Image IconImage;
 
-    private void Awake()
-    {
-        IconPanel = GameObject.FindGameObjectsWithTag("IconPanel")[0];
-    }
     void Start()
     {
-        CurrentSpellIcon = gameObject.GetComponent<SpellCast>().CurrentSpell.GetComponent<Spell>().SpellIcon;
-        IconImage = IconPanel.GetComponent<Image>();
+        //IconPanel = GameObject.FindGameObjectsWithTag("IconPanel")[0];
+        //IconImage = IconPanel.GetComponent<Image>();
     }
 
-    void Update()
+    public void ChangeIcon(GameObject CurrentSpell)
     {
-        if (CurrentSpellIcon != null)
+        Sprite CurrentSpellPicture;
+        if(CurrentSpell!=null)
         {
-            IconImage.sprite = CurrentSpellIcon;
+            CurrentSpellPicture = CurrentSpell.GetComponent<Spell>().SpellIcon;
         }
         else
         {
-            if(IconImage != null)
-            {
-                IconImage.sprite = DefaultImage;
-            }
-            else
-            {
-                Debug.Log("Sdfsdg");
-            }
+            CurrentSpellPicture = DefaultImage;
         }
+
+        IconImage.sprite = CurrentSpellPicture;
     }
 }

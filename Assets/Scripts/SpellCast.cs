@@ -10,8 +10,8 @@ public class SpellCast : MonoBehaviour
     private static SpellCast Instance;
     public Dictionary<ulong, GameObject> Spells = new Dictionary<ulong, GameObject>();
     public GameObject FireBall;
-    public float force;
     private ManaPlayer manaPlayer;
+    [SerializeField] SpellIconsChange iconsChange;
 
     public GameObject CurrentSpell { get; private set; }
     public static SpellCast GetInstance() => Instance;
@@ -27,15 +27,17 @@ public class SpellCast : MonoBehaviour
     {
         SpellCode = 0;
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
+        iconsChange = gameObject.GetComponent<SpellIconsChange>();
     }
     private void Update()
     {
+        PickSpell(SpellCode);
         if (Input.GetMouseButtonDown(0))
         {
             ulong newSpellCode = SpellCode;
             SpellCode = 0;
 
-            PickSpell(newSpellCode);
+            //PickSpell(newSpellCode);
             if(CurrentSpell != null)
                 CastSpell();
         }
@@ -45,10 +47,11 @@ public class SpellCast : MonoBehaviour
         if (Spells.ContainsKey(SpellCode))
         {
             CurrentSpell = Spells[SpellCode];
+            iconsChange.ChangeIcon(CurrentSpell);
         }
         else
         {
-            Debug.LogWarning("Incorrect spell code.");
+            //Debug.LogWarning("Incorrect spell code.");
         }
     }
 
@@ -62,6 +65,7 @@ public class SpellCast : MonoBehaviour
             NewSpell.GetComponent<Spell>().Caster = gameObject;
 
             CurrentSpell = null;
+            iconsChange.ChangeIcon(CurrentSpell);
         }
     }
     private bool CanCast()
