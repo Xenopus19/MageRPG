@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Spell))]
-public class FireballScript : Spell
+public class FireballScript : Projectiles
 {
-    public GameObject Caster;
 
     private void Start()
     {
@@ -13,6 +12,8 @@ public class FireballScript : Spell
         {
             Physics.IgnoreCollision(Caster.transform.GetChild(i).GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         }
+
+        FlyForward();
     }
     private void OnCollisionEnter(Collision collision)
     {

@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class Spell : MonoBehaviour
 {
+    public GameObject Caster;
     public float Damage;
     public float ManaConsumption;
-    public Image SpellIcon;
+    public Sprite SpellIcon;
 
     private void OnCollisionEnter(Collision collision)
     {

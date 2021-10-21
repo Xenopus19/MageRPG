@@ -13,7 +13,7 @@ public class SpellCast : MonoBehaviour
     public float force;
     private ManaPlayer manaPlayer;
 
-    private GameObject CurrentSpell;
+    public GameObject CurrentSpell { get; private set; }
     public static SpellCast GetInstance() => Instance;
     private void Awake()
     {
@@ -57,16 +57,9 @@ public class SpellCast : MonoBehaviour
         if (CanCast()) 
         {
 
-            manaPlayer.DecrementMana();
+            manaPlayer.DecrementMana(CurrentSpell.GetComponent<Spell>().ManaConsumption);
             GameObject NewSpell = Instantiate(CurrentSpell, gameObject.transform.position, Quaternion.identity);
-            NewSpell.GetComponent<FireballScript>().Caster = gameObject;
-
-            Ray ray = new Ray();
-            ray.origin = Camera.main.transform.position;
-            ray.direction = Camera.main.transform.forward;
-
-            Rigidbody SpellPhysics = NewSpell.GetComponent<Rigidbody>();
-            SpellPhysics.AddForce(ray.direction * force);
+            NewSpell.GetComponent<Spell>().Caster = gameObject;
 
             CurrentSpell = null;
         }
