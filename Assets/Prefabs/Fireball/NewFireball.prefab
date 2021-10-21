@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Caster: {fileID: 0}
-  Damage: 20
+  ActionAmount: 20
   ManaConsumption: 20
   SpellIcon: {fileID: 21300000, guid: dd0abcea0f535fa4691cd9bf465913b7, type: 3}
   Force: 3000

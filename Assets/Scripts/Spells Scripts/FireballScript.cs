@@ -10,6 +10,7 @@ public class FireballScript : Projectiles
         Physics.IgnoreCollision(Caster.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         for(int i = 0; i < Caster.transform.childCount; i++)
         {
+            if(Caster.transform.GetChild(i).GetComponent<Collider>()!=null)
             Physics.IgnoreCollision(Caster.transform.GetChild(i).GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         }
 
@@ -19,10 +20,14 @@ public class FireballScript : Projectiles
     {
         GameObject Target = collision.gameObject;
 
-        if (Target.GetComponent<Health>()!=null)
+        if (Target.GetComponent<Health>()!=null )
         {
-            Target.GetComponent<Health>().ReceiveDamage(Damage);
+            Target.GetComponent<Health>().ReceiveDamage(ActionAmount);
             Destroy(gameObject);
+        }
+        else if(Target.GetComponentInChildren<Health>() != null)
+        {
+            Target.GetComponentInChildren<Health>().ReceiveDamage(ActionAmount);
         }
         else
         {

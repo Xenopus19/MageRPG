@@ -1413,7 +1413,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireballDummy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3751370557912438833, guid: 364e6244a8a099d48ba284fc11bf1087, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 364e6244a8a099d48ba284fc11bf1087, type: 3}
 --- !u!1 &617431396
 GameObject:
@@ -2104,6 +2105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstPersonPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 884415160055828287, guid: 44c285dfe0acafa4fbc59b7467d03786, type: 3}
+      propertyPath: Heal
+      value: 
+      objectReference: {fileID: 2862818277757017517, guid: e1bdf6d64eab1cf4786e43e54ed9809d, type: 3}
     - target: {fileID: 884415160055828287, guid: 44c285dfe0acafa4fbc59b7467d03786, type: 3}
       propertyPath: EmptySpell
       value: 

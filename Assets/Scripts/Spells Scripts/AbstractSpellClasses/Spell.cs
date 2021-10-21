@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Spell : MonoBehaviour
 {
     public GameObject Caster;
-    public float Damage;
+    public float ActionAmount;
     public float ManaConsumption;
     public Sprite SpellIcon;
 
