@@ -56,7 +56,6 @@ public class SpellCast : MonoBehaviour
     {
         if (CanCast()) 
         {
-
             manaPlayer.DecrementMana();
             GameObject NewSpell = Instantiate(CurrentSpell, gameObject.transform.position, Quaternion.identity);
             NewSpell.GetComponent<FireballScript>().Caster = gameObject;
