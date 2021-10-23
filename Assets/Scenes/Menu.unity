@@ -2250,6 +2250,7 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -299.9206, y: -236.21036}
   m_SizeDelta: {x: 192.46661, y: 33.183014}
 =======
@@ -2260,6 +2261,10 @@ RectTransform:
   m_AnchoredPosition: {x: -299.9206, y: -273.84622}
   m_SizeDelta: {x: 192.4666, y: 108.4547}
 >>>>>>> main
+=======
+  m_AnchoredPosition: {x: -299.9206, y: -236.21036}
+  m_SizeDelta: {x: 192.46661, y: 33.183014}
+>>>>>>> parent of 63b582a (UI scale  bugfix)
 =======
   m_AnchoredPosition: {x: -299.9206, y: -236.21036}
   m_SizeDelta: {x: 192.46661, y: 33.183014}
@@ -2877,6 +2882,7 @@ RectTransform:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 145.0794, y: -236.21036}
   m_SizeDelta: {x: 192.46661, y: 33.183014}
 =======
@@ -2887,6 +2893,10 @@ RectTransform:
   m_AnchoredPosition: {x: 145.0794, y: -273.85}
   m_SizeDelta: {x: 192.4666, y: 108.45}
 >>>>>>> main
+=======
+  m_AnchoredPosition: {x: 145.0794, y: -236.21036}
+  m_SizeDelta: {x: 192.46661, y: 33.183014}
+>>>>>>> parent of 63b582a (UI scale  bugfix)
 =======
   m_AnchoredPosition: {x: 145.0794, y: -236.21036}
   m_SizeDelta: {x: 192.46661, y: 33.183014}
