@@ -838,7 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -2249,6 +2249,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -299.9206, y: -236.21036}
   m_SizeDelta: {x: 192.46661, y: 33.183014}
 =======
@@ -2259,6 +2260,10 @@ RectTransform:
   m_AnchoredPosition: {x: -299.9206, y: -273.84622}
   m_SizeDelta: {x: 192.4666, y: 108.4547}
 >>>>>>> main
+=======
+  m_AnchoredPosition: {x: -299.9206, y: -236.21036}
+  m_SizeDelta: {x: 192.46661, y: 33.183014}
+>>>>>>> parent of 63b582a (UI scale  bugfix)
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1354255724
 MonoBehaviour:
@@ -2871,6 +2876,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 145.0794, y: -236.21036}
   m_SizeDelta: {x: 192.46661, y: 33.183014}
 =======
@@ -2881,6 +2887,10 @@ RectTransform:
   m_AnchoredPosition: {x: 145.0794, y: -273.85}
   m_SizeDelta: {x: 192.4666, y: 108.45}
 >>>>>>> main
+=======
+  m_AnchoredPosition: {x: 145.0794, y: -236.21036}
+  m_SizeDelta: {x: 192.46661, y: 33.183014}
+>>>>>>> parent of 63b582a (UI scale  bugfix)
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936363249
 MonoBehaviour:
