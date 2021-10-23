@@ -2195,6 +2195,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 884415160055828287, guid: 44c285dfe0acafa4fbc59b7467d03786, type: 3}
+      propertyPath: HealSpell
+      value: 
+      objectReference: {fileID: 2862818277757017517, guid: e1bdf6d64eab1cf4786e43e54ed9809d, type: 3}
     - target: {fileID: 7149068218929271475, guid: 44c285dfe0acafa4fbc59b7467d03786, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6

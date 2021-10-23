@@ -10,6 +10,7 @@ public class SpellCast : MonoBehaviour
     private static SpellCast Instance;
     public Dictionary<ulong, GameObject> Spells = new Dictionary<ulong, GameObject>();
     public GameObject FireBall;
+    [SerializeField] private GameObject HealSpell;
 
     private ManaPlayer manaPlayer;
     private SpellIconsChange iconsChange;
@@ -20,6 +21,7 @@ public class SpellCast : MonoBehaviour
     {
         Instance = this;
         Spells.Add(7896321, FireBall);
+        Spells.Add(7536, HealSpell);
     }
 
     public ulong SpellCode;

@@ -8,10 +8,19 @@ public class Projectiles : Spell
     public void FlyForward()
     {
         Ray ray = new Ray();
-        ray.origin = Caster.transform.position;
-        ray.direction = Caster.transform.forward;
+        if(Caster.GetComponentInChildren<MouseLook>() != null)
+        {
+            GameObject CasterCamera = Caster.GetComponentInChildren<MouseLook>().gameObject;
 
-        
+            ray.origin = CasterCamera.transform.position;
+            ray.direction = CasterCamera.transform.forward;
+        }
+        else
+        {
+            ray.origin = Caster.transform.position;
+            ray.direction = Caster.transform.forward;
+        }
+
         Rigidbody SpellPhysics = gameObject.GetComponent<Rigidbody>();
         SpellPhysics.AddForce(ray.direction * Force);
     }

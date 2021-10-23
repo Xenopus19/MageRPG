@@ -13,6 +13,19 @@ public class VolumeSliders : MonoBehaviour
 
     [SerializeField] private int VolumeMultiplier;
 
+    private void Start()
+    {
+        if(PlayerPrefs.HasKey("MusicVolume"))
+        {
+            SetGroupVolume(MusicExposedParam, PlayerPrefs.GetFloat("MusicVolume"));
+        }
+
+        if (PlayerPrefs.HasKey("EffectsVolume"))
+        {
+            SetGroupVolume(EffectsExposedParam, PlayerPrefs.GetFloat("EffectsVolume"));
+        }
+    }
+
     public void SetGroupVolume(string ExposedParam, float newVolume)
     {
         audioMixer.SetFloat(ExposedParam, LerpSliderValue(newVolume));
