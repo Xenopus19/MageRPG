@@ -10,10 +10,13 @@ public class SpellIconsChange : MonoBehaviour
     [SerializeField] private GameObject IconPanel;
     [SerializeField]private Image IconImage;
 
+    private SpellCast spellCast;
+
     void Start()
     {
+        spellCast = GetComponent<SpellCast>();
         //IconPanel = GameObject.FindGameObjectsWithTag("IconPanel")[0];
-        //IconImage = IconPanel.GetComponent<Image>();
+        IconImage = IconPanel.GetComponent<Image>();
     }
 
     public void ChangeIcon(GameObject CurrentSpell)

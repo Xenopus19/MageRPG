@@ -10,8 +10,9 @@ public class SpellCast : MonoBehaviour
     private static SpellCast Instance;
     public Dictionary<ulong, GameObject> Spells = new Dictionary<ulong, GameObject>();
     public GameObject FireBall;
-    public float force;
+
     private ManaPlayer manaPlayer;
+    private SpellIconsChange iconsChange;
 
     private GameObject CurrentSpell;
     public static SpellCast GetInstance() => Instance;
@@ -25,17 +26,17 @@ public class SpellCast : MonoBehaviour
 
     private void Start()
     {
+        iconsChange = GetComponent<SpellIconsChange>();
         SpellCode = 0;
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
     }
     private void Update()
     {
+        PickSpell(SpellCode);
         if (Input.GetMouseButtonDown(0))
         {
             ulong newSpellCode = SpellCode;
             SpellCode = 0;
-
-            PickSpell(newSpellCode);
             if(CurrentSpell != null)
                 CastSpell();
         }
@@ -45,10 +46,11 @@ public class SpellCast : MonoBehaviour
         if (Spells.ContainsKey(SpellCode))
         {
             CurrentSpell = Spells[SpellCode];
+            OnSpellChange();
         }
         else
         {
-            Debug.LogWarning("Incorrect spell code.");
+            //Debug.LogWarning("Incorrect spell code.");
         }
     }
 
@@ -56,22 +58,26 @@ public class SpellCast : MonoBehaviour
     {
         if (CanCast()) 
         {
-            manaPlayer.DecrementMana();
+            manaPlayer.DecrementMana(CurrentSpell.GetComponent<Spell>().ManaConsumption);
             GameObject NewSpell = Instantiate(CurrentSpell, gameObject.transform.position, Quaternion.identity);
-            NewSpell.GetComponent<FireballScript>().Caster = gameObject;
+            NewSpell.GetComponent<Spell>().Caster = gameObject;
 
             Ray ray = new Ray();
             ray.origin = Camera.main.transform.position;
             ray.direction = Camera.main.transform.forward;
 
-            Rigidbody SpellPhysics = NewSpell.GetComponent<Rigidbody>();
-            SpellPhysics.AddForce(ray.direction * force);
-
             CurrentSpell = null;
+            OnSpellChange();
+            
         }
     }
     private bool CanCast()
     {
         return manaPlayer.manaPlayer>=CurrentSpell.GetComponent<Spell>().ManaConsumption; 
+    }
+
+    private void OnSpellChange()
+    {
+        iconsChange.ChangeIcon(CurrentSpell);
     }
 }
