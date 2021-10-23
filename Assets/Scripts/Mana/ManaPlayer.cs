@@ -1,15 +1,19 @@
 using UnityEngine;
 
-public class ManaPlayer : MonoBehaviour {
+public class ManaPlayer : MonoBehaviour 
+{
+
     public float manaPlayer = 100f;
+
+    [SerializeField] private float MaxMana = 100;
     private float time = 0f;
     void Update() {
-        if (manaPlayer < 100) 
+        if (manaPlayer < MaxMana) 
             RecoveryMana();
 
     }
-    public void DecrementMana() {
-        manaPlayer -= 20f;
+    public void DecrementMana(float RequiredMana) {
+        manaPlayer -= RequiredMana;
         ManaText.ChangeManaText(manaPlayer);
     }
     public void RecoveryMana() {
