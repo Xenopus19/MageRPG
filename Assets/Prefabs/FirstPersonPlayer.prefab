@@ -281,6 +281,7 @@ GameObject:
   - component: {fileID: 884415160055828281}
   - component: {fileID: 884415160055828285}
   - component: {fileID: 884415160055828287}
+  - component: {fileID: 6168506672898183080}
   m_Layer: 0
   m_Name: FirstPersonPlayer
   m_TagString: Player
@@ -359,6 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaPlayer: 100
+  MaxMana: 100
 --- !u!114 &884415160055828287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,3 +376,16 @@ MonoBehaviour:
   FireBall: {fileID: 2762361141048217686, guid: e115bcdfebadc8b4f8461d5de192bd51, type: 3}
   force: 5000
   SpellCode: 0
+--- !u!114 &6168506672898183080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7c72e8f1a2fce4699830939bcfdc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
