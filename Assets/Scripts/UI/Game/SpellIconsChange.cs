@@ -13,7 +13,7 @@ public class SpellIconsChange : MonoBehaviour
 
     void Start()
     {
-        //IconPanel = GameObject.FindGameObjectsWithTag("IconPanel")[0];
+        IconPanel = GameObject.FindGameObjectsWithTag("IconPanel")[0];
         IconImage = IconPanel.GetComponent<Image>();
     }
 

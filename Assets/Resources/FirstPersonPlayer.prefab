@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 884415158717114751}
   - component: {fileID: 884415158717114722}
   - component: {fileID: 884415158717114723}
+  - component: {fileID: 1658278310110689029}
   m_Layer: 0
   m_Name: MageCamera
   m_TagString: MainCamera
@@ -163,6 +164,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1658278310110689029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415158717114745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629c2e9b8ac51de408a58a06897be641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &884415159922455508
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +287,7 @@ GameObject:
   - component: {fileID: 884415160055828287}
   - component: {fileID: -3983066920297027617}
   - component: {fileID: 9099572953435569747}
+  - component: {fileID: -8346260469055776327}
   m_Layer: 0
   m_Name: FirstPersonPlayer
   m_TagString: Player
@@ -408,6 +422,21 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &-8346260469055776327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7c72e8f1a2fce4699830939bcfdc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultImage: {fileID: 21300000, guid: 66efb24ed46044ab8a039599cbc47d7b, type: 3}
+  IconPanel: {fileID: 0}
+  IconImage: {fileID: 0}
 --- !u!114 &2871666960349788098
 MonoBehaviour:
   m_ObjectHideFlags: 0
