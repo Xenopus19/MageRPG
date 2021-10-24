@@ -55,7 +55,6 @@ GameObject:
   m_Component:
   - component: {fileID: 884415158717114750}
   - component: {fileID: 884415158717114749}
-  - component: {fileID: 884415158717114748}
   - component: {fileID: 884415158717114751}
   - component: {fileID: 884415158717114722}
   - component: {fileID: 884415158717114723}
@@ -123,14 +122,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &884415158717114748
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884415158717114745}
-  m_Enabled: 1
 --- !u!114 &884415158717114751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d165a9d8529c8e94ea53b045b67398d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 450
   playerBody: {fileID: 884415160055828280}
 --- !u!114 &884415158717114722
 MonoBehaviour:
@@ -281,6 +272,8 @@ GameObject:
   - component: {fileID: 884415160055828281}
   - component: {fileID: 884415160055828285}
   - component: {fileID: 884415160055828287}
+  - component: {fileID: -3983066920297027617}
+  - component: {fileID: 9099572953435569747}
   m_Layer: 0
   m_Name: FirstPersonPlayer
   m_TagString: Player
@@ -360,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manaPlayer: 100
+  MaxMana: 100
 --- !u!114 &884415160055828287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,8 +367,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireBall: {fileID: 2762361141048217686, guid: e115bcdfebadc8b4f8461d5de192bd51, type: 3}
-  force: 5000
+  HealSpell: {fileID: 0}
   SpellCode: 0
+--- !u!114 &-3983066920297027617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 9099572953435569747}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &9099572953435569747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!114 &2871666960349788098
 MonoBehaviour:
   m_ObjectHideFlags: 0

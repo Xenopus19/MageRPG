@@ -7,9 +7,11 @@ using Photon.Realtime;
 
 public class GameNetwork : MonoBehaviourPunCallbacks
 {
+    [SerializeField] private GameObject PlayerPrefab;
+    [SerializeField] private GameObject SpawnPosition;
     void Start()
     {
-        
+        PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.transform.position, Quaternion.identity);
     }
 
     void Update()
