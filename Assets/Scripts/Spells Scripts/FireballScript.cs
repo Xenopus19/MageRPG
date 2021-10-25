@@ -5,7 +5,7 @@ using Photon.Pun;
 [RequireComponent(typeof(Spell))]
 public class FireballScript : Projectiles
 {
-
+    private PhotonView photonView;
     private void Start()
     {
         Physics.IgnoreCollision(Caster.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
@@ -14,6 +14,7 @@ public class FireballScript : Projectiles
             if(Caster.transform.GetChild(i).GetComponent<Collider>()!=null)
             Physics.IgnoreCollision(Caster.transform.GetChild(i).GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         }
+        photonView = GetComponent<PhotonView>();
 
         FlyForward();
     }
@@ -24,31 +25,21 @@ public class FireballScript : Projectiles
         if (Target.GetComponent<Health>()!=null )
         {
             Target.GetComponent<Health>().ReceiveDamage(ActionAmount);
-            Destroy(gameObject);
+            photonView.RPC("DestroyFireball", RpcTarget.All);
         }
         else if(Target.GetComponentInChildren<Health>() != null)
         {
             Target.GetComponentInChildren<Health>().ReceiveDamage(ActionAmount);
-            Destroy(gameObject);
+            photonView.RPC("DestroyFireball", RpcTarget.All);
         }
         else
         {
-            //PhotonNetwork.Destroy(gameObject);
+            photonView.RPC("DestroyFireball", RpcTarget.All);
         }
-
-        /*if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<HPPlayer>().GetDamage(20f);
-            Destroy(gameObject);
-        }
-        else if(collision.gameObject.tag == "Dummy" && Caster.tag != "Dummy")
-        {
-            collision.gameObject.GetComponent<DummyHP>().DummyHPs -= 20f;
-            Destroy(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }*/
+    }
+    [PunRPC]
+    void DestroyFireball()
+    {
+        Destroy(gameObject);
     }
 }
