@@ -381,8 +381,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FireBall: {fileID: 2762361141048217686, guid: e115bcdfebadc8b4f8461d5de192bd51, type: 3}
-  HealSpell: {fileID: 0}
   SpellCode: 0
+  HealSpell: {fileID: 2862818277757017517, guid: e1bdf6d64eab1cf4786e43e54ed9809d, type: 3}
 --- !u!114 &-3983066920297027617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7c72e8f1a2fce4699830939bcfdc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultImage: {fileID: 21300000, guid: 66efb24ed46044ab8a039599cbc47d7b, type: 3}
+  DefaultImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   IconPanel: {fileID: 0}
   IconImage: {fileID: 0}
 --- !u!114 &2871666960349788098

@@ -4,43 +4,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Photon.Pun;
 
 public class SpellCast : MonoBehaviour
 {
-    private static SpellCast Instance;
     public Dictionary<ulong, GameObject> Spells = new Dictionary<ulong, GameObject>();
     public GameObject FireBall;
+    public ulong SpellCode;
     [SerializeField] private GameObject HealSpell;
 
     private ManaPlayer manaPlayer;
     private SpellIconsChange iconsChange;
+    private PhotonView photonView;
 
     private GameObject CurrentSpell;
-    public static SpellCast GetInstance() => Instance;
     private void Awake()
     {
-        Instance = this;
         Spells.Add(7896321, FireBall);
         Spells.Add(7536, HealSpell);
-    }
-
-    public ulong SpellCode;
+    }    
 
     private void Start()
     {
+        photonView = GetComponent<PhotonView>();
         iconsChange = GetComponent<SpellIconsChange>();
         SpellCode = 0;
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
     }
     private void Update()
     {
+        PickAndCastSpell();
+    }
+
+    [PunRPC]
+    private void PickAndCastSpell()
+    {
+        if (!photonView.IsMine) return;
         PickSpell(SpellCode);
         if (Input.GetMouseButtonDown(0))
         {
-            ulong newSpellCode = SpellCode;
             SpellCode = 0;
-            if(CurrentSpell != null)
-                CastSpell();
+            if (CurrentSpell != null)
+                photonView.RPC("CastSpell", RpcTarget.AllViaServer);
         }
     }
     private void PickSpell(ulong SpellCode)
@@ -55,24 +60,20 @@ public class SpellCast : MonoBehaviour
             //Debug.LogWarning("Incorrect spell code.");
         }
     }
-
+    [PunRPC]
     public void CastSpell()
     {
-        if (CanCast()) 
+        if(CanCast())
         {
             manaPlayer.DecrementMana(CurrentSpell.GetComponent<Spell>().ManaConsumption);
             GameObject NewSpell = Instantiate(CurrentSpell, gameObject.transform.position, Quaternion.identity);
             NewSpell.GetComponent<Spell>().Caster = gameObject;
 
-            Ray ray = new Ray();
-            ray.origin = Camera.main.transform.position;
-            ray.direction = Camera.main.transform.forward;
-
             CurrentSpell = null;
             OnSpellChange();
-            
         }
     }
+
     private bool CanCast()
     {
         return manaPlayer.manaPlayer>=CurrentSpell.GetComponent<Spell>().ManaConsumption; 

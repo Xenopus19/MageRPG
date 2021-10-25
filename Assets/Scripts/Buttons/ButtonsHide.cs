@@ -13,7 +13,13 @@ public class ButtonsHide : MonoBehaviour
 
         if(photonView.IsMine)
         {
+            SpellCast spellCast = GetComponentInParent<SpellCast>();
             buttons = GameObject.Find("buttons");
+            for(int i = 0; i<buttons.transform.childCount; i++)
+            {
+                buttons.transform.GetChild(i).gameObject.GetComponent<OnButtonHover>().spellCast = spellCast;
+                Debug.Log($"SpellCast for {i} set.");
+            }
             buttons.SetActive(false);
         }
         

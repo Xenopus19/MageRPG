@@ -11,7 +11,8 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject SpawnPosition;
     void Start()
     {
-        PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.transform.position, Quaternion.identity);
+        GameObject Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.transform.position, Quaternion.identity);
+        Player.GetComponent<PhotonView>().Owner.TagObject = Player;
     }
 
     void Update()
