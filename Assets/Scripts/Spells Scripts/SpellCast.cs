@@ -65,16 +65,12 @@ public class SpellCast : MonoBehaviour
         if(CanCast())
         {
             manaPlayer.DecrementMana(CurrentSpell.GetComponent<Spell>().ManaConsumption);
-            //GameObject NewSpell = Instantiate(CurrentSpell, gameObject.transform.position, Quaternion.identity);
-            //NewSpell.GetComponent<Spell>().Caster = gameObject;
-            //photonView.RPC("Cast", RpcTarget.All, CurrentSpell.name);
             Cast(CurrentSpell.name);
 
             CurrentSpell = null;
             OnSpellChange();
         }
     }
-    [PunRPC]
     private void Cast(string SpellName)
     {
         GameObject NewSpell = PhotonNetwork.Instantiate(SpellName, gameObject.transform.position, Quaternion.identity);
