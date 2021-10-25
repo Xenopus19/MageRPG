@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 [RequireComponent(typeof(Spell))]
 public class FireballScript : Projectiles
 {
@@ -28,10 +29,11 @@ public class FireballScript : Projectiles
         else if(Target.GetComponentInChildren<Health>() != null)
         {
             Target.GetComponentInChildren<Health>().ReceiveDamage(ActionAmount);
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            //PhotonNetwork.Destroy(gameObject);
         }
 
         /*if (collision.gameObject.tag == "Player")

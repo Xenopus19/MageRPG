@@ -1378,6 +1378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireballDummy
       objectReference: {fileID: 0}
+    - target: {fileID: 5949292565031165671, guid: 364e6244a8a099d48ba284fc11bf1087, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 364e6244a8a099d48ba284fc11bf1087, type: 3}
 --- !u!1 &617431396
