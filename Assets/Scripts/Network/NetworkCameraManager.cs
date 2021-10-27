@@ -11,6 +11,7 @@ public class NetworkCameraManager : MonoBehaviour
         if(!photonView.IsMine)
         {
             Destroy(GetComponent<Camera>());
+            Destroy(GetComponent<AudioListener>());
         }
     }
 }

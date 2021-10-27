@@ -10,6 +10,7 @@ public class SpellCast : MonoBehaviour
 {
     public Dictionary<ulong, GameObject> Spells = new Dictionary<ulong, GameObject>();
     public GameObject FireBall;
+    [HideInInspector]
     public ulong SpellCode;
     [SerializeField] private GameObject HealSpell;
 
