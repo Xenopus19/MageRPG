@@ -16,6 +16,11 @@ public class ManaPlayer : MonoBehaviour
         manaPlayer -= RequiredMana;
         ManaText.ChangeManaText(manaPlayer);
     }
+
+    public void RefillMana(float AdditionalMana)
+    {
+        manaPlayer += AdditionalMana;
+    }
     public void RecoveryMana() {
         time += Time.deltaTime;
         if (time > 0.4) {
