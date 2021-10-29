@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9136236502982602511}
   - component: {fileID: 4584451691299636672}
-  m_Layer: 0
+  - component: {fileID: 7568155704341660978}
+  m_Layer: 7
   m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,3 +48,25 @@ MonoBehaviour:
   ActionAmount: 20
   ManaConsumption: 30
   SpellIcon: {fileID: 21300000, guid: ac41923b12f708c408b7a31390059c5b, type: 3}
+--- !u!114 &7568155704341660978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2862818277757017517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

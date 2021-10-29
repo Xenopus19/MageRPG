@@ -9,9 +9,10 @@ using Photon.Pun;
 public class SpellCast : MonoBehaviour
 {
     public Dictionary<ulong, GameObject> Spells = new Dictionary<ulong, GameObject>();
-    public GameObject FireBall;
     public ulong SpellCode;
+    [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject HealSpell;
+    [SerializeField] private GameObject Tornado;
 
     private ManaPlayer manaPlayer;
     private SpellIconsChange iconsChange;
@@ -22,14 +23,15 @@ public class SpellCast : MonoBehaviour
     {
         Spells.Add(7896321, FireBall);
         Spells.Add(7536, HealSpell);
+        Spells.Add(412589, Tornado);
     }    
 
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
         iconsChange = GetComponent<SpellIconsChange>();
-        SpellCode = 0;
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
+        SpellCode = 0;
     }
     private void Update()
     {
@@ -46,6 +48,7 @@ public class SpellCast : MonoBehaviour
             SpellCode = 0;
             if (CurrentSpell != null)
                 CastSpell();
+            iconsChange.DisableIconPanel();
         }
     }
     private void PickSpell(ulong SpellCode)
