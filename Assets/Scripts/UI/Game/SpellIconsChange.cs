@@ -14,6 +14,7 @@ public class SpellIconsChange : MonoBehaviour
     void Start()
     {
         IconPanel = GameObject.FindGameObjectsWithTag("IconPanel")[0];
+        IconPanel.SetActive(false);
         IconImage = IconPanel.GetComponent<Image>();
     }
 
@@ -23,6 +24,7 @@ public class SpellIconsChange : MonoBehaviour
         if(CurrentSpell!=null)
         {
             CurrentSpellPicture = CurrentSpell.GetComponent<Spell>().SpellIcon;
+            IconPanel.SetActive(true);
         }
         else
         {
@@ -30,5 +32,10 @@ public class SpellIconsChange : MonoBehaviour
         }
 
         IconImage.sprite = CurrentSpellPicture;
+    }
+
+    public void DisableIconPanel()
+    {
+        IconPanel.SetActive(false);
     }
 }

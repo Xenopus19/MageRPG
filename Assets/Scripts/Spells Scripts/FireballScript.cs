@@ -25,20 +25,20 @@ public class FireballScript : Projectiles
         if (Target.GetComponent<Health>()!=null )
         {
             Target.GetComponent<Health>().ReceiveDamage(ActionAmount);
-            photonView.RPC("DestroyFireball", RpcTarget.All);
+            photonView.RPC("DestroySpell", RpcTarget.All);
         }
         else if(Target.GetComponentInChildren<Health>() != null)
         {
             Target.GetComponentInChildren<Health>().ReceiveDamage(ActionAmount);
-            photonView.RPC("DestroyFireball", RpcTarget.All);
+            photonView.RPC("DestroySpell", RpcTarget.All);
         }
         else
         {
-            photonView.RPC("DestroyFireball", RpcTarget.All);
+            photonView.RPC("DestroySpell", RpcTarget.All);
         }
     }
     [PunRPC]
-    void DestroyFireball()
+    void DestroySpell()
     {
         Destroy(gameObject);
     }

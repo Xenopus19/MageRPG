@@ -131,7 +131,7 @@ MonoBehaviour:
   Caster: {fileID: 0}
   ActionAmount: 20
   ManaConsumption: 20
-  SpellIcon: {fileID: 21300000, guid: dd0abcea0f535fa4691cd9bf465913b7, type: 3}
+  SpellIcon: {fileID: 21300000, guid: 24869be00c6aaf743a46d3fe253f88a2, type: 3}
   Force: 3000
 --- !u!114 &8390864611826997559
 MonoBehaviour:
