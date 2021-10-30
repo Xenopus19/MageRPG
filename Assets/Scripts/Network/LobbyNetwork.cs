@@ -35,7 +35,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined the room.");
 
-        PhotonNetwork.LoadLevel("Arena1");
+        PhotonNetwork.LoadLevel("Arena2");
     }
 
     private void Update()
