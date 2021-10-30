@@ -22,7 +22,7 @@ public class SpellCast : MonoBehaviour
     private void Awake()
     {
         Spells.Add(7896321, FireBall);
-        Spells.Add(7536, HealSpell);
+        Spells.Add(12, HealSpell);
     }    
 
     private void Start()
