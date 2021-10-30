@@ -1,13 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class ManaItem : MonoBehaviour
 {
     [SerializeField] private float ManaToRefill;
+    [SerializeField] private float Lifetime;
 
-    private void OnCollisionEnter(Collision collision)
+    private float LivedTime;
+
+    private void OnTriggerEnter(Collider collider)
     {
-        collision.gameObject.GetComponent<ManaPlayer>()?.RefillMana(ManaToRefill);
+        Debug.Log(collider.gameObject.name);
+        collider.gameObject.GetComponent<ManaPlayer>().manaPlayer+=ManaToRefill;
+        PhotonNetwork.Destroy(gameObject);
+    }
+
+    private void Update()
+    {
+        LivedTime += Time.deltaTime;
+        if (LivedTime >= Lifetime)
+            PhotonNetwork.Destroy(gameObject);
     }
 }
