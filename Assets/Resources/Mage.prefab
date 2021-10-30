@@ -531,9 +531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8daf26e485a7a8e4bb57d357e678a948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FireBall: {fileID: 2762361141048217686, guid: e115bcdfebadc8b4f8461d5de192bd51, type: 3}
   SpellCode: 0
+  FireBall: {fileID: 2762361141048217686, guid: e115bcdfebadc8b4f8461d5de192bd51, type: 3}
   HealSpell: {fileID: 2862818277757017517, guid: e1bdf6d64eab1cf4786e43e54ed9809d, type: 3}
+  Tornado: {fileID: 0}
 --- !u!114 &-3983066920297027617
 MonoBehaviour:
   m_ObjectHideFlags: 0

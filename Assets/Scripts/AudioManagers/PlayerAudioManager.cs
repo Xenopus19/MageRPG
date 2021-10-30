@@ -27,11 +27,11 @@ public class PlayerAudioManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && playerMovement.isGrounded)
         {
-            audioSource.enabled = true;
+            audioSource.mute = false;
         }
         else
         {
-            audioSource.enabled = false;
+            audioSource.mute = true;
         }
     }
 
