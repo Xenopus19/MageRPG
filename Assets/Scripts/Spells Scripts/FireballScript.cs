@@ -15,7 +15,7 @@ public class FireballScript : Projectiles
         }
         photonView = GetComponent<PhotonView>();
 
-        //FlyForward();
+        FlyForward();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -24,21 +24,16 @@ public class FireballScript : Projectiles
         if (Target.GetComponent<Health>()!=null )
         {
             Target.GetComponent<Health>().ReceiveDamage(ActionAmount);
-            photonView.RPC("DestroySpell", RpcTarget.All);
+            //Destroy(gameObject);
         }
         else if(Target.GetComponentInChildren<Health>() != null)
         {
             Target.GetComponentInChildren<Health>().ReceiveDamage(ActionAmount);
-            photonView.RPC("DestroySpell", RpcTarget.All);
+            //Destroy(gameObject);
         }
         else
         {
-            photonView.RPC("DestroySpell", RpcTarget.All);
+            //Destroy(gameObject);
         }
-    }
-    [PunRPC]
-    public void DestroySpell()
-    {
-        Destroy(gameObject);
     }
 }
