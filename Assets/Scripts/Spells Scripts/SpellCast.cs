@@ -77,7 +77,7 @@ public class SpellCast : MonoBehaviour
     private void Cast(string SpellName)
     {
         GameObject NewSpell = PhotonNetwork.Instantiate(SpellName, gameObject.transform.position, Quaternion.identity);
-        NewSpell.GetComponent<Spell>().Caster = gameObject;
+        NewSpell.GetComponent<Spell>().SyncCasterOnAllPrefabs(gameObject.name);
     }
 
     private bool CanCast()

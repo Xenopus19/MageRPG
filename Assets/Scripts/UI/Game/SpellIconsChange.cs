@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 using UnityEngine.UI;
 
 public class SpellIconsChange : MonoBehaviour
@@ -13,7 +14,9 @@ public class SpellIconsChange : MonoBehaviour
 
     void Start()
     {
-        IconPanel = GameObject.FindGameObjectsWithTag("IconPanel")[0];
+        if (!GetComponent<PhotonView>().IsMine) return;
+
+        IconPanel = GameObject.Find("CurrentSpellPanel");
         IconPanel.SetActive(false);
         IconImage = IconPanel.GetComponent<Image>();
     }

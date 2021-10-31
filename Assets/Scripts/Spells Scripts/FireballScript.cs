@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-[RequireComponent(typeof(Spell))]
 public class FireballScript : Projectiles
 {
     private PhotonView photonView;
@@ -16,7 +15,7 @@ public class FireballScript : Projectiles
         }
         photonView = GetComponent<PhotonView>();
 
-        FlyForward();
+        //FlyForward();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -38,7 +37,7 @@ public class FireballScript : Projectiles
         }
     }
     [PunRPC]
-    void DestroySpell()
+    public void DestroySpell()
     {
         Destroy(gameObject);
     }

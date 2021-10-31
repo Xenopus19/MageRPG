@@ -14,13 +14,13 @@ public class ManaItem : MonoBehaviour
     {
         Debug.Log(collider.gameObject.name);
         collider.gameObject.GetComponent<ManaPlayer>().manaPlayer+=ManaToRefill;
-        PhotonNetwork.Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     private void Update()
     {
         LivedTime += Time.deltaTime;
         if (LivedTime >= Lifetime)
-            PhotonNetwork.Destroy(gameObject);
+            Destroy(gameObject);
     }
 }
