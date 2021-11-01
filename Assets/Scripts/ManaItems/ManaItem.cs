@@ -13,7 +13,7 @@ public class ManaItem : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         Debug.Log(collider.gameObject.name);
-        collider.gameObject.GetComponent<ManaPlayer>().manaPlayer+=ManaToRefill;
+        collider.gameObject.GetComponent<ManaPlayer>()?.RefillMana(ManaToRefill);
         Destroy(gameObject);
     }
 

@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 884415158717114723}
   - component: {fileID: 1658278310110689029}
   - component: {fileID: 58847500901294220}
+  - component: {fileID: 3310706468860346910}
   m_Layer: 0
   m_Name: MageCamera
   m_TagString: MainCamera
@@ -185,6 +186,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884415158717114745}
   m_Enabled: 1
+--- !u!114 &3310706468860346910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415158717114745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &884415159922455508
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,6 +431,7 @@ GameObject:
   - component: {fileID: -3983066920297027617}
   - component: {fileID: 9099572953435569747}
   - component: {fileID: -8346260469055776327}
+  - component: {fileID: -319035408183028212}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -590,6 +608,18 @@ MonoBehaviour:
   DefaultImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   IconPanel: {fileID: 0}
   IconImage: {fileID: 0}
+--- !u!114 &-319035408183028212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4444e751ee3e8f142a4640ed89ccbf5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2871666960349788098
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -24,16 +24,20 @@ public class FireballScript : Projectiles
         if (Target.GetComponent<Health>()!=null )
         {
             Target.GetComponent<Health>().ReceiveDamage(ActionAmount);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
         else if(Target.GetComponentInChildren<Health>() != null)
         {
             Target.GetComponentInChildren<Health>().ReceiveDamage(ActionAmount);
-            //Destroy(gameObject);
+            Destroy(gameObject);
+        }
+        else if(Target.GetComponentInParent<Health>()!=null)
+        {
+            Target.GetComponentInParent<Health>().ReceiveDamage(ActionAmount);
         }
         else
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

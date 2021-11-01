@@ -29,6 +29,7 @@ public class SpellCast : MonoBehaviour
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
+
         iconsChange = GetComponent<SpellIconsChange>();
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
         SpellCode = 0;

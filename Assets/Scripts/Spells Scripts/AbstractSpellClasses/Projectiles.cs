@@ -12,7 +12,7 @@ public class Projectiles : Spell
         {
             GameObject CasterCamera = Caster.GetComponentInChildren<MouseLook>().gameObject;
 
-            ray.origin = CasterCamera.transform.position;
+            ray.origin = CasterCamera.transform.position + new Vector3(0, 10, 0);
             ray.direction = CasterCamera.transform.forward;
         }
         else
