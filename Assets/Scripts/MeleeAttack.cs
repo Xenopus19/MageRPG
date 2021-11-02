@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class MeleeAttack : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class MeleeAttack : MonoBehaviour
 
     void Update()
     {
+        if (!GetComponentInParent<PhotonView>().IsMine) return;
         if (Input.GetKeyDown(AttackButton))
         {
             StickCollider.enabled = true;

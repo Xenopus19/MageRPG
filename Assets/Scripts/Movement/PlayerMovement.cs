@@ -1,4 +1,5 @@
-using UnityEngine;
+ using UnityEngine;
+using Photon.Pun;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,10 +16,21 @@ public class PlayerMovement : MonoBehaviour
     
     Vector3 velocity;
     public bool isGrounded;
-    void Update()
+
+    private PhotonView photonView;
+
+    private void Start()
     {
+        photonView = GetComponent<PhotonView>();
+    }
+
+    private void Update()
+    {
+        if (!photonView.IsMine) return;
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        if (isGrounded && velocity.y < 0) {
+        if (isGrounded && velocity.y < 0)
+        {
             velocity.y = -2f;
         }
 
@@ -28,7 +40,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * directionX + transform.forward * directionZ;
         controller.Move(move * speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(jumpCode) && isGrounded) {
+        if (Input.GetKeyDown(jumpCode) && isGrounded)
+        {
             velocity.y = Mathf.Sqrt(jumpHeigh * -2f * gravity);
         }
 

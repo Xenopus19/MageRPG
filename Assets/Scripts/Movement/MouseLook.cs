@@ -1,4 +1,5 @@
 using UnityEngine;
+using Photon.Pun;
 
 public class MouseLook : MonoBehaviour
 {
@@ -9,13 +10,18 @@ public class MouseLook : MonoBehaviour
     private ButtonsHide buttonsHide;
     private bool buttonsShowing = false;
     private bool freezeCamera = false;
+    private PhotonView photonView;
     void Start()
     {
+        photonView = gameObject.GetComponentInParent<PhotonView>();
         Cursor.lockState = CursorLockMode.Locked;
         buttonsHide = GetComponent<ButtonsHide>();
     }
     void Update()
     {
+        if (!photonView.IsMine)
+            return; 
+
         if (!freezeCamera)
             MoveCamera();
         ChangeButtonsStatus();

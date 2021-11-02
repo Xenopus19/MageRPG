@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class Spell : MonoBehaviour
 {
+    [HideInInspector]
     public GameObject Caster;
     public float ActionAmount;
     public float ManaConsumption;
