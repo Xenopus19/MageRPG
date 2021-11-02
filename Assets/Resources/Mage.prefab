@@ -57,7 +57,6 @@ GameObject:
   - component: {fileID: 884415158717114749}
   - component: {fileID: 884415158717114751}
   - component: {fileID: 884415158717114722}
-  - component: {fileID: 884415158717114723}
   - component: {fileID: 1658278310110689029}
   - component: {fileID: 58847500901294220}
   - component: {fileID: 3310706468860346910}
@@ -76,7 +75,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884415158717114745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.49, z: 0.63}
+  m_LocalPosition: {x: 0, y: 5.46, z: 0.42}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 884415160055828280}
@@ -152,20 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons: {fileID: 0}
---- !u!136 &884415158717114723
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884415158717114745}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1658278310110689029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,6 +538,7 @@ MonoBehaviour:
   FireBall: {fileID: 2762361141048217686, guid: e115bcdfebadc8b4f8461d5de192bd51, type: 3}
   HealSpell: {fileID: 2862818277757017517, guid: e1bdf6d64eab1cf4786e43e54ed9809d, type: 3}
   Tornado: {fileID: 0}
+  PlayerCamera: {fileID: 884415158717114745}
   CurrentSpell: {fileID: 0}
 --- !u!114 &-3983066920297027617
 MonoBehaviour:
@@ -574,6 +560,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 9099572953435569747}
+  - {fileID: 3310706468860346910}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -651,15 +638,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 408764, guid: 0c742447bd6d3ab4792475f2f0c96fcf, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 1.06584
       objectReference: {fileID: 0}
     - target: {fileID: 408764, guid: 0c742447bd6d3ab4792475f2f0c96fcf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6
+      value: 2.05
       objectReference: {fileID: 0}
     - target: {fileID: 408764, guid: 0c742447bd6d3ab4792475f2f0c96fcf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 408764, guid: 0c742447bd6d3ab4792475f2f0c96fcf, type: 3}
       propertyPath: m_LocalPosition.z

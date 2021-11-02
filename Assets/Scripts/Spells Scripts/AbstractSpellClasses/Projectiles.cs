@@ -11,8 +11,7 @@ public class Projectiles : Spell
         if(Caster.GetComponentInChildren<MouseLook>() != null)
         {
             GameObject CasterCamera = Caster.GetComponentInChildren<MouseLook>().gameObject;
-
-            ray.origin = CasterCamera.transform.position + new Vector3(0, 10, 0);
+            ray.origin = CasterCamera.transform.position;
             ray.direction = CasterCamera.transform.forward;
         }
         else

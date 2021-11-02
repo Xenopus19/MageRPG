@@ -10,8 +10,13 @@ public class FireballScript : Projectiles
         Physics.IgnoreCollision(Caster.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         for(int i = 0; i < Caster.transform.childCount; i++)
         {
+            
             if(Caster.transform.GetChild(i).GetComponent<Collider>()!=null)
-            Physics.IgnoreCollision(Caster.transform.GetChild(i).GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+            {
+                Debug.LogError(Caster.transform.GetChild(i).name);
+
+            }
+            
         }
         photonView = GetComponent<PhotonView>();
 
@@ -20,24 +25,26 @@ public class FireballScript : Projectiles
     private void OnCollisionEnter(Collision collision)
     {
         GameObject Target = collision.gameObject;
+        Debug.LogError(Target.name);
 
         if (Target.GetComponent<Health>()!=null )
         {
             Target.GetComponent<Health>().ReceiveDamage(ActionAmount);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else if(Target.GetComponentInChildren<Health>() != null)
         {
             Target.GetComponentInChildren<Health>().ReceiveDamage(ActionAmount);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else if(Target.GetComponentInParent<Health>()!=null)
         {
             Target.GetComponentInParent<Health>().ReceiveDamage(ActionAmount);
+            //Destroy(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

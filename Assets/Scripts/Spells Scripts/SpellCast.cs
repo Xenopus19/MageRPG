@@ -13,10 +13,12 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject HealSpell;
     [SerializeField] private GameObject Tornado;
+    [SerializeField] private GameObject PlayerCamera;
 
     private ManaPlayer manaPlayer;
     private SpellIconsChange iconsChange;
     private PhotonView photonView;
+
 
     [SerializeField] private GameObject CurrentSpell;
     private void Awake()
@@ -81,7 +83,7 @@ public class SpellCast : MonoBehaviour
     [PunRPC]
     private void Cast()
     {
-        GameObject NewSpell = Instantiate(CurrentSpell, gameObject.transform.position, Quaternion.identity);
+        GameObject NewSpell = Instantiate(CurrentSpell, PlayerCamera.transform.position, Quaternion.identity);
         NewSpell.GetComponent<Spell>().Caster = gameObject;
     }
 
