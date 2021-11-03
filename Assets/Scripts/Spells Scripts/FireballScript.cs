@@ -5,46 +5,48 @@ using Photon.Pun;
 public class FireballScript : Projectiles
 {
     private PhotonView photonView;
+
     private void Start()
     {
-        Physics.IgnoreCollision(Caster.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+        /*Physics.IgnoreCollision(Caster.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
         for(int i = 0; i < Caster.transform.childCount; i++)
         {
-            
-            if(Caster.transform.GetChild(i).GetComponent<Collider>()!=null)
+            Collider CasterChildCollider = Caster.transform.GetChild(i).GetComponent<Collider>();
+            if (CasterChildCollider!=null)
             {
                 Debug.LogError(Caster.transform.GetChild(i).name);
-
+                Physics.IgnoreCollision(CasterChildCollider,gameObject.GetComponent<Collider>());
             }
             
-        }
+        }*/
+        
         photonView = GetComponent<PhotonView>();
-
         FlyForward();
+        IgnoreCollisionWithCaster();
     }
     private void OnCollisionEnter(Collision collision)
     {
         GameObject Target = collision.gameObject;
-        Debug.LogError(Target.name);
+        Debug.LogWarning(Target.name);
 
         if (Target.GetComponent<Health>()!=null )
         {
             Target.GetComponent<Health>().ReceiveDamage(ActionAmount);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
-        else if(Target.GetComponentInChildren<Health>() != null)
+        else if(Target.GetComponentInChildren<Health>() != null && Target.transform.parent.gameObject != Caster)
         {
             Target.GetComponentInChildren<Health>().ReceiveDamage(ActionAmount);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
-        else if(Target.GetComponentInParent<Health>()!=null)
+        else if(Target.GetComponentInParent<Health>()!=null && Target.transform.parent.gameObject != Caster)
         {
             Target.GetComponentInParent<Health>().ReceiveDamage(ActionAmount);
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
         else
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 }

@@ -24,4 +24,25 @@ public class Projectiles : Spell
         Rigidbody SpellPhysics = gameObject.GetComponent<Rigidbody>();
         SpellPhysics.AddForce(ray.direction * Force);
     }
+
+    public void IgnoreCollisionWithCaster()
+    {
+        if(Caster.GetComponent<Collider>()!=null)
+        {
+            Physics.IgnoreCollision(Caster.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+        }
+        
+        for (int i = 0; i < Caster.transform.childCount; i++)
+        {
+            Collider CasterChildCollider = Caster.transform.GetChild(i).GetComponent<Collider>();
+            if (CasterChildCollider != null)
+            {
+                Physics.IgnoreCollision(CasterChildCollider, gameObject.GetComponent<Collider>());
+                Debug.LogError(CasterChildCollider.gameObject.name);
+            }
+
+        }
+
+        gameObject.GetComponent<Collider>().enabled = true;
+    }
 }
