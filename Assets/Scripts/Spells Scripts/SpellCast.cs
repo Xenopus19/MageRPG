@@ -10,9 +10,12 @@ public class SpellCast : MonoBehaviour
 {
     public Dictionary<int, GameObject> Spells = new Dictionary<int, GameObject>();
     public int SpellCode;
+
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject HealSpell;
     [SerializeField] private GameObject Tornado;
+    [SerializeField] private GameObject Frostbolt;
+
     [SerializeField] private GameObject PlayerCamera;
 
     private ManaPlayer manaPlayer;
@@ -26,6 +29,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add(7896321, FireBall);
         Spells.Add(7536, HealSpell);
         Spells.Add(412589, Tornado);
+        Spells.Add(9874123, Frostbolt);
     }    
 
     private void Start()
@@ -83,7 +87,7 @@ public class SpellCast : MonoBehaviour
     [PunRPC]
     private void Cast()
     {
-        GameObject NewSpell = Instantiate(CurrentSpell, PlayerCamera.transform.position, Quaternion.identity);
+        GameObject NewSpell = Instantiate(CurrentSpell, PlayerCamera.transform.position, PlayerCamera.transform.rotation);
         NewSpell.GetComponent<Spell>().Caster = gameObject;
     }
 
