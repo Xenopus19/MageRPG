@@ -15,6 +15,7 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject HealSpell;
     [SerializeField] private GameObject Tornado;
     [SerializeField] private GameObject Frostbolt;
+    [SerializeField] private GameObject StoneWall;
 
     [SerializeField] private GameObject PlayerCamera;
 
@@ -30,6 +31,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add(7536, HealSpell);
         Spells.Add(412589, Tornado);
         Spells.Add(9874123, Frostbolt);
+        Spells.Add(123654789, StoneWall);
     }    
 
     private void Start()
