@@ -6,14 +6,8 @@ using Photon.Pun;
 
 public class Spell : MonoBehaviour
 {
-    [HideInInspector]
     public GameObject Caster;
     public float ActionAmount;
     public float ManaConsumption;
     public Sprite SpellIcon;
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
 }
