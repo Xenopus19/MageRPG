@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -7842526334415908757}
   - component: {fileID: -8786148805986016909}
   - component: {fileID: 6160785024434143738}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StoneWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,6 +170,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -7842526334415908757}
+  - {fileID: 6160785024434143738}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
