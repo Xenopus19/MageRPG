@@ -20,19 +20,27 @@ public class TornadoScript : Projectiles
     [SerializeField] private float UpwardPushForce;
     private void OnTriggerEnter(Collider collision)
     {
-        GameObject Target = collision.gameObject;
+        if (PhotonNetwork.IsMasterClient) 
+        {
+            GameObject Target = collision.gameObject.transform.parent?.gameObject;
 
-        if (Target.GetComponent<Rigidbody>() != null)
-        {
-            Target.GetComponent<Rigidbody>().AddForce(transform.forward * UpwardPushForce);
-            DestroySpell();
-        }
-        else if (Target.GetComponent<CharacterController>() != null)
-        {
-            Target.GetComponent<ImpactReceiver>().AddImpact(transform.forward, UpwardPushForce/5);
-            DestroySpell();
+            if (Target.GetComponent<Rigidbody>() != null)
+            {
+                Target.GetComponent<Rigidbody>().AddForce(transform.forward * UpwardPushForce);
+                DestroySpell();
+            }
+            else if (Target.GetComponent<CharacterController>() != null)
+            {
+                AddImpact(Target);
+                DestroySpell();
+            }
         }
     }
+    void AddImpact(GameObject Target)
+    {
+        Target.GetComponent<ImpactReceiver>().AddImpact(transform.forward, UpwardPushForce / 5);
+    }
+
     [PunRPC]
     void DestroySpell()
     {

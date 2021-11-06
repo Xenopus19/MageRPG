@@ -525,7 +525,7 @@ MonoBehaviour:
   SpellCode: 0
   FireBall: {fileID: 2762361141048217686, guid: e115bcdfebadc8b4f8461d5de192bd51, type: 3}
   HealSpell: {fileID: 2862818277757017517, guid: e1bdf6d64eab1cf4786e43e54ed9809d, type: 3}
-  Tornado: {fileID: 0}
+  Tornado: {fileID: 3056348367490164487, guid: 6c080b5622f640649a658011663d1e5d, type: 3}
   Frostbolt: {fileID: 7352676846187088993, guid: f48810e3231a4674ea57adb09f61e579, type: 3}
   StoneWall: {fileID: 8286624203043886165, guid: 3a5d1cc4a30977b4da37efbcadb8dd17, type: 3}
   PlayerCamera: {fileID: 884415158717114745}
