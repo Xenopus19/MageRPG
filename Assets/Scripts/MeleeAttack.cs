@@ -14,6 +14,8 @@ public class MeleeAttack : MonoBehaviour
         StickCollider = gameObject.GetComponent<Collider>();
         StickAnimator = gameObject.GetComponent<Animator>();
         StickCollider.enabled = false;
+        Collider UserCollider = gameObject.transform.parent.GetComponent<Collider>();
+        Physics.IgnoreCollision(UserCollider, StickCollider);
     }
 
     void Update()
@@ -28,9 +30,10 @@ public class MeleeAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider target)
     {
-        if(target.GetComponent<Health>() != null)
+        Health targetHealth = target.GetComponent<Health>();
+        if(targetHealth != null)
         {
-            target.GetComponent<Health>().ReceiveDamage(Damage);
+            targetHealth.ReceiveDamage(Damage);
         }
     }
 }
