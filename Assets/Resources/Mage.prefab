@@ -410,13 +410,13 @@ GameObject:
   - component: {fileID: 884415160055828283}
   - component: {fileID: 884415160055828281}
   - component: {fileID: 884415160055828285}
-  - component: {fileID: 8336651780495459988}
   - component: {fileID: -5500756376589398900}
   - component: {fileID: 884415160055828287}
   - component: {fileID: -3983066920297027617}
   - component: {fileID: 9099572953435569747}
   - component: {fileID: -8346260469055776327}
   - component: {fileID: -319035408183028212}
+  - component: {fileID: -6800435193658097107}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -497,19 +497,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaPlayer: 100
   MaxMana: 100
---- !u!114 &8336651780495459988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884415160055828282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4edb0fd4165f394689f1a7e44bebf5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 100
 --- !u!114 &-5500756376589398900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -609,6 +596,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444e751ee3e8f142a4640ed89ccbf5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6800435193658097107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd40a38249b4f844be1bdbc39245b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
 --- !u!114 &2871666960349788098
 MonoBehaviour:
   m_ObjectHideFlags: 0

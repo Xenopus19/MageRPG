@@ -4,16 +4,28 @@ using UnityEngine;
 public class PlayerHP : Health {
     private float amountOfLifes = 3f;
 
-    private GameNetwork gameNetwork;
+    private PhotonView photonView;
+
+    private RoundManager roundManager;
 
     void Start() {
-        gameNetwork = GameObject.Find("GameNetworkManager").GetComponent<GameNetwork>();
+        photonView = gameObject.GetComponent<PhotonView>();
+        if (photonView.IsMine) {
+            roundManager = GameObject.Find("RoundManager").GetComponent<RoundManager>();
+            roundManager.Init(gameObject);
+        }
+    }
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.R)) {
+            ReceiveDamage(MaxHealth);
+        }
     }
 
     public override void Die() {
         amountOfLifes--;
+        roundManager.EndRound();
         if (amountOfLifes == 0) {
-            gameNetwork.LeaveRoom();
+            roundManager.EndGameByLosing();
         }
     }
 }

@@ -20,7 +20,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks
 
     public override void OnLeftRoom()
     {
-        SceneManager.LoadScene("EndGame");
+        SceneManager.LoadScene("Menu");
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
