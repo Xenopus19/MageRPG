@@ -9,6 +9,6 @@ public class SelfHeal : Spell
         Health CasterHealth = Caster.GetComponentInChildren<Health>();
         float SpellHealing = gameObject.GetComponent<Spell>().ActionAmount;
         CasterHealth.ReceiveHealing(SpellHealing);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

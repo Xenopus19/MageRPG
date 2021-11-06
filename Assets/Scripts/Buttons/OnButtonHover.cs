@@ -5,7 +5,7 @@ using Photon.Pun;
 
 public class OnButtonHover : MonoBehaviour
 {
-    public ulong AmountToAdd;
+    public int AmountToAdd;
 
     public SpellCast spellCast;
 

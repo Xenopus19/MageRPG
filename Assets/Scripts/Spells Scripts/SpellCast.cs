@@ -8,27 +8,36 @@ using Photon.Pun;
 
 public class SpellCast : MonoBehaviour
 {
-    public Dictionary<ulong, GameObject> Spells = new Dictionary<ulong, GameObject>();
-    public ulong SpellCode;
+    public Dictionary<int, GameObject> Spells = new Dictionary<int, GameObject>();
+    public int SpellCode;
+
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject HealSpell;
     [SerializeField] private GameObject Tornado;
+    [SerializeField] private GameObject Frostbolt;
+    [SerializeField] private GameObject StoneWall;
+
+    [SerializeField] private GameObject PlayerCamera;
 
     private ManaPlayer manaPlayer;
     private SpellIconsChange iconsChange;
     private PhotonView photonView;
 
-    private GameObject CurrentSpell;
+
+    [SerializeField] private GameObject CurrentSpell;
     private void Awake()
     {
         Spells.Add(7896321, FireBall);
         Spells.Add(7536, HealSpell);
         Spells.Add(412589, Tornado);
+        Spells.Add(9874123, Frostbolt);
+        Spells.Add(123654789, StoneWall);
     }    
 
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
+
         iconsChange = GetComponent<SpellIconsChange>();
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
         SpellCode = 0;
@@ -38,11 +47,10 @@ public class SpellCast : MonoBehaviour
         PickAndCastSpell();
     }
 
-    [PunRPC]
     private void PickAndCastSpell()
     {
         if (!photonView.IsMine) return;
-        PickSpell(SpellCode);
+        photonView.RPC("PickSpell", RpcTarget.All, SpellCode);
         if (Input.GetMouseButtonDown(0))
         {
             SpellCode = 0;
@@ -51,12 +59,16 @@ public class SpellCast : MonoBehaviour
             iconsChange.DisableIconPanel();
         }
     }
-    private void PickSpell(ulong SpellCode)
+    [PunRPC]
+    private void PickSpell(int SpellCode)
     {
         if (Spells.ContainsKey(SpellCode))
         {
             CurrentSpell = Spells[SpellCode];
-            OnSpellChange();
+            if(photonView.IsMine)
+            {
+                OnSpellChange();
+            }
         }
         else
         {
@@ -68,15 +80,16 @@ public class SpellCast : MonoBehaviour
         if(CanCast())
         {
             manaPlayer.DecrementMana(CurrentSpell.GetComponent<Spell>().ManaConsumption);
-            Cast(CurrentSpell.name);
+            photonView.RPC("Cast", RpcTarget.All);
 
             CurrentSpell = null;
             OnSpellChange();
         }
     }
-    private void Cast(string SpellName)
+    [PunRPC]
+    private void Cast()
     {
-        GameObject NewSpell = PhotonNetwork.Instantiate(SpellName, gameObject.transform.position, Quaternion.identity);
+        GameObject NewSpell = Instantiate(CurrentSpell, PlayerCamera.transform.position, PlayerCamera.transform.rotation);
         NewSpell.GetComponent<Spell>().Caster = gameObject;
     }
 

@@ -47,6 +47,10 @@ MonoBehaviour:
   - DebugMessage
   - DestroyFireball
   - DestroySpell
+  - SyncCaster
+  - PickSpell
+  - RPC_CreatemanaItem
+  - RPC_CreateManaItem
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
