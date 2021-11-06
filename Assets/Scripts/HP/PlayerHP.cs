@@ -16,9 +16,9 @@ public class PlayerHP : Health {
         }
     }
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.R)) {
+        /*if (Input.GetKeyDown(KeyCode.R)) {
             ReceiveDamage(MaxHealth);
-        }
+        }*/
     }
 
     public override void Die() {
