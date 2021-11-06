@@ -42,11 +42,15 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(jumpCode) && isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpHeigh * -2f * gravity);
+            Jump(jumpHeigh, gravity);
         }
 
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+    public void Jump(float JumpHeight, float gravity)
+    {
+        velocity.y = Mathf.Sqrt(jumpHeigh * -2f * gravity);
     }
 }

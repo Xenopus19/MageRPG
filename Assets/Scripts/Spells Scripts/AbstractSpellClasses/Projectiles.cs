@@ -20,7 +20,7 @@ public class Projectiles : Spell
             ray.direction = Caster.transform.forward;
         }
 
-        GetComponent<AudioSource>()?.Play();
+        //GetComponent<AudioSource>()?.Play();
         Rigidbody SpellPhysics = gameObject.GetComponent<Rigidbody>();
         SpellPhysics.AddForce(ray.direction * Force);
     }

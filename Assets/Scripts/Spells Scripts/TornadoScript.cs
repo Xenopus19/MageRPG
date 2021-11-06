@@ -11,18 +11,13 @@ public class TornadoScript : Projectiles
     {
         gameObject.transform.Rotate(270f, 0f, 0f);
         gameObject.transform.position += new Vector3(0f, 2f, 0f);
-        Physics.IgnoreCollision(Caster.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
-        for (int i = 0; i < Caster.transform.childCount; i++)
-        {
-            if (Caster.transform.GetChild(i).GetComponent<Collider>() != null)
-                Physics.IgnoreCollision(Caster.transform.GetChild(i).GetComponent<Collider>(), gameObject.GetComponent<Collider>());
-        }
         photonView = GetComponent<PhotonView>();
 
         FlyForward();
     }
 
     [SerializeField] private float UpwardPushForce;
+    [SerializeField] private float UpwardJumpForce;
     private void OnTriggerEnter(Collider collision)
     {
         GameObject Target = collision.gameObject;
@@ -30,12 +25,12 @@ public class TornadoScript : Projectiles
         if (Target.GetComponent<Rigidbody>() != null)
         {
             Target.GetComponent<Rigidbody>().AddForce(transform.forward * UpwardPushForce);
-            photonView.RPC("DestroySpell", RpcTarget.All);
+            DestroySpell();
         }
-        else if (Target.GetComponentInChildren<Rigidbody>() != null)
+        else if (Target.GetComponent<CharacterController>() != null)
         {
-            Target.GetComponentInChildren<Rigidbody>().AddForce(transform.forward * UpwardPushForce); ;
-            photonView.RPC("DestroySpell", RpcTarget.All);
+            Target.GetComponent<PlayerMovement>().Jump(UpwardJumpForce, -9.81f);
+            DestroySpell();
         }
     }
     [PunRPC]
