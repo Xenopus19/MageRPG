@@ -12,7 +12,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     void Start()
     {
         GameObject Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.transform.position, Quaternion.identity);
-        Player.GetComponent<PhotonView>().Owner.TagObject = Player;
+        Player.name += PhotonNetwork.CountOfPlayers.ToString() ;
     }
 
     void Update()
