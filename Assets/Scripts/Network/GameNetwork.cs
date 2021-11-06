@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine; 
 using Photon.Pun;
 using UnityEngine.SceneManagement;
@@ -15,10 +13,6 @@ public class GameNetwork : MonoBehaviourPunCallbacks
         Player.GetComponent<PhotonView>().Owner.TagObject = Player;
     }
 
-    void Update()
-    {
-        
-    }
     public void LeaveRoom()
     {
         PhotonNetwork.LeaveRoom();
@@ -26,7 +20,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks
 
     public override void OnLeftRoom()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("EndGame");
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)

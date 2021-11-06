@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
@@ -23,7 +21,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
-        PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions {MaxPlayers = 6 });
+        PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
     }
 
     public void JoinRoom()
@@ -36,10 +34,5 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         Debug.Log("Joined the room.");
 
         PhotonNetwork.LoadLevel("Arena2");
-    }
-
-    private void Update()
-    {
-        
     }
 }

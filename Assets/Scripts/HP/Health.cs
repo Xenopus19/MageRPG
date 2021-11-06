@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -31,9 +29,8 @@ public class Health : MonoBehaviour
             CurrentHealth = MaxHealth;
     }
 
-    private void Die()
+    public virtual void Die()
     {
-        Debug.Log("You're dead");
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 }
