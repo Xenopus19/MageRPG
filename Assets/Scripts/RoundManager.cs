@@ -22,17 +22,18 @@ public class RoundManager : MonoBehaviour {
         Player.transform.position = spawnPoint.transform.position;
     }
 
-    [PunRPC]
+    
     public void EndGameByLosing() {
         gameUI.SetActive(false);
         endGameUI.SetActive(true);
         endGameUI.GetComponent<EndGameCanvasManager>().MakeLoseText();
+        photonView.RPC("EndGameByWinning", RpcTarget.Others);
     }
-    
+    [PunRPC]
     public void EndGameByWinning() {
         gameUI.SetActive(false);
         endGameUI.SetActive(true);
-        photonView.RPC("EndGameByLosing", RpcTarget.Others);
+        
         endGameUI.GetComponent<EndGameCanvasManager>().MakeWinText();
     }
 }

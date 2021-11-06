@@ -2,7 +2,7 @@ using Photon.Pun;
 using UnityEngine;
 
 public class PlayerHP : Health {
-    private float amountOfLifes = 3f;
+    public float amountOfLifes = 3f;
 
     private PhotonView photonView;
 
@@ -23,9 +23,13 @@ public class PlayerHP : Health {
 
     public override void Die() {
         amountOfLifes--;
-        roundManager.EndRound();
-        if (amountOfLifes == 0) {
-            roundManager.EndGameByLosing();
+        if(photonView.IsMine)
+        {
+            roundManager.EndRound();
+            if (amountOfLifes == 0)
+            {
+                roundManager.EndGameByLosing();
+            }
         }
     }
 }
