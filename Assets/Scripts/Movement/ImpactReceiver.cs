@@ -13,7 +13,6 @@ public class ImpactReceiver : MonoBehaviour
         character = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         // apply the impact force:
