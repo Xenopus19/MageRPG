@@ -27,11 +27,11 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject CurrentSpell;
     private void Awake()
     {
-        Spells.Add(7896321, FireBall);
-        Spells.Add(7536, HealSpell);
-        Spells.Add(412589, Tornado);
-        Spells.Add(9874123, Frostbolt);
-        Spells.Add(123654789, StoneWall);
+        Spells.Add(12, FireBall);
+        Spells.Add(175, HealSpell);
+        //Spells.Add(412589, Tornado);
+        Spells.Add(43, Frostbolt);
+        Spells.Add(8765, StoneWall);
     }    
 
     private void Start()
