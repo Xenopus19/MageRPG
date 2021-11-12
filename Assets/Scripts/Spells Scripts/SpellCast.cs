@@ -31,7 +31,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add(175, HealSpell);
         //Spells.Add(412589, Tornado);
         Spells.Add(43, Frostbolt);
-        Spells.Add(8765, StoneWall);
+        Spells.Add(8576, StoneWall);
     }    
 
     private void Start()
