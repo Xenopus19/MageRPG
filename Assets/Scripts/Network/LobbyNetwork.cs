@@ -6,7 +6,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public string playerName;
 
     public GameObject playerAmountTextObject;
-    private RoomText playerAmountText;
+    private PlayerAmountText playerAmountText;
     private void Start()
     {
         //PhotonNetwork.NickName = "Player " + Random.Range(19, 39);
@@ -15,7 +15,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         PhotonNetwork.GameVersion = "1";
         PhotonNetwork.ConnectUsingSettings();
 
-        playerAmountText = playerAmountTextObject.GetComponent<RoomText>();
+        playerAmountText = playerAmountTextObject.GetComponent<PlayerAmountText>();
     }
 
     public override void OnConnectedToMaster()
@@ -51,6 +51,6 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     }
 
     private void Update() {
-        playerAmountText?.ChangeRoomText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
+        playerAmountText?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
     }
 }
