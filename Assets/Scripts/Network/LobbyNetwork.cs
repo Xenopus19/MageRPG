@@ -3,10 +3,11 @@ using Photon.Pun;
 
 public class LobbyNetwork : MonoBehaviourPunCallbacks
 {
+    public string playerName;
     private void Start()
     {
         //PhotonNetwork.NickName = "Player " + Random.Range(19, 39);
-
+        playerName = PhotonNetwork.NickName;
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = "1";
         PhotonNetwork.ConnectUsingSettings();
@@ -24,9 +25,9 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         Debug.Log("Player is " + PhotonNetwork.NickName);
     }
 
-    public void CreateRoom()
+    public void CreateRoom(string nameOfRoom)
     {
-        PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
+        PhotonNetwork.CreateRoom(nameOfRoom, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
     }
 
     public void JoinRoom()
