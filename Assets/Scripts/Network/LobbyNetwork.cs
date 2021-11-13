@@ -30,27 +30,39 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         Debug.Log("Player is " + PhotonNetwork.NickName);
     }
 
-    public void CreateRoom(string nameOfRoom)
+    //public void CreateRoom(string nameOfRoom)
+    //{
+    //    PhotonNetwork.CreateRoom(nameOfRoom, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
+    //}
+
+    public void CreateRoom()
     {
-        PhotonNetwork.CreateRoom(nameOfRoom, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
+        PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
     }
 
     public void JoinRoom()
     {
-        PhotonNetwork.JoinRandomRoom();
+        PhotonNetwork.JoinRoom("");
     }
 
-    public override void OnJoinedRoom() {
-        print(PhotonNetwork.CurrentRoom.PlayerCount);
-        if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+    //public override void OnJoinedRoom() {
+    //    print(PhotonNetwork.CurrentRoom.PlayerCount);
+    //    if (PhotonNetwork.CurrentRoom.PlayerCount == PhotonNetwork.CurrentRoom.MaxPlayers) {
 
-            Debug.Log("Joined the room.");
+    //        Debug.Log("Joined the room.");
 
-            PhotonNetwork.LoadLevel("Arena2");
-        }
+    //        PhotonNetwork.LoadLevel("Arena2");
+    //    }
+    //}
+
+    public override void OnJoinedRoom() 
+    {
+        Debug.Log("Joined the room.");
+
+        PhotonNetwork.LoadLevel("Arena2");
     }
 
-    private void Update() {
-        playerAmountText?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
-    }
+    //private void Update() {
+    //    playerAmountText?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
+    //}
 }
