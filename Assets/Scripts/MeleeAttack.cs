@@ -31,8 +31,8 @@ public class MeleeAttack : MonoBehaviour
     private void OnTriggerEnter(Collider target)
     {
         Debug.Log("ahahahahahahahaha");
-        Health targetHealth = target.GetComponent<Health>();
-        if(targetHealth != null)
+        PlayerHP targetHealth = target.GetComponent<PlayerHP>();
+        if (targetHealth != null)
         {
             targetHealth.ReceiveDamage(Damage);
         }
