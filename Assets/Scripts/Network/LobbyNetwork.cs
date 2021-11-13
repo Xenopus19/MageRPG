@@ -3,7 +3,6 @@ using Photon.Pun;
 
 public class LobbyNetwork : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
     private void Start()
     {
         PhotonNetwork.NickName = "Player " + Random.Range(19, 39);
@@ -17,6 +16,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to master.");
+        GameObject.Find("LoadingPanel").SetActive(false);
     }
 
     public void CreateRoom()
