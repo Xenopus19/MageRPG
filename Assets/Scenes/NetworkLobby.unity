@@ -2328,9 +2328,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 823376761}
-        m_TargetAssemblyTypeName: CreatingRoom, Assembly-CSharp
-        m_MethodName: CreateRoomPanel
+      - m_Target: {fileID: 1623529919}
+        m_TargetAssemblyTypeName: LobbyNetwork, Assembly-CSharp
+        m_MethodName: CreateRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
