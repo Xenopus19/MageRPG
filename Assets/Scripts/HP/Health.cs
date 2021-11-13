@@ -11,6 +11,8 @@ public class Health : MonoBehaviour
         CurrentHealth = MaxHealth;
     }
 
+    [PunRPC] 
+    
     public void ReceiveDamage(float IncomingDamage)
     {
         Debug.Log("ahahahahahahahaha");
