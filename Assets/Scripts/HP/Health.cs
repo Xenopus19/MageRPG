@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
 
     public void ReceiveDamage(float IncomingDamage)
     {
+        Debug.Log("ahahahahahahahaha");
         CurrentHealth -= IncomingDamage;
 
         if(CurrentHealth<=0)
@@ -24,6 +25,7 @@ public class Health : MonoBehaviour
     public void ReceiveHealing(float IncomeingHealing)
     {
         CurrentHealth += IncomeingHealing;
+
 
         if (CurrentHealth > MaxHealth)
             CurrentHealth = MaxHealth;
