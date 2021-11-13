@@ -5,8 +5,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 {
     private void Start()
     {
-        PhotonNetwork.NickName = "Player " + Random.Range(19, 39);
-        Debug.Log("Player is " + PhotonNetwork.NickName);
+        //PhotonNetwork.NickName = "Player " + Random.Range(19, 39);
 
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = "1";
@@ -17,6 +16,12 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     {
         Debug.Log("Connected to master.");
         GameObject.Find("LoadingPanel").SetActive(false);
+    }
+
+    public void AddNickName(string name) 
+    {
+        PhotonNetwork.NickName = name;
+        Debug.Log("Player is " + PhotonNetwork.NickName);
     }
 
     public void CreateRoom()
