@@ -5,22 +5,26 @@ public class ManaPlayer : MonoBehaviour
 {
 
     public float manaPlayer = 100f;
-    [SerializeField] private float MaxMana = 100;
+    public float MaxMana = 100;
 
     private float time = 0f;
     private PhotonView photonView;
+    private ColorMana colorMana;
+    private void Start()
+    {
+        photonView = gameObject.GetComponent<PhotonView>();
+        if (photonView.IsMine) {
+            colorMana = GameObject.Find("PanelForMana").GetComponent<ColorMana>();
+            colorMana.Init(gameObject);
+        }
+    }
 
     private void Update() 
     {
         if (manaPlayer < MaxMana) 
             RecoveryMana();
-
     }
 
-    private void Start()
-    {
-        photonView = gameObject.GetComponent<PhotonView>();
-    }
     public void DecrementMana(float RequiredMana) 
     {
         manaPlayer -= RequiredMana;

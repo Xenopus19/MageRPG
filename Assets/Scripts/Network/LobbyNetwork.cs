@@ -42,7 +42,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public void JoinRoom()
     {
-        PhotonNetwork.JoinRoom("");
+        PhotonNetwork.JoinRandomRoom();
     }
 
     //public override void OnJoinedRoom() {

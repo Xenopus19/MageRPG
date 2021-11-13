@@ -19,11 +19,6 @@ public class PlayerHP : Health {
             roundManager.Init(gameObject);
         }
     }
-    private void Update() {
-        /*if (Input.GetKeyDown(KeyCode.R)) {
-            ReceiveDamage(MaxHealth);
-        }*/
-    }
 
     public override void Die() {
         amountOfLifes--;

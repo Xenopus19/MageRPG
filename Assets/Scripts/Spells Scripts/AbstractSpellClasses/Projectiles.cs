@@ -38,7 +38,7 @@ public class Projectiles : Spell
             if (CasterChildCollider != null)
             {
                 Physics.IgnoreCollision(CasterChildCollider, gameObject.GetComponent<Collider>());
-                Debug.LogError(CasterChildCollider.gameObject.name);
+                //Debug.LogError(CasterChildCollider.gameObject.name);
             }
 
         }
