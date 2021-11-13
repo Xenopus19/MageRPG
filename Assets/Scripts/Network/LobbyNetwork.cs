@@ -3,12 +3,11 @@ using Photon.Pun;
 
 public class LobbyNetwork : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
+    public string playerName;
     private void Start()
     {
-        PhotonNetwork.NickName = "Player " + Random.Range(19, 39);
-        Debug.Log("Player is " + PhotonNetwork.NickName);
-
+        //PhotonNetwork.NickName = "Player " + Random.Range(19, 39);
+        playerName = PhotonNetwork.NickName;
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = "1";
         PhotonNetwork.ConnectUsingSettings();
@@ -17,11 +16,18 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to master.");
+        GameObject.Find("LoadingPanel").SetActive(false);
     }
 
-    public void CreateRoom()
+    public void AddNickName(string name) 
     {
-        PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
+        PhotonNetwork.NickName = name;
+        Debug.Log("Player is " + PhotonNetwork.NickName);
+    }
+
+    public void CreateRoom(string nameOfRoom)
+    {
+        PhotonNetwork.CreateRoom(nameOfRoom, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
     }
 
     public void JoinRoom()
