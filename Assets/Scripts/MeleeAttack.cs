@@ -36,12 +36,12 @@ public class MeleeAttack : MonoBehaviour
         PlayerHP targetHealth = target.GetComponent<PlayerHP>();
         if (targetHealth != null)
         {
-            photonView.RPC("DealDamage", RpcTarget.All, Damage);
+            photonView.RPC("DealDamage", RpcTarget.All, Damage, targetHealth);
             Debug.Log("hihihaha");
         }
     }
     [PunRPC]
-    public void DealDamage(float Damage)
+    public void DealDamage(float Damage,PlayerHP targetHealth)
     {
         targetHealth.ReceiveDamage(Damage);
     }
