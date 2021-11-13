@@ -33,7 +33,6 @@ public class MeleeAttack : MonoBehaviour
         PlayerHP targetHealth = target.GetComponent<PlayerHP>();
         if (targetHealth != null)
         {
-            Debug.Log("ahahahahahahahaha");
             targetHealth.ReceiveDamage(Damage);
         }
     }
