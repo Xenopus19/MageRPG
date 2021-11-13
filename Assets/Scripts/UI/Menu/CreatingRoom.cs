@@ -24,9 +24,7 @@ public class CreatingRoom : MonoBehaviour {
         roomButtons.SetActive(false);
     }
 
-    private void Update() {
-        
-    }
+    
 
     public void Cancel() {
         roomButtons.SetActive(true);
