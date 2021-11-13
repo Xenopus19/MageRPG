@@ -8,9 +8,13 @@ public class PlayerHP : Health {
 
     private RoundManager roundManager;
 
+    private ColorHp colorHP;
+    
     void Start() {
         photonView = gameObject.GetComponent<PhotonView>();
         if (photonView.IsMine) {
+            colorHP = GameObject.Find("PanelForHP").GetComponent<ColorHp>();
+            colorHP.Init(gameObject);
             roundManager = GameObject.Find("RoundManager").GetComponent<RoundManager>();
             roundManager.Init(gameObject);
         }

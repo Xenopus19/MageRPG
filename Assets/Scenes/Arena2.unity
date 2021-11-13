@@ -1265,6 +1265,64 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0e5682fd3f78024187e81ee8dafe235, type: 3}
+--- !u!1 &844112848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8392816188033690775, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+  m_PrefabInstance: {fileID: 4474251495000287422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &844112850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8392816188033690773, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+  m_PrefabInstance: {fileID: 4474251495000287422}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844112848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &844112852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844112848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b314362e9680b9a438cd72dc07124ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0, a: 1}
+    key1: {r: 1, g: 0.77250254, b: 0, a: 1}
+    key2: {r: 0.111854315, g: 1, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 20817
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  HealthBarImage: {fileID: 844112850}
 --- !u!1 &881018421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3652,6 +3710,34 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 59.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4474251494380089568, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: MaxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474251494380089568, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: healthGradient.atime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474251494380089568, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: healthGradient.atime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474251494380089568, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: healthGradient.key1.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474251494380089568, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: healthGradient.key1.g
+      value: 0.49785483
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474251494380089568, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: healthGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474251494380089569, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: MaxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 8392816187715931849, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3744,7 +3830,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1674633886}
-    m_RemovedComponents: []
+    - target: {fileID: 8392816188033690773, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392816188033690773, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392816188033690773, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4474251494380089568, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+    - {fileID: 4474251494380089569, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
 --- !u!1 &5363498931658712691 stripped
 GameObject:
