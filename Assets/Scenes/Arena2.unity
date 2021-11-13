@@ -720,67 +720,6 @@ MonoBehaviour:
   winString: You won
   loseString: You lose
   endGameText: {fileID: 902759202}
---- !u!1 &1024039004 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5363498930050843215, guid: b98382eb34bcf934f86e7b02a10ee374, type: 3}
-  m_PrefabInstance: {fileID: 1718148076}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1024039006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024039004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b314362e9680b9a438cd72dc07124ca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthGradient:
-    serializedVersion: 2
-    key0: {r: 0.8867924, g: 0.14972024, b: 0.012548926, a: 1}
-    key1: {r: 0.49034405, g: 0.48766994, b: 0.025640491, a: 1}
-    key2: {r: 0.9583334, g: 1, b: 0, a: 0}
-    key3: {r: 0, g: 0.9056604, b: 0.04183269, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 3855
-    ctime1: 17540
-    ctime2: 35273
-    ctime3: 65535
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 4
-    m_NumAlphaKeys: 2
-  HealthBarImage: {fileID: 1626448987}
-  MaxHealth: 100
---- !u!114 &1024039007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024039004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4edb0fd4165f394689f1a7e44bebf5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 0
 --- !u!1 &1026906320
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,7 +866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1458,14 +1397,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1529762371}
   - component: {fileID: 1529762370}
-  - component: {fileID: 1529762372}
   m_Layer: 0
   m_Name: ManaItemsCreator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1529762370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1479,7 +1417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ManaItem: {fileID: 6298019205335149024, guid: 6659a7dcf4094314aa41e7bf99c3c885, type: 3}
-  SpawnCooldown: 3
+  SpawnCooldown: 10
 --- !u!4 &1529762371
 Transform:
   m_ObjectHideFlags: 0
@@ -1494,28 +1432,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1529762372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1529762369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 2
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &1540422599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1612,17 +1528,6 @@ Transform:
   m_Father: {fileID: 1275195085}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: -90}
---- !u!114 &1626448987 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5363498930435596231, guid: b98382eb34bcf934f86e7b02a10ee374, type: 3}
-  m_PrefabInstance: {fileID: 1718148076}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1674633885
 GameObject:
   m_ObjectHideFlags: 0
