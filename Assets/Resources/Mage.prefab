@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  photonView: {fileID: 0}
   amountOfLifes: 3
 --- !u!114 &7808385751874169432
 MonoBehaviour:

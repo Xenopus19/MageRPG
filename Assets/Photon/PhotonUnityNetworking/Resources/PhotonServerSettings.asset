@@ -54,6 +54,9 @@ MonoBehaviour:
   - EndGameByLosing
   - EndGameByWinning
   - DealDamage
+  - ReceiveDamage
+  - RPC_ReceiveDamage
+  - RPC_DealDamageToObject
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

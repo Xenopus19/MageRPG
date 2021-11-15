@@ -4,14 +4,12 @@ using UnityEngine;
 public class PlayerHP : Health {
     public float amountOfLifes = 3f;
 
-    private PhotonView photonView;
-
     private RoundManager roundManager;
 
     private ColorHp colorHP;
     
     void Start() {
-        photonView = gameObject.GetComponent<PhotonView>();
+        photonView = GetComponent<PhotonView>();
         if (photonView.IsMine) {
             colorHP = GameObject.Find("PanelForHP").GetComponent<ColorHp>();
             colorHP.Init(gameObject);

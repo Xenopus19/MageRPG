@@ -1,4 +1,5 @@
 using UnityEngine;
+using Photon.Pun;
 
 public class Health : MonoBehaviour
 {
@@ -6,17 +7,27 @@ public class Health : MonoBehaviour
 
     public float MaxHealth;
 
+    public PhotonView photonView;
+
     private void Awake()
     {
         CurrentHealth = MaxHealth;
     }
-
+    private void Start()
+    {
+        photonView = gameObject.GetComponent<PhotonView>();
+    }
     public void ReceiveDamage(float IncomingDamage)
     {
-        Debug.Log("ahahahahahahahaha");
+        if(PhotonNetwork.IsMasterClient&&photonView!=null)
+        photonView.RPC("RPC_DealDamageToObject", RpcTarget.All, IncomingDamage);
+    }
+    [PunRPC]
+    public void RPC_DealDamageToObject(float IncomingDamage)
+    {
         CurrentHealth -= IncomingDamage;
 
-        if(CurrentHealth<=0)
+        if (CurrentHealth <= 0)
         {
             Die();
         }

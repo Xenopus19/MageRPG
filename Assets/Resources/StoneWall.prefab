@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 50
+  photonView: {fileID: 0}
 --- !u!95 &-8415068122378621984
 Animator:
   serializedVersion: 3

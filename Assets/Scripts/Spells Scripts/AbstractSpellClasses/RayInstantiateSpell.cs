@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class RayInstantiateSpell : Spell
@@ -11,9 +10,9 @@ public class RayInstantiateSpell : Spell
     {
         if(Physics.Raycast(ray, out RaycastHit hit))
         {
-            if (hit.collider.gameObject.layer == 10)
+            if (hit.collider.gameObject.layer == 10 && PhotonNetwork.IsMasterClient)
             {
-                GameObject NewStructure = Instantiate(StructureToInstantiate, hit.point, Caster.transform.rotation);
+                GameObject NewStructure = PhotonNetwork.Instantiate(StructureToInstantiate.name, hit.point, Caster.transform.rotation);
             }
         }
     }
