@@ -507,6 +507,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 886637332}
     m_Modifications:
+    - target: {fileID: 5007003102439666260, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007003102439666260, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007003102439666260, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007003102439666260, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8022922212407627976, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
       propertyPath: m_Name
       value: Page1
@@ -881,9 +897,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Next
-
-'
+  m_Text: Next
 --- !u!222 &1635784335
 CanvasRenderer:
   m_ObjectHideFlags: 0
