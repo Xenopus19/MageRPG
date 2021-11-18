@@ -18,9 +18,13 @@ public class ColorHp : MonoBehaviour
     }
     void Update()
     {
-        CurrentHealth = playerhp.CurrentHealth;
-        MaxHealth = playerhp.MaxHealth;
-        healthPercent = CurrentHealth / MaxHealth;
-        HealthBarImage.color = healthGradient.Evaluate(healthPercent);
+        Debug.LogWarning("Color hp update");
+        if(playerhp!=null)
+        {
+            CurrentHealth = playerhp.CurrentHealth;
+            MaxHealth = playerhp.MaxHealth;
+            healthPercent = CurrentHealth / MaxHealth;
+            HealthBarImage.color = healthGradient.Evaluate(healthPercent);
+        }
     }
 }

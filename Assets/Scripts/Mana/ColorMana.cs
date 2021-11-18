@@ -15,9 +15,12 @@ public class ColorMana : MonoBehaviour {
         playerMana = player.GetComponent<ManaPlayer>();
     }
     void Update() {
-        CurrentMana = playerMana.manaPlayer;
-        MaxMana = playerMana.MaxMana;
-        manaPercent = CurrentMana / MaxMana;
-        ManaBarImage.color = ManaGradient.Evaluate(manaPercent);
+        if (playerMana != null)
+        {
+            CurrentMana = playerMana.manaPlayer;
+            MaxMana = playerMana.MaxMana;
+            manaPercent = CurrentMana / MaxMana;
+            ManaBarImage.color = ManaGradient.Evaluate(manaPercent);
+        }
     }
 }
