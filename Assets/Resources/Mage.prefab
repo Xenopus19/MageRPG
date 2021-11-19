@@ -408,16 +408,16 @@ GameObject:
   m_Component:
   - component: {fileID: 884415160055828280}
   - component: {fileID: 884415160055828283}
+  - component: {fileID: 6357201653259662328}
   - component: {fileID: 884415160055828281}
-  - component: {fileID: 884415160055828285}
+  - component: {fileID: -6800435193658097107}
   - component: {fileID: -5500756376589398900}
+  - component: {fileID: 884415160055828285}
+  - component: {fileID: -319035408183028212}
   - component: {fileID: 884415160055828287}
+  - component: {fileID: -8346260469055776327}
   - component: {fileID: -3983066920297027617}
   - component: {fileID: 9099572953435569747}
-  - component: {fileID: -8346260469055776327}
-  - component: {fileID: -319035408183028212}
-  - component: {fileID: -6800435193658097107}
-  - component: {fileID: 7808385751874169432}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -461,6 +461,22 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6357201653259662328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4860ce600db866478deef3715cc9943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Stick: {fileID: 7149068218929521571}
+  MeleeAttackButton: 102
+  SpellCastButton: 0
+  JumpKey: 32
 --- !u!114 &884415160055828281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,6 +500,33 @@ MonoBehaviour:
     m_Bits: 1024
   jumpCode: 32
   isGrounded: 0
+--- !u!114 &-6800435193658097107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd40a38249b4f844be1bdbc39245b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  photonView: {fileID: 0}
+  amountOfLifes: 3
+--- !u!114 &-5500756376589398900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1358a12d56bc0f24b93c5691a3e5939f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &884415160055828285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,7 +541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manaPlayer: 100
   MaxMana: 100
---- !u!114 &-5500756376589398900
+--- !u!114 &-319035408183028212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,7 +550,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 884415160055828282}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1358a12d56bc0f24b93c5691a3e5939f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4444e751ee3e8f142a4640ed89ccbf5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &884415160055828287
@@ -530,6 +573,21 @@ MonoBehaviour:
   StoneWall: {fileID: 8286624203043886165, guid: 3a5d1cc4a30977b4da37efbcadb8dd17, type: 3}
   PlayerCamera: {fileID: 884415158717114745}
   CurrentSpell: {fileID: 0}
+--- !u!114 &-8346260469055776327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7c72e8f1a2fce4699830939bcfdc73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  IconPanel: {fileID: 0}
+  IconImage: {fileID: 0}
 --- !u!114 &-3983066920297027617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,60 +628,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &-8346260469055776327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884415160055828282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a7c72e8f1a2fce4699830939bcfdc73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefaultImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  IconPanel: {fileID: 0}
-  IconImage: {fileID: 0}
---- !u!114 &-319035408183028212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884415160055828282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4444e751ee3e8f142a4640ed89ccbf5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-6800435193658097107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884415160055828282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acd40a38249b4f844be1bdbc39245b03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 100
-  photonView: {fileID: 0}
-  amountOfLifes: 3
---- !u!114 &7808385751874169432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 884415160055828282}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bfb8f2bd4e958a49bc7c22caf7fae71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2871666960349788098
 MonoBehaviour:
   m_ObjectHideFlags: 0

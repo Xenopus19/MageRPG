@@ -21,14 +21,10 @@ public class MeleeAttack : MonoBehaviour
         Physics.IgnoreCollision(UserCollider, StickCollider);
     }
 
-    void Update()
+    public void Attack()
     {
-        if (!GetComponentInParent<PhotonView>().IsMine) return;
-        if (Input.GetKeyDown(AttackButton))
-        {
-            StickCollider.enabled = true;
-            StickAnimator.SetTrigger("Attack");
-        }
+        StickCollider.enabled = true;
+        StickAnimator.SetTrigger("Attack");
     }
 
     private void OnTriggerEnter(Collider target)

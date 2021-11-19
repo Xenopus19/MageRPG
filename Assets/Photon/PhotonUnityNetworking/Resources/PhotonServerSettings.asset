@@ -57,6 +57,7 @@ MonoBehaviour:
   - ReceiveDamage
   - RPC_ReceiveDamage
   - RPC_DealDamageToObject
+  - RPC_PickSpell
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

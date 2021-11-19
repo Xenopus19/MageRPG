@@ -44,23 +44,16 @@ public class SpellCast : MonoBehaviour
     }
     private void Update()
     {
-        PickAndCastSpell();
+        PickSpell();
     }
 
-    private void PickAndCastSpell()
+    private void PickSpell()
     {
         if (!photonView.IsMine) return;
-        photonView.RPC("PickSpell", RpcTarget.All, SpellCode);
-        if (Input.GetMouseButtonDown(0))
-        {
-            SpellCode = 0;
-            if (CurrentSpell != null)
-                CastSpell();
-            iconsChange.DisableIconPanel();
-        }
+        photonView.RPC("RPC_PickSpell", RpcTarget.All, SpellCode);
     }
     [PunRPC]
-    private void PickSpell(int SpellCode)
+    private void RPC_PickSpell(int SpellCode)
     {
         if (Spells.ContainsKey(SpellCode))
         {
@@ -74,6 +67,13 @@ public class SpellCast : MonoBehaviour
         {
             //Debug.LogWarning("Incorrect spell code.");
         }
+    }
+    public void StartCasting()
+    {
+        SpellCode = 0;
+        if (CurrentSpell != null)
+            CastSpell();
+        iconsChange.DisableIconPanel();
     }
     public void CastSpell()
     {
