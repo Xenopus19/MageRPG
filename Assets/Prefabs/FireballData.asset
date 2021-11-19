@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a629bca100360184fbb196481403d3a9, type: 3}
   m_Name: FireballData
   m_EditorClassIdentifier: 
-  SpellName: Fireball
+  SpellName: Ignis
   SpellImage: {fileID: 21300000, guid: 24869be00c6aaf743a46d3fe253f88a2, type: 3}
-  SpellDescription: " \u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444
-    \u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444
-    \u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444
-    \u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444\u0444 "
+  SpellDescription: Main attacking spell. A fast projectile with good damage. Doesn't
+    give any debuffs.
   SpellManaCost: 'Mana Cost: 20'
   SpellDamage: 'Damage: 20'
   SpellCastingCode: {fileID: 0}
