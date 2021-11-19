@@ -1,26 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-[RequireComponent(typeof(Health))]
 
 public class ColorHp : MonoBehaviour
 {
     [SerializeField] Gradient healthGradient;
-    private Health PlayerHealth;
-    private float healthPercent;
     [SerializeField] Image HealthBarImage;
-    [SerializeField] float MaxHealth;
+    
+    private float healthPercent;
 
-    void Start()
+    private float CurrentHealth;
+    private float MaxHealth;
+
+    private PlayerHP playerhp;
+    public void Init (GameObject player)
     {
-        PlayerHealth = gameObject.GetComponent<Health>();
+        playerhp = player.GetComponent<PlayerHP>();
     }
     void Update()
     {
-        float CurrentHealth = PlayerHealth.CurrentHealth;
-        healthPercent = CurrentHealth / MaxHealth;
-        HealthBarImage.color = healthGradient.Evaluate(healthPercent);
+        Debug.LogWarning("Color hp update");
+        if(playerhp!=null)
+        {
+            CurrentHealth = playerhp.CurrentHealth;
+            MaxHealth = playerhp.MaxHealth;
+            healthPercent = CurrentHealth / MaxHealth;
+            HealthBarImage.color = healthGradient.Evaluate(healthPercent);
+        }
     }
 }

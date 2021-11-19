@@ -9,8 +9,11 @@ public class MeleeAttack : MonoBehaviour
     private Collider StickCollider;
     private Animator StickAnimator;
     public KeyCode AttackButton;
+    public PhotonView photonView;
+
     private void Start()
     {
+        photonView = GetComponent<PhotonView>();
         StickCollider = gameObject.GetComponent<Collider>();
         StickAnimator = gameObject.GetComponent<Animator>();
         StickCollider.enabled = false;
@@ -30,10 +33,16 @@ public class MeleeAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider target)
     {
-        Health targetHealth = target.GetComponent<Health>();
-        if(targetHealth != null)
+        PlayerHP targetHealth = target.GetComponent<PlayerHP>();
+        if (targetHealth != null)
         {
-            targetHealth.ReceiveDamage(Damage);
+            photonView.RPC("DealDamage", RpcTarget.All, Damage, targetHealth);
+            Debug.Log("hihihaha");
         }
+    }
+    [PunRPC]
+    public void DealDamage(float Damage,PlayerHP targetHealth)
+    {
+        targetHealth.ReceiveDamage(Damage);
     }
 }

@@ -17,7 +17,12 @@ public class ButtonsHide : MonoBehaviour
             buttons = GameObject.Find("buttons");
             for(int i = 0; i<buttons.transform.childCount; i++)
             {
-                buttons.transform.GetChild(i).gameObject.GetComponent<OnButtonHover>().spellCast = spellCast;
+                GameObject ButtonChild = buttons.transform.GetChild(i).gameObject;
+                OnButtonHover buttonHover = ButtonChild.GetComponent<OnButtonHover>();
+                if(buttonHover!=null)
+                {
+                    buttonHover.spellCast = spellCast;
+                }
                 Debug.Log($"SpellCast for {i} set.");
             }
             buttons.SetActive(false);

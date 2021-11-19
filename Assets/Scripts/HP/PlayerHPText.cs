@@ -11,19 +11,20 @@ public class PlayerHPText : MonoBehaviour
     private Text HpText;
     private PhotonView photonView;
     private Text RoundsText;
-    public void ChangeHealthText()
-    {
-        if (!photonView.IsMine) return;
-        float CurrentHealth = PlayerHealth.CurrentHealth;
-        HpText.text = CurrentHealth.ToString();
-        RoundsText.text = PlayerHealth.amountOfLifes.ToString();
-    }
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
         PlayerHealth = gameObject.GetComponent<PlayerHP>();
         HpText = GameObject.Find("HPText").GetComponent<Text>();
         RoundsText = GameObject.Find("RoundLeftText").GetComponent<Text>();
+    }
+
+    public void ChangeHealthText()
+    {
+        if (!photonView.IsMine) return;
+        float CurrentHealth = PlayerHealth.CurrentHealth;
+        HpText.text = CurrentHealth.ToString();
+        RoundsText.text = "Lifes: " + PlayerHealth.amountOfLifes.ToString();
     }
 
     private void Update()
