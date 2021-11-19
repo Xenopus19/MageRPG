@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpellName: Medico
   SpellImage: {fileID: 21300000, guid: ac41923b12f708c408b7a31390059c5b, type: 3}
-  SpellDescription: By accelerating metabolism processes, you start healing a lot
-    faster.
+  SpellDescription: By accelerating metabolism processes, your wounds start healing
+    a lot faster.
   SpellManaCost: 'Mana Cost: 30'
   SpellDamage: 'Heal: 20'
-  SpellCastingCode: {fileID: 0}
+  SpellCastingCode: {fileID: 21300000, guid: 2cd22de441ba071469135b443e63dfb5, type: 3}

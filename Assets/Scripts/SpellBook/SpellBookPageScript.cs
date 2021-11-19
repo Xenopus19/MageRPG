@@ -21,6 +21,11 @@ public class SpellBookPageScript : MonoBehaviour
         SpellDamage = gameObject.transform.Find("SpellDamage").GetComponent<Text>();
         SpellCastingCode = gameObject.transform.Find("SpellCastingCode").GetComponent<Image>();
 
+        ChangeData(ThisSpellData);
+    }
+
+    public void ChangeData(SpellBookPageDataScript ThisSpellData)
+    {
         SpellName.text = ThisSpellData.SpellName;
         SpellIcon.sprite = ThisSpellData.SpellImage;
         SpellDescription.text = ThisSpellData.SpellDescription;
