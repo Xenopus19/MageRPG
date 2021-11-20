@@ -8,6 +8,8 @@ public class CreatingRoom : MonoBehaviour {
     private LobbyNetwork lobbyNetwork;
     private RoomText roomText;
 
+    public bool isStartGame = false;
+
     private void Init() {
         lobbyNetwork = lobbyNetworkManager.GetComponent<LobbyNetwork>();
         roomText = roomTextObject.GetComponent<RoomText>();
@@ -17,7 +19,7 @@ public class CreatingRoom : MonoBehaviour {
         Init();
         string playerName = PlayerPrefs.GetString("PlayerName");
         string randomRoomName = $"{playerName}{Random.Range(1000, 9999)}";
-        //lobbyNetwork.CreateRoom(randomRoomName);
+        lobbyNetwork.CreateRoom(randomRoomName);
         roomText.ChangeRoomText(randomRoomName);
 
         gameObject.SetActive(true);
@@ -25,7 +27,10 @@ public class CreatingRoom : MonoBehaviour {
     }
 
     public void Cancel() {
-        roomButtons.SetActive(true);
-        gameObject.SetActive(false);
+        lobbyNetwork.LeaveRoom();
+    }  
+
+    public void StartGame() {
+        lobbyNetwork.LoadLevel();
     }
 }

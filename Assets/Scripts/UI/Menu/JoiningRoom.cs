@@ -6,7 +6,6 @@ public class JoiningRoom : MonoBehaviour
 {
     public GameObject roomButtons;
     public GameObject lobbyNetworkManager;
-
     private LobbyNetwork lobbyNetwork;
 
     private void Init() {
@@ -15,13 +14,12 @@ public class JoiningRoom : MonoBehaviour
 
     public void CreateJoinRoomPanel() {
         Init();
-
+        lobbyNetwork.JoinRoom();
         gameObject.SetActive(true);
         roomButtons.SetActive(false);
     }
 
     public void Cancel() {
-        roomButtons.SetActive(true);
-        gameObject.SetActive(false);
+        lobbyNetwork.LeaveRoom();
     }
 }
