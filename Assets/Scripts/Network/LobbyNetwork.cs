@@ -71,6 +71,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         playerAmountText?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
         if (PhotonNetwork.CurrentRoom?.PlayerCount == PhotonNetwork.CurrentRoom?.MaxPlayers && PhotonNetwork.CurrentRoom != null) {
             LoadLevel();
+            Destroy(gameObject);
         }
     }
 
