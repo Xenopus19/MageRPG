@@ -12,14 +12,17 @@ public class PlayerInputController : MonoBehaviour
     [SerializeField] private KeyCode MeleeAttackButton;
     [SerializeField] private KeyCode SpellCastButton;
     [SerializeField] private KeyCode JumpKey;
+    [SerializeField] private KeyCode BasicShotKey;
 
     private PlayerMovement playerMovement;
     private MeleeAttack melee;
     private PhotonView photonView;
     private SpellCast spellCast;
+    private BasicShot basicShot;
 
     private void Start()
     {
+        basicShot = GetComponent<BasicShot>();
         spellCast = GetComponent<SpellCast>();
         melee = Stick.GetComponent<MeleeAttack>();
         photonView = GetComponent<PhotonView>();
@@ -33,6 +36,7 @@ public class PlayerInputController : MonoBehaviour
         GetAndExecuteMovementInput();
         GetMeleeInput();
         GetSpellCastInput();
+        GetBasicShotInput();
     }
 
     private void GetAndExecuteMovementInput()
@@ -60,6 +64,13 @@ public class PlayerInputController : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             spellCast.StartCasting();
+        }
+    }
+    private void GetBasicShotInput()
+    {
+        if(Input.GetKeyDown(BasicShotKey))
+        {
+            basicShot.MakeBasicShot();
         }
     }
 }
