@@ -18,7 +18,6 @@ public class ColorHp : MonoBehaviour
     }
     void Update()
     {
-        Debug.LogWarning("Color hp update");
         if(playerhp!=null)
         {
             CurrentHealth = playerhp.CurrentHealth;

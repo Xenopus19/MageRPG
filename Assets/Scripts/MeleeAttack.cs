@@ -29,16 +29,15 @@ public class MeleeAttack : MonoBehaviour
 
     private void OnTriggerEnter(Collider target)
     {
-        PlayerHP targetHealth = target.GetComponent<PlayerHP>();
+        Health targetHealth = target.GetComponent<Health>();
         if (targetHealth != null)
         {
-            photonView.RPC("DealDamage", RpcTarget.All, Damage, targetHealth);
-            Debug.Log("hihihaha");
+            target.gameObject.GetComponent<Health>()?.ReceiveDamage(Damage);
         }
     }
-    [PunRPC]
-    public void DealDamage(float Damage,PlayerHP targetHealth)
+    public void OnFinishAtack()
     {
-        targetHealth.ReceiveDamage(Damage);
+        StickCollider.enabled = false;
     }
+    
 }

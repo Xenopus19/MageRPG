@@ -23,7 +23,7 @@ public class Health : MonoBehaviour
         photonView.RPC("RPC_DealDamageToObject", RpcTarget.All, IncomingDamage);
     }
     [PunRPC]
-    private void RPC_DealDamageToObject(float IncomingDamage)
+    public void RPC_DealDamageToObject(float IncomingDamage)
     {
         CurrentHealth -= IncomingDamage;
 
