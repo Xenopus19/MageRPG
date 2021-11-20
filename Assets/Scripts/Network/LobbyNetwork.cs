@@ -8,8 +8,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public GameObject playerAmountTextCR;
     public GameObject playerAmountTextJR;
-    private PlayerAmountText playerAmountTextcr;
-    private PlayerAmountText playerAmountTextjr;
+    private PlayerAmountText playerAmountText;
 
     public GameObject joiningRoom;
     private JoiningRoomText joiningRoomText;
@@ -23,8 +22,6 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
             PhotonNetwork.ConnectUsingSettings();
         }
 
-        playerAmountTextcr = playerAmountTextCR.GetComponent<PlayerAmountText>();
-        playerAmountTextjr = playerAmountTextJR.GetComponent<PlayerAmountText>();
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
     }
 
@@ -50,7 +47,12 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom() {
         Debug.Log("Joined the room");
-        joiningRoomText.WriteRoomName(PhotonNetwork.CurrentRoom?.Name.ToString());
+        if (!PhotonNetwork.IsMasterClient) {
+            joiningRoomText.WriteRoomName(PhotonNetwork.CurrentRoom?.Name.ToString());
+            playerAmountText = playerAmountTextJR.GetComponent<PlayerAmountText>(); 
+        } else {
+            playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
+        }
     }
 
     public void LeaveRoom() {
@@ -66,8 +68,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     }
 
     private void Update() {
-        playerAmountTextcr?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
-        playerAmountTextjr?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
+        playerAmountText?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
         //if (PhotonNetwork.CurrentRoom?.PlayerCount == PhotonNetwork.CurrentRoom?.MaxPlayers) {
         //    LoadLevel();
         //}
