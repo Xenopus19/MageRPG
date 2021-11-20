@@ -19,6 +19,14 @@ public class RoundManager : MonoBehaviour {
 
     public void EndRound() {
         playerHP.CurrentHealth = playerHP.MaxHealth;
+        if(PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("TeleportToSpawnPoint", RpcTarget.All);
+        }
+    }
+    [PunRPC]
+    private void TeleportToSpawnPoint()
+    {
         Player.transform.position = spawnPoint.transform.position;
     }
 

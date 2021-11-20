@@ -44,16 +44,16 @@ public class SpellCast : MonoBehaviour
     }
     private void Update()
     {
-        PickSpell();
+        GetSpell();
     }
 
-    private void PickSpell()
+    private void GetSpell()
     {
         if (!photonView.IsMine) return;
-        photonView.RPC("RPC_PickSpell", RpcTarget.All, SpellCode);
+        photonView.RPC("PickSpell", RpcTarget.All, SpellCode);
     }
     [PunRPC]
-    private void RPC_PickSpell(int SpellCode)
+    private void PickSpell(int SpellCode)
     {
         if (Spells.ContainsKey(SpellCode))
         {
