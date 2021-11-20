@@ -18,7 +18,7 @@ public class ColorHp : MonoBehaviour
     }
     void Update()
     {
-        if(playerhp != null)
+        if(playerhp!=null)
         {
             CurrentHealth = playerhp.CurrentHealth;
             MaxHealth = playerhp.MaxHealth;

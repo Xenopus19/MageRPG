@@ -26,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!photonView.IsMine) return;
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0)
@@ -34,23 +33,18 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
-        float directionX = Input.GetAxis("Horizontal");
-        float directionZ = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * directionX + transform.forward * directionZ;
-        controller.Move(move * speed * Time.deltaTime);
-
-        if (Input.GetKeyDown(jumpCode) && isGrounded)
-        {
-            Jump(jumpHeigh, gravity);
-        }
-
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
     }
-    public void Jump(float JumpHeight, float gravity)
+    public void MovePlayer(float directionX, float directionZ)
     {
+        Vector3 move = transform.right * directionX + transform.forward * directionZ;
+        controller.Move(move * speed * Time.deltaTime);
+    }
+    public void Jump()
+    {
+        if(isGrounded)
         velocity.y = Mathf.Sqrt(jumpHeigh * -2f * gravity);
     }
 }
