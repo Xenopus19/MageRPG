@@ -25,6 +25,7 @@ public class PlayerAudioManager : MonoBehaviour
 
     private void PlayFootsteps()
     {
+        Debug.LogError(playerMovement.isGrounded);
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && playerMovement.isGrounded)
         {
             audioSource.mute = false;

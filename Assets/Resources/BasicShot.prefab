@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4913334078870562534}
   - component: {fileID: 2689270626624394912}
   - component: {fileID: 336438750183838336}
-  - component: {fileID: 1873855039821558937}
   - component: {fileID: 3952799152555633969}
   - component: {fileID: -8378906728681642269}
+  - component: {fileID: -4826332710813177917}
   m_Layer: 0
   m_Name: BasicShot
   m_TagString: Untagged
@@ -125,23 +125,6 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &1873855039821558937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743849074773497234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8c9640790a55a4b80fffb828c45864, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Caster: {fileID: 0}
-  ActionAmount: 5
-  ManaConsumption: 0
-  SpellIcon: {fileID: 0}
-  Force: 4000
 --- !u!65 &3952799152555633969
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -171,3 +154,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4826332710813177917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743849074773497234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e45a636abc9dad4595da1dc75b62fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Caster: {fileID: 0}
+  ActionAmount: 7
+  ManaConsumption: 0
+  SpellIcon: {fileID: 0}
+  Force: 4000
