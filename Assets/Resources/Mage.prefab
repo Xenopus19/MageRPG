@@ -418,6 +418,7 @@ GameObject:
   - component: {fileID: -8346260469055776327}
   - component: {fileID: -3983066920297027617}
   - component: {fileID: 9099572953435569747}
+  - component: {fileID: 6788347773692069661}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Player
@@ -477,6 +478,7 @@ MonoBehaviour:
   MeleeAttackButton: 102
   SpellCastButton: 0
   JumpKey: 32
+  BasicShotKey: 114
 --- !u!114 &884415160055828281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,6 +630,21 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &6788347773692069661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884415160055828282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ba3dd5ff9709047a9a80f98331d78d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BasicShotPrefab: {fileID: 743849074773497234, guid: 39855066961c40e4ba3cda87b6477778, type: 3}
+  ShotCooldown: 1
+  PlayerCamera: {fileID: 884415158717114745}
 --- !u!114 &2871666960349788098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,7 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aaa92d1452ba9a4d99797f9d404450f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 5
+  Damage: 10
   AttackButton: 102
   photonView: {fileID: 0}
 --- !u!114 &4546239193750017219

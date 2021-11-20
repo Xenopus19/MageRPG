@@ -14,6 +14,7 @@ public class PlayerHPText : MonoBehaviour
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
+        if (!photonView.IsMine) return;
         PlayerHealth = gameObject.GetComponent<PlayerHP>();
         HpText = GameObject.Find("HPText").GetComponent<Text>();
         RoundsText = GameObject.Find("RoundLeftText").GetComponent<Text>();

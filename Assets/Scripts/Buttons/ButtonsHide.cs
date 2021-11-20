@@ -23,7 +23,7 @@ public class ButtonsHide : MonoBehaviour
                 {
                     buttonHover.spellCast = spellCast;
                 }
-                Debug.Log($"SpellCast for {i} set.");
+                //Debug.Log($"SpellCast for {i} set.");
             }
             buttons.SetActive(false);
         }
