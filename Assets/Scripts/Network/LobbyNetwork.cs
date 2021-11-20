@@ -69,9 +69,9 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     private void Update() {
         playerAmountText?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
-        //if (PhotonNetwork.CurrentRoom?.PlayerCount == PhotonNetwork.CurrentRoom?.MaxPlayers) {
-        //    LoadLevel();
-        //}
+        if (PhotonNetwork.CurrentRoom?.PlayerCount == PhotonNetwork.CurrentRoom?.MaxPlayers && PhotonNetwork.CurrentRoom != null) {
+            LoadLevel();
+        }
     }
 
     //public void CreateRoom()
