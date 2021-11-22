@@ -13,7 +13,7 @@ public class PlayerHP : Health {
         if (photonView.IsMine) {
             colorHP = GameObject.Find("PanelForHP").GetComponent<ColorHp>();
             colorHP.Init(gameObject);
-            lifeManager = GameObject.Find("RoundManager").GetComponent<LifeManager>();
+            lifeManager = GameObject.Find("LifeManager").GetComponent<LifeManager>();
             lifeManager.Init(gameObject);
         }
     }

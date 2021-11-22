@@ -20,12 +20,8 @@ public class LifeManager : MonoBehaviour {
     public void EndLife() {
         playerHP.CurrentHealth = playerHP.MaxHealth;
         TeleportToSpawnPoint();
-        //if(PhotonNetwork.IsMasterClient)
-        //{
-        //    photonView.RPC("TeleportToSpawnPoint", RpcTarget.All);
-        //}
     }
-    //[PunRPC]
+
     private void TeleportToSpawnPoint()
     {
         Player.transform.position = spawnPoint.transform.position;
