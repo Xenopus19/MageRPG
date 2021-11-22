@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GoingToMenu : MonoBehaviour {
+    private GameNetwork gameNetwork;
     public void GoToMenu() {
-        SceneManager.LoadScene("Menu");
+        gameNetwork.LeaveRoom();
     }
 }
