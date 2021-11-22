@@ -1,7 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 
-public class RoundManager : MonoBehaviour {
+public class LifeManager : MonoBehaviour {
     private GameObject Player;
     private PlayerHP playerHP;
 
@@ -17,14 +17,15 @@ public class RoundManager : MonoBehaviour {
         playerHP = Player.GetComponent<PlayerHP>();
     }
 
-    public void EndRound() {
+    public void EndLife() {
         playerHP.CurrentHealth = playerHP.MaxHealth;
-        if(PhotonNetwork.IsMasterClient)
-        {
-            photonView.RPC("TeleportToSpawnPoint", RpcTarget.All);
-        }
+        TeleportToSpawnPoint();
+        //if(PhotonNetwork.IsMasterClient)
+        //{
+        //    photonView.RPC("TeleportToSpawnPoint", RpcTarget.All);
+        //}
     }
-    [PunRPC]
+    //[PunRPC]
     private void TeleportToSpawnPoint()
     {
         Player.transform.position = spawnPoint.transform.position;
