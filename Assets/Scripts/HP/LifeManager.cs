@@ -25,6 +25,7 @@ public class LifeManager : MonoBehaviour {
     private void TeleportToSpawnPoint()
     {
         Player.transform.position = spawnPoint.transform.position;
+        Player.transform.rotation = spawnPoint.transform.rotation;
     }
 
     
