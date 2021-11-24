@@ -1522,6 +1522,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1470040672140337475, guid: 2e6ce094bcfb8224697f1322a6915a3b, type: 3}
+      propertyPath: gameNetworkManager
+      value: 
+      objectReference: {fileID: 1674633885}
     - target: {fileID: 1470040672215729066, guid: 2e6ce094bcfb8224697f1322a6915a3b, type: 3}
       propertyPath: m_Name
       value: EndGameUI
@@ -2801,7 +2805,7 @@ GameObject:
   - component: {fileID: 1487221361}
   - component: {fileID: 1487221363}
   m_Layer: 0
-  m_Name: RoundManager
+  m_Name: LifeManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
