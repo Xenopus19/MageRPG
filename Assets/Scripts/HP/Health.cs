@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
 
     public PhotonView photonView;
 
-    public event Action<> OnDamageReceived; 
+    //public event Action<> OnDamageReceived; 
 
     private void Awake()
     {
