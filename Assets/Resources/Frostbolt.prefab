@@ -128,7 +128,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -9039990162309823103, guid: d96d561cc1eb6204d9e924807fd5ba59, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4e1ff8faed12a475eba9be0e46072269, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 55bc0b6fc22e28f4792066b783795a51, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -248,7 +248,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: -7381289273294973668}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
