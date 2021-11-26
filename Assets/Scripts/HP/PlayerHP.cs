@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerHP : Health {
     public float amountOfLifes = 3f;
 
+    [SerializeField] private AudioSource audioSource;
+
     private LifeManager lifeManager;
 
     private ColorHp colorHP;
@@ -25,7 +27,7 @@ public class PlayerHP : Health {
             lifeManager.EndLife();
             if (amountOfLifes == 0)
             {
-                lifeManager.EndGameByLosing();
+                lifeManager.EndGame();
             }
         }
     }

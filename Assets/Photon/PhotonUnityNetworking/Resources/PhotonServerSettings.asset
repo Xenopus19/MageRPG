@@ -60,6 +60,8 @@ MonoBehaviour:
   - RPC_PickSpell
   - TeleportToSpawnPoint
   - Shoot
+  - WinFirstTeam
+  - WinSecondTeam
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
