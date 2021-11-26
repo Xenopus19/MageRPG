@@ -6396,14 +6396,14 @@ PrefabInstance:
     - target: {fileID: 8474746786232116728, guid: c67045e2da8d63a40b05ab92f7e62f58, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1079546781}
+      objectReference: {fileID: 1623529919}
     - target: {fileID: 8474746786232116728, guid: c67045e2da8d63a40b05ab92f7e62f58, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToMenu
+      value: OnLeftLobby
       objectReference: {fileID: 0}
     - target: {fileID: 8474746786232116728, guid: c67045e2da8d63a40b05ab92f7e62f58, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GoingToMenu, Assembly-CSharp
+      value: LobbyNetwork, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8474746786232116729, guid: c67045e2da8d63a40b05ab92f7e62f58, type: 3}
       propertyPath: m_Pivot.x
@@ -6505,6 +6505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackToMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 8474746788094543505, guid: c67045e2da8d63a40b05ab92f7e62f58, type: 3}
+      propertyPath: m_Name
+      value: MenuText
+      objectReference: {fileID: 0}
     - target: {fileID: 8474746788094543507, guid: c67045e2da8d63a40b05ab92f7e62f58, type: 3}
       propertyPath: m_Text
       value: Menu
@@ -6521,18 +6525,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8474746786232116734, guid: c67045e2da8d63a40b05ab92f7e62f58, type: 3}
   m_PrefabInstance: {fileID: 1079546778}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1079546781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1079546780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f0c53259b35ef04ca182d8ba6d43df5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1079546782
 AudioSource:
   m_ObjectHideFlags: 0
