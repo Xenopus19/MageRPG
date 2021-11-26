@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerHP : Health {
     public float amountOfLifes = 3f;
 
+    [SerializeField] private AudioSource audioSource;
+
     private RoundManager roundManager;
 
     private ColorHp colorHP;

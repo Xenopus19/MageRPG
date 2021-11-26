@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using Photon.Pun;
 
 public class Health : MonoBehaviour
@@ -8,6 +9,8 @@ public class Health : MonoBehaviour
     public float MaxHealth;
 
     public PhotonView photonView;
+
+    public event Action<> OnDamageReceived; 
 
     private void Awake()
     {
