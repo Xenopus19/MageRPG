@@ -25,7 +25,7 @@ public class PlayerHP : Health {
             lifeManager.EndLife();
             if (amountOfLifes == 0)
             {
-                lifeManager.EndGameByLosing();
+                lifeManager.EndGame();
             }
         }
     }
