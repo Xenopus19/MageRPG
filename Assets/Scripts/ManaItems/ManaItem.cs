@@ -7,6 +7,7 @@ public class ManaItem : MonoBehaviour
 {
     [SerializeField] private float ManaToRefill;
     [SerializeField] private float Lifetime;
+    [SerializeField] private AudioSource audioSource;
 
     private float LivedTime;
 

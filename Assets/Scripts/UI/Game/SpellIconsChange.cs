@@ -16,7 +16,7 @@ public class SpellIconsChange : MonoBehaviour
     {
         if (!GetComponent<PhotonView>().IsMine) return;
 
-        IconPanel = GameObject.Find("CurrentSpellPanel");
+        IconPanel = GameObject.Find("CurrentSpellPlane");
         IconPanel.SetActive(false);
         IconImage = IconPanel.GetComponent<Image>();
     }
