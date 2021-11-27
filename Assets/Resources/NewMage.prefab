@@ -1258,6 +1258,7 @@ MonoBehaviour:
   Tornado: {fileID: 3056348367490164487, guid: 6c080b5622f640649a658011663d1e5d, type: 3}
   Frostbolt: {fileID: 7352676846187088993, guid: f48810e3231a4674ea57adb09f61e579, type: 3}
   StoneWall: {fileID: 8286624203043886165, guid: 3a5d1cc4a30977b4da37efbcadb8dd17, type: 3}
+  IceBarrage: {fileID: 5685674506080238444, guid: 5218dcbe9a80a924a866161d1007cc8b, type: 3}
   PlayerCamera: {fileID: 712854308040321455}
   CurrentSpell: {fileID: 0}
 --- !u!114 &-6584478467838854892
