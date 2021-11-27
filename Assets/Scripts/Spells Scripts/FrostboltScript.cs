@@ -6,6 +6,8 @@ public class FrostboltScript : Projectiles
 {
     private void Start()
     {
+        GetAnimator();
+        anim.Play("FireBallAndFrostboltCastAnim");
         IgnoreCollisionWithCaster();
         FlyForward();
     }

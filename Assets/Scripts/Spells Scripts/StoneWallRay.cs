@@ -6,6 +6,8 @@ public class StoneWallRay : RayInstantiateSpell
 {
     private void Start()
     {
+        GetAnimator();
+        anim.Play("StoneWallCastingAnim");
         SpawnStructure(CreateRay());
     }
 }
