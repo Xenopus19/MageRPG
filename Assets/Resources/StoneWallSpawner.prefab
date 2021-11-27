@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8512710709427813260}
   - component: {fileID: 5543644794069150169}
+  - component: {fileID: -6340659324996111010}
   m_Layer: 0
   m_Name: StoneWallSpawner
   m_TagString: Untagged
@@ -49,3 +50,16 @@ MonoBehaviour:
   SpellIcon: {fileID: 21300000, guid: dfad975965baf27458fb1fee8a51be86, type: 3}
   StructureToInstantiate: {fileID: 6288614207729255650, guid: 33dd84cb959b9f14b9836382649703a5, type: 3}
   MaxInstantiateDistance: 30
+--- !u!114 &-6340659324996111010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286624203043886165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ff8619c7e23294b8360dbca97ebfe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lifetime: 1
