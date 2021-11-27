@@ -18,11 +18,6 @@ public class GotDamagePlayerEffect : GotDamageEffect
         CreateUIEffect();
         PlaySound();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-            health.ReceiveDamage(5);
-    }
     private void CreateUIEffect()
     {
         if(photonView.IsMine)
