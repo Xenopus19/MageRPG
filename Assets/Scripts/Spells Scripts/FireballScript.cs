@@ -9,6 +9,8 @@ public class FireballScript : Projectiles
     private void Start()
     {   
         photonView = GetComponent<PhotonView>();
+        GetAnimator();
+        anim.Play("FireBallAndFrostboltCastAnim");
         FlyForward();
         IgnoreCollisionWithCaster();
     }

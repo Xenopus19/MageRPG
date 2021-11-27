@@ -5,7 +5,6 @@ public class RayInstantiateSpell : Spell
 {
     [SerializeField] private GameObject StructureToInstantiate;
     [SerializeField] private float MaxInstantiateDistance;
-
     public void SpawnStructure(Ray ray)
     {
         if(Physics.Raycast(ray, out RaycastHit hit))

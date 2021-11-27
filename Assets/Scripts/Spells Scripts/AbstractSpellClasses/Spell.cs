@@ -10,4 +10,10 @@ public class Spell : MonoBehaviour
     public float ActionAmount;
     public float ManaConsumption;
     public Sprite SpellIcon;
+    public Animator anim;
+
+    public void GetAnimator()
+    {
+        anim = Caster.GetComponent<Animator>();
+    }
 }

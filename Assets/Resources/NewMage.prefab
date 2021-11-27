@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 8903893092853342413}
   - component: {fileID: 5563612510965128621}
   m_Layer: 0
-  m_Name: MageCamera
+  m_Name: NewMageCamera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,6 +1078,7 @@ GameObject:
   - component: {fileID: 7117773000955201570}
   - component: {fileID: 1226905845954351648}
   - component: {fileID: 3523955161344097719}
+  - component: {fileID: -6901316953023894094}
   m_Layer: 0
   m_Name: NewMage
   m_TagString: Untagged
@@ -1254,7 +1255,7 @@ MonoBehaviour:
   Tornado: {fileID: 3056348367490164487, guid: 6c080b5622f640649a658011663d1e5d, type: 3}
   Frostbolt: {fileID: 7352676846187088993, guid: f48810e3231a4674ea57adb09f61e579, type: 3}
   StoneWall: {fileID: 8286624203043886165, guid: 3a5d1cc4a30977b4da37efbcadb8dd17, type: 3}
-  PlayerCamera: {fileID: 884415158717114745, guid: 19177767799561448a7cea47137802b4, type: 3}
+  PlayerCamera: {fileID: 712854308040321455}
   CurrentSpell: {fileID: 0}
 --- !u!114 &-6584478467838854892
 MonoBehaviour:
@@ -1291,6 +1292,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 1226905845954351648}
+  - {fileID: -6901316953023894094}
   - {fileID: 5563612510965128621}
   sceneViewId: 0
   InstantiationId: 0
@@ -1326,6 +1328,30 @@ MonoBehaviour:
   BasicShotPrefab: {fileID: 743849074773497234, guid: 39855066961c40e4ba3cda87b6477778, type: 3}
   ShotCooldown: 1
   PlayerCamera: {fileID: 884415158717114745, guid: 19177767799561448a7cea47137802b4, type: 3}
+--- !u!114 &-6901316953023894094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485778871360351862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: Moving
+  - Type: 4
+    SynchronizeType: 2
+    Name: FireballCasted
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
 --- !u!1 &3555844993184216359
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,7 +19,6 @@ public class PlayerInputController : MonoBehaviour
     private PhotonView photonView;
     private SpellCast spellCast;
     private BasicShot basicShot;
-
     private void Start()
     {
         basicShot = GetComponent<BasicShot>();

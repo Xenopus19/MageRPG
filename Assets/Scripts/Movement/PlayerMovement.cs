@@ -19,9 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     private PhotonView photonView;
 
+    private Animator anim;
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
+        anim = gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -40,6 +42,8 @@ public class PlayerMovement : MonoBehaviour
     public void MovePlayer(float directionX, float directionZ)
     {
         Vector3 move = transform.right * directionX + transform.forward * directionZ;
+        if(directionX == 0 && directionZ == 0) anim.SetBool("Moving", false);
+        else anim.SetBool("Moving", true);
         controller.Move(move * speed * Time.deltaTime);
     }
     public void Jump()
