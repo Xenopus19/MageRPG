@@ -7,12 +7,12 @@ public class BarrageTile : Spell
     private void Start()
     {
         Caster = GetComponentInParent<Spell>().Caster;
-        IgnoreCollisionWithCaster();
+        //IgnoreCollisionWithCaster();
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        DamageTarget(other.transform.gameObject);
+        DamageTarget(collision.transform.gameObject);
+        Debug.LogError(collision.transform.gameObject.name);
         Destroy(gameObject);
     }
 }

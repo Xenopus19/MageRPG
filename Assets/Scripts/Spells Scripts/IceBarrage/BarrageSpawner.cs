@@ -12,7 +12,13 @@ public class BarrageSpawner : MonoBehaviour
     {
         spawnerData = GetComponent<Spell>();
         GameObject iceBarrage = Instantiate(IceBarrageGO);
+        iceBarrage.GetComponent<Spell>().Caster = spawnerData.Caster;
         iceBarrage.transform.SetParent(spawnerData.Caster.transform);
-        iceBarrage.transform.localPosition = Vector3.zero;
+        iceBarrage.transform.localPosition = Vector3.zero + new Vector3(0, 0.3f, 0);
+        for(int i = 0; i<=iceBarrage.transform.childCount-1; i++)
+        {
+            iceBarrage.transform.GetChild(i).GetComponent<Spell>().Caster = spawnerData.Caster;
+        }
+        iceBarrage.SetActive(true);
     }
 }
