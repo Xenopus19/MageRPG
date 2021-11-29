@@ -30,7 +30,10 @@ public class FireballScript : Projectiles
 
     private void CreateExplosion()
     {
-        GameObject effect = Instantiate(ExplosionParticle, gameObject.transform.position, Quaternion.identity);
-        effect.SetActive(true);
+        if(ExplosionParticle!=null)
+        {
+            GameObject effect = Instantiate(ExplosionParticle, gameObject.transform.position, Quaternion.identity);
+            effect.SetActive(true);
+        }
     }
 }
