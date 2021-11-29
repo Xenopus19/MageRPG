@@ -4,6 +4,8 @@ using UnityEngine;
 using Photon.Pun;
 public class FireballScript : Projectiles
 {
+    [SerializeField] private GameObject ExplosionParticle;
+
     private PhotonView photonView;
 
     private void Start()
@@ -22,6 +24,13 @@ public class FireballScript : Projectiles
         {
             DamageTarget(Target);
         }
+        CreateExplosion();
         Destroy(gameObject);
+    }
+
+    private void CreateExplosion()
+    {
+        GameObject effect = Instantiate(ExplosionParticle, gameObject.transform.position, Quaternion.identity);
+        effect.SetActive(true);
     }
 }
