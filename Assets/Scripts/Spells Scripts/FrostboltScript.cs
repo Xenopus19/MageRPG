@@ -20,25 +20,35 @@ public class FrostboltScript : Projectiles
         GameObject Target = collision.gameObject;
         Debug.LogWarning(Target.name);
 
-        if (Target.GetComponent<Health>() != null)
+        if(GetTargetHealth(Target)!=null)
         {
-            Target.GetComponent<Health>().ReceiveDamage(ActionAmount);
+            GetTargetHealth(Target).ReceiveDamage(ActionAmount);
             Destroy(gameObject);
-        }
-        else if (Target.GetComponentInChildren<Health>() != null)
-        {
-            Target.GetComponentInChildren<Health>().ReceiveDamage(ActionAmount);
-            Destroy(gameObject);
-        }
-        else if (Target.GetComponentInParent<Health>() != null)
-        {
-            Target.GetComponentInParent<Health>().ReceiveDamage(ActionAmount);
             ApplyMovementDebuff(Target);
-            Destroy(gameObject);
         }
         else
         {
             Destroy(gameObject);
+        }
+    }
+
+    public Health GetTargetHealth(GameObject Target)
+    {
+        if (Target.GetComponent<Health>() != null)
+        {
+            return Target.GetComponent<Health>();
+        }
+        else if (Target.GetComponentInChildren<Health>() != null)
+        {
+            return Target.GetComponentInChildren<Health>();
+        }
+        else if (Target.GetComponentInParent<Health>() != null)
+        {
+            return Target.GetComponentInParent<Health>();
+        }
+        else
+        {
+            return null;
         }
     }
 
@@ -51,13 +61,13 @@ public class FrostboltScript : Projectiles
             Debuff.DebuffTime = DebuffDuration;
             Debuff.SpeedToDecrease = 6;
         }
-        ApplySlowingEffect();
+        ApplySlowingEffect(Target);
     }
 
-    private void ApplySlowingEffect()
+    private void ApplySlowingEffect(GameObject Target)
     {
-        GameObject effect = Instantiate(SlowingEffect, Caster.transform);
-        effect.transform.position = Vector3.zero;
+        GameObject effect = Instantiate(SlowingEffect, Target.transform);
+        effect.transform.localPosition = Vector3.zero + new Vector3(0, 1, 0);
         effect.GetComponent<DestroyOverTime>().Lifetime = DebuffDuration;
     }
 

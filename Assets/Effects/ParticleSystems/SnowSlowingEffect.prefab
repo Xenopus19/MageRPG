@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 471020799546724222}
   - component: {fileID: 471020799564989756}
   - component: {fileID: 471020799566488476}
+  - component: {fileID: -6218780185029425313}
   m_Layer: 0
   m_Name: SnowSlowingEffect
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 471020799546434790}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 37.50755, y: 14.51, z: 23.43}
-  m_LocalScale: {x: 0.33324, y: 0.33324, z: 0.33324}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.05}
   m_Children:
   - {fileID: 471020799546643210}
   m_Father: {fileID: 0}
@@ -4793,6 +4794,19 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-6218780185029425313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471020799546434790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ff8619c7e23294b8360dbca97ebfe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lifetime: 5
 --- !u!1 &471020799546440866
 GameObject:
   m_ObjectHideFlags: 0
