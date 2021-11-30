@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FrostboltScript : Projectiles
 {
+    [SerializeField] private GameObject SlowingEffect;
+    [SerializeField] private float DebuffDuration;
+
     private void Start()
     {
         GetAnimator();
@@ -45,9 +48,17 @@ public class FrostboltScript : Projectiles
         if (Target.GetComponentInParent<PlayerMovement>()!=null)
         {
             DecreaseSpeed Debuff = TargetParent.AddComponent<DecreaseSpeed>();
-            Debuff.DebuffTime = 10f;
+            Debuff.DebuffTime = DebuffDuration;
             Debuff.SpeedToDecrease = 6;
         }
+        ApplySlowingEffect();
+    }
+
+    private void ApplySlowingEffect()
+    {
+        GameObject effect = Instantiate(SlowingEffect, Caster.transform);
+        effect.transform.position = Vector3.zero;
+        effect.GetComponent<DestroyOverTime>().Lifetime = DebuffDuration;
     }
 
 }
