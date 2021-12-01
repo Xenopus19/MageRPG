@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BarrageTile : Spell
 {
+    [SerializeField] LayerMask groundMask;
     private void Start()
     {
         Caster = GetComponentInParent<Spell>().Caster;
@@ -12,7 +13,6 @@ public class BarrageTile : Spell
     private void OnCollisionEnter(Collision collision)
     {
         DamageTarget(collision.transform.gameObject);
-        Debug.LogError(collision.transform.gameObject.name);
         Destroy(gameObject);
     }
 }

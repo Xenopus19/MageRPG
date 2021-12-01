@@ -16,7 +16,7 @@ TagManager:
   - player
   - Water
   - UI
-  - FireLayer
+  - IgnoreGround
   - Spell
   - InvisibleWalls
   - dummy
