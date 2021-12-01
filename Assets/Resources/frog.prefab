@@ -155,7 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ManaToRefill: 30
-  audioSource: {fileID: 0}
+  SFXAudio: {fileID: 8300000, guid: 7298cdd19e7244a4f9a880e0058b5c8c, type: 3}
+  EffectGO: {fileID: 7587097764356830660, guid: 7b80c0c1192a8f346a10ebbf683e7f82, type: 3}
 --- !u!114 &-6237856705201582512
 MonoBehaviour:
   m_ObjectHideFlags: 0
