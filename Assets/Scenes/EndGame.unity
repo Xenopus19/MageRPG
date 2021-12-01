@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 288330164}
   - component: {fileID: 288330163}
   - component: {fileID: 288330162}
-  - component: {fileID: 288330161}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -163,18 +162,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000043869, y: -115.30963}
   m_SizeDelta: {x: 207.1075, y: 65.1389}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &288330161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288330159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f0c53259b35ef04ca182d8ba6d43df5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &288330162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +206,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 288330161}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GoingToMenu, Assembly-CSharp
         m_MethodName: GoToMenu
         m_Mode: 1
@@ -348,6 +335,7 @@ GameObject:
   - component: {fileID: 497627994}
   - component: {fileID: 497627993}
   - component: {fileID: 497627997}
+  - component: {fileID: 497627998}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -449,6 +437,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af90b2aa0acf5b469081ba6e772b6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &497627998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497627992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35033282279102841a9b73bba98ee717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &614775147
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +542,6 @@ GameObject:
   - component: {fileID: 637049122}
   - component: {fileID: 637049121}
   - component: {fileID: 637049120}
-  - component: {fileID: 637049119}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -570,18 +569,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.0012989, y: -22}
   m_SizeDelta: {x: 207.11, y: 65.1388}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &637049119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637049117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9422178549abc47919fb4c60b613d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &637049120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,8 +613,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 637049119}
-        m_TargetAssemblyTypeName: StartingGame, Assembly-CSharp
+      - m_Target: {fileID: 497627998}
+        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:

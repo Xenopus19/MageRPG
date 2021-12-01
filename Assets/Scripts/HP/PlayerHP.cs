@@ -4,7 +4,9 @@ using UnityEngine;
 public class PlayerHP : Health {
     public float amountOfLifes = 3f;
 
-    private RoundManager roundManager;
+    [SerializeField] private AudioSource audioSource;
+
+    private LifeManager lifeManager;
 
     private ColorHp colorHP;
     
@@ -13,8 +15,8 @@ public class PlayerHP : Health {
         if (photonView.IsMine) {
             colorHP = GameObject.Find("PanelForHP").GetComponent<ColorHp>();
             colorHP.Init(gameObject);
-            roundManager = GameObject.Find("RoundManager").GetComponent<RoundManager>();
-            roundManager.Init(gameObject);
+            lifeManager = GameObject.Find("LifeManager").GetComponent<LifeManager>();
+            lifeManager.Init(gameObject);
         }
     }
 
@@ -22,10 +24,10 @@ public class PlayerHP : Health {
         amountOfLifes--;
         if(photonView.IsMine)
         {
-            roundManager.EndRound();
+            lifeManager.EndLife();
             if (amountOfLifes == 0)
             {
-                roundManager.EndGameByLosing();
+                lifeManager.EndGame();
             }
         }
     }

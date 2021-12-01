@@ -6,9 +6,10 @@ using Photon.Pun;
 public class ManaItem : MonoBehaviour
 {
     [SerializeField] private float ManaToRefill;
-    [SerializeField] private float Lifetime;
 
-    private float LivedTime;
+    [SerializeField] private AudioSource audioSource;
+
+
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -19,8 +20,6 @@ public class ManaItem : MonoBehaviour
 
     private void Update()
     {
-        LivedTime += Time.deltaTime;
-        if (LivedTime >= Lifetime)
-            Destroy(gameObject);
+
     }
 }

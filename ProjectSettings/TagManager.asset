@@ -8,6 +8,7 @@ TagManager:
   - dummy
   - Dummy
   - IconPanel
+  - EffectsCanvas
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - InvisibleWalls
   - dummy
   - Ground
-  - 
+  - PostProcessing
   - 
   - 
   - 

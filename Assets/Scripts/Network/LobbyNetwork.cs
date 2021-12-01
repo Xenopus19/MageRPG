@@ -63,7 +63,16 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         PhotonNetwork.LoadLevel("NetworkLobby");
     }
 
+    public void LeaveLobby() {
+        PhotonNetwork.LeaveLobby();
+    }
+
+    public override void OnLeftLobby() {
+        PhotonNetwork.LoadLevel("Menu");
+    }
+
     public void LoadLevel() {
+        PhotonNetwork.CurrentRoom.IsVisible = false;
         PhotonNetwork.LoadLevel("Arena2");
     }
 

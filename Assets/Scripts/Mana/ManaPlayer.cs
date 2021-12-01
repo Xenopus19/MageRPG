@@ -53,4 +53,8 @@ public class ManaPlayer : MonoBehaviour
         if(photonView.IsMine)
         ManaText.ChangeManaText(manaPlayer);
     }
+
+    public void DestroyToAvoidExceptions() {
+        Destroy(this);
+    }
 }

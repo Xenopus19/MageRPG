@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -218,7 +218,6 @@ GameObject:
   - component: {fileID: 47039507}
   - component: {fileID: 47039506}
   - component: {fileID: 47039505}
-  - component: {fileID: 47039504}
   m_Layer: 5
   m_Name: GoBackToMenu
   m_TagString: Untagged
@@ -245,18 +244,6 @@ RectTransform:
   m_AnchoredPosition: {x: -884, y: 472}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &47039504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 47039502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f0c53259b35ef04ca182d8ba6d43df5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &47039505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,8 +288,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 47039504}
-        m_TargetAssemblyTypeName: GoingToMenu, Assembly-CSharp
+      - m_Target: {fileID: 443723853}
+        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
         m_MethodName: GoToMenu
         m_Mode: 1
         m_Arguments:
@@ -647,6 +634,7 @@ GameObject:
   - component: {fileID: 443723851}
   - component: {fileID: 443723850}
   - component: {fileID: 443723849}
+  - component: {fileID: 443723853}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -738,6 +726,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &443723853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443723848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35033282279102841a9b73bba98ee717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &485718053
 PrefabInstance:
   m_ObjectHideFlags: 0
