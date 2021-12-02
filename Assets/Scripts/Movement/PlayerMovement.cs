@@ -42,10 +42,9 @@ public class PlayerMovement : MonoBehaviour
     public void MovePlayer(float directionX, float directionZ)
     {
         Vector3 move = transform.right * directionX + transform.forward * directionZ;
-        if (anim == null)
-            Debug.Log("sdfsdf");
-        if(directionX == 0 && directionZ == 0) anim.SetBool("Moving", false);
-        else anim.SetBool("Moving", true);
+        if(anim != null && directionX == 0 && directionZ == 0) {
+            anim.SetBool("Moving", false);
+        } else anim.SetBool("Moving", true);
         controller.Move(move * speed * Time.deltaTime);
     }
     public void Jump()

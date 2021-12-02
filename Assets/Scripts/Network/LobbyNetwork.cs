@@ -12,6 +12,8 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public GameObject joiningRoom;
     private JoiningRoomText joiningRoomText;
+
+    public GameObject LoadingPanel;
     private void Start()
     {
         playerName = PhotonNetwork.NickName;
@@ -73,6 +75,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public void LoadLevel() {
         PhotonNetwork.CurrentRoom.IsVisible = false;
+        LoadingPanel.SetActive(true);
         PhotonNetwork.LoadLevel("Arena2");
     }
 
