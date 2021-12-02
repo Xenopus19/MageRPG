@@ -5,7 +5,6 @@ using UnityEngine;
 public class Projectiles : Spell
 {
     [SerializeField] float Force;
-    public GameObject EffectOnColiding;
     public void FlyForward()
     {
         Ray ray = new Ray();

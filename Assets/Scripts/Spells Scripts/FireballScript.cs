@@ -17,16 +17,11 @@ public class FireballScript : Projectiles
     private void OnCollisionEnter(Collision collision)
     {
         GameObject Target = collision.gameObject;
-        ExplosionEffect(gameObject);
         //Debug.LogWarning(Target.name);
         if (PhotonNetwork.IsMasterClient)
         {
             DamageTarget(Target);
         }
         Destroy(gameObject);
-    }
-    private void ExplosionEffect(GameObject Firebal)
-    {
-        GameObject Explosion = Instantiate(EffectOnColiding, Firebal.transform.position ,Quaternion.identity);
     }
 }

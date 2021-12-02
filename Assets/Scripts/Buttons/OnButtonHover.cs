@@ -6,23 +6,20 @@ using Photon.Pun;
 public class OnButtonHover : MonoBehaviour
 {
     public int AmountToAdd;
-    public GameObject[] Icons;
-    [SerializeField] private GameObject Canvas;
-    public GameObject spawn;
-    public List<float> CurrentCode;
 
-    public SpellCast spellCast; 
+    public SpellCodeVisualisation SpellCodeVisualisation;
 
+    public SpellCast spellCast;
+    private void Start()
+    {
+        if (!GetComponent<PhotonView>().IsMine) return;
+        SpellCodeVisualisation = GetComponent<SpellCodeVisualisation>();
+    }
     public void ifHoveredOn()
     {
         spellCast.SpellCode *= 10;
-        CodeRefresh(AmountToAdd);
+        SpellCodeVisualisation.CodeRefresh(AmountToAdd);
         spellCast.SpellCode += AmountToAdd;
         print(spellCast.SpellCode);
-    }
-    public void CodeRefresh(int CurrentNewElement)
-    {
-        CurrentCode.Add(CurrentNewElement);
-        Instantiate(Icons[CurrentNewElement], spawn.transform.position, Quaternion.identity, Canvas.transform);
     }
 }
