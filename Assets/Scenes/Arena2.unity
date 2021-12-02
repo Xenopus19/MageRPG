@@ -4363,6 +4363,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 9.299988
       objectReference: {fileID: 0}
+    - target: {fileID: 1734348284445085714, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: spawn
+      value: 
+      objectReference: {fileID: 4474251495000287431}
+    - target: {fileID: 1734348284445085714, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 5363498931658712691}
+    - target: {fileID: 1734348284445085714, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: Icons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1734348284445085714, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: Icons.Array.data[0]
+      value: 
+      objectReference: {fileID: 4474251495000287433}
+    - target: {fileID: 1734348284445085714, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+      propertyPath: Icons.Array.data[1]
+      value: 
+      objectReference: {fileID: 4474251495000287432}
     - target: {fileID: 1734348284501729852, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -5474,6 +5494,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &4474251495000287431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8399941878878177410, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+  m_PrefabInstance: {fileID: 4474251495000287422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4474251495000287432 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1604273569304656489, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+  m_PrefabInstance: {fileID: 4474251495000287422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4474251495000287433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7798322600564621817, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
+  m_PrefabInstance: {fileID: 4474251495000287422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5363498931658712691 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8392816187715931853, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
