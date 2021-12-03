@@ -75,7 +75,7 @@ public class SpellCast : MonoBehaviour
     public void StartCasting()
     {
         SpellCode = 0;
-        SpellCodeVisualisation.OnCastVisualisation();
+        //SpellCodeVisualisation.OnCastVisualisation();
         if (CurrentSpell != null)
         {
             CastSpell();
