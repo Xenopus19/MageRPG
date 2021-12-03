@@ -12,7 +12,8 @@ public class OnButtonHover : MonoBehaviour
     public void ifHoveredOn()
     {
         //spellCast.SpellCode *= 10;
-        spellCast.SpellCode = spellCast.SpellCode + AmountToAdd.ToString();
+        if(!spellCast.SpellCode.EndsWith(AmountToAdd.ToString()))
+        spellCast.SpellCode += AmountToAdd.ToString();
         Debug.Log(spellCast.SpellCode);
     }
 }

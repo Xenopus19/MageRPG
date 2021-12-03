@@ -42,7 +42,7 @@ public class SpellCast : MonoBehaviour
 
         iconsChange = GetComponent<SpellIconsChange>();
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
-        SpellCode = "0";
+        SpellCode = "";
     }
     private void Update()
     {
@@ -72,7 +72,7 @@ public class SpellCast : MonoBehaviour
     }
     public void StartCasting()
     {
-        SpellCode = "0";
+        SpellCode = "";
         if (CurrentSpell != null)
             CastSpell();
         iconsChange.DisableIconPanel();
