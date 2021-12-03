@@ -14,18 +14,16 @@ public class SpellCodeVisualisation : MonoBehaviour
     {
         CurrentCode.Add(CurrentNewElement);
         Vector3 StatePosition = spawn.transform.position - new Vector3(0, CurrentCode.Count * 50, 0);
-        GameObject CreatedElements = Instantiate(Icons[CurrentNewElement - 1], StatePosition, Quaternion.identity, Canvas.transform);
-        CodeElements.Add(CreatedElements);
+        GameObject CurentCreatedElement = Instantiate(Icons[CurrentNewElement - 1], StatePosition, Quaternion.identity, Canvas.transform);
+        CodeElements.Add(CurentCreatedElement);
     }
-    public void OnCast()
+    public void OnCastVisualisation()
     {
-        CurrentCode.Clear();
-        for (int i = CodeElements.Count; i > 0; i--)
+        for (int a = 0; a < CodeElements.Count; a++)
         {
-            GameObject Element = CodeElements[i];
-            Destroy(Element);
-            CodeElements.Clear();
+            Destroy(CodeElements[a]);
         }
+        CodeElements.Clear();
+        CurrentCode.Clear();
     }
 }
-

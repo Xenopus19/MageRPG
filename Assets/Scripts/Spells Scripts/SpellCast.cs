@@ -21,7 +21,7 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject PlayerCamera;
 
     private ManaPlayer manaPlayer;
-    private SpellCodeVisualisation SpellCodeVisualisation;
+    public SpellCodeVisualisation SpellCodeVisualisation;
     private SpellIconsChange iconsChange;
     private PhotonView photonView;
 
@@ -42,9 +42,9 @@ public class SpellCast : MonoBehaviour
         photonView = GetComponent<PhotonView>();
 
         iconsChange = GetComponent<SpellIconsChange>();
-        SpellCodeVisualisation = GetComponent<SpellCodeVisualisation>();
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
         SpellCode = 0;
+        SpellCodeVisualisation = gameObject.GetComponent<SpellCodeVisualisation>();
     }
     private void Update()
     {
@@ -75,10 +75,10 @@ public class SpellCast : MonoBehaviour
     public void StartCasting()
     {
         SpellCode = 0;
+        SpellCodeVisualisation.OnCastVisualisation();
         if (CurrentSpell != null)
         {
             CastSpell();
-            SpellCodeVisualisation.OnCast();
         }
         iconsChange.DisableIconPanel();
     }
