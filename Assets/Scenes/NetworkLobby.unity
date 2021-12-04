@@ -2907,6 +2907,7 @@ MonoBehaviour:
   playerAmountTextCR: {fileID: 1670792615}
   playerAmountTextJR: {fileID: 1653941695}
   joiningRoom: {fileID: 1890268851}
+  LoadingPanel: {fileID: 1047740454}
 --- !u!4 &1623529920
 Transform:
   m_ObjectHideFlags: 0

@@ -6,8 +6,8 @@ using Photon.Pun;
 public class ManaItem : MonoBehaviour
 {
     [SerializeField] private float ManaToRefill;
-
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip SFXAudio;
+    [SerializeField] private GameObject EffectGO;
 
 
 
@@ -15,11 +15,15 @@ public class ManaItem : MonoBehaviour
     {
         Debug.Log(collider.gameObject.name);
         collider.gameObject.GetComponent<ManaPlayer>()?.RefillMana(ManaToRefill);
+        CreatePickedSound();
         Destroy(gameObject);
     }
 
-    private void Update()
+    private void CreatePickedSound()
     {
+        GameObject SFX = Instantiate(EffectGO, gameObject.transform.position, Quaternion.identity);
 
+        SFX.GetComponent<AudioSource>().clip = SFXAudio;
+        SFX.SetActive(true);
     }
 }

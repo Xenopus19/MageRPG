@@ -34,7 +34,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.46}
-  m_Children: []
+  m_Children:
+  - {fileID: 357818018786034370}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -103,7 +104,10 @@ MonoBehaviour:
   ActionAmount: 10
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 523e84463dc564c4a8acf46bc2a50042, type: 3}
+  anim: {fileID: 0}
   Force: 2500
+  SlowingEffect: {fileID: 471020799546434790, guid: 5d513f182166a15419f1d0c1efcff1e7, type: 3}
+  DebuffDuration: 10
 --- !u!136 &-2083660283796328775
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -269,3 +273,79 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!1001 &357818018786433092
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8329886477355273684}
+    m_Modifications:
+    - target: {fileID: 100006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_Name
+      value: FrostboltParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400002, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+    - {fileID: 114000013218167218, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+--- !u!4 &357818018786034370 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400006, guid: f1fca55934f274a4b9c8fd316d61e964, type: 3}
+  m_PrefabInstance: {fileID: 357818018786433092}
+  m_PrefabAsset: {fileID: 0}

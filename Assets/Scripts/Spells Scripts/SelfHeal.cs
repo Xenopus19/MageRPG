@@ -6,6 +6,7 @@ public class SelfHeal : Spell
 {
     private void Start()
     {
+        gameObject.transform.SetParent(Caster.transform);
         GetAnimator();
         anim.Play("HealCastAnim");
         Health CasterHealth = Caster.GetComponentInChildren<Health>();
