@@ -1213,18 +1213,18 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.09411765, g: 0.7137255, b: 0.53333336, a: 0}
-        key1: {r: 0.007843138, g: 0.25882354, b: 0.11372549, a: 0.5058824}
-        key2: {r: 0.22352941, g: 0.45490196, b: 0, a: 1}
-        key3: {r: 0.29803923, g: 0, b: 0, a: 0.49019608}
+        key0: {r: 0.09411764, g: 0.47223097, b: 0.7137255, a: 0}
+        key1: {r: 0.09019607, g: 0.69411767, b: 0.68216723, a: 0.5058824}
+        key2: {r: 0.00784313, g: 0.15629381, b: 0.25882354, a: 1}
+        key3: {r: 0.00784313, g: 0.17405199, b: 0.25882354, a: 0.49019608}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 17155
-        ctime1: 41827
-        ctime2: 42405
-        ctime3: 65535
+        ctime1: 18119
+        ctime2: 41827
+        ctime3: 42791
         ctime4: 0
         ctime5: 0
         ctime6: 0
@@ -1238,7 +1238,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 4
         m_NumAlphaKeys: 5
       minGradient:
         serializedVersion: 2
@@ -5885,8 +5885,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.047058824, g: 0.77254903, b: 0.3529412, a: 0}
-        key1: {r: 0.22352941, g: 0.45490196, b: 0, a: 0.5058824}
+        key0: {r: 0.047058806, g: 0.77254903, b: 0.7650608, a: 0}
+        key1: {r: 0, g: 0.17810678, b: 0.2830189, a: 0.5058824}
         key2: {r: 0.22352941, g: 0.45490196, b: 0, a: 1}
         key3: {r: 0.29803923, g: 0, b: 0, a: 0.49019608}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -10539,8 +10539,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.105882354, g: 0.3254902, b: 0, a: 0}
-        key1: {r: 0.023529412, g: 0.23529412, b: 0.06666667, a: 1}
+        key0: {r: 0, g: 0.31519014, b: 0.3254902, a: 0}
+        key1: {r: 0.023529403, g: 0.16223322, b: 0.23529412, a: 1}
         key2: {r: 0.023529412, g: 0.30980393, b: 0.05882353, a: 0.49019608}
         key3: {r: 0.29803923, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -14010,7 +14010,7 @@ GameObject:
   - component: {fileID: 11400002}
   - component: {fileID: 114000013218167218}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: FrostboltParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

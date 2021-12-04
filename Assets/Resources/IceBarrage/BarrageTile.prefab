@@ -38,6 +38,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 357818018786336482, guid: f48810e3231a4674ea57adb09f61e579, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1423675463014317385, guid: f48810e3231a4674ea57adb09f61e579, type: 3}
       propertyPath: rolloffMode
       value: 1
