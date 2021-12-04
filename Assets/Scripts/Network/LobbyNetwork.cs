@@ -89,6 +89,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public void LoadLevel() 
     {
         PhotonNetwork.CurrentRoom.IsVisible = false;
+        LoadingPlane.SetActive(true);
         PhotonNetwork.LoadLevel("Arena3");
     }
 
