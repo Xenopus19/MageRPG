@@ -5,6 +5,7 @@ public class LifeManager : MonoBehaviour {
     private GameObject Player;
     private PlayerHP playerHP;
     private ManaPlayer manaPlayer;
+    private PlayerHPText playerHPText;
 
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject endGameUI;
@@ -22,11 +23,13 @@ public class LifeManager : MonoBehaviour {
         Player = player;
         playerHP = Player.GetComponent<PlayerHP>();
         manaPlayer = Player.GetComponent<ManaPlayer>();
+        playerHPText = Player.GetComponent<PlayerHPText>();
     }
 
     public void EndLife() {
         Debug.LogWarning("EndLife");
         playerHP.CurrentHealth = playerHP.MaxHealth;
+        playerHPText.ChangeHealthText();
         TeleportToSpawnPoint();
     }
 
