@@ -8,8 +8,8 @@ using Photon.Pun;
 
 public class SpellCast : MonoBehaviour
 {
-    public Dictionary<int, GameObject> Spells = new Dictionary<int, GameObject>();
-    public int SpellCode;
+    public Dictionary<string, GameObject> Spells = new Dictionary<string, GameObject>();
+    public string SpellCode;
 
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject HealSpell;
@@ -28,12 +28,12 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject CurrentSpell;
     private void Awake()
     {
-        Spells.Add(12, FireBall);
-        Spells.Add(175, HealSpell);
+        Spells.Add("12", FireBall);
+        Spells.Add("175", HealSpell);
         //Spells.Add(412589, Tornado);
-        Spells.Add(43, Frostbolt);
-        Spells.Add(8576, StoneWall);
-        Spells.Add(34, IceBarrage);
+        Spells.Add("43", Frostbolt);
+        Spells.Add("8576", StoneWall);
+        Spells.Add("34", IceBarrage);
     }    
 
     private void Start()
@@ -42,7 +42,7 @@ public class SpellCast : MonoBehaviour
 
         iconsChange = GetComponent<SpellIconsChange>();
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
-        SpellCode = 0;
+        SpellCode = "";
     }
     private void Update()
     {
@@ -55,7 +55,7 @@ public class SpellCast : MonoBehaviour
         photonView.RPC("PickSpell", RpcTarget.All, SpellCode);
     }
     [PunRPC]
-    private void PickSpell(int SpellCode)
+    private void PickSpell(string SpellCode)
     {
         if (Spells.ContainsKey(SpellCode))
         {
@@ -72,7 +72,7 @@ public class SpellCast : MonoBehaviour
     }
     public void StartCasting()
     {
-        SpellCode = 0;
+        SpellCode = "";
         if (CurrentSpell != null)
             CastSpell();
         iconsChange.DisableIconPanel();

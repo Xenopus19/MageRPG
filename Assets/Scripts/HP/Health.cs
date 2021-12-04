@@ -35,6 +35,7 @@ public class Health : MonoBehaviour
         {
             Die();
         }
+        if(OnDamageReceived!=null)
         OnDamageReceived();
     }
 

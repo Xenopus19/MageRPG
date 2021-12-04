@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class JoiningRoom : MonoBehaviour
@@ -8,18 +7,26 @@ public class JoiningRoom : MonoBehaviour
     public GameObject lobbyNetworkManager;
     private LobbyNetwork lobbyNetwork;
 
-    private void Init() {
+    private void Init() 
+    {
         lobbyNetwork = lobbyNetworkManager.GetComponent<LobbyNetwork>();
     }
 
-    public void CreateJoinRoomPanel() {
+    public void CreateJoinRoomPanel() 
+    {
         Init();
         lobbyNetwork.JoinRoom();
         gameObject.SetActive(true);
         roomButtons.SetActive(false);
     }
 
-    public void Cancel() {
-        lobbyNetwork.LeaveRoom();
+    public void Cancel() 
+    {
+        if(PhotonNetwork.CurrentRoom!=null)
+        {
+            lobbyNetwork.LeaveRoom();
+        }
+        roomButtons.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
