@@ -10,13 +10,22 @@ public class BarrageTile : Spell
     private void Start()
     {
         Caster = GetComponentInParent<Spell>().Caster;
-        //IgnoreCollisionWithCaster();
+        IgnoreCollisionWithCaster();
     }
     private void OnCollisionEnter(Collision collision)
     {
-        DamageTarget(collision.transform.gameObject);
-        CreateDestroyEffects();
-        Destroy(gameObject);
+        GameObject Target = collision.gameObject;
+        if (Target.GetComponent<Spell>()?.Caster == Caster)
+        {
+            Physics.IgnoreCollision(Target.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+            return;
+        }
+        else
+        {
+            DamageTarget(collision.transform.gameObject);
+            CreateDestroyEffects();
+            Destroy(gameObject);
+        }
     }
 
     private void CreateDestroyEffects()

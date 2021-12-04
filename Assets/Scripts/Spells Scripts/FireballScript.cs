@@ -19,13 +19,22 @@ public class FireballScript : Projectiles
     private void OnCollisionEnter(Collision collision)
     {
         GameObject Target = collision.gameObject;
-        //Debug.LogWarning(Target.name);
-        if(PhotonNetwork.IsMasterClient)
+        if (Target.GetComponent<Spell>()?.Caster == Caster)
         {
-            DamageTarget(Target);
+            Physics.IgnoreCollision(Target.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+            return;
         }
-        CreateExplosion();
-        Destroy(gameObject);
+        else
+        {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                DamageTarget(Target);
+            }
+            CreateExplosion();
+            Destroy(gameObject);
+        }
+        
+        //Debug.LogWarning(Target.name);
     }
 
     private void CreateExplosion()

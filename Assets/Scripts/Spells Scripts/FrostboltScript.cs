@@ -32,25 +32,7 @@ public class FrostboltScript : Projectiles
         }
     }
 
-    public Health GetTargetHealth(GameObject Target)
-    {
-        if (Target.GetComponent<Health>() != null)
-        {
-            return Target.GetComponent<Health>();
-        }
-        else if (Target.GetComponentInChildren<Health>() != null)
-        {
-            return Target.GetComponentInChildren<Health>();
-        }
-        else if (Target.GetComponentInParent<Health>() != null)
-        {
-            return Target.GetComponentInParent<Health>();
-        }
-        else
-        {
-            return null;
-        }
-    }
+    
 
     private void ApplyMovementDebuff(GameObject Target)
     {
