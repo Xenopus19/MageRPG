@@ -25,6 +25,7 @@ public class LifeManager : MonoBehaviour {
     }
 
     public void EndLife() {
+        Debug.LogWarning("EndLife");
         playerHP.CurrentHealth = playerHP.MaxHealth;
         TeleportToSpawnPoint();
     }
@@ -35,6 +36,7 @@ public class LifeManager : MonoBehaviour {
     }
 
     public void EndGame() {
+        Debug.LogWarning("EndGame");
         if (!gameNetwork.IsFirstTeam) {
             photonView.RPC("WinFirstTeam", RpcTarget.All);
         } else {

@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d165a9d8529c8e94ea53b045b67398d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 350
+  mouseSensitivity: 100
   playerBody: {fileID: 4257073481814815948}
 --- !u!114 &6659411336831233
 MonoBehaviour:
@@ -1117,7 +1117,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3485778871360351862}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 33a1190094793414bbe079b33bdec1b7, type: 3}
   m_Controller: {fileID: 9100000, guid: 198753d7329289a42a78f5a4b61b2df1, type: 2}
   m_CullingMode: 1
