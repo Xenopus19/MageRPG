@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class FrostboltScript : Projectiles
 {
-    [SerializeField] private GameObject SlowingEffect;
-    [SerializeField] private float DebuffDuration;
+    [SerializeField] private GameObject SlowingParticle;
+
+    [SerializeField] private float DebuffTime;
+    [SerializeField] private float DebuffValue;
+
+    private Buff Debuff;
 
     private void Start()
     {
+        Debuff = new Buff(DebuffTime, DebuffValue);
         GetAnimator();
         anim.Play("FireBallAndFrostboltCastAnim");
         IgnoreCollisionWithCaster();
@@ -37,20 +42,20 @@ public class FrostboltScript : Projectiles
     private void ApplyMovementDebuff(GameObject Target)
     {
         GameObject TargetParent = Target.transform.parent.gameObject;
-        if (Target.GetComponentInParent<PlayerMovement>()!=null)
+        PlayerMovement targetMovement = Target.GetComponent<PlayerMovement>();
+        if (targetMovement!=null)
         {
-            DecreaseSpeed Debuff = TargetParent.AddComponent<DecreaseSpeed>();
-            Debuff.DebuffTime = DebuffDuration;
-            Debuff.SpeedToDecrease = 6;
+            Debug.LogWarning("MovementDetected");
+            targetMovement.AddBuff(Debuff);
         }
-        ApplySlowingEffect(Target);
+        ApplySlowingParticle(Target);
     }
 
-    private void ApplySlowingEffect(GameObject Target)
+    private void ApplySlowingParticle(GameObject Target)
     {
-        GameObject effect = Instantiate(SlowingEffect, Target.transform);
+        GameObject effect = Instantiate(SlowingParticle, Target.transform);
         effect.transform.localPosition = Vector3.zero + new Vector3(0, 1, 0);
-        effect.GetComponent<DestroyOverTime>().Lifetime = DebuffDuration;
+        effect.GetComponent<DestroyOverTime>().Lifetime = Debuff.Time;
     }
 
 }

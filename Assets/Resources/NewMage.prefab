@@ -1117,7 +1117,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3485778871360351862}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 33a1190094793414bbe079b33bdec1b7, type: 3}
   m_Controller: {fileID: 9100000, guid: 198753d7329289a42a78f5a4b61b2df1, type: 2}
   m_CullingMode: 1
@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7347813271592866453}
   groundCheck: {fileID: 2532898369298504665}
-  speed: 8
+  baseSpeed: 12
   gravity: -20
   jumpHeigh: 2
   groundDistance: 0.4

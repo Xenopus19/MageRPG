@@ -101,13 +101,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Caster: {fileID: 0}
-  ActionAmount: 10
+  ActionAmount: 15
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 523e84463dc564c4a8acf46bc2a50042, type: 3}
   anim: {fileID: 0}
   Force: 2500
-  SlowingEffect: {fileID: 471020799546434790, guid: 5d513f182166a15419f1d0c1efcff1e7, type: 3}
-  DebuffDuration: 10
+  SlowingParticle: {fileID: 471020799546434790, guid: 5d513f182166a15419f1d0c1efcff1e7, type: 3}
+  DebuffTime: 10
+  DebuffValue: 6
 --- !u!136 &-2083660283796328775
 CapsuleCollider:
   m_ObjectHideFlags: 0
