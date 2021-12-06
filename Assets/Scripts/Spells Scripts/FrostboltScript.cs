@@ -23,7 +23,7 @@ public class FrostboltScript : Projectiles
     private void OnCollisionEnter(Collision collision)
     {
         GameObject Target = collision.gameObject;
-        Debug.LogWarning(Target.name);
+        Debug.LogError(Target.name);
 
         if(GetTargetHealth(Target)!=null)
         {
@@ -41,9 +41,7 @@ public class FrostboltScript : Projectiles
 
     private void ApplyMovementDebuff(GameObject Target)
     {
-        GameObject TargetParent = Target.transform.parent.gameObject;
-        Debug.LogError(TargetParent.name);
-        PlayerMovement targetMovement = TargetParent.GetComponent<PlayerMovement>();
+        PlayerMovement targetMovement = Target.GetComponent<PlayerMovement>();
         if (targetMovement!=null)
         {
             Debug.LogError("MovementDetected");
@@ -55,7 +53,7 @@ public class FrostboltScript : Projectiles
     private void ApplySlowingParticle(GameObject Target)
     {
         GameObject effect = Instantiate(SlowingParticle, Target.transform);
-        effect.transform.localPosition = Vector3.zero + new Vector3(0, 1, 0);
+        effect.transform.localPosition = Vector3.zero + new Vector3(0, 2, 0);
         effect.GetComponent<DestroyOverTime>().Lifetime = Debuff.Time;
     }
 
