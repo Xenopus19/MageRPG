@@ -46,12 +46,15 @@ public class PlayerMovement : MonoBehaviour
 
     public void AddBuff(Buff buff)
     {
+        Debug.LogError("Debuff added.");
         buffs.Add(buff);
+        StartCoroutine("DeleteBuffAfterTime", buff);
     }
 
-    IEnumerator DeleteBuff(Buff buffToDelete)
+    IEnumerator DeleteBuffAfterTime(Buff buffToDelete)
     {
         yield return new WaitForSeconds(buffToDelete.Time);
+
         buffs.Remove(buffToDelete);
     }
     private void OnDisable()

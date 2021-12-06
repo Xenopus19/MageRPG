@@ -27,9 +27,9 @@ public class FrostboltScript : Projectiles
 
         if(GetTargetHealth(Target)!=null)
         {
-            GetTargetHealth(Target).ReceiveDamage(ActionAmount);
-            Destroy(gameObject);
+            DamageTarget(Target);
             ApplyMovementDebuff(Target);
+            Destroy(gameObject);
         }
         else
         {
@@ -42,10 +42,11 @@ public class FrostboltScript : Projectiles
     private void ApplyMovementDebuff(GameObject Target)
     {
         GameObject TargetParent = Target.transform.parent.gameObject;
-        PlayerMovement targetMovement = Target.GetComponent<PlayerMovement>();
+        Debug.LogError(TargetParent.name);
+        PlayerMovement targetMovement = TargetParent.GetComponent<PlayerMovement>();
         if (targetMovement!=null)
         {
-            Debug.LogWarning("MovementDetected");
+            Debug.LogError("MovementDetected");
             targetMovement.AddBuff(Debuff);
         }
         ApplySlowingParticle(Target);
