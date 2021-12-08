@@ -17,20 +17,30 @@ public class Spell : MonoBehaviour
         anim = Caster.GetComponent<Animator>();
     }
 
-    public void DamageTarget(GameObject Target)
+    public Health GetTargetHealth(GameObject Target)
     {
         if (Target.GetComponent<Health>() != null)
         {
-            Target.GetComponent<Health>().ReceiveDamage(ActionAmount);
+            return Target.GetComponent<Health>();
         }
-        else if (Target.GetComponentInChildren<Health>() != null && Target.transform.parent.gameObject != Caster)
+        else if (Target.GetComponentInChildren<Health>() != null)
         {
-            Target.GetComponentInChildren<Health>().ReceiveDamage(ActionAmount);
+            return Target.GetComponentInChildren<Health>();
         }
-        else if (Target.GetComponentInParent<Health>() != null && Target.transform.parent.gameObject != Caster)
+        else if (Target.GetComponentInParent<Health>() != null)
         {
-            Target.GetComponentInParent<Health>().ReceiveDamage(ActionAmount);
+            return Target.GetComponentInParent<Health>();
         }
+        else
+        {
+            return null;
+        }
+    }
+
+    public void DamageTarget(GameObject Target)
+    {
+        if(GetTargetHealth(Target)!=null && GetTargetHealth(Target)!=GetTargetHealth(Caster))
+        GetTargetHealth(Target).ReceiveDamage(ActionAmount);
     }
 
     public void IgnoreCollisionWithCaster()
@@ -52,6 +62,15 @@ public class Spell : MonoBehaviour
         }
 
         TurnOnCollider();
+    }
+
+    public void IgnoreCollisionWithSameCasterSpell(GameObject Target)
+    {
+        if (Target.GetComponent<Spell>()?.Caster == Caster)
+        {
+            Physics.IgnoreCollision(Target.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+            return;
+        }
     }
 
     public virtual void TurnOnCollider()
