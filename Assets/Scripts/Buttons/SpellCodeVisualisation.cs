@@ -17,7 +17,7 @@ public class SpellCodeVisualisation : MonoBehaviour
         GameObject CurentCreatedElement = Instantiate(Icons[CurrentNewElement - 1], StatePosition, Quaternion.identity, Canvas.transform);
         CodeElements.Add(CurentCreatedElement);
     }
-    public void OnCastVisualisation()
+    public void OnCastVisualisation ()
     {
         for (int a = 0; a < CodeElements.Count; a++)
         {
