@@ -7,6 +7,7 @@ public class Projectiles : Spell
     [Header("On Collision Effects")]
     [SerializeField] private AudioClip OnCollisionSound;
     [SerializeField] public GameObject OnCollisionParticle;
+    [SerializeField] GameObject GODestroySFX;
 
 
     [SerializeField] float Force;
@@ -47,12 +48,8 @@ public class Projectiles : Spell
 
     private void PlayExplosionSound()
     {
-        AudioSource audio = GetComponent<AudioSource>();
-        Debug.LogError("Sound played");
-        if(audio!=null)
-        {
-            audio.clip = OnCollisionSound;
-            audio.Play();
-        }
+        GameObject SFXObject = Instantiate(GODestroySFX, gameObject.transform.position, Quaternion.identity);
+        SFXObject.GetComponent<AudioSource>().clip = OnCollisionSound;
+        SFXObject.SetActive(true);
     }
 }

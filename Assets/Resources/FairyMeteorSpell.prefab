@@ -4912,6 +4912,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   OnCollisionSound: {fileID: 8300000, guid: 6f4c349891a491449bae3e0c4d19de99, type: 3}
   OnCollisionParticle: {fileID: 100004, guid: 33384af7b24a0f14cb7bbf3b795f7a2b, type: 3}
+  GODestroySFX: {fileID: 7587097764356830660, guid: 7b80c0c1192a8f346a10ebbf683e7f82, type: 3}
   Force: 2000
 --- !u!114 &7823447282206474850
 MonoBehaviour:
