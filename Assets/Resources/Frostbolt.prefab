@@ -105,6 +105,8 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 523e84463dc564c4a8acf46bc2a50042, type: 3}
   anim: {fileID: 0}
+  OnCollisionSound: {fileID: 8300000, guid: 5561c4f9bdadf174ca1f1ab41473e02b, type: 3}
+  OnCollisionParticle: {fileID: 198276, guid: 1720f2c1867206149a7c64de30295781, type: 3}
   Force: 2500
   SlowingParticle: {fileID: 471020799546434790, guid: 5d513f182166a15419f1d0c1efcff1e7, type: 3}
   DebuffTime: 10

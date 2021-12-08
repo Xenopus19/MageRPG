@@ -6,6 +6,8 @@ public class FrostboltScript : Projectiles
 {
     [SerializeField] private GameObject SlowingParticle;
 
+    [Header("Defuff Settings")]
+
     [SerializeField] private float DebuffTime;
     [SerializeField] private float DebuffValue;
 
@@ -24,6 +26,7 @@ public class FrostboltScript : Projectiles
     {
         GameObject Target = collision.gameObject;
         Debug.LogError(Target.name);
+        CreateCollisionEffects();
 
         if(GetTargetHealth(Target)!=null)
         {

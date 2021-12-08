@@ -24242,8 +24242,9 @@ MonoBehaviour:
   ManaConsumption: 20
   SpellIcon: {fileID: 21300000, guid: 24869be00c6aaf743a46d3fe253f88a2, type: 3}
   anim: {fileID: 0}
+  OnCollisionSound: {fileID: 8300000, guid: 9bd47279e275744f599128e083469f8d, type: 3}
+  OnCollisionParticle: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
   Force: 3000
-  ExplosionParticle: {fileID: 152120}
 --- !u!82 &2957531840117869144
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24374,7 +24375,8 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 9073630235098510059}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
