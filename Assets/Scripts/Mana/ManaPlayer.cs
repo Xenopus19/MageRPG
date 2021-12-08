@@ -10,8 +10,10 @@ public class ManaPlayer : MonoBehaviour
     private float time = 0f;
     private PhotonView photonView;
     private ColorMana colorMana;
+    private ManaText manaText;
     private void Start()
     {
+        manaText = GetComponent<ManaText>();
         photonView = gameObject.GetComponent<PhotonView>();
         if (photonView.IsMine) {
             colorMana = GameObject.Find("PanelForMana").GetComponent<ColorMana>();
@@ -51,7 +53,7 @@ public class ManaPlayer : MonoBehaviour
     private void ChangeManaText()
     {
         if(photonView.IsMine)
-        ManaText.ChangeManaText(manaPlayer);
+        manaText.ChangeManaText(manaPlayer);
     }
 
     public void DestroyToAvoidExceptions() {

@@ -1110,8 +1110,8 @@ GameObject:
   - component: {fileID: 1226905845954351648}
   - component: {fileID: 3523955161344097719}
   - component: {fileID: -6901316953023894094}
-  - component: {fileID: -6513724308497281910}
   - component: {fileID: 5386795164424029937}
+  - component: {fileID: -6513724308497281910}
   m_Layer: 0
   m_Name: NewMage
   m_TagString: Untagged
@@ -1296,6 +1296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444e751ee3e8f142a4640ed89ccbf5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PercentLeftToDisplayIcons: 0
 --- !u!114 &1655343511269407535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1418,6 +1419,24 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0
+--- !u!114 &5386795164424029937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485778871360351862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fd2d965469b1c46a4e87390c2e9e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackRadius: 2
+  MaxDamage: 7
+  MinDamage: 3
+  Cooldown: 3
+  Particle: {fileID: 100008, guid: f3613b78354895b469b7da1f0a90e686, type: 3}
+  DamageCircleCenter: {fileID: 1635305129066679095}
 --- !u!82 &-6513724308497281910
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1514,24 +1533,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &5386795164424029937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3485778871360351862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46fd2d965469b1c46a4e87390c2e9e0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackRadius: 2
-  MaxDamage: 7
-  MinDamage: 3
-  Cooldown: 3
-  Particle: {fileID: 100008, guid: f3613b78354895b469b7da1f0a90e686, type: 3}
-  DamageCircleCenter: {fileID: 1635305129066679095}
 --- !u!1 &3555844993184216359
 GameObject:
   m_ObjectHideFlags: 0
