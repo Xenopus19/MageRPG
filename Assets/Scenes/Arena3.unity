@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 1024
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 6d2e5ba9eb2105d4097ad7652e1eee1e, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -6693,6 +6693,9 @@ MonoBehaviour:
   - {fileID: 176701195}
   - {fileID: 176701194}
   SpawnPosition: {fileID: 0}
+  LifesForFirstTeam: 0
+  LifesForSecondTeam: 0
+  AmountOfLosses: 0
 --- !u!4 &1591645412
 Transform:
   m_ObjectHideFlags: 0
