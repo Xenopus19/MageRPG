@@ -21,9 +21,9 @@ public class PlayerHP : Health {
     }
 
     public override void Die() {
-        amountOfLifes--;
         if(photonView.IsMine)
         {
+            amountOfLifes--;
             lifeManager.EndLife();
             if (amountOfLifes == 0)
             {

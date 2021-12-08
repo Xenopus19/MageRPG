@@ -7,19 +7,13 @@ public class OnButtonHover : MonoBehaviour
 {
     public int AmountToAdd;
 
-    public SpellCodeVisualisation SpellCodeVisualisation;
-
     public SpellCast spellCast;
-    private void Start()
-    {
-        if (!GetComponent<PhotonView>().IsMine) return;
-        SpellCodeVisualisation = GetComponent<SpellCodeVisualisation>();
-    }
+
     public void ifHoveredOn()
     {
-        spellCast.SpellCode *= 10;
-        SpellCodeVisualisation.CodeRefresh(AmountToAdd);
-        spellCast.SpellCode += AmountToAdd;
-        print(spellCast.SpellCode);
+        //spellCast.SpellCode *= 10;
+        if(!spellCast.SpellCode.EndsWith(AmountToAdd.ToString()))
+        spellCast.SpellCode += AmountToAdd.ToString();
+        Debug.Log(spellCast.SpellCode);
     }
 }

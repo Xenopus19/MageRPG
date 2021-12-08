@@ -4,6 +4,8 @@ using UnityEngine;
 using Photon.Pun;
 public class FireballScript : Projectiles
 {
+    [SerializeField] private GameObject ExplosionParticle;
+
     private PhotonView photonView;
 
     private void Start()
@@ -17,11 +19,30 @@ public class FireballScript : Projectiles
     private void OnCollisionEnter(Collision collision)
     {
         GameObject Target = collision.gameObject;
-        //Debug.LogWarning(Target.name);
-        if (PhotonNetwork.IsMasterClient)
+        if (Target.GetComponent<Spell>()?.Caster == Caster)
         {
-            DamageTarget(Target);
+            Physics.IgnoreCollision(Target.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
+            return;
         }
-        Destroy(gameObject);
+        else
+        {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                DamageTarget(Target);
+            }
+            CreateExplosion();
+            Destroy(gameObject);
+        }
+        
+        //Debug.LogWarning(Target.name);
+    }
+
+    private void CreateExplosion()
+    {
+        if(ExplosionParticle!=null)
+        {
+            GameObject effect = Instantiate(ExplosionParticle, gameObject.transform.position, Quaternion.identity);
+            effect.SetActive(true);
+        }
     }
 }

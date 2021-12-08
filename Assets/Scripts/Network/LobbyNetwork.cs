@@ -12,14 +12,22 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public GameObject joiningRoom;
     private JoiningRoomText joiningRoomText;
+    private GameObject LoadingPlane;
     private void Start()
     {
         playerName = PhotonNetwork.NickName;
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = "1";
 
-        if (!PhotonNetwork.IsConnected) {
+        LoadingPlane = GameObject.Find("LoadingPanel");
+
+        if (!PhotonNetwork.IsConnected) 
+        {
             PhotonNetwork.ConnectUsingSettings();
+        }
+        else
+        {
+            LoadingPlane.SetActive(false);
         }
 
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
@@ -28,7 +36,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to master.");
-        GameObject.Find("LoadingPanel").SetActive(false);
+        LoadingPlane.SetActive(false);
     }
 
     public void AddNickName(string name) 
@@ -37,15 +45,18 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         Debug.Log("Player is " + PhotonNetwork.NickName);
     }
 
-    public void CreateRoom(string nameOfRoom) {
+    public void CreateRoom(string nameOfRoom) 
+    {
         PhotonNetwork.CreateRoom(nameOfRoom, new Photon.Realtime.RoomOptions { MaxPlayers = 6 });
     }
 
-    public void JoinRoom() {
+    public void JoinRoom() 
+    {
         PhotonNetwork.JoinRandomRoom();
     }
 
-    public override void OnJoinedRoom() {
+    public override void OnJoinedRoom() 
+    {
         Debug.Log("Joined the room");
         if (!PhotonNetwork.IsMasterClient) {
             joiningRoomText.WriteRoomName(PhotonNetwork.CurrentRoom?.Name.ToString());
@@ -55,28 +66,35 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         }
     }
 
-    public void LeaveRoom() {
+    public void LeaveRoom() 
+    {
         PhotonNetwork.LeaveRoom();
     } 
     
-    public override void OnLeftRoom() {
+    public override void OnLeftRoom() 
+    {
         PhotonNetwork.LoadLevel("NetworkLobby");
     }
 
-    public void LeaveLobby() {
+    public void LeaveLobby() 
+    {
         PhotonNetwork.LeaveLobby();
     }
 
-    public override void OnLeftLobby() {
+    public override void OnLeftLobby() 
+    {
         PhotonNetwork.LoadLevel("Menu");
     }
 
-    public void LoadLevel() {
+    public void LoadLevel() 
+    {
         PhotonNetwork.CurrentRoom.IsVisible = false;
-        PhotonNetwork.LoadLevel("Arena2");
+        LoadingPlane.SetActive(true);
+        PhotonNetwork.LoadLevel("Arena3");
     }
 
-    private void Update() {
+    private void Update() 
+    {
         playerAmountText?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
         if (PhotonNetwork.CurrentRoom?.PlayerCount == PhotonNetwork.CurrentRoom?.MaxPlayers && PhotonNetwork.CurrentRoom != null) {
             LoadLevel();
@@ -84,15 +102,15 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         }
     }
 
-    //public void CreateRoom()
-    //{
-    //    PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
-    //}
+    /*public void CreateRoom()     NANI?
+    {
+        PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
+    }
 
-    //public override void OnJoinedRoom() 
-    //{
-    //    Debug.Log("Joined the room.");
+    public override void OnJoinedRoom() 
+    {
+        Debug.Log("Joined the room.");
 
-    //    PhotonNetwork.LoadLevel("Arena2");
-    //}
+        PhotonNetwork.LoadLevel("Arena2");
+    }*/
 }
