@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float GetCurrentSpeed(float speed)
     {
+        if (buffs == null) return speed;
         foreach(Buff buff in buffs)
         {
             speed += buff.Value;

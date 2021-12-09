@@ -4,18 +4,20 @@ using UnityEngine;
 public class ManaText : MonoBehaviour
 {
     [SerializeField] private float PercentLeftToDisplayIcons;
+    
 
     private float UpperValueToDisplayIcons;
 
     private GameObject ManaBar;
-    private GameObject LittleManaIcons;
+    private GameObject LowManaIcons;
+
 
     private void Start()
     {
         UpperValueToDisplayIcons = Percent(GetComponent<ManaPlayer>().MaxMana, PercentLeftToDisplayIcons);
 
         ManaBar = GameObject.Find("ManaText");
-        LittleManaIcons = GameObject.Find("LittleManaIcons");
+        LowManaIcons = GameObject.Find("LowManaBar");
     }
 
     public void ChangeManaText(float manaPlayer) 
@@ -33,13 +35,11 @@ public class ManaText : MonoBehaviour
     {
         if (manaPlayer <= UpperValueToDisplayIcons)
         {
-            Debug.LogError("Icons are active.");
-            LittleManaIcons?.SetActive(true);
+            LowManaIcons?.SetActive(true);
         }
         else
         {
-            Debug.LogError("Icons disabled.");
-            LittleManaIcons?.SetActive(false);
+            LowManaIcons?.SetActive(false);
         }
     }
 }

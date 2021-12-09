@@ -1296,7 +1296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444e751ee3e8f142a4640ed89ccbf5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PercentLeftToDisplayIcons: 0
+  PercentLeftToDisplayIcons: 25
 --- !u!114 &1655343511269407535
 MonoBehaviour:
   m_ObjectHideFlags: 0
