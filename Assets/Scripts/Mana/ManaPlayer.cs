@@ -16,7 +16,7 @@ public class ManaPlayer : MonoBehaviour
         photonView = GetComponent<PhotonView>();
         manaText = GetComponent<ManaText>();
         photonView = gameObject.GetComponent<PhotonView>();
-        if (true) 
+        if (photonView.IsMine) 
         {
             colorMana = GameObject.Find("PanelForMana").GetComponent<ColorMana>();
             colorMana.Init(gameObject);

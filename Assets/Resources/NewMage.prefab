@@ -1106,12 +1106,12 @@ GameObject:
   - component: {fileID: 8985282694595273510}
   - component: {fileID: 1655343511269407535}
   - component: {fileID: -6584478467838854892}
-  - component: {fileID: 7117773000955201570}
   - component: {fileID: 1226905845954351648}
   - component: {fileID: 3523955161344097719}
   - component: {fileID: -6901316953023894094}
   - component: {fileID: 5386795164424029937}
   - component: {fileID: -6513724308497281910}
+  - component: {fileID: 2738286793084531421}
   m_Layer: 0
   m_Name: NewMage
   m_TagString: Untagged
@@ -1257,7 +1257,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b4a8ad14385ed974aa2b09ceb5dc7897, type: 3}
   - {fileID: 21300000, guid: b2a570856a08d6947b74049df36d0b18, type: 3}
   - {fileID: 21300000, guid: d7b3d82c3d6e5f44cb0c3b3ed25881cb, type: 3}
-  photonView: {fileID: 7117773000955201570}
+  photonView: {fileID: 0}
 --- !u!114 &-3629093619896889983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,31 +1333,6 @@ MonoBehaviour:
   DefaultImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   IconPanel: {fileID: 0}
   IconImage: {fileID: 0}
---- !u!114 &7117773000955201570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3485778871360351862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 1226905845954351648}
-  - {fileID: -6901316953023894094}
-  - {fileID: 5563612510965128621}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!114 &1226905845954351648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,6 +1508,31 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2738286793084531421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485778871360351862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 1226905845954351648}
+  - {fileID: -6901316953023894094}
+  - {fileID: 5563612510965128621}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &3555844993184216359
 GameObject:
   m_ObjectHideFlags: 0

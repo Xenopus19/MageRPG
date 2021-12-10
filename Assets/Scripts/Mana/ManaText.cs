@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using Photon.Pun;
 [RequireComponent(typeof(ManaPlayer))]
 public class ManaText : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ManaText : MonoBehaviour
     private float UpperValueToDisplayIcons;
 
     private GameObject ManaBar;
+    private PhotonView photonView;
     private GameObject LowManaIcons;
 
 
@@ -16,8 +18,13 @@ public class ManaText : MonoBehaviour
     {
         UpperValueToDisplayIcons = Percent(GetComponent<ManaPlayer>().MaxMana, PercentLeftToDisplayIcons);
 
-        ManaBar = GameObject.Find("ManaText");
-        LowManaIcons = GameObject.Find("LowManaBar");
+        photonView = GetComponent<PhotonView>();
+        if(photonView.IsMine)
+        {
+            ManaBar = GameObject.Find("ManaText");
+            LowManaIcons = GameObject.Find("LowManaBar");
+            LowManaIcons.SetActive(false);
+        } 
     }
 
     public void ChangeManaText(float manaPlayer) 
