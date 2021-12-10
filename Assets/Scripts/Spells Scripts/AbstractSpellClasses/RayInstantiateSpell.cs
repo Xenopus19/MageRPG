@@ -5,15 +5,17 @@ public class RayInstantiateSpell : Spell
 {
     [SerializeField] private GameObject StructureToInstantiate;
     [SerializeField] private float MaxInstantiateDistance;
-    public void SpawnStructure(Ray ray)
+    public GameObject SpawnStructure(Ray ray)
     {
         if(Physics.Raycast(ray, out RaycastHit hit))
         {
             if (hit.collider.gameObject.layer == 10 && PhotonNetwork.IsMasterClient)
             {
                 GameObject NewStructure = PhotonNetwork.Instantiate(StructureToInstantiate.name, hit.point, Caster.transform.rotation);
+                return NewStructure;
             }
         }
+        return null;
     }
     public Ray CreateRay()
     {
