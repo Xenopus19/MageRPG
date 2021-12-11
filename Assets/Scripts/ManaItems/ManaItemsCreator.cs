@@ -18,12 +18,12 @@ public class ManaItemsCreator : MonoBehaviour
 
     private void CreateManaItem()
     {
-        Vector3 Pos = new Vector3(Random.Range(28, 43), 0.5f, Random.Range(13, 44));
+        Vector3 Pos = new Vector3(Random.Range(-28, 62), 45f, Random.Range(-19, 82));
         photonView.RPC("RPC_CreateManaItem", RpcTarget.All, Pos.x, Pos.z);
     }
     [PunRPC]
     public void RPC_CreateManaItem(float x, float z)
     {
-        GameObject NewItem = Instantiate(ManaItem, new Vector3(x, 0.5f, z), Quaternion.identity);
+        GameObject NewItem = Instantiate(ManaItem, new Vector3(x, 45f, z), Quaternion.identity);
     }
 }

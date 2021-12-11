@@ -12,14 +12,18 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     public bool IsFirstTeam { get; private set; }
     void Start()
     {
-        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
-            if (PhotonNetwork.PlayerList[i].NickName == PhotonNetwork.NickName) {
+        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) 
+        {
+            if (PhotonNetwork.PlayerList[i].NickName == PhotonNetwork.NickName) 
+            {
                 SpawnPosition = SpawnPositions[i].transform;
                 IsFirstTeam = i % 2 == 0;
                 break;
             }
         }
         GameObject Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
+        PhotonNetwork.LocalPlayer.TagObject = Player;
+        Player.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
         Player.name += PhotonNetwork.CountOfPlayers.ToString();
     }
 
