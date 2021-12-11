@@ -7,6 +7,7 @@ public class PlayerHP : Health {
     [SerializeField] private AudioSource audioSource;
 
     private LifeManager lifeManager;
+    private PlayerInputController inputController;
 
     private ColorHp colorHP;
     
@@ -18,6 +19,7 @@ public class PlayerHP : Health {
             colorHP.Init(gameObject);
             lifeManager = GameObject.Find("LifeManager").GetComponent<LifeManager>();
             lifeManager.Init(gameObject);
+            inputController = GetComponent<PlayerInputController>();
         }
     }
 
@@ -28,7 +30,8 @@ public class PlayerHP : Health {
             lifeManager.EndLife();
             if (amountOfLifes == 0)
             {
-                lifeManager.EndGame();
+                inputController.IsFreeze = true;
+                lifeManager.EndGameForPlayer();
             }
         }
     }
