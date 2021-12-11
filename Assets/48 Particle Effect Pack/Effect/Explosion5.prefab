@@ -9445,7 +9445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ff8619c7e23294b8360dbca97ebfe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lifetime: 4
+  Lifetime: 1.5
 --- !u!1 &100006
 GameObject:
   m_ObjectHideFlags: 0
