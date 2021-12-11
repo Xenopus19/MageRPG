@@ -995,6 +995,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1832497583}
     m_Modifications:
+    - target: {fileID: 338866998917306263, guid: 8dc9bde489e5fdc4e8d8ebe92eae8f68, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 632
+      objectReference: {fileID: 0}
     - target: {fileID: 561451398798564732, guid: 8dc9bde489e5fdc4e8d8ebe92eae8f68, type: 3}
       propertyPath: m_Name
       value: LowManaBar
@@ -1065,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3352439343671739261, guid: 8dc9bde489e5fdc4e8d8ebe92eae8f68, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -5
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3352439343671739261, guid: 8dc9bde489e5fdc4e8d8ebe92eae8f68, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1102,6 +1106,10 @@ PrefabInstance:
     - target: {fileID: 8356742718322507025, guid: 8dc9bde489e5fdc4e8d8ebe92eae8f68, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8568758085024278096, guid: 8dc9bde489e5fdc4e8d8ebe92eae8f68, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -136
       objectReference: {fileID: 0}
     - target: {fileID: 8809077085081434623, guid: 8dc9bde489e5fdc4e8d8ebe92eae8f68, type: 3}
       propertyPath: m_LocalPosition.z
