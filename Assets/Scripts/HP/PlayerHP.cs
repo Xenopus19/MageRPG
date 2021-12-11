@@ -7,27 +7,31 @@ public class PlayerHP : Health {
     [SerializeField] private AudioSource audioSource;
 
     private LifeManager lifeManager;
+    private PlayerInputController inputController;
 
     private ColorHp colorHP;
     
     void Start() {
         photonView = GetComponent<PhotonView>();
-        if (photonView.IsMine) {
+        if (photonView.IsMine) 
+        {
             colorHP = GameObject.Find("PanelForHP").GetComponent<ColorHp>();
             colorHP.Init(gameObject);
             lifeManager = GameObject.Find("LifeManager").GetComponent<LifeManager>();
             lifeManager.Init(gameObject);
+            inputController = GetComponent<PlayerInputController>();
         }
     }
 
     public override void Die() {
-        amountOfLifes--;
         if(photonView.IsMine)
         {
+            amountOfLifes--;
             lifeManager.EndLife();
             if (amountOfLifes == 0)
             {
-                lifeManager.EndGame();
+                inputController.IsFreeze = true;
+                lifeManager.EndGameForPlayer();
             }
         }
     }

@@ -5,8 +5,6 @@ using Photon.Pun;
 
 public class PlayerInputController : MonoBehaviour
 {
-    [SerializeField] GameObject Stick;
-
     [Space(20f)]
 
     [SerializeField] private KeyCode MeleeAttackButton;
@@ -15,15 +13,17 @@ public class PlayerInputController : MonoBehaviour
     [SerializeField] private KeyCode BasicShotKey;
 
     private PlayerMovement playerMovement;
-    private MeleeAttack melee;
+    private MeleeBlast melee;
     private PhotonView photonView;
     private SpellCast spellCast;
     private BasicShot basicShot;
+
+    public bool IsFreeze = false;
     private void Start()
     {
         basicShot = GetComponent<BasicShot>();
         spellCast = GetComponent<SpellCast>();
-        melee = Stick.GetComponent<MeleeAttack>();
+        melee = GetComponent<MeleeBlast>();
         photonView = GetComponent<PhotonView>();
         playerMovement = GetComponent<PlayerMovement>();
     }
@@ -31,11 +31,13 @@ public class PlayerInputController : MonoBehaviour
     private void Update()
     {
         if (!photonView.IsMine) return;
-
-        GetAndExecuteMovementInput();
-        GetMeleeInput();
-        GetSpellCastInput();
-        GetBasicShotInput();
+        if (!IsFreeze) 
+        {
+            GetAndExecuteMovementInput();
+            GetMeleeInput();
+            GetSpellCastInput();
+            GetBasicShotInput();
+        }
     }
 
     private void GetAndExecuteMovementInput()
@@ -54,7 +56,7 @@ public class PlayerInputController : MonoBehaviour
     {
         if(Input.GetKeyDown(MeleeAttackButton))
         {
-            melee.Attack();
+            melee.DoAttack();
         }
     }
 

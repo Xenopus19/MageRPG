@@ -5,6 +5,7 @@ public class LifeManager : MonoBehaviour {
     private GameObject Player;
     private PlayerHP playerHP;
     private ManaPlayer manaPlayer;
+    private PlayerHPText playerHPText;
 
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject endGameUI;
@@ -22,10 +23,13 @@ public class LifeManager : MonoBehaviour {
         Player = player;
         playerHP = Player.GetComponent<PlayerHP>();
         manaPlayer = Player.GetComponent<ManaPlayer>();
+        playerHPText = Player.GetComponent<PlayerHPText>();
     }
 
     public void EndLife() {
+        Debug.LogWarning("EndLife");
         playerHP.CurrentHealth = playerHP.MaxHealth;
+        playerHPText.ChangeHealthText();
         TeleportToSpawnPoint();
     }
 
@@ -34,7 +38,29 @@ public class LifeManager : MonoBehaviour {
         Player.transform.rotation = spawnPoint.rotation;
     }
 
-    public void EndGame() {
+    public void EndGameForPlayer() {
+        if (gameNetwork.IsFirstTeam) {
+           photonView.RPC("MakeLossForTeam", RpcTarget.All, gameNetwork.IsFirstTeam);
+            if (gameNetwork.AmountOfLosses == gameNetwork.LifesForFirstTeam) {
+                EndGame();
+            }
+        } else {
+           photonView.RPC("MakeLossForTeam", RpcTarget.All, !gameNetwork.IsFirstTeam);
+            if (gameNetwork.AmountOfLosses == gameNetwork.LifesForSecondTeam) {
+                EndGame();
+            }
+        }
+    }
+
+    [PunRPC]
+    public void MakeLossForTeam(bool IsLosingTeam) {
+        if (IsLosingTeam) {
+            gameNetwork.AmountOfLosses++;
+        }
+    }
+
+    private void EndGame() {
+        Debug.LogWarning("EndGame");
         if (!gameNetwork.IsFirstTeam) {
             photonView.RPC("WinFirstTeam", RpcTarget.All);
         } else {

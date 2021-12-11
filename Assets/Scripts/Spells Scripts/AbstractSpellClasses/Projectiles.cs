@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Projectiles : Spell
 {
+    [Header("On Collision Effects")]
+    [SerializeField] private AudioClip OnCollisionSound;
+    [SerializeField] public GameObject OnCollisionParticle;
+    [SerializeField] GameObject GODestroySFX;
+
+
     [SerializeField] float Force;
     public void FlyForward()
     {
@@ -24,7 +30,26 @@ public class Projectiles : Spell
         Rigidbody SpellPhysics = gameObject.GetComponent<Rigidbody>();
         SpellPhysics.AddForce(ray.direction * Force);
     }
-    
 
-    
+    public void CreateCollisionEffects()
+    {
+        MakeExplosion();
+        PlayExplosionSound();
+    }
+
+    private void MakeExplosion()
+    {
+        if (OnCollisionParticle != null)
+        {
+            GameObject effect = Instantiate(OnCollisionParticle, gameObject.transform.position, Quaternion.identity);
+            effect.SetActive(true);
+        }
+    }
+
+    private void PlayExplosionSound()
+    {
+        GameObject SFXObject = Instantiate(GODestroySFX, gameObject.transform.position, Quaternion.identity);
+        SFXObject.GetComponent<AudioSource>().clip = OnCollisionSound;
+        SFXObject.SetActive(true);
+    }
 }
