@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d165a9d8529c8e94ea53b045b67398d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 100
+  mouseSensitivity: 350
   playerBody: {fileID: 4257073481814815948}
 --- !u!114 &6659411336831233
 MonoBehaviour:
@@ -1025,36 +1025,6 @@ Transform:
   m_Father: {fileID: 1755282581673782330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3463149519019729355
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1635305129066679095}
-  m_Layer: 0
-  m_Name: MeleeBlastCenter
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1635305129066679095
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3463149519019729355}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.585, z: 0.632}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4257073481814815948}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3469859268583824504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1106,12 +1076,12 @@ GameObject:
   - component: {fileID: 8985282694595273510}
   - component: {fileID: 1655343511269407535}
   - component: {fileID: -6584478467838854892}
+  - component: {fileID: 7117773000955201570}
   - component: {fileID: 1226905845954351648}
   - component: {fileID: 3523955161344097719}
   - component: {fileID: -6901316953023894094}
-  - component: {fileID: 5386795164424029937}
   - component: {fileID: -6513724308497281910}
-  - component: {fileID: 2738286793084531421}
+  - component: {fileID: -2989279056210912017}
   m_Layer: 0
   m_Name: NewMage
   m_TagString: Untagged
@@ -1137,7 +1107,6 @@ Transform:
   - {fileID: 3464061315358083156}
   - {fileID: 2532898369298504665}
   - {fileID: 106771302036630208}
-  - {fileID: 1635305129066679095}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1149,7 +1118,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3485778871360351862}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 33a1190094793414bbe079b33bdec1b7, type: 3}
   m_Controller: {fileID: 9100000, guid: 198753d7329289a42a78f5a4b61b2df1, type: 2}
   m_CullingMode: 1
@@ -1190,11 +1159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4860ce600db866478deef3715cc9943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MeleeAttackButton: 114
+  Stick: {fileID: 7149068218929521571, guid: 19177767799561448a7cea47137802b4, type: 3}
+  MeleeAttackButton: 102
   SpellCastButton: 0
   JumpKey: 32
   BasicShotKey: 103
-  IsFreeze: 0
 --- !u!114 &8356878512950559632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1209,7 +1178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7347813271592866453}
   groundCheck: {fileID: 2532898369298504665}
-  baseSpeed: 12
+  speed: 8
   gravity: -20
   jumpHeigh: 2
   groundDistance: 0.4
@@ -1252,13 +1221,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b4c4aef7e70c4024294e5adf1c87ea33, type: 3}
   - {fileID: 8300000, guid: 5a1289162db07e744a1412446f1ec10b, type: 3}
   - {fileID: 8300000, guid: 19ce0afc76bd8164895841cd2596fa11, type: 3}
-  ParticleEffect: {fileID: 6072973331698664435, guid: c8b9a16be4cf7d748b041e8893f57da4, type: 3}
+  ParticleEffect: {fileID: 104342, guid: dda25b5983c0161428703721417513c6, type: 3}
   UIEffectGO: {fileID: 8252640809519931997, guid: 43f5934d098679641b47edf9bbf99ed0, type: 3}
   Splashes:
   - {fileID: 21300000, guid: b4a8ad14385ed974aa2b09ceb5dc7897, type: 3}
   - {fileID: 21300000, guid: b2a570856a08d6947b74049df36d0b18, type: 3}
   - {fileID: 21300000, guid: d7b3d82c3d6e5f44cb0c3b3ed25881cb, type: 3}
-  photonView: {fileID: 0}
+  photonView: {fileID: 7117773000955201570}
 --- !u!114 &-3629093619896889983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,7 +1266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444e751ee3e8f142a4640ed89ccbf5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PercentLeftToDisplayIcons: 25
 --- !u!114 &1655343511269407535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1317,7 +1285,6 @@ MonoBehaviour:
   Frostbolt: {fileID: 7352676846187088993, guid: f48810e3231a4674ea57adb09f61e579, type: 3}
   StoneWall: {fileID: 8286624203043886165, guid: 3a5d1cc4a30977b4da37efbcadb8dd17, type: 3}
   IceBarrage: {fileID: 5685674506080238444, guid: 5218dcbe9a80a924a866161d1007cc8b, type: 3}
-  StaticField: {fileID: 2027796423206249555, guid: a55e3f0da87ab344681d0894fa04878d, type: 3}
   PlayerCamera: {fileID: 712854308040321455}
   CurrentSpell: {fileID: 0}
 --- !u!114 &-6584478467838854892
@@ -1335,6 +1302,31 @@ MonoBehaviour:
   DefaultImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   IconPanel: {fileID: 0}
   IconImage: {fileID: 0}
+--- !u!114 &7117773000955201570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485778871360351862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 1226905845954351648}
+  - {fileID: -6901316953023894094}
+  - {fileID: 5563612510965128621}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!114 &1226905845954351648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,24 +1388,6 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0
---- !u!114 &5386795164424029937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3485778871360351862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46fd2d965469b1c46a4e87390c2e9e0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttackRadius: 2
-  MaxDamage: 7
-  MinDamage: 3
-  Cooldown: 3
-  Particle: {fileID: 100008, guid: f3613b78354895b469b7da1f0a90e686, type: 3}
-  DamageCircleCenter: {fileID: 1635305129066679095}
 --- !u!82 &-6513724308497281910
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1510,7 +1484,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2738286793084531421
+--- !u!114 &-2989279056210912017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1519,22 +1493,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3485778871360351862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Script: {fileID: 11500000, guid: 87d6bede8e076ad408fb22ded5808321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 1226905845954351648}
-  - {fileID: -6901316953023894094}
-  - {fileID: 5563612510965128621}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
+  TextPrefab: {fileID: 1468205292910114168, guid: be0289802f33ad24d82573bafffef552, type: 3}
+  DistanceBetweenTextAndObject: 3
+  InFirstTeam: 0
 --- !u!1 &3555844993184216359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,6 +2306,7 @@ GameObject:
   - component: {fileID: 106771302036630208}
   - component: {fileID: 1470251334419714768}
   - component: {fileID: 6709877228385106880}
+  - component: {fileID: 4838570798104654631}
   - component: {fileID: 290838906144410421}
   - component: {fileID: 6940322169777811444}
   m_Layer: 0
@@ -2414,6 +2379,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4838570798104654631
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374525089076809013}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &290838906144410421
 AudioSource:
   m_ObjectHideFlags: 0
