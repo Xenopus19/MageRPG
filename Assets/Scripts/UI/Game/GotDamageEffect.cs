@@ -5,7 +5,7 @@ using UnityEngine;
 public class GotDamageEffect : MonoBehaviour
 {
     public Health health;
-    public AudioSource audio;
+    public AudioSource audioSourse;
 
     [SerializeField] private AudioClip[] DamageSoundVariations;
     [SerializeField] private GameObject ParticleEffect;
@@ -13,6 +13,7 @@ public class GotDamageEffect : MonoBehaviour
     void Start()
     {
         health.OnDamageReceived += FrontendEffects;
+        
     }
 
     public virtual void FrontendEffects()
@@ -27,7 +28,7 @@ public class GotDamageEffect : MonoBehaviour
     }
     public void PlaySound()
     {
-        audio.clip = DamageSoundVariations[Random.Range(0, DamageSoundVariations.Length-1)];
-        audio.Play();
+        audioSourse.clip = DamageSoundVariations[Random.Range(0, DamageSoundVariations.Length-1)];
+        audioSourse.Play();
     }
 }

@@ -9,7 +9,7 @@ public class GotDamagePlayerEffect : GotDamageEffect
 
     private void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioSourse = GetComponent<AudioSource>();
         health.OnDamageReceived += FrontendEffects;
         photonView = GetComponent<PhotonView>();
     }
