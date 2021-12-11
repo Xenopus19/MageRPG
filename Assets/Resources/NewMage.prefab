@@ -1082,6 +1082,7 @@ GameObject:
   - component: {fileID: -6901316953023894094}
   - component: {fileID: -6513724308497281910}
   - component: {fileID: -2989279056210912017}
+  - component: {fileID: 4106095845039119705}
   m_Layer: 0
   m_Name: NewMage
   m_TagString: Untagged
@@ -1501,6 +1502,18 @@ MonoBehaviour:
   TextPrefab: {fileID: 1468205292910114168, guid: be0289802f33ad24d82573bafffef552, type: 3}
   DistanceBetweenTextAndObject: 3
   InFirstTeam: 0
+--- !u!122 &4106095845039119705
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485778871360351862}
+  m_Enabled: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190335
+  m_Size: 2
 --- !u!1 &3555844993184216359
 GameObject:
   m_ObjectHideFlags: 0
