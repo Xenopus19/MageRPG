@@ -28,7 +28,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks
             }
         }
         GameObject Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
-        Player.name += PhotonNetwork.CountOfPlayers.ToString();
+        Player.name += SpawnPosition.name;
     }
 
     public void LeaveRoom()
