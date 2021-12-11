@@ -1,6 +1,5 @@
 using UnityEngine;
 using Photon.Pun;
-using System;
 
 public class LobbyNetwork : MonoBehaviourPunCallbacks
 {
@@ -47,7 +46,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public void CreateRoom(string nameOfRoom) 
     {
-        PhotonNetwork.CreateRoom(nameOfRoom, new Photon.Realtime.RoomOptions { MaxPlayers = 6 });
+        PhotonNetwork.CreateRoom(nameOfRoom, new Photon.Realtime.RoomOptions { MaxPlayers = 7 });
     }
 
     public void JoinRoom() 
@@ -96,21 +95,5 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     private void Update() 
     {
         playerAmountText?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
-        if (PhotonNetwork.CurrentRoom?.PlayerCount == PhotonNetwork.CurrentRoom?.MaxPlayers && PhotonNetwork.CurrentRoom != null) {
-            LoadLevel();
-            Destroy(gameObject);
-        }
     }
-
-    /*public void CreateRoom()     NANI?
-    {
-        PhotonNetwork.CreateRoom(null, new Photon.Realtime.RoomOptions {MaxPlayers = 2 });
-    }
-
-    public override void OnJoinedRoom() 
-    {
-        Debug.Log("Joined the room.");
-
-        PhotonNetwork.LoadLevel("Arena2");
-    }*/
 }

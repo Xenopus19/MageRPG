@@ -6868,6 +6868,9 @@ MonoBehaviour:
   - {fileID: 176701195}
   - {fileID: 176701194}
   SpawnPosition: {fileID: 0}
+  LifesForFirstTeam: 0
+  LifesForSecondTeam: 0
+  AmountOfLosses: 0
 --- !u!4 &1591645412
 Transform:
   m_ObjectHideFlags: 0

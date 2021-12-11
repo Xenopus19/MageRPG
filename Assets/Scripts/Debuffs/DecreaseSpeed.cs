@@ -14,8 +14,8 @@ public class DecreaseSpeed : MonoBehaviour
     private void Start()
     {
         movement = gameObject.GetComponent<PlayerMovement>();
-        OriginalSpeed = movement.speed;
-        movement.speed -= SpeedToDecrease;
+        OriginalSpeed = movement.baseSpeed;
+        movement.baseSpeed -= SpeedToDecrease;
     }
 
     private void Update()
@@ -23,7 +23,7 @@ public class DecreaseSpeed : MonoBehaviour
         LivedTime += Time.deltaTime;
         if (LivedTime >= DebuffTime)
         {
-            movement.speed = OriginalSpeed;
+            movement.baseSpeed = OriginalSpeed;
             Destroy(this);
         }            
     }

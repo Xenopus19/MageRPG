@@ -20,7 +20,7 @@ public class GotDamagePlayerEffect : GotDamageEffect
     }
     private void CreateUIEffect()
     {
-        if(photonView.IsMine)
+        //if(photonView.IsMine)
         {
             GameObject canvas = GameObject.FindWithTag("EffectsCanvas");
             GameObject effect = Instantiate(UIEffectGO);
