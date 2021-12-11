@@ -46,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void AddBuff(Buff buff)
     {
-        Debug.LogError("Debuff added.");
         buffs.Add(buff);
         StartCoroutine("DeleteBuffAfterTime", buff);
     }
