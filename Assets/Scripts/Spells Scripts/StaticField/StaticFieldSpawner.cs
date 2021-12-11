@@ -10,8 +10,11 @@ public class StaticFieldSpawner : RayInstantiateSpell
     {
         Caster.GetComponent<PlayerMovement>()?.AddBuff(new Buff(BuffTime, BuffValue));
 
-        GameObject staticField = SpawnStructure(CreateRay());
-        staticField.GetComponentInChildren<Spell>().Caster = Caster;
-        staticField.SetActive(true);
+        GameObject staticField = SpawnStructure(CreateRay(), false);
+        if(staticField!=null)
+        {
+            staticField.GetComponent<StaticField>().Caster = Caster;
+            staticField.SetActive(true);
+        }
     }
 }

@@ -1251,7 +1251,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b4c4aef7e70c4024294e5adf1c87ea33, type: 3}
   - {fileID: 8300000, guid: 5a1289162db07e744a1412446f1ec10b, type: 3}
   - {fileID: 8300000, guid: 19ce0afc76bd8164895841cd2596fa11, type: 3}
-  ParticleEffect: {fileID: 104342, guid: dda25b5983c0161428703721417513c6, type: 3}
+  ParticleEffect: {fileID: 6072973331698664435, guid: c8b9a16be4cf7d748b041e8893f57da4, type: 3}
   UIEffectGO: {fileID: 8252640809519931997, guid: 43f5934d098679641b47edf9bbf99ed0, type: 3}
   Splashes:
   - {fileID: 21300000, guid: b4a8ad14385ed974aa2b09ceb5dc7897, type: 3}
