@@ -25,7 +25,6 @@ public class FrostboltScript : Projectiles
     private void OnCollisionEnter(Collision collision)
     {
         GameObject Target = collision.gameObject;
-        Debug.LogError(Target.name);
         CreateCollisionEffects();
 
         if(GetTargetHealth(Target)!=null)
