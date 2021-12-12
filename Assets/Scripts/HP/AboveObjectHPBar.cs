@@ -19,7 +19,7 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
     {
         SpawnUpperText();
         health = gameObject.GetComponent<Health>();
-        RemoveHPBarsOfOtherTeam();
+        //RemoveHPBarsOfOtherTeam();
     }
 
     void Update()
