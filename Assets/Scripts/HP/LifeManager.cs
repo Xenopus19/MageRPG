@@ -14,11 +14,13 @@ public class LifeManager : MonoBehaviour {
     private PhotonView photonView;
     public GameObject GameNetworkManager;
     private GameNetwork gameNetwork;
+    private TurningDeathStatus deathStatus;
 
     public void Init(GameObject player) {
         photonView = gameObject.GetComponent<PhotonView>();
         gameNetwork = GameNetworkManager.GetComponent<GameNetwork>();
         spawnPoint = gameNetwork.SpawnPosition;
+        deathStatus = GetComponent<TurningDeathStatus>();
 
         Player = player;
         playerHP = Player.GetComponent<PlayerHP>();
@@ -39,6 +41,7 @@ public class LifeManager : MonoBehaviour {
     }
 
     public void EndGameForPlayer() {
+        deathStatus.TurnOnDeathStatus(Player, photonView);
         if (gameNetwork.IsFirstTeam) {
            photonView.RPC("MakeLossForTeam", RpcTarget.All, gameNetwork.IsFirstTeam);
             if (gameNetwork.AmountOfLosses == gameNetwork.LifesForFirstTeam) {
