@@ -1,12 +1,27 @@
  using UnityEngine;
 using Photon.Pun;
+using System.Collections.Generic;
+using System.Collections;
+
+public struct Buff
+{
+    public float Time;
+    public float Value;
+
+    public Buff(float time, float value)
+    {
+        Time = time;
+        Value = value;
+    }
+}
 
 public class PlayerMovement : MonoBehaviour
+
 {
     public CharacterController controller;
     public Transform groundCheck;
 
-    public float speed = 12f;
+    public float baseSpeed = 12f;
     public float gravity = -9.81f;
     public float jumpHeigh = 3f;
 
@@ -20,20 +35,58 @@ public class PlayerMovement : MonoBehaviour
     private PhotonView photonView;
 
     private Animator anim;
+
+    private List<Buff> buffs;
     private void Start()
     {
         photonView = GetComponent<PhotonView>();
         anim = gameObject.GetComponent<Animator>();
+        buffs = new List<Buff>();
     }
 
-    private Animator GetAnimator() {
-        if (anim == null) {
+    public void AddBuff(Buff buff)
+    {
+        buffs.Add(buff);
+        StartCoroutine("DeleteBuffAfterTime", buff);
+    }
+
+    IEnumerator DeleteBuffAfterTime(Buff buffToDelete)
+    {
+        yield return new WaitForSeconds(buffToDelete.Time);
+
+        buffs.Remove(buffToDelete);
+    }
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
+    private float GetCurrentSpeed(float speed)
+    {
+        if (buffs == null) return speed;
+        foreach(Buff buff in buffs)
+        {
+            speed += buff.Value;
+        }
+
+        speed = Mathf.Clamp(speed, 1f, 50f);
+
+        return speed;
+    }
+
+    private Animator GetAnimator() 
+    {
+        if (anim == null) 
+        {
             anim = gameObject.GetComponent<Animator>();
         }
-        if (anim == null) {
+        if (anim == null) 
+        {
             Debug.LogError("Animator component not found");
             return null;
-        } else {
+        } 
+        else 
+        {
             return anim;
         }
     }
@@ -51,13 +104,18 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
-    public void MovePlayer(float directionX, float directionZ) {
+    public void MovePlayer(float directionX, float directionZ) 
+    {
         Vector3 move = transform.right * directionX + transform.forward * directionZ;
-        
-        if (directionX == 0 && directionZ == 0) {
+
+        float speed = GetCurrentSpeed(baseSpeed);
+        if (directionX == 0 && directionZ == 0) 
+        {
             GetAnimator().SetBool("Moving", false);
-        } else
+        } 
+        else
             GetAnimator().SetBool("Moving", true);
+
         controller.Move(move * speed * Time.deltaTime);
     }
     public void Jump()

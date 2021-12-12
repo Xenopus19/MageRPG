@@ -63,7 +63,7 @@ MonoBehaviour:
   Caster: {fileID: 0}
   ActionAmount: 0
   ManaConsumption: 50
-  SpellIcon: {fileID: 21300000, guid: 63d4511055082dd4ab1763311f8ea974, type: 3}
+  SpellIcon: {fileID: 21300000, guid: af19f5d462d01854e8a83d40bd157be7, type: 3}
   anim: {fileID: 0}
 --- !u!114 &-4935072907852112294
 MonoBehaviour:
@@ -334,7 +334,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0, g: 0.5019608, b: 1, a: 1}
+      maxColor: {r: 0.9625834, g: 1, b: 0.7122642, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

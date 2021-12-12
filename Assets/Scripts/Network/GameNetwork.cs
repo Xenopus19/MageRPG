@@ -28,6 +28,8 @@ public class GameNetwork : MonoBehaviourPunCallbacks
             }
         }
         GameObject Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
+        PhotonNetwork.LocalPlayer.TagObject = Player;
+        Player.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
         Player.name += SpawnPosition.name;
     }
 
