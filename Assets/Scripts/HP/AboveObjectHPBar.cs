@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class AboveObjectHPBar : MonoBehaviourPunCallbacks
 {
+    [SerializeField] private GameObject AboveText;
     [SerializeField] private GameObject TextPrefab;
     [SerializeField] private float DistanceBetweenTextAndObject;
 
@@ -24,18 +25,25 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
     void Update()
     {
         HPText.GetComponent<TextMesh>().text = health.CurrentHealth.ToString();
-        RotateOtherHPBarsToPlayer();
+        //RotateOtherHPBarsToPlayer();
     }
 
     private void SpawnUpperText()
     {
-        Vector3 TextPos = gameObject.transform.position;
-        TextPos.y += DistanceBetweenTextAndObject;
+        if(AboveText==null)
+        {
+            Vector3 TextPos = gameObject.transform.position;
+            TextPos.y += DistanceBetweenTextAndObject;
 
-        Quaternion TextRotation = gameObject.transform.rotation;
+            Quaternion TextRotation = gameObject.transform.rotation;
 
-        HPText = Instantiate(TextPrefab, TextPos, TextRotation);
-        HPText.transform.SetParent(transform);
+            HPText = Instantiate(TextPrefab, TextPos, TextRotation);
+            HPText.transform.SetParent(transform);
+        }
+        else
+        {
+            HPText = AboveText;
+        }
     }
 
     private void RemoveHPBarsOfOtherTeam()
@@ -51,7 +59,7 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
         }
     }
 
-    private void RotateOtherHPBarsToPlayer()
+    /*private void RotateOtherHPBarsToPlayer()
     {
         foreach (Player player in PhotonNetwork.PlayerListOthers)
         {
@@ -59,5 +67,5 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
             AboveObjectHPBar OtherPlayerScript = Player.GetComponent<AboveObjectHPBar>();
             OtherPlayerScript.HPText.transform.LookAt(transform);
         }
-    }
+    }*/
 }
