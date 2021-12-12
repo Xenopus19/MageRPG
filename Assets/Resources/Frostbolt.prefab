@@ -111,7 +111,7 @@ MonoBehaviour:
   Force: 2500
   SlowingParticle: {fileID: 471020799546434790, guid: 5d513f182166a15419f1d0c1efcff1e7, type: 3}
   DebuffTime: 10
-  DebuffValue: -6
+  DebuffValue: -4
 --- !u!136 &-2083660283796328775
 CapsuleCollider:
   m_ObjectHideFlags: 0
