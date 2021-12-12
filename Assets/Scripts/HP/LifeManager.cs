@@ -42,7 +42,7 @@ public class LifeManager : MonoBehaviour {
     }
 
     public void EndGameForPlayer() {
-        deathStatus.TurnOnDeathStatus(Player);
+        deathStatus.TurnOnDeathStatus(Player, photonView);
         if (gameNetwork.IsFirstTeam) {
            photonView.RPC("MakeLossForTeam", RpcTarget.All, gameNetwork.IsFirstTeam);
             if (gameNetwork.AmountOfLosses == gameNetwork.LifesForFirstTeam) {

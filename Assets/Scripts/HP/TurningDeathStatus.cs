@@ -1,22 +1,36 @@
 using UnityEngine;
+using Photon.Pun;
 
-public class TurningDeathStatus : MonoBehaviour
-{
+public class TurningDeathStatus : MonoBehaviour {
     [SerializeField] private GameObject deathUI;
     [SerializeField] private GameObject gameUI;
-    
-    public void TurnOnDeathStatus(GameObject Player) {
+    private GameObject player;
+
+    public void TurnOnDeathStatus(GameObject Player, PhotonView photonView) {
         deathUI.SetActive(true);
         gameUI.SetActive(false);
-        Destroy(Player.GetComponent<Animator>());
-        Destroy(Player.GetComponent<PlayerHP>());
-        Destroy(Player.GetComponent<GotDamageEffect>());
-        Destroy(Player.GetComponent<PlayerHPText>());
-        Destroy(Player.GetComponent<ManaPlayer>());
-        Destroy(Player.GetComponent<ManaText>());
-        Destroy(Player.GetComponent<SpellCast>());
-        Destroy(Player.GetComponent<SpellIconsChange>());
-        Destroy(Player.GetComponent<BasicShot>());
-        Destroy(Player.GetComponent<AboveObjectHPBar>());
+        Player.GetComponent<PlayerHP>().enabled = false;
+        Player.GetComponent<PlayerHP>().enabled = false;
+        Player.GetComponent<GotDamageEffect>().enabled = false;
+        Player.GetComponent<PlayerHPText>().enabled = false;
+        Player.GetComponent<ManaPlayer>().enabled = false;
+        Player.GetComponent<ManaText>().enabled = false;
+        Player.GetComponent<SpellCast>().enabled = false;
+        Player.GetComponent<SpellIconsChange>().enabled = false;
+        Player.GetComponent<BasicShot>().enabled = false;
+        Player.GetComponent<AboveObjectHPBar>().enabled = false;
+        player = Player;
+        photonView.RPC("RemoveMesh", RpcTarget.All);
+        RemoveMesh();
+    }
+    [PunRPC]
+    public void RemoveMesh() {
+        for (int i = 0; i < player.transform.childCount; i++) {
+            GameObject child = player.transform.GetChild(i).gameObject;
+            SkinnedMeshRenderer skinnedMeshRenderer = child?.GetComponent<SkinnedMeshRenderer>();
+            if (skinnedMeshRenderer != null) {
+                skinnedMeshRenderer.enabled = false;
+            }
+        }
     }
 }
