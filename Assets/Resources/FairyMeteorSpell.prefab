@@ -4906,7 +4906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Caster: {fileID: 0}
-  ActionAmount: 7
+  ActionAmount: 3
   ManaConsumption: 0
   SpellIcon: {fileID: 0}
   anim: {fileID: 0}
