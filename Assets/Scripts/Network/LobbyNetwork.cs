@@ -1,5 +1,6 @@
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class LobbyNetwork : MonoBehaviourPunCallbacks
 {
@@ -12,6 +13,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public GameObject joiningRoom;
     private JoiningRoomText joiningRoomText;
     private GameObject LoadingPlane;
+    private TypedLobby defaultLobby = new TypedLobby("default", LobbyType.Default);
     private void Start()
     {
         playerName = PhotonNetwork.NickName;
@@ -23,19 +25,26 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsConnected) 
         {
             PhotonNetwork.ConnectUsingSettings();
+            
         }
         else
         {
             LoadingPlane.SetActive(false);
         }
-
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
+    }
+
+    private void JoinDefaultLobby()
+    {
+        
+        Debug.Log(PhotonNetwork.JoinLobby(defaultLobby));
     }
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to master.");
         LoadingPlane.SetActive(false);
+        JoinDefaultLobby();
     }
 
     public void AddNickName(string name) 
