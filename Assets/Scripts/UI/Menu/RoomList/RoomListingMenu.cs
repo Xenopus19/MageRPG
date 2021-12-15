@@ -8,17 +8,18 @@ public class RoomListingMenu : MonoBehaviourPunCallbacks
     [SerializeField] private Transform Content;
     [SerializeField] private GameObject RoomListing;
 
-    private void Start()
-    {
-        Debug.LogWarning(PhotonNetwork.InLobby);
-    }
 
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        Debug.LogError("Callback called");
+        for(int i = 0; i<Content.childCount; i++)
+        {
+            Destroy(Content.GetChild(i).gameObject);
+        }
         foreach(RoomInfo info in roomList)
         {
+            if (info.PlayerCount == 0) continue;
+
             GameObject listing = Instantiate(RoomListing, Content);
             if(listing != null)
             {
