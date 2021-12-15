@@ -1159,11 +1159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4860ce600db866478deef3715cc9943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Stick: {fileID: 7149068218929521571, guid: 19177767799561448a7cea47137802b4, type: 3}
   MeleeAttackButton: 102
   SpellCastButton: 0
   JumpKey: 32
   BasicShotKey: 103
+  IsFreeze: 0
 --- !u!114 &8356878512950559632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 7347813271592866453}
   groundCheck: {fileID: 2532898369298504665}
-  speed: 8
+  baseSpeed: 12
   gravity: -20
   jumpHeigh: 2
   groundDistance: 0.4
@@ -1266,6 +1266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444e751ee3e8f142a4640ed89ccbf5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PercentLeftToDisplayIcons: 0
 --- !u!114 &1655343511269407535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,6 +1286,7 @@ MonoBehaviour:
   Frostbolt: {fileID: 7352676846187088993, guid: f48810e3231a4674ea57adb09f61e579, type: 3}
   StoneWall: {fileID: 8286624203043886165, guid: 3a5d1cc4a30977b4da37efbcadb8dd17, type: 3}
   IceBarrage: {fileID: 5685674506080238444, guid: 5218dcbe9a80a924a866161d1007cc8b, type: 3}
+  StaticField: {fileID: 0}
   PlayerCamera: {fileID: 712854308040321455}
   CurrentSpell: {fileID: 0}
 --- !u!114 &-6584478467838854892

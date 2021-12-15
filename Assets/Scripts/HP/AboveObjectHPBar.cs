@@ -40,24 +40,38 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
 
     private void RemoveHPBarsOfOtherTeam()
     {
-        foreach(Player player in PhotonNetwork.PlayerListOthers)
+        AboveObjectHPBar[] bars = FindObjectsOfType<AboveObjectHPBar>();
+        foreach(var hpBar in bars)
         {
-            GameObject Player = (GameObject)player.TagObject;
-            AboveObjectHPBar OtherPlayerScript = Player.GetComponent<AboveObjectHPBar>();
-            if(OtherPlayerScript.InFirstTeam != gameObject.GetComponent<AboveObjectHPBar>())
+            if (hpBar.InFirstTeam != this.InFirstTeam)
             {
-                Destroy(OtherPlayerScript.HPText);
+                Destroy(hpBar.HPText);
             }
         }
+        /*foreach(Player photonPlayer in PhotonNetwork.PlayerListOthers)
+        {
+            GameObject PlayerGO = (GameObject)photonPlayer.TagObject;
+            if (PlayerGO)
+            {
+                AboveObjectHPBar OtherPlayerScript = PlayerGO.GetComponent<AboveObjectHPBar>();
+                if (OtherPlayerScript.InFirstTeam != gameObject.GetComponent<AboveObjectHPBar>())
+                {
+                    Destroy(OtherPlayerScript.HPText);
+                }
+            }
+        }*/
     }
 
     private void RotateOtherHPBarsToPlayer()
     {
-        foreach (Player player in PhotonNetwork.PlayerListOthers)
+        foreach (Player photonPlayer in PhotonNetwork.PlayerListOthers)
         {
-            GameObject Player = (GameObject)player.TagObject;
-            AboveObjectHPBar OtherPlayerScript = Player.GetComponent<AboveObjectHPBar>();
-            OtherPlayerScript.HPText.transform.LookAt(transform);
+            GameObject PlayerGO = (GameObject)photonPlayer.TagObject;
+            if (PlayerGO)
+            {
+                AboveObjectHPBar OtherPlayerScript = PlayerGO.GetComponent<AboveObjectHPBar>();
+                OtherPlayerScript.HPText.transform.LookAt(transform);
+            }
         }
     }
 }
