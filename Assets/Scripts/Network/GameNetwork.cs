@@ -3,11 +3,13 @@ using Photon.Pun;
 using UnityEngine.SceneManagement;
 using Photon.Realtime;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class GameNetwork : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject PlayerPrefab;
     [SerializeField] private List<GameObject> SpawnPositions = new List<GameObject>();
+    [SerializeField] private List<GameObject> NickNameTexts = new List<GameObject>();
     public Transform SpawnPosition;
     public bool IsFirstTeam { get; private set; }
     public float LifesForFirstTeam = 0;
@@ -15,6 +17,14 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     public float AmountOfLosses = 0;
     void Start()
     {
+        DefineTeam();
+        GameObject Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
+        PhotonNetwork.LocalPlayer.TagObject = Player;
+        Player.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
+        Player.name += SpawnPosition.name;
+    }
+
+    private void DefineTeam() {
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
             if (i % 2 == 0) {
                 LifesForFirstTeam++;
@@ -24,13 +34,18 @@ public class GameNetwork : MonoBehaviourPunCallbacks
             if (PhotonNetwork.PlayerList[i].NickName == PhotonNetwork.NickName) {
                 SpawnPosition = SpawnPositions[i].transform;
                 IsFirstTeam = i % 2 == 0;
+                DefineNickName(i);
                 continue;
             }
         }
-        GameObject Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
-        PhotonNetwork.LocalPlayer.TagObject = Player;
-        Player.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
-        Player.name += SpawnPosition.name;
+    }
+
+    private void DefineNickName(int index) {
+        if (IsFirstTeam) {
+            NickNameTexts[index].GetComponent<Text>().text = PhotonNetwork.NickName;
+        } else {
+            NickNameTexts[index - 1].GetComponent<Text>().text = PhotonNetwork.NickName;
+        }
     }
 
     public void LeaveRoom()
