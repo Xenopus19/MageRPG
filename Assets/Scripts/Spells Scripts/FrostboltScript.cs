@@ -46,7 +46,6 @@ public class FrostboltScript : Projectiles
         PlayerMovement targetMovement = Target.GetComponent<PlayerMovement>();
         if (targetMovement!=null)
         {
-            Debug.LogError("MovementDetected");
             targetMovement.AddBuff(Debuff);
         }
         ApplySlowingParticle(Target);

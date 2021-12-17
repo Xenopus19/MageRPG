@@ -19,7 +19,6 @@ public class ManaText : MonoBehaviour
         UpperValueToDisplayIcons = Percent(GetComponent<ManaPlayer>().MaxMana, PercentLeftToDisplayIcons);
 
         photonView = gameObject.GetComponent<PhotonView>();
-        if (photonView == null) Debug.LogWarning("PhotonView is null");
         if(photonView.IsMine)
         {
             ManaBar = GameObject.Find("ManaText");

@@ -9,8 +9,9 @@ public class GotDamagePlayerEffect : GotDamageEffect
 
     private void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioSourse = GetComponent<AudioSource>();
         health.OnDamageReceived += FrontendEffects;
+        photonView = GetComponent<PhotonView>();
     }
     public override void FrontendEffects()
     {
@@ -20,7 +21,7 @@ public class GotDamagePlayerEffect : GotDamageEffect
     }
     private void CreateUIEffect()
     {
-        //if(photonView.IsMine)
+        if(photonView.IsMine)
         {
             GameObject canvas = GameObject.FindWithTag("EffectsCanvas");
             GameObject effect = Instantiate(UIEffectGO);
