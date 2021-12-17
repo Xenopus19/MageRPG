@@ -18,6 +18,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     void Start()
     {
         DefineTeam();
+        DefineNickName();
         GameObject Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
         PhotonNetwork.LocalPlayer.TagObject = Player;
         Player.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
@@ -34,17 +35,30 @@ public class GameNetwork : MonoBehaviourPunCallbacks
             if (PhotonNetwork.PlayerList[i].NickName == PhotonNetwork.NickName) {
                 SpawnPosition = SpawnPositions[i].transform;
                 IsFirstTeam = i % 2 == 0;
-                DefineNickName(i);
                 continue;
             }
         }
     }
 
-    private void DefineNickName(int index) {
-        if (IsFirstTeam) {
-            NickNameTexts[index].GetComponent<Text>().text = PhotonNetwork.NickName;
-        } else {
-            NickNameTexts[index - 1].GetComponent<Text>().text = PhotonNetwork.NickName;
+    private void DefineNickName() {
+        Text nickName;
+        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
+            if (IsFirstTeam) {
+                nickName = NickNameTexts[i].GetComponent<Text>();
+                nickName.text = PhotonNetwork.PlayerList[i].NickName;
+                continue;
+            } else {
+                if (i % 2 == 1) {
+                    nickName = NickNameTexts[i - 1].GetComponent<Text>();
+                    nickName.text = PhotonNetwork.PlayerList[i].NickName;
+                    continue;
+                } else {
+                    nickName = NickNameTexts[i + 1].GetComponent<Text>();
+                    nickName.text = PhotonNetwork.PlayerList[i].NickName;
+                    continue;
+                }
+                
+            }
         }
     }
 
