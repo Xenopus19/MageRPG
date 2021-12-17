@@ -15,8 +15,11 @@ public class LifeManager : MonoBehaviour {
     public GameObject GameNetworkManager;
     private GameNetwork gameNetwork;
 
+    private TurningDeathStatus deathStatus;
+
     public void Init(GameObject player) {
-        photonView = gameObject.GetComponent<PhotonView>();
+        deathStatus = GetComponent<TurningDeathStatus>();
+        photonView = GetComponent<PhotonView>();
         gameNetwork = GameNetworkManager.GetComponent<GameNetwork>();
         spawnPoint = gameNetwork.SpawnPosition;
 
@@ -27,7 +30,7 @@ public class LifeManager : MonoBehaviour {
     }
 
     public void EndLife() {
-        Debug.LogWarning("EndLife");
+        Debug.Log("EndLife");
         playerHP.CurrentHealth = playerHP.MaxHealth;
         playerHPText.ChangeHealthText();
         TeleportToSpawnPoint();
@@ -38,8 +41,30 @@ public class LifeManager : MonoBehaviour {
         Player.transform.rotation = spawnPoint.rotation;
     }
 
-    public void EndGame() {
-        Debug.LogWarning("EndGame");
+    public void EndGameForPlayer() {
+        deathStatus.TurnOnDeathStatus(Player, photonView);
+        if (gameNetwork.IsFirstTeam) {
+           photonView.RPC("MakeLossForTeam", RpcTarget.All, gameNetwork.IsFirstTeam);
+            if (gameNetwork.AmountOfLosses == gameNetwork.LifesForFirstTeam) {
+                EndGame();
+            }
+        } else {
+           photonView.RPC("MakeLossForTeam", RpcTarget.All, !gameNetwork.IsFirstTeam);
+            if (gameNetwork.AmountOfLosses == gameNetwork.LifesForSecondTeam) {
+                EndGame();
+            }
+        }
+    }
+
+    [PunRPC]
+    public void MakeLossForTeam(bool IsLosingTeam) {
+        if (IsLosingTeam) {
+            gameNetwork.AmountOfLosses++;
+        }
+    }
+
+    private void EndGame() {
+        Debug.Log("EndGame");
         if (!gameNetwork.IsFirstTeam) {
             photonView.RPC("WinFirstTeam", RpcTarget.All);
         } else {

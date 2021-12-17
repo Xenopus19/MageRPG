@@ -10,17 +10,27 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     [SerializeField] private List<GameObject> SpawnPositions = new List<GameObject>();
     public Transform SpawnPosition;
     public bool IsFirstTeam { get; private set; }
+    public float LifesForFirstTeam = 0;
+    public float LifesForSecondTeam = 0;
+    public float AmountOfLosses = 0;
     void Start()
     {
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
+            if (i % 2 == 0) {
+                LifesForFirstTeam++;
+            } else {
+                LifesForSecondTeam++;
+            }
             if (PhotonNetwork.PlayerList[i].NickName == PhotonNetwork.NickName) {
                 SpawnPosition = SpawnPositions[i].transform;
                 IsFirstTeam = i % 2 == 0;
-                break;
+                continue;
             }
         }
         GameObject Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
-        Player.name += PhotonNetwork.CountOfPlayers.ToString();
+        PhotonNetwork.LocalPlayer.TagObject = Player;
+        Player.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
+        Player.name += SpawnPosition.name;
     }
 
     public void LeaveRoom()

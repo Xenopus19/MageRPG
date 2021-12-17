@@ -1,35 +1,71 @@
 using System.Collections;
+using Photon.Pun;
 using System.Collections.Generic;
+using Photon.Realtime;
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
-public class AboveObjectHPBar : MonoBehaviour
+public class AboveObjectHPBar : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private TextMesh TextPrefab;
+    [SerializeField] private GameObject AboveText;
+    [SerializeField] private GameObject TextPrefab;
     [SerializeField] private float DistanceBetweenTextAndObject;
-    [SerializeField] private float TextDeltaRotation;
 
-    private TextMesh Text;
+    private GameObject HPText;
     private Health health;
+
+    public bool InFirstTeam;
     void Start()
     {
         SpawnUpperText();
         health = gameObject.GetComponent<Health>();
+        //RemoveHPBarsOfOtherTeam();
     }
 
     void Update()
     {
-        Text.text = health.CurrentHealth.ToString();
+        HPText.GetComponent<TextMesh>().text = health.CurrentHealth.ToString();
+        //RotateOtherHPBarsToPlayer();
     }
 
     private void SpawnUpperText()
     {
-        Vector3 TextPos = gameObject.transform.position;
-        TextPos.y += DistanceBetweenTextAndObject;
+        if(AboveText==null)
+        {
+            Vector3 TextPos = gameObject.transform.position;
+            TextPos.y += DistanceBetweenTextAndObject;
 
-        Quaternion TextRotation = gameObject.transform.rotation;
-        TextRotation.w += TextDeltaRotation;
+            Quaternion TextRotation = gameObject.transform.rotation;
 
-        Text = Instantiate(TextPrefab, TextPos, TextRotation);
+            HPText = Instantiate(TextPrefab, TextPos, TextRotation);
+            HPText.transform.SetParent(transform);
+        }
+        else
+        {
+            HPText = AboveText;
+        }
     }
+
+    private void RemoveHPBarsOfOtherTeam()
+    {
+        foreach(Player player in PhotonNetwork.PlayerListOthers)
+        {
+            GameObject Player = (GameObject)player.TagObject;
+            AboveObjectHPBar OtherPlayerScript = Player.GetComponent<AboveObjectHPBar>();
+            if(OtherPlayerScript.InFirstTeam != gameObject.GetComponent<AboveObjectHPBar>())
+            {
+                Destroy(OtherPlayerScript.HPText);
+            }
+        }
+    }
+
+    /*private void RotateOtherHPBarsToPlayer()
+    {
+        foreach (Player player in PhotonNetwork.PlayerListOthers)
+        {
+            GameObject Player = (GameObject)player.TagObject;
+            AboveObjectHPBar OtherPlayerScript = Player.GetComponent<AboveObjectHPBar>();
+            OtherPlayerScript.HPText.transform.LookAt(transform);
+        }
+    }*/
 }

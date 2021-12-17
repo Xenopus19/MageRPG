@@ -17,6 +17,7 @@ public class ManaItem : MonoBehaviour
         collider.gameObject.GetComponent<ManaPlayer>()?.RefillMana(ManaToRefill);
         CreatePickedSound();
         Destroy(gameObject);
+        
     }
 
     private void CreatePickedSound()

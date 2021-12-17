@@ -6,6 +6,7 @@ using Photon.Pun;
 
 public class Spell : MonoBehaviour
 {
+    [Header("Basic Spell Data")]
     public GameObject Caster;
     public float ActionAmount;
     public float ManaConsumption;
