@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2387334452623244733}
   - component: {fileID: 1625341641271800344}
   - component: {fileID: 3560844090666321618}
-  - component: {fileID: 2175101052251790561}
   - component: {fileID: -4950920023328294419}
   - component: {fileID: -9140915108880597049}
   - component: {fileID: -686664778971441854}
@@ -86,25 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2175101052251790561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3056348367490164487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12cec918e7b5deb4aaf44e182b8f034c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Caster: {fileID: 0}
-  ActionAmount: 0
-  ManaConsumption: 25
-  SpellIcon: {fileID: 21300000, guid: ad88016ec4a32e74b92ff3aa43b1ea70, type: 3}
-  Force: 600
-  UpwardPushForce: 1000
-  UpwardJumpForce: 5
 --- !u!114 &-4950920023328294419
 MonoBehaviour:
   m_ObjectHideFlags: 0
