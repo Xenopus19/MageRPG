@@ -17,8 +17,6 @@ public class PlayerInputController : MonoBehaviour
     private PhotonView photonView;
     private SpellCast spellCast;
     private BasicShot basicShot;
-
-    public bool IsFreeze = false;
     private void Start()
     {
         basicShot = GetComponent<BasicShot>();
@@ -28,16 +26,14 @@ public class PlayerInputController : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
 
-    private void Update()
+    private void Update() 
     {
-        if (!photonView.IsMine) return;
-        if (!IsFreeze) 
-        {
-            GetAndExecuteMovementInput();
-            GetMeleeInput();
-            GetSpellCastInput();
-            GetBasicShotInput();
-        }
+        if (!photonView.IsMine)
+            return;
+        GetAndExecuteMovementInput();
+        GetMeleeInput();
+        GetSpellCastInput();
+        GetBasicShotInput();
     }
 
     private void GetAndExecuteMovementInput()
