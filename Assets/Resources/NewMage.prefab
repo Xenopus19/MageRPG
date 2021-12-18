@@ -1165,7 +1165,6 @@ MonoBehaviour:
   SpellCastButton: 0
   JumpKey: 32
   BasicShotKey: 103
-  IsFreeze: 0
 --- !u!114 &8356878512950559632
 MonoBehaviour:
   m_ObjectHideFlags: 0
