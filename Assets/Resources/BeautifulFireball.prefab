@@ -24238,8 +24238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Caster: {fileID: 0}
-  ActionAmount: 20
-  ManaConsumption: 20
+  ActionAmount: 10
+  ManaConsumption: 7
   SpellIcon: {fileID: 21300000, guid: 24869be00c6aaf743a46d3fe253f88a2, type: 3}
   anim: {fileID: 0}
   OnCollisionSound: {fileID: 8300000, guid: 19ce0afc76bd8164895841cd2596fa11, type: 3}

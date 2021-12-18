@@ -19,13 +19,11 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
     {
         SpawnUpperText();
         health = gameObject.GetComponent<Health>();
-        //RemoveHPBarsOfOtherTeam();
     }
 
     void Update()
     {
         HPText.GetComponent<TextMesh>().text = health.CurrentHealth.ToString();
-        //RotateOtherHPBarsToPlayer();
     }
 
     private void SpawnUpperText()
@@ -45,27 +43,4 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
             HPText = AboveText;
         }
     }
-
-    private void RemoveHPBarsOfOtherTeam()
-    {
-        foreach(Player player in PhotonNetwork.PlayerListOthers)
-        {
-            GameObject Player = (GameObject)player.TagObject;
-            AboveObjectHPBar OtherPlayerScript = Player.GetComponent<AboveObjectHPBar>();
-            if(OtherPlayerScript.InFirstTeam != gameObject.GetComponent<AboveObjectHPBar>())
-            {
-                Destroy(OtherPlayerScript.HPText);
-            }
-        }
-    }
-
-    /*private void RotateOtherHPBarsToPlayer()
-    {
-        foreach (Player player in PhotonNetwork.PlayerListOthers)
-        {
-            GameObject Player = (GameObject)player.TagObject;
-            AboveObjectHPBar OtherPlayerScript = Player.GetComponent<AboveObjectHPBar>();
-            OtherPlayerScript.HPText.transform.LookAt(transform);
-        }
-    }*/
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class LobbyNetwork : MonoBehaviourPunCallbacks
 {
@@ -10,8 +11,11 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     private PlayerAmountText playerAmountText;
 
     public GameObject joiningRoom;
+    public GameObject roomList;
+
     private JoiningRoomText joiningRoomText;
     private GameObject LoadingPlane;
+    private TypedLobby defaultLobby = new TypedLobby("default", LobbyType.Default);
     private void Start()
     {
         playerName = PhotonNetwork.NickName;
@@ -23,19 +27,26 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsConnected) 
         {
             PhotonNetwork.ConnectUsingSettings();
+            
         }
         else
         {
             LoadingPlane.SetActive(false);
         }
-
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
     }
+
+    
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to master.");
         LoadingPlane.SetActive(false);
+        JoinDefaultLobby();
+    }
+    private void JoinDefaultLobby()
+    {
+        Debug.Log(PhotonNetwork.JoinLobby(defaultLobby));
     }
 
     public void AddNickName(string name) 
@@ -56,12 +67,19 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom() 
     {
+        if (PhotonNetwork.CurrentRoom.Name == "CallbackTrigger") return;
         Debug.Log("Joined the room");
-        if (!PhotonNetwork.IsMasterClient) {
-            joiningRoomText.WriteRoomName(PhotonNetwork.CurrentRoom?.Name.ToString());
+        roomList.SetActive(false);
+        joiningRoom.GetComponent<JoiningRoom>().CreateJoinRoomPanel();
+        if (!PhotonNetwork.IsMasterClient) 
+        {
+            //joiningRoomText.WriteRoomName(PhotonNetwork.CurrentRoom?.Name);
             playerAmountText = playerAmountTextJR.GetComponent<PlayerAmountText>(); 
-        } else {
-            playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
+        }
+        
+        else 
+        {
+            //playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
         }
     }
 

@@ -15,7 +15,6 @@ public class JoiningRoom : MonoBehaviour
     public void CreateJoinRoomPanel() 
     {
         Init();
-        lobbyNetwork.JoinRoom();
         gameObject.SetActive(true);
         roomButtons.SetActive(false);
     }

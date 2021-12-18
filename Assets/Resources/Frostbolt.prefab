@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Caster: {fileID: 0}
-  ActionAmount: 15
-  ManaConsumption: 25
+  ActionAmount: 7
+  ManaConsumption: 13
   SpellIcon: {fileID: 21300000, guid: 989a1ac3e56c6ba4c98ee199a2457ed3, type: 3}
   anim: {fileID: 0}
   OnCollisionSound: {fileID: 8300000, guid: 5561c4f9bdadf174ca1f1ab41473e02b, type: 3}
@@ -111,7 +111,7 @@ MonoBehaviour:
   Force: 2500
   SlowingParticle: {fileID: 471020799546434790, guid: 5d513f182166a15419f1d0c1efcff1e7, type: 3}
   DebuffTime: 10
-  DebuffValue: -6
+  DebuffValue: -4
 --- !u!136 &-2083660283796328775
 CapsuleCollider:
   m_ObjectHideFlags: 0
