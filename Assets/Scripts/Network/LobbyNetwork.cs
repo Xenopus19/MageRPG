@@ -73,13 +73,13 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         joiningRoom.GetComponent<JoiningRoom>().CreateJoinRoomPanel();
         if (!PhotonNetwork.IsMasterClient) 
         {
-            //joiningRoomText.WriteRoomName(PhotonNetwork.CurrentRoom?.Name);
+            joiningRoomText.WriteRoomName(PhotonNetwork.CurrentRoom?.Name);
             playerAmountText = playerAmountTextJR.GetComponent<PlayerAmountText>(); 
         }
         
         else 
         {
-            //playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
+            playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
         }
     }
 
