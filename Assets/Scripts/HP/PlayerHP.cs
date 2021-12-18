@@ -18,6 +18,10 @@ public class PlayerHP : Health {
         }
     }
 
+    public void ResetHealth() {
+        CurrentHealth = MaxHealth;
+    }
+
     public override void Die() {
         if(photonView.IsMine)
         {
