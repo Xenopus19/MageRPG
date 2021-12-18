@@ -34,6 +34,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
             LoadingPlane.SetActive(false);
         }
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
+        //joiningRoomText.Init();
     }
 
     
@@ -74,12 +75,12 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsMasterClient) 
         {
             joiningRoomText.WriteRoomName();
-            //playerAmountText = playerAmountTextJR.GetComponent<PlayerAmountText>(); 
+            playerAmountText = playerAmountTextJR.GetComponent<PlayerAmountText>(); 
         }
         
         else 
         {
-            //playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
+            playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
         }
     }
 
