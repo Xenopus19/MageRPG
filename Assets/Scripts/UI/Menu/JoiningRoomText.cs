@@ -1,4 +1,5 @@
 using UnityEngine;
+using Photon.Pun;
 using UnityEngine.UI;
 
 public class JoiningRoomText : MonoBehaviour {
@@ -9,7 +10,8 @@ public class JoiningRoomText : MonoBehaviour {
         roomNameText = RoomName.GetComponent<Text>();
     }
 
-    public void WriteRoomName(string roomName) {
-        roomNameText.text = $"Room: {roomName}";
+    public void WriteRoomName() 
+    {
+        roomNameText.text = $"Room: " + PhotonNetwork.CurrentRoom.Name ;
     }
 }
