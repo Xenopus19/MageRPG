@@ -16,14 +16,14 @@ public class RoomListingMenu : MonoBehaviourPunCallbacks
         {
             Destroy(Content.GetChild(i).gameObject);
         }
-        foreach(RoomInfo info in roomList)
+        for(int i = 0; i<roomList.Count; i++)
         {
-            if (info.PlayerCount == 0) continue;
+            if (roomList[i].PlayerCount <=0) continue;
 
             GameObject listing = Instantiate(RoomListing, Content);
             if(listing != null)
             {
-                listing.GetComponent<RoomListing>().SetRoomInfo(info);
+                listing.GetComponent<RoomListing>().SetRoomInfo(roomList[i]);
             }
         }
     }
