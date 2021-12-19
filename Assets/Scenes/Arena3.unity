@@ -13343,30 +13343,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1186374708249405902, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
   m_PrefabInstance: {fileID: 1832497569}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1832497590 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5397091472357640398, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
-  m_PrefabInstance: {fileID: 1832497569}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1832497591 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8659002963663459397, guid: 4e94c774d5edb494a9dd6d875a9a6d14, type: 3}
-  m_PrefabInstance: {fileID: 1832497569}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1832497592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1832497570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f26f158fc66c964448397fe276bdc446, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  yourTeamPanel: {fileID: 1832497590}
-  enemyTeamPanel: {fileID: 1832497591}
 --- !u!114 &1832497598
 MonoBehaviour:
   m_ObjectHideFlags: 0

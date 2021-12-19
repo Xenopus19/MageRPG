@@ -16,6 +16,9 @@ public class FireballScript : Projectiles
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if (!isAlive)
+            return;
+
         GameObject Target = collision.gameObject;
         if (Target.GetComponent<Spell>()?.Caster == Caster)
         {
@@ -29,6 +32,7 @@ public class FireballScript : Projectiles
                 DamageTarget(Target);
             }
             CreateCollisionEffects();
+            isAlive = false;
             Destroy(gameObject);
         }
         
