@@ -31,7 +31,7 @@ public class LifeManager : MonoBehaviour {
 
     public void EndLife() {
         Debug.Log("EndLife");
-        playerHP.CurrentHealth = playerHP.MaxHealth;
+        playerHP.ResetHealth();
         playerHPText.ChangeHealthText();
         TeleportToSpawnPoint();
     }

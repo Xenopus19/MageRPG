@@ -23,7 +23,11 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        HPText.GetComponent<TextMesh>().text = health.CurrentHealth.ToString();
+        if (health.CurrentHealth <= 0) {
+            HPText.GetComponent<TextMesh>().text = "Dead";
+        } else {
+            HPText.GetComponent<TextMesh>().text = health.CurrentHealth.ToString();
+        }
     }
 
     private void SpawnUpperText()
