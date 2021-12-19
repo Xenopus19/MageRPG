@@ -39,8 +39,6 @@ public class FrostboltScript : Projectiles
         }
     }
 
-    
-
     private void ApplyMovementDebuff(GameObject Target)
     {
         PlayerMovement targetMovement = Target.GetComponent<PlayerMovement>();
@@ -57,5 +55,4 @@ public class FrostboltScript : Projectiles
         effect.transform.localPosition = Vector3.zero + new Vector3(0, 2, 0);
         effect.GetComponent<DestroyOverTime>().Lifetime = Debuff.Time;
     }
-
 }
