@@ -12,21 +12,31 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
     [SerializeField] private float DistanceBetweenTextAndObject;
 
     private GameObject HPText;
-    private Health health;
+    private PlayerHP playerHP;
+    private float health;
+    private PhotonView _photonView;
 
     public bool InFirstTeam;
     void Start()
     {
         SpawnUpperText();
-        health = gameObject.GetComponent<Health>();
+        _photonView = GetComponent<PhotonView>();
+        playerHP = gameObject.GetComponent<PlayerHP>();
     }
 
-    void Update()
-    {
-        if (health.CurrentHealth <= 0) {
-            HPText.GetComponent<TextMesh>().text = "Dead";
+    void Update() {
+        if (_photonView.IsMine) {
+            health = playerHP.CurrentHealth;
+            photonView.RPC("ShowHealth", RpcTarget.All, health);
+        }
+    }
+
+    [PunRPC]
+    public void ShowHealth(float health) {
+        if (health >= 0) {
+            HPText.GetComponent<TextMesh>().text = health.ToString();
         } else {
-            HPText.GetComponent<TextMesh>().text = health.CurrentHealth.ToString();
+            HPText.GetComponent<TextMesh>().text = "Dead";
         }
     }
 
