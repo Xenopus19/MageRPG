@@ -1290,6 +1290,7 @@ MonoBehaviour:
   StoneWall: {fileID: 8286624203043886165, guid: 3a5d1cc4a30977b4da37efbcadb8dd17, type: 3}
   IceBarrage: {fileID: 5685674506080238444, guid: 5218dcbe9a80a924a866161d1007cc8b, type: 3}
   StaticField: {fileID: 2027796423206249555, guid: a55e3f0da87ab344681d0894fa04878d, type: 3}
+  FrozenOrb: {fileID: 1519707880228496850, guid: 3a0aa4ef325692c4c85354c20733bd5b, type: 3}
   PlayerCamera: {fileID: 712854308040321455}
   CurrentSpell: {fileID: 0}
 --- !u!114 &-6584478467838854892

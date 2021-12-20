@@ -6,7 +6,7 @@ public class FireballScript : Projectiles
 {
     private PhotonView photonView;
 
-    private void Start()
+    protected void Start()
     {   
         photonView = GetComponent<PhotonView>();
         GetAnimator();
@@ -14,7 +14,7 @@ public class FireballScript : Projectiles
         FlyForward();
         IgnoreCollisionWithCaster();
     }
-    private void OnCollisionEnter(Collision collision)
+    protected void OnCollisionEnter(Collision collision)
     {
         if (!isAlive)
             return;
