@@ -18,7 +18,7 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject StoneWall;
     [SerializeField] private GameObject IceBarrage;
     [SerializeField] private GameObject StaticField;
-    [SerializeField] private GameObject FrozenOrb;
+    [SerializeField] private GameObject Vampirism;
 
     [SerializeField] private GameObject PlayerCamera;
 
@@ -27,6 +27,7 @@ public class SpellCast : MonoBehaviour
     private SpellCodeVisualisation spellCodeVisualisation;
     private PhotonView photonView;
 
+    public bool IsUsingVampirism;
 
     [SerializeField] private GameObject CurrentSpell;
     private void Awake()
@@ -38,7 +39,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add("8576", StoneWall);
         Spells.Add("34", IceBarrage);
         Spells.Add("617", StaticField);
-        Spells.Add("1243", FrozenOrb);
+        Spells.Add("1475", Vampirism);
     }    
 
     private void Start()

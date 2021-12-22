@@ -41,8 +41,11 @@ public class Spell : MonoBehaviour
 
     public void DamageTarget(GameObject Target)
     {
-        if(GetTargetHealth(Target)!=null && GetTargetHealth(Target)!=GetTargetHealth(Caster))
-        GetTargetHealth(Target).ReceiveDamage(ActionAmount);
+        if (GetTargetHealth(Target) != null && GetTargetHealth(Target) != GetTargetHealth(Caster))
+        {
+            GetTargetHealth(Target).ReceiveDamage(ActionAmount);
+            TryVampirism(Caster);
+        }
     }
 
     public void IgnoreCollisionWithCaster()
@@ -78,5 +81,14 @@ public class Spell : MonoBehaviour
     public virtual void TurnOnCollider()
     {
         gameObject.GetComponent<Collider>().enabled = true;
+    }
+
+
+    public void TryVampirism(GameObject DamagingSpellCaster)
+    {
+        if (DamagingSpellCaster.GetComponent<SpellCast>().IsUsingVampirism == true)
+        {
+            DamagingSpellCaster.GetComponent<PlayerHP>().ReceiveHealing(this.ActionAmount * 0.2f);
+        }
     }
 }
