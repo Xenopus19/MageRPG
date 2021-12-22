@@ -18,6 +18,7 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject StoneWall;
     [SerializeField] private GameObject IceBarrage;
     [SerializeField] private GameObject StaticField;
+    [SerializeField] private GameObject FrozenOrb;
 
     [SerializeField] private GameObject PlayerCamera;
 
@@ -37,6 +38,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add("8576", StoneWall);
         Spells.Add("34", IceBarrage);
         Spells.Add("617", StaticField);
+        Spells.Add("1243", FrozenOrb);
     }    
 
     private void Start()

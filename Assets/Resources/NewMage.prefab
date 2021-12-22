@@ -1224,7 +1224,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b4c4aef7e70c4024294e5adf1c87ea33, type: 3}
   - {fileID: 8300000, guid: 5a1289162db07e744a1412446f1ec10b, type: 3}
   - {fileID: 8300000, guid: 19ce0afc76bd8164895841cd2596fa11, type: 3}
-  ParticleEffect: {fileID: 104342, guid: dda25b5983c0161428703721417513c6, type: 3}
+  ParticleEffect: {fileID: 6072973331698664435, guid: c8b9a16be4cf7d748b041e8893f57da4, type: 3}
   UIEffectGO: {fileID: 8252640809519931997, guid: 43f5934d098679641b47edf9bbf99ed0, type: 3}
   Splashes:
   - {fileID: 21300000, guid: b4a8ad14385ed974aa2b09ceb5dc7897, type: 3}
@@ -1290,6 +1290,7 @@ MonoBehaviour:
   StoneWall: {fileID: 8286624203043886165, guid: 3a5d1cc4a30977b4da37efbcadb8dd17, type: 3}
   IceBarrage: {fileID: 5685674506080238444, guid: 5218dcbe9a80a924a866161d1007cc8b, type: 3}
   StaticField: {fileID: 2027796423206249555, guid: a55e3f0da87ab344681d0894fa04878d, type: 3}
+  FrozenOrb: {fileID: 1519707880228496850, guid: 3a0aa4ef325692c4c85354c20733bd5b, type: 3}
   PlayerCamera: {fileID: 712854308040321455}
   CurrentSpell: {fileID: 0}
 --- !u!114 &-6584478467838854892
@@ -1857,7 +1858,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 954746d370bc8934299c8c8267543f4f, type: 3}
+  - {fileID: 2100000, guid: 50f3ee82d93d7ef4094715de660ab464, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3347,7 +3348,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33ad2df547de9ae458034edf8c6e6907, type: 3}
+  - {fileID: 2100000, guid: 50f3ee82d93d7ef4094715de660ab464, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3387,10 +3388,10 @@ TextMesh:
   m_FontSize: 469
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 33ad2df547de9ae458034edf8c6e6907, type: 3}
+  m_Font: {fileID: 12800000, guid: 954746d370bc8934299c8c8267543f4f, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4285690623
+    rgba: 4282203647
 --- !u!1 &8623031842383615437
 GameObject:
   m_ObjectHideFlags: 0

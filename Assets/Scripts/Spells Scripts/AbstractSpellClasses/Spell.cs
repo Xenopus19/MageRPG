@@ -13,6 +13,7 @@ public class Spell : MonoBehaviour
     public Sprite SpellIcon;
     public Animator anim;
 
+    protected bool isAlive = true;
     public void GetAnimator()
     {
         anim = Caster.GetComponent<Animator>();
