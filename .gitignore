@@ -39,4 +39,4 @@ sysinfo.txt
 *.log
 
 [Ll]ogs/
-EditorUserSettings.asset
+*/EditorUserSettings.asset
