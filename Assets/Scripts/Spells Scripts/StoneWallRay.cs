@@ -8,6 +8,7 @@ public class StoneWallRay : RayInstantiateSpell
     {
         GetAnimator();
         anim.Play("StoneWallCastingAnim");
-        SpawnStructure(CreateRay(), true);
+        GameObject Wall = SpawnStructure(CreateRay(), false);
+        Wall.GetComponent<Spell>().Caster = Caster;
     }
 }

@@ -20,8 +20,10 @@ public class FireballScript : Projectiles
             return;
 
         GameObject Target = collision.gameObject;
+        Debug.Log(Target.name);
         if (Target.GetComponent<Spell>()?.Caster == Caster)
         {
+            Debug.Log("Collision ignored");
             Physics.IgnoreCollision(Target.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
             return;
         }
