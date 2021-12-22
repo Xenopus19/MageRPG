@@ -23,7 +23,7 @@ public class SpellCast : MonoBehaviour
 
     private ManaPlayer manaPlayer;
     private SpellIconsChange iconsChange;
-    private SpellCodeVisualisation spellCodeVisualisation;
+    //private SpellCodeVisualisation spellCodeVisualisation;
     private PhotonView photonView;
 
 
@@ -32,7 +32,6 @@ public class SpellCast : MonoBehaviour
     {
         Spells.Add("12", FireBall);
         Spells.Add("175", HealSpell);
-        //Spells.Add(412589, Tornado);
         Spells.Add("43", Frostbolt);
         Spells.Add("8576", StoneWall);
         Spells.Add("34", IceBarrage);
@@ -44,7 +43,7 @@ public class SpellCast : MonoBehaviour
         photonView = GetComponent<PhotonView>();
 
         iconsChange = GetComponent<SpellIconsChange>();
-        spellCodeVisualisation = GameObject.Find("buttons").GetComponent<SpellCodeVisualisation>();
+        //spellCodeVisualisation = GameObject.Find("buttons").GetComponent<SpellCodeVisualisation>();
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
         SpellCode = "";
     }
@@ -80,7 +79,7 @@ public class SpellCast : MonoBehaviour
         if (CurrentSpell != null)
         {
             CastSpell();
-            spellCodeVisualisation.OnCastVisualisation();
+            //spellCodeVisualisation.OnCastVisualisation();
         }
         iconsChange.DisableIconPanel();
     }

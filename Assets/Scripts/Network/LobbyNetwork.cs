@@ -27,7 +27,6 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsConnected) 
         {
             PhotonNetwork.ConnectUsingSettings();
-            
         }
         else
         {
@@ -86,12 +85,20 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public void LeaveRoom() 
     {
+        photonView.RPC("MakeMaster", RpcTarget.All);
         PhotonNetwork.LeaveRoom();
     } 
     
     public override void OnLeftRoom() 
     {
         PhotonNetwork.LoadLevel("NetworkLobby");
+    }
+    
+    [PunRPC]
+    private void MakeMaster() {
+        if (PhotonNetwork.IsMasterClient) {
+            playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
+        }
     }
 
     public void LeaveLobby() 
