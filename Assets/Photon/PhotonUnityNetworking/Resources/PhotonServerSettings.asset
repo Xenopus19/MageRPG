@@ -68,6 +68,7 @@ MonoBehaviour:
   - RemoveMesh
   - ShowHealth
   - MakeMaster
+  - RPC_DealHealToObject
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

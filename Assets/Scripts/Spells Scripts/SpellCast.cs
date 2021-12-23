@@ -19,6 +19,7 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject IceBarrage;
     [SerializeField] private GameObject StaticField;
     [SerializeField] private GameObject Vampirism;
+    [SerializeField] private GameObject HealingProjectile;
 
     [SerializeField] private GameObject PlayerCamera;
 
@@ -39,6 +40,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add("34", IceBarrage);
         Spells.Add("617", StaticField);
         Spells.Add("1475", Vampirism);
+        Spells.Add("8127" , HealingProjectile);
     }    
 
     private void Start()

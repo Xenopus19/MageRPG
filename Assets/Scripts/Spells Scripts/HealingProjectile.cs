@@ -1,19 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Photon.Pun;
-public class FireballScript : Projectiles
-{
-    private PhotonView photonView;
+using UnityEngine;
 
+public class HealingProjectile :Projectiles
+{
     private void Start()
-    {   
-        photonView = GetComponent<PhotonView>();
-        GetAnimator();
-        anim.Play("FireBallAndFrostboltCastAnim");
-        FlyForward();
+    {
         IgnoreCollisionWithCaster();
+        FlyForward();
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (!isAlive)
@@ -31,15 +26,16 @@ public class FireballScript : Projectiles
         {
             if (PhotonNetwork.IsMasterClient)
             {
-                DamageTarget(Target);
+                Health health = GetTargetHealth(Target);
+                if(health!=null)
+                {
+                    health.ReceiveHealing(ActionAmount);
+                }
             }
             CreateCollisionEffects();
             isAlive = false;
             Destroy(gameObject);
         }
-        
-        //Debug.LogWarning(Target.name);
     }
 
-    
 }

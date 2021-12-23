@@ -1291,6 +1291,7 @@ MonoBehaviour:
   IceBarrage: {fileID: 5685674506080238444, guid: 5218dcbe9a80a924a866161d1007cc8b, type: 3}
   StaticField: {fileID: 2027796423206249555, guid: a55e3f0da87ab344681d0894fa04878d, type: 3}
   Vampirism: {fileID: 8053093429068890989, guid: 31f03db1a0ea23c41ac9f6b2fa992b64, type: 3}
+  HealingProjectile: {fileID: 3136297729522583036, guid: 48a4404e3c74e5f468d9c214f51353b0, type: 3}
   PlayerCamera: {fileID: 712854308040321455}
   IsUsingVampirism: 0
   CurrentSpell: {fileID: 0}

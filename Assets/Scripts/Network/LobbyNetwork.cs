@@ -18,6 +18,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     private TypedLobby defaultLobby = new TypedLobby("default", LobbyType.Default);
     private void Start()
     {
+            
         playerName = PhotonNetwork.NickName;
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = "1";
@@ -33,6 +34,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
             JoinDefaultLobby();
             LoadingPlane.SetActive(false);
         }
+
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
         //joiningRoomText.Init();
     }
