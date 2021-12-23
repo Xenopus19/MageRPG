@@ -30,6 +30,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         }
         else
         {
+            JoinDefaultLobby();
             LoadingPlane.SetActive(false);
         }
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
@@ -67,7 +68,6 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom() 
     {
-        if (PhotonNetwork.CurrentRoom.Name == "CallbackTrigger") return;
         Debug.Log("Joined the room");
         roomList.SetActive(false);
         joiningRoom.GetComponent<JoiningRoom>().CreateJoinRoomPanel();
@@ -92,6 +92,9 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public override void OnLeftRoom() 
     {
         PhotonNetwork.LoadLevel("NetworkLobby");
+
+        if(PhotonNetwork.InLobby)
+        PhotonNetwork.LeaveLobby();
     }
     
     [PunRPC]
@@ -108,6 +111,10 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public override void OnLeftLobby() 
     {
+        if(PhotonNetwork.InLobby)
+        {
+            PhotonNetwork.LeaveLobby();
+        }
         PhotonNetwork.LoadLevel("Menu");
     }
 
