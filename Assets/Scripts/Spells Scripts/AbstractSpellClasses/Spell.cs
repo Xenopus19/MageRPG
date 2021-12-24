@@ -41,7 +41,7 @@ public class Spell : MonoBehaviour
 
     public void DamageTarget(GameObject Target)
     {
-        if (GetTargetHealth(Target) != null && GetTargetHealth(Target) != GetTargetHealth(Caster))
+        if (GetTargetHealth(Target) != null && GetTargetHealth(Target) != GetTargetHealth(Caster) && PhotonNetwork.IsMasterClient)
         {
             GetTargetHealth(Target).ReceiveDamage(ActionAmount);
             TryVampirism(Caster);
