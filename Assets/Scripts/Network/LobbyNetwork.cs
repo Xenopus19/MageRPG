@@ -1,6 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using System.Collections;
 
 public class LobbyNetwork : MonoBehaviourPunCallbacks
 {
@@ -31,7 +32,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         }
         else
         {
-            JoinDefaultLobby();
+            StartCoroutine("JoinDefaultLobbyWithDelay");
             LoadingPlane.SetActive(false);
         }
 
@@ -49,7 +50,14 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     }
     private void JoinDefaultLobby()
     {
-        Debug.Log(PhotonNetwork.JoinLobby(defaultLobby));
+        PhotonNetwork.JoinLobby(defaultLobby);
+    }
+
+    private IEnumerable JoinDefaultLobbyWithDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        JoinDefaultLobby();
     }
 
     public void AddNickName(string name) 

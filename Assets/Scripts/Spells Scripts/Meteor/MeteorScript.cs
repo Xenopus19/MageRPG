@@ -27,7 +27,7 @@ public class MeteorScript : Spell
 
     private IEnumerator Explode()
     {
-        Debug.Log("Meteor exploded");
+        //Debug.Log("Meteor exploded");
         yield return new WaitForSeconds(ExplosionDelay);
 
         Destroy(Fireball);

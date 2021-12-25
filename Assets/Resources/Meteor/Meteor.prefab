@@ -14607,7 +14607,7 @@ MonoBehaviour:
   Fireball: {fileID: 400872793439504068}
   DestinationPoint: {fileID: 6777859221446145136}
   ExplosionRadius: 3
-  ExplosionDelay: 0.5
+  ExplosionDelay: 0.4
   FireballFallingSpeed: 75
   Flame: {fileID: 7005732004349152682, guid: 08b8ff8d94933d14c80a122652b0a14e, type: 3}
   Explosion: {fileID: 100012, guid: 2773c6c2c174c334890f7ce3d5f3d936, type: 3}
