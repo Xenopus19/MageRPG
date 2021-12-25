@@ -9,7 +9,7 @@ public class RayInstantiateSpell : Spell
     {
         if(Physics.Raycast(ray, out RaycastHit hit))
         {
-            if (hit.collider.gameObject.layer == 10)
+            if (true)/*hit.collider.gameObject.layer == 10*/
             {
                 if (IsNetworkInstantiate)
                 {

@@ -6,7 +6,7 @@ public class FireballScript : Projectiles
 {
     private PhotonView photonView;
 
-    private void Start()
+    protected void Start()
     {   
         photonView = GetComponent<PhotonView>();
         GetAnimator();
@@ -14,14 +14,16 @@ public class FireballScript : Projectiles
         FlyForward();
         IgnoreCollisionWithCaster();
     }
-    private void OnCollisionEnter(Collision collision)
+    protected void OnCollisionEnter(Collision collision)
     {
         if (!isAlive)
             return;
 
         GameObject Target = collision.gameObject;
+        Debug.Log(Target.name);
         if (Target.GetComponent<Spell>()?.Caster == Caster)
         {
+            Debug.Log("Collision ignored");
             Physics.IgnoreCollision(Target.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
             return;
         }
