@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1973525546259374090}
   - component: {fileID: 5233488117302485519}
   - component: {fileID: 6424739165979211699}
+  - component: {fileID: 8350886297066459333}
+  - component: {fileID: 7220497881061886071}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -113,6 +115,45 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 852b9cab02222ff4b8d96cc5f328d8b9, type: 3}
   anim: {fileID: 0}
+--- !u!114 &8350886297066459333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281528916581093965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &7220497881061886071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281528916581093965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 8350886297066459333}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &564763838878946856
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +167,8 @@ GameObject:
   - component: {fileID: 5466648088728775677}
   - component: {fileID: 1756736707769533}
   - component: {fileID: 1263440997075362789}
+  - component: {fileID: 5763495792165630424}
+  - component: {fileID: 494471037408739637}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -226,6 +269,54 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 852b9cab02222ff4b8d96cc5f328d8b9, type: 3}
   anim: {fileID: 0}
+--- !u!114 &5763495792165630424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564763838878946856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &494471037408739637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564763838878946856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -4804866280073977389}
+  - {fileID: 3928976108476381865}
+  - {fileID: 117593826126544139}
+  - {fileID: 5763495792165630424}
+  - {fileID: 8350886297066459333}
+  - {fileID: 1109648236437880948}
+  - {fileID: 5748747643214205504}
+  - {fileID: 4928971672189978118}
+  - {fileID: 1067825454401161631}
+  - {fileID: 2802911042415880850}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1951144234929603750
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,6 +330,8 @@ GameObject:
   - component: {fileID: 3798692924456069833}
   - component: {fileID: 6289015036075866391}
   - component: {fileID: 5322514649938548814}
+  - component: {fileID: 3928976108476381865}
+  - component: {fileID: 5638368170585086549}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -339,6 +432,54 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 852b9cab02222ff4b8d96cc5f328d8b9, type: 3}
   anim: {fileID: 0}
+--- !u!114 &3928976108476381865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951144234929603750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &5638368170585086549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951144234929603750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -4804866280073977389}
+  - {fileID: 3928976108476381865}
+  - {fileID: 117593826126544139}
+  - {fileID: 5763495792165630424}
+  - {fileID: 8350886297066459333}
+  - {fileID: 1109648236437880948}
+  - {fileID: 5748747643214205504}
+  - {fileID: 4928971672189978118}
+  - {fileID: 1067825454401161631}
+  - {fileID: 2802911042415880850}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4626417050695688262
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +493,8 @@ GameObject:
   - component: {fileID: 3164751566740225902}
   - component: {fileID: 992933949572726385}
   - component: {fileID: 966773346685564278}
+  - component: {fileID: 2802911042415880850}
+  - component: {fileID: 4731058498530175991}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Untagged
@@ -452,6 +595,54 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 852b9cab02222ff4b8d96cc5f328d8b9, type: 3}
   anim: {fileID: 0}
+--- !u!114 &2802911042415880850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626417050695688262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &4731058498530175991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626417050695688262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -4804866280073977389}
+  - {fileID: 3928976108476381865}
+  - {fileID: 117593826126544139}
+  - {fileID: 5763495792165630424}
+  - {fileID: 8350886297066459333}
+  - {fileID: 1109648236437880948}
+  - {fileID: 5748747643214205504}
+  - {fileID: 4928971672189978118}
+  - {fileID: 1067825454401161631}
+  - {fileID: 2802911042415880850}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4734205789790579689
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +656,8 @@ GameObject:
   - component: {fileID: 407627388397964232}
   - component: {fileID: 6750161565438522764}
   - component: {fileID: 3850329492668640219}
+  - component: {fileID: 4928971672189978118}
+  - component: {fileID: 8661342290037266936}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -565,6 +758,54 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 852b9cab02222ff4b8d96cc5f328d8b9, type: 3}
   anim: {fileID: 0}
+--- !u!114 &4928971672189978118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4734205789790579689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &8661342290037266936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4734205789790579689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -4804866280073977389}
+  - {fileID: 3928976108476381865}
+  - {fileID: 117593826126544139}
+  - {fileID: 5763495792165630424}
+  - {fileID: 8350886297066459333}
+  - {fileID: 1109648236437880948}
+  - {fileID: 5748747643214205504}
+  - {fileID: 4928971672189978118}
+  - {fileID: 1067825454401161631}
+  - {fileID: 2802911042415880850}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &4972700310855030493
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +819,8 @@ GameObject:
   - component: {fileID: 2036804805254090015}
   - component: {fileID: 8203673905430666392}
   - component: {fileID: 4809024475588350546}
+  - component: {fileID: 117593826126544139}
+  - component: {fileID: 2157830764113084905}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -678,6 +921,54 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 852b9cab02222ff4b8d96cc5f328d8b9, type: 3}
   anim: {fileID: 0}
+--- !u!114 &117593826126544139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972700310855030493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &2157830764113084905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972700310855030493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -4804866280073977389}
+  - {fileID: 3928976108476381865}
+  - {fileID: 117593826126544139}
+  - {fileID: 5763495792165630424}
+  - {fileID: 8350886297066459333}
+  - {fileID: 1109648236437880948}
+  - {fileID: 5748747643214205504}
+  - {fileID: 4928971672189978118}
+  - {fileID: 1067825454401161631}
+  - {fileID: 2802911042415880850}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &5219211580047769481
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +982,8 @@ GameObject:
   - component: {fileID: 5131766439651843709}
   - component: {fileID: 779949060305603663}
   - component: {fileID: 8623677571982657712}
+  - component: {fileID: 1067825454401161631}
+  - component: {fileID: 1071937347779443728}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Untagged
@@ -791,6 +1084,54 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 852b9cab02222ff4b8d96cc5f328d8b9, type: 3}
   anim: {fileID: 0}
+--- !u!114 &1067825454401161631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5219211580047769481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &1071937347779443728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5219211580047769481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -4804866280073977389}
+  - {fileID: 3928976108476381865}
+  - {fileID: 117593826126544139}
+  - {fileID: 5763495792165630424}
+  - {fileID: 8350886297066459333}
+  - {fileID: 1109648236437880948}
+  - {fileID: 5748747643214205504}
+  - {fileID: 4928971672189978118}
+  - {fileID: 1067825454401161631}
+  - {fileID: 2802911042415880850}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &5616636850662226689
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +1145,8 @@ GameObject:
   - component: {fileID: 1523400755862539510}
   - component: {fileID: 8752523965387550267}
   - component: {fileID: 1112932479316407875}
+  - component: {fileID: 5748747643214205504}
+  - component: {fileID: 6310177875419733997}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -904,6 +1247,54 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 852b9cab02222ff4b8d96cc5f328d8b9, type: 3}
   anim: {fileID: 0}
+--- !u!114 &5748747643214205504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616636850662226689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &6310177875419733997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616636850662226689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -4804866280073977389}
+  - {fileID: 3928976108476381865}
+  - {fileID: 117593826126544139}
+  - {fileID: 5763495792165630424}
+  - {fileID: 8350886297066459333}
+  - {fileID: 1109648236437880948}
+  - {fileID: 5748747643214205504}
+  - {fileID: 4928971672189978118}
+  - {fileID: 1067825454401161631}
+  - {fileID: 2802911042415880850}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &7040355173975674763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1015,6 +1406,8 @@ GameObject:
   - component: {fileID: 9124624387397174017}
   - component: {fileID: 22389212381246144}
   - component: {fileID: 8462523634444275779}
+  - component: {fileID: 1109648236437880948}
+  - component: {fileID: 5020977592220800813}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -1115,3 +1508,51 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: 852b9cab02222ff4b8d96cc5f328d8b9, type: 3}
   anim: {fileID: 0}
+--- !u!114 &1109648236437880948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7606583542914899174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &5020977592220800813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7606583542914899174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: -4804866280073977389}
+  - {fileID: 3928976108476381865}
+  - {fileID: 117593826126544139}
+  - {fileID: 5763495792165630424}
+  - {fileID: 8350886297066459333}
+  - {fileID: 1109648236437880948}
+  - {fileID: 5748747643214205504}
+  - {fileID: 4928971672189978118}
+  - {fileID: 1067825454401161631}
+  - {fileID: 2802911042415880850}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
