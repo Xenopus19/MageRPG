@@ -44,7 +44,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add("1475", Vampirism);
         Spells.Add("1243", FrozenOrb);
         Spells.Add("8127", HealingProjectile);
-        Spells.Add("21", Meteor);
+        Spells.Add("86275", Meteor);
     }    
 
     private void Start()
