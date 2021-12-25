@@ -6,8 +6,8 @@ public class MountainScript : Spell
 {
     Health CollidedPlayerHealth;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        DamageTarget(collision.gameObject);
+        DamageTarget(other.gameObject);
     }
 }
