@@ -1294,6 +1294,7 @@ MonoBehaviour:
   FrozenOrb: {fileID: 1519707880228496850, guid: 3a0aa4ef325692c4c85354c20733bd5b, type: 3}
   HealingProjectile: {fileID: 3136297729522583036, guid: 48a4404e3c74e5f468d9c214f51353b0, type: 3}
   Meteor: {fileID: 5272016879970276331, guid: 056f31d2100ccf345b2b89b4ff4ddcc4, type: 3}
+  Spikes: {fileID: 2429358459969404064, guid: 1e9f166a6893c7c4095bda011e35bbfb, type: 3}
   PlayerCamera: {fileID: 712854308040321455}
   IsUsingVampirism: 0
   CurrentSpell: {fileID: 0}
