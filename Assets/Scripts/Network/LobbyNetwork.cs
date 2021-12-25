@@ -1,6 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using System.Collections;
 
 public class LobbyNetwork : MonoBehaviourPunCallbacks
 {
@@ -18,6 +19,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     private TypedLobby defaultLobby = new TypedLobby("default", LobbyType.Default);
     private void Start()
     {
+            
         playerName = PhotonNetwork.NickName;
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = "1";
@@ -27,12 +29,13 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         if (!PhotonNetwork.IsConnected) 
         {
             PhotonNetwork.ConnectUsingSettings();
-            
         }
         else
         {
+            StartCoroutine("JoinDefaultLobbyWithDelay");
             LoadingPlane.SetActive(false);
         }
+
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
         //joiningRoomText.Init();
     }
@@ -47,7 +50,14 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     }
     private void JoinDefaultLobby()
     {
-        Debug.Log(PhotonNetwork.JoinLobby(defaultLobby));
+        PhotonNetwork.JoinLobby(defaultLobby);
+    }
+
+    private IEnumerable JoinDefaultLobbyWithDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        JoinDefaultLobby();
     }
 
     public void AddNickName(string name) 
@@ -68,7 +78,6 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom() 
     {
-        if (PhotonNetwork.CurrentRoom.Name == "CallbackTrigger") return;
         Debug.Log("Joined the room");
         roomList.SetActive(false);
         joiningRoom.GetComponent<JoiningRoom>().CreateJoinRoomPanel();
@@ -86,12 +95,23 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public void LeaveRoom() 
     {
+        photonView.RPC("MakeMaster", RpcTarget.All);
         PhotonNetwork.LeaveRoom();
     } 
     
     public override void OnLeftRoom() 
     {
         PhotonNetwork.LoadLevel("NetworkLobby");
+
+        if(PhotonNetwork.InLobby)
+        PhotonNetwork.LeaveLobby();
+    }
+    
+    [PunRPC]
+    private void MakeMaster() {
+        if (PhotonNetwork.IsMasterClient) {
+            playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
+        }
     }
 
     public void LeaveLobby() 
@@ -101,6 +121,10 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public override void OnLeftLobby() 
     {
+        if(PhotonNetwork.InLobby)
+        {
+            PhotonNetwork.LeaveLobby();
+        }
         PhotonNetwork.LoadLevel("Menu");
     }
 

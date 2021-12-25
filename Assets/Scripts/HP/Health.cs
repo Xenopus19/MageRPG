@@ -39,9 +39,14 @@ public class Health : MonoBehaviour
         OnDamageReceived();
     }
 
-    public void ReceiveHealing(float IncomeingHealing)
+    public void ReceiveHealing(float IncomingHealing)
     {
-        CurrentHealth += IncomeingHealing;
+        photonView.RPC("RPC_DealHealToObject", RpcTarget.All, IncomingHealing);
+    }
+    [PunRPC]
+    public void RPC_DealHealToObject(float IncomingHealing)
+    {
+        CurrentHealth += IncomingHealing;
 
 
         if (CurrentHealth > MaxHealth)

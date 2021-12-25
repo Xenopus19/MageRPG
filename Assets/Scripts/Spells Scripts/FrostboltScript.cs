@@ -24,6 +24,7 @@ public class FrostboltScript : Projectiles
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!isAlive) return;
         GameObject Target = collision.gameObject;
         CreateCollisionEffects();
 
@@ -31,10 +32,12 @@ public class FrostboltScript : Projectiles
         {
             DamageTarget(Target);
             ApplyMovementDebuff(Target);
+            isAlive = false;
             Destroy(gameObject);
         }
         else
         {
+            isAlive = false;
             Destroy(gameObject);
         }
     }

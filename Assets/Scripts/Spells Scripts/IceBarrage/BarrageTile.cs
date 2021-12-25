@@ -1,4 +1,4 @@
-using System;
+using Photon.Pun;
 using UnityEngine;
 
 public class BarrageTile : Spell
@@ -14,6 +14,7 @@ public class BarrageTile : Spell
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if (!isAlive) return;
         GameObject Target = collision.gameObject;
         if (Target.GetComponent<Spell>()?.Caster == Caster)
         {
@@ -24,6 +25,7 @@ public class BarrageTile : Spell
         {
             DamageTarget(collision.transform.gameObject);
             CreateDestroyEffects();
+            isAlive = false;
             Destroy(gameObject);
         }
     }

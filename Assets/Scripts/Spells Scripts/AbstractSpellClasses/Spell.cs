@@ -13,6 +13,7 @@ public class Spell : MonoBehaviour
     public Sprite SpellIcon;
     public Animator anim;
 
+    protected bool isAlive = true;
     public void GetAnimator()
     {
         anim = Caster.GetComponent<Animator>();
@@ -40,7 +41,7 @@ public class Spell : MonoBehaviour
 
     public void DamageTarget(GameObject Target)
     {
-        if (GetTargetHealth(Target) != null && GetTargetHealth(Target) != GetTargetHealth(Caster))
+        if (GetTargetHealth(Target) != null && GetTargetHealth(Target) != GetTargetHealth(Caster) && PhotonNetwork.IsMasterClient)
         {
             GetTargetHealth(Target).ReceiveDamage(ActionAmount);
             TryVampirism(Caster);

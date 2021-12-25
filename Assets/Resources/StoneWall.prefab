@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8271564503614805025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6887236610192687589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95ff2196cc1a7a48b312798777caf9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Caster: {fileID: 0}
+  ActionAmount: 0
+  ManaConsumption: 0
+  SpellIcon: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &9052380765520134069
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,6 +27,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2850294180436652098}
   - component: {fileID: 7621275898349474376}
+  - component: {fileID: 3174897225910385868}
+  - component: {fileID: 2196625922413166358}
+  - component: {fileID: 1052920203825379633}
+  - component: {fileID: 9179089510091609194}
   m_Layer: 0
   m_Name: StoneWall
   m_TagString: Untagged
@@ -54,6 +75,65 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!65 &3174897225910385868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9052380765520134069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.63, y: 2.99, z: 0.4}
+  m_Center: {x: 0, y: 1.32, z: 0}
+--- !u!114 &2196625922413166358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9052380765520134069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95ff2196cc1a7a48b312798777caf9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Caster: {fileID: 0}
+  ActionAmount: 0
+  ManaConsumption: 0
+  SpellIcon: {fileID: 0}
+  anim: {fileID: 0}
+--- !u!54 &1052920203825379633
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9052380765520134069}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!114 &9179089510091609194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9052380765520134069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ff8619c7e23294b8360dbca97ebfe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lifetime: 15
 --- !u!1001 &635505048011703559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125,8 +205,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneWall
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8983638209211113272, guid: 33dd84cb959b9f14b9836382649703a5, type: 3}
+    - {fileID: 1813037727784116818, guid: 33dd84cb959b9f14b9836382649703a5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33dd84cb959b9f14b9836382649703a5, type: 3}
+--- !u!1 &6887236610192687589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6288614207729255650, guid: 33dd84cb959b9f14b9836382649703a5, type: 3}
+  m_PrefabInstance: {fileID: 635505048011703559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1591218325676985548 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2217144150621751755, guid: 33dd84cb959b9f14b9836382649703a5, type: 3}

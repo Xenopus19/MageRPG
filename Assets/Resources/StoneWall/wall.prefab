@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &8652744105616099089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232209079084014346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95ff2196cc1a7a48b312798777caf9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Caster: {fileID: 0}
+  ActionAmount: 0
+  ManaConsumption: 0
+  SpellIcon: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!1 &6596997570286785836
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +117,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33dd84cb959b9f14b9836382649703a5, type: 3}
+--- !u!1 &1232209079084014346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6288614207729255650, guid: 33dd84cb959b9f14b9836382649703a5, type: 3}
+  m_PrefabInstance: {fileID: 5069939294928183272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6384109993663665699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2217144150621751755, guid: 33dd84cb959b9f14b9836382649703a5, type: 3}

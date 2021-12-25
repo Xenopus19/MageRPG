@@ -16,9 +16,14 @@ public class FireballScript : Projectiles
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if (!isAlive)
+            return;
+
         GameObject Target = collision.gameObject;
+        Debug.Log(Target.name);
         if (Target.GetComponent<Spell>()?.Caster == Caster)
         {
+            Debug.Log("Collision ignored");
             Physics.IgnoreCollision(Target.GetComponent<Collider>(), gameObject.GetComponent<Collider>());
             return;
         }
@@ -29,6 +34,7 @@ public class FireballScript : Projectiles
                 DamageTarget(Target);
             }
             CreateCollisionEffects();
+            isAlive = false;
             Destroy(gameObject);
         }
         

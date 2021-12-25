@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameNetwork : MonoBehaviourPunCallbacks
 {
     [SerializeField] private GameObject PlayerPrefab;
+    [SerializeField] private GameObject DeadPlayerPrefab;
     [SerializeField] private List<GameObject> SpawnPositions = new List<GameObject>();
     [SerializeField] private List<GameObject> NickNameTexts = new List<GameObject>();
     public Transform SpawnPosition;
@@ -15,11 +16,13 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     public float LifesForFirstTeam = 0;
     public float LifesForSecondTeam = 0;
     public float AmountOfLosses = 0;
+
+    private GameObject Player;
     void Start()
     {
         DefineTeam();
         DefineNickName();
-        GameObject Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
+        Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
         PhotonNetwork.LocalPlayer.TagObject = Player;
         Player.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
         Player.name += SpawnPosition.name;
@@ -80,5 +83,10 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         Debug.Log(otherPlayer.NickName + " left the room.");
+    }
+
+    public void OnDie() {
+        GameObject DeadPlayer = PhotonNetwork.Instantiate(DeadPlayerPrefab.name, Player.transform.position, Player.transform.rotation);
+        PhotonNetwork.Destroy(Player);
     }
 }

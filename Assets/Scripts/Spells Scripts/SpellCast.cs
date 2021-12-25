@@ -19,13 +19,15 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject IceBarrage;
     [SerializeField] private GameObject StaticField;
     [SerializeField] private GameObject Vampirism;
-    [SerializeField] private GameObject Spikes;
+    [SerializeField] private GameObject FrozenOrb;
+    [SerializeField] private GameObject HealingProjectile;
+    [SerializeField] private GameObject Meteor;
 
     [SerializeField] private GameObject PlayerCamera;
 
     private ManaPlayer manaPlayer;
     private SpellIconsChange iconsChange;
-    private SpellCodeVisualisation spellCodeVisualisation;
+    //private SpellCodeVisualisation spellCodeVisualisation;
     private PhotonView photonView;
 
     public bool IsUsingVampirism;
@@ -35,13 +37,14 @@ public class SpellCast : MonoBehaviour
     {
         Spells.Add("12", FireBall);
         Spells.Add("175", HealSpell);
-        //Spells.Add(412589, Tornado);
         Spells.Add("43", Frostbolt);
         Spells.Add("8576", StoneWall);
         Spells.Add("34", IceBarrage);
         Spells.Add("617", StaticField);
         Spells.Add("1475", Vampirism);
-        Spells.Add("142", Spikes);
+        Spells.Add("1243", FrozenOrb);
+        Spells.Add("8127", HealingProjectile);
+        Spells.Add("86275", Meteor);
     }    
 
     private void Start()
@@ -49,7 +52,7 @@ public class SpellCast : MonoBehaviour
         photonView = GetComponent<PhotonView>();
 
         iconsChange = GetComponent<SpellIconsChange>();
-        spellCodeVisualisation = GameObject.Find("buttons").GetComponent<SpellCodeVisualisation>();
+        //spellCodeVisualisation = GameObject.Find("buttons").GetComponent<SpellCodeVisualisation>();
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
         SpellCode = "";
     }
@@ -85,7 +88,7 @@ public class SpellCast : MonoBehaviour
         if (CurrentSpell != null)
         {
             CastSpell();
-            spellCodeVisualisation.OnCastVisualisation();
+            //spellCodeVisualisation.OnCastVisualisation();
         }
         iconsChange.DisableIconPanel();
     }
