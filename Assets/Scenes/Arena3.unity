@@ -9993,6 +9993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 3485778871360351862, guid: 522e53b0724cb484ab3d44657e0a07ae, type: 3}
+  DeadPlayerPrefab: {fileID: 8813071004635140471, guid: 9a7a5a6433daba54b9a70e19c3d27243, type: 3}
   SpawnPositions:
   - {fileID: 176701199}
   - {fileID: 176701198}
