@@ -3573,7 +3573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: {fileID: 459288609}
-  RoomListing: {fileID: 7445340108388575878, guid: dea349495dbc52449adf04d49a9efe75, type: 3}
+  RoomButtonPrefab: {fileID: 0}
 --- !u!1 &1539538211
 GameObject:
   m_ObjectHideFlags: 0
@@ -3683,7 +3683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Content: {fileID: 459288609}
-  RoomListing: {fileID: 7445340108388575878, guid: dea349495dbc52449adf04d49a9efe75, type: 3}
+  RoomButtonPrefab: {fileID: 7445340108388575878, guid: dea349495dbc52449adf04d49a9efe75, type: 3}
 --- !u!4 &1600603855
 Transform:
   m_ObjectHideFlags: 0
