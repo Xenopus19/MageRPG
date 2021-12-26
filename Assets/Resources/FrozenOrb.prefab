@@ -172,6 +172,7 @@ MonoBehaviour:
   ManaConsumption: 15
   SpellIcon: {fileID: 21300000, guid: fcb537db90697b34fae958d8aadbe162, type: 3}
   anim: {fileID: 0}
+  ParticlesOnRecognize: {fileID: 198276, guid: 1720f2c1867206149a7c64de30295781, type: 3}
   OnCollisionSound: {fileID: 8300000, guid: 5561c4f9bdadf174ca1f1ab41473e02b, type: 3}
   OnCollisionParticle: {fileID: 198276, guid: 1720f2c1867206149a7c64de30295781, type: 3}
   GODestroySFX: {fileID: 7587097764356830660, guid: 7b80c0c1192a8f346a10ebbf683e7f82, type: 3}

@@ -12,6 +12,7 @@ public class Spell : MonoBehaviour
     public float ManaConsumption;
     public Sprite SpellIcon;
     public Animator anim;
+    public GameObject ParticlesOnRecognize;
 
     protected bool isAlive = true;
     public void GetAnimator()

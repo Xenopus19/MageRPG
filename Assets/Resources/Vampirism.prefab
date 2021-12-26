@@ -48,4 +48,5 @@ MonoBehaviour:
   ManaConsumption: 25
   SpellIcon: {fileID: 21300000, guid: a657ab42a4f9f394ebf80edadd794ba5, type: 3}
   anim: {fileID: 0}
+  ParticlesOnRecognize: {fileID: 5888467369549194514, guid: e7342b34af0244443b82197e55f9ce70, type: 3}
   EffectTime: 10

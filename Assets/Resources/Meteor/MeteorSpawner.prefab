@@ -48,5 +48,6 @@ MonoBehaviour:
   ManaConsumption: 20
   SpellIcon: {fileID: 21300000, guid: 00e8783f2adc24940a8669a66b7b7f25, type: 3}
   anim: {fileID: 0}
+  ParticlesOnRecognize: {fileID: 366606915571589684, guid: 219603195e5f3fa4091d86703d87694f, type: 3}
   StructureToInstantiate: {fileID: 3073125381435364382, guid: a927454495034974e98fc205dd4885c0, type: 3}
   MaxInstantiateDistance: 15
