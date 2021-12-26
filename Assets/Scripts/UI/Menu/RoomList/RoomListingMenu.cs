@@ -6,31 +6,42 @@ using UnityEngine;
 public class RoomListingMenu : MonoBehaviourPunCallbacks
 {
     [SerializeField] private Transform Content;
-    [SerializeField] private GameObject RoomListing;
+    [SerializeField] private GameObject RoomButtonPrefab;
 
-    private List<RoomListing> listings = new List<RoomListing>();
+    private Dictionary<string, GameObject> roomButtons = new Dictionary<string, GameObject>();
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
+        if(roomList.Count!=0)
         foreach(RoomInfo info in roomList)
         {
-            if(info.RemovedFromList)
+            if(roomButtons.ContainsKey(info.Name))
             {
-                int index = listings.FindIndex(x => x.roomInfo.Name == info.Name);
-                if(index!=-1)
+                if(info.RemovedFromList)
                 {
-                    Destroy(listings[index].gameObject);
-                    listings.RemoveAt(index);
+                    DeleteRoomButton(info);
+                }
+                else
+                {
+                    roomButtons[info.Name].GetComponent<RoomListing>().SetRoomInfo(info);
                 }
             }
-            GameObject roomButton = Instantiate(RoomListing, Content);
-            if(roomButton != null)
+            else
             {
-                RoomListing thisListing = roomButton.GetComponent<RoomListing>();
-                thisListing.SetRoomInfo(info);
-                listings.Add(thisListing);
-                Debug.LogWarning("Created: " + roomButton.GetComponent<RoomListing>().roomInfo.Name);
+                CreateNewRoomButton(info);
             }
         }
+    }
+    private void DeleteRoomButton(RoomInfo info)
+    {
+        Destroy(roomButtons[info.Name]);
+        roomButtons.Remove(info.Name);
+    }
+
+    private void CreateNewRoomButton(RoomInfo info)
+    {
+        GameObject roomListingButton = Instantiate(RoomButtonPrefab, Content.transform);
+        roomListingButton.GetComponent<RoomListing>().SetRoomInfo(info);
+        roomButtons.Add(info.Name, roomListingButton);
     }
 }
