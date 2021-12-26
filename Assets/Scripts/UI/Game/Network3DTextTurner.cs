@@ -24,7 +24,10 @@ public class Network3DTextTurner : MonoBehaviour
     {
         foreach(GameObject text in Texts3D)
         {
-            text.transform.LookAt(LocalPlayerGO.transform);
+            text.transform?.LookAt(LocalPlayerGO.transform);
+            //if (!(LocalPlayerGO.transform && text.transform) {
+            //    text.transform?.LookAt(LocalPlayerGO.transform);
+            //}
         }
     }
 }

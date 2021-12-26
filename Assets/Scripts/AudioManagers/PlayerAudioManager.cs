@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class PlayerAudioManager : MonoBehaviour
@@ -10,20 +9,29 @@ public class PlayerAudioManager : MonoBehaviour
     private float StepChangeTime = 2;
     private float StepChangeCooldown = 0;
     private PlayerMovement playerMovement;
+    private PhotonView photonView;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         playerMovement = GetComponentInParent<PlayerMovement>();
+        photonView = gameObject.GetComponentInParent<PhotonView>();
+        audioSource.mute = true;
     }
 
     private void Update()
     {
         PlayFootsteps();
         SetRandomFootstepSFX();
+        //if (photonView != null) {
+        //    if (photonView.IsMine) {
+        //        photonView.RPC("PlayFootsteps", RpcTarget.All);
+        //        SetRandomFootstepSFX();
+        //    }
+        //}
     }
-
-    private void PlayFootsteps()
+    //[PunRPC]
+    public void PlayFootsteps()
     {
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && playerMovement.isGrounded)
         {
