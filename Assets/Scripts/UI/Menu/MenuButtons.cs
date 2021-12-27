@@ -25,4 +25,9 @@ public class MenuButtons : MonoBehaviour {
     public void StartGame() {
         SceneManager.LoadScene("NetworkLobby");
     }
+
+    public void LoadTutorial()
+    {
+        SceneManager.LoadScene("TutorialLevel");
+    }
 }

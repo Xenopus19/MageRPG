@@ -13,8 +13,8 @@ public class PlayerHP : Health {
         {
             ColorHp colorHP = GameObject.Find("PanelForHP").GetComponent<ColorHp>();
             colorHP.Init(gameObject);
-            lifeManager = GameObject.Find("LifeManager").GetComponent<LifeManager>();
-            lifeManager.Init(gameObject);
+            lifeManager = GameObject.Find("LifeManager")?.GetComponent<LifeManager>();
+            lifeManager?.Init(gameObject);
         }
     }
 
