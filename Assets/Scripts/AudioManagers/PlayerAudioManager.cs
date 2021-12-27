@@ -15,7 +15,7 @@ public class PlayerAudioManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         playerMovement = GetComponentInParent<PlayerMovement>();
-        photonView = gameObject.GetComponentInParent<PhotonView>();
+        photonView = GetComponent<PhotonView>();
         audioSource.mute = true;
     }
 
