@@ -110,11 +110,9 @@ public class PlayerMovement : MonoBehaviour
 
         float speed = GetCurrentSpeed(baseSpeed);
         if (directionX == 0 && directionZ == 0) 
-        {
-            GetAnimator().SetBool("Moving", false);
-        } 
+            GetAnimator()?.SetBool("Moving", false);
         else
-            GetAnimator().SetBool("Moving", true);
+            GetAnimator()?.SetBool("Moving", true);
 
         controller.Move(move * speed * Time.deltaTime);
     }

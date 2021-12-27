@@ -13,7 +13,6 @@ public class SpellCast : MonoBehaviour
 
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject HealSpell;
-    [SerializeField] private GameObject Tornado;
     [SerializeField] private GameObject Frostbolt;
     [SerializeField] private GameObject StoneWall;
     [SerializeField] private GameObject IceBarrage;
