@@ -15,7 +15,7 @@ public class PlayerAudioManager : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         playerMovement = GetComponentInParent<PlayerMovement>();
-        photonView = gameObject.GetComponentInParent<PhotonView>();
+        photonView = GetComponent<PhotonView>();
         audioSource.mute = true;
     }
 
@@ -25,13 +25,12 @@ public class PlayerAudioManager : MonoBehaviour
         //SetRandomFootstepSFX();
         if (photonView != null && playerMovement.isActiveAndEnabled) {
             if (photonView.IsMine) {
-                //photonView.RPC("PlayFootsteps", RpcTarget.All);
-                PlayFootsteps();
+                photonView.RPC("PlayFootsteps", RpcTarget.All);
                 SetRandomFootstepSFX();
             }
         }
     }
-    //[PunRPC]
+    [PunRPC]
     public void PlayFootsteps()
     {
         if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && playerMovement.isGrounded)
