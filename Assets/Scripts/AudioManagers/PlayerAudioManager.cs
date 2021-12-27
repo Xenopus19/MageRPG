@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class PlayerAudioManager : MonoBehaviour
@@ -10,22 +9,17 @@ public class PlayerAudioManager : MonoBehaviour
     private float StepChangeTime = 2;
     private float StepChangeCooldown = 0;
     private PlayerMovement playerMovement;
+    private PhotonView photonView;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
         playerMovement = GetComponentInParent<PlayerMovement>();
+        photonView = gameObject.GetComponentInParent<PhotonView>();
     }
 
-    private void Update()
-    {
-<<<<<<< Updated upstream
-        PlayFootsteps();
-        SetRandomFootstepSFX();
-    }
-
-    private void PlayFootsteps()
-=======
+    private void Update() 
+    { 
         //PlayFootsteps();
         //SetRandomFootstepSFX();
         if (photonView != null) {
@@ -37,9 +31,8 @@ public class PlayerAudioManager : MonoBehaviour
     }
     [PunRPC]
     public void PlayFootsteps()
->>>>>>> Stashed changes
     {
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && playerMovement.isGrounded)
+        if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && playerMovement.isGrounded)
         {
             audioSource.mute = false;
         }
