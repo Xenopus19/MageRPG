@@ -23,7 +23,7 @@ public class PlayerAudioManager : MonoBehaviour
     { 
         //PlayFootsteps();
         //SetRandomFootstepSFX();
-        if (photonView != null) {
+        if (photonView != null && playerMovement.isActiveAndEnabled) {
             if (photonView.IsMine) {
                 photonView.RPC("PlayFootsteps", RpcTarget.All);
                 SetRandomFootstepSFX();
