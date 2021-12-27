@@ -19,11 +19,25 @@ public class PlayerAudioManager : MonoBehaviour
 
     private void Update()
     {
+<<<<<<< Updated upstream
         PlayFootsteps();
         SetRandomFootstepSFX();
     }
 
     private void PlayFootsteps()
+=======
+        //PlayFootsteps();
+        //SetRandomFootstepSFX();
+        if (photonView != null) {
+            if (photonView.IsMine) {
+                photonView.RPC("PlayFootsteps", RpcTarget.All);
+                SetRandomFootstepSFX();
+            }
+        }
+    }
+    [PunRPC]
+    public void PlayFootsteps()
+>>>>>>> Stashed changes
     {
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) && playerMovement.isGrounded)
         {
