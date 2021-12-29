@@ -20,12 +20,25 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     private GameObject Player;
     void Start()
     {
+        MakeNickNamesDifferent();
         DefineTeam();
         DefineNickName();
         Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
         PhotonNetwork.LocalPlayer.TagObject = Player;
         Player.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
         Player.name += SpawnPosition.name;
+    }
+
+    private void MakeNickNamesDifferent() {
+        string nickName;
+        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
+            nickName = PhotonNetwork.PlayerList[i].NickName;
+            for (int j = 0; j < PhotonNetwork.PlayerList.Length; j++) {
+                if (nickName == PhotonNetwork.PlayerList[j].NickName && i != j) {
+                    PhotonNetwork.PlayerList[j].NickName += "1";
+                }
+            }
+        }
     }
 
     private void DefineTeam() {
