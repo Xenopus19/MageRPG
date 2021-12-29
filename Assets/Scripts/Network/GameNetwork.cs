@@ -18,7 +18,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     public float AmountOfLosses = 0;
 
     private GameObject Player;
-    void Start()
+    void Start() 
     {
         MakeNickNamesDifferent();
         DefineTeam();
