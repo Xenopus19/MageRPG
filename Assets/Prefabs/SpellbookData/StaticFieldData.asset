@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a629bca100360184fbb196481403d3a9, type: 3}
   m_Name: StaticFieldData
   m_EditorClassIdentifier: 
-  SpellName: 
-  SpellImage: {fileID: 0}
-  SpellDescription: 
-  SpellManaCost: 
-  SpellDamage: 
-  SpellCastingCode: {fileID: 0}
+  SpellName: Stabilis Agro
+  SpellImage: {fileID: 21300000, guid: faf087d01d38dca4ba834d52ba744a9e, type: 3}
+  SpellDescription: Releases a field of electricity that damages on touch. also gives
+    a speed boost on cast.
+  SpellManaCost: 'Mana Cost: '
+  SpellDamage: 'Damage: 15 per 3s'
+  SpellCastingCode: {fileID: 21300000, guid: 8e0e39311083030459b48fb16c245664, type: 3}
