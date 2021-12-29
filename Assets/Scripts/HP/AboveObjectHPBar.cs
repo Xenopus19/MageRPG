@@ -12,7 +12,7 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
     [SerializeField] private float DistanceBetweenTextAndObject;
 
     private GameObject HPText;
-    private PlayerHP playerHP;
+    private Health playerHP;
     private float health;
     private PhotonView _photonView;
 
@@ -21,7 +21,7 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
     {
         SpawnUpperText();
         _photonView = GetComponent<PhotonView>();
-        playerHP = gameObject.GetComponent<PlayerHP>();
+        playerHP = gameObject.GetComponent<Health>();
     }
 
     void Update() {

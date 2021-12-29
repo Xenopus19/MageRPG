@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
     public void ReceiveDamage(float IncomingDamage)
     {
         //if(PhotonNetwork.IsMasterClient&&photonView!=null)
-        photonView.RPC("RPC_DealDamageToObject", RpcTarget.All, IncomingDamage);
+        photonView?.RPC("RPC_DealDamageToObject", RpcTarget.All, IncomingDamage);
     }
     [PunRPC]
     public void RPC_DealDamageToObject(float IncomingDamage)

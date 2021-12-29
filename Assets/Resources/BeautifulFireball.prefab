@@ -24242,7 +24242,8 @@ MonoBehaviour:
   ManaConsumption: 7
   SpellIcon: {fileID: 21300000, guid: 24869be00c6aaf743a46d3fe253f88a2, type: 3}
   anim: {fileID: 0}
-  OnCollisionSound: {fileID: 8300000, guid: 3e807e8c34789d34797d894f61e75412, type: 3}
+  ParticlesOnRecognize: {fileID: 286082889499301459, guid: 71cb60569a086ca43bab5c1b8c833d5f, type: 3}
+  OnCollisionSound: {fileID: 8300000, guid: 1a93c4ce5cb072140bc9a09bf52f080c, type: 3}
   OnCollisionParticle: {fileID: 100000, guid: f881607407b15cc46b24d6bda799037a, type: 3}
   GODestroySFX: {fileID: 7587097764356830660, guid: 7b80c0c1192a8f346a10ebbf683e7f82, type: 3}
   Force: 3000
@@ -24256,7 +24257,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -9039990162309823103, guid: d96d561cc1eb6204d9e924807fd5ba59, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 55bc0b6fc22e28f4792066b783795a51, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8e441e0a1474dab458a5fd30e996e2a9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.44
   m_Pitch: 1

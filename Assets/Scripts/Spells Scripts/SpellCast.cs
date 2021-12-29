@@ -25,11 +25,12 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject PlayerCamera;
 
     private ManaPlayer manaPlayer;
-    private SpellIconsChange iconsChange;
+    private SpellIconsChange spellRecognizedEffects;
     //private SpellCodeVisualisation spellCodeVisualisation;
     private PhotonView photonView;
 
     public bool IsUsingVampirism;
+    private bool ParticleEffectCasted;
 
     [SerializeField] private GameObject CurrentSpell;
     private void Awake()
@@ -50,7 +51,7 @@ public class SpellCast : MonoBehaviour
     {
         photonView = GetComponent<PhotonView>();
 
-        iconsChange = GetComponent<SpellIconsChange>();
+        spellRecognizedEffects = GetComponent<SpellIconsChange>();
         //spellCodeVisualisation = GameObject.Find("buttons").GetComponent<SpellCodeVisualisation>();
         manaPlayer = gameObject.GetComponent<ManaPlayer>();
         SpellCode = "";
@@ -69,11 +70,16 @@ public class SpellCast : MonoBehaviour
     private void PickSpell(string SpellCode)
     {
         if (Spells.ContainsKey(SpellCode))
-        {
+        {   
             CurrentSpell = Spells[SpellCode];
-            if(photonView.IsMine)
+            if(!ParticleEffectCasted)
             {
-                OnSpellChange();
+                CreateParticles();
+                ParticleEffectCasted = true;
+            }
+            if (photonView.IsMine)
+            {
+                ChangeSpellIcon();
             }
         }
         else
@@ -89,7 +95,7 @@ public class SpellCast : MonoBehaviour
             CastSpell();
             //spellCodeVisualisation.OnCastVisualisation();
         }
-        iconsChange.DisableIconPanel();
+        spellRecognizedEffects.DisableIconPanel();
     }
     public void CastSpell()
     {
@@ -99,12 +105,13 @@ public class SpellCast : MonoBehaviour
             photonView.RPC("Cast", RpcTarget.All);
 
             CurrentSpell = null;
-            OnSpellChange();
+            ChangeSpellIcon();
         }
     }
     [PunRPC]
     private void Cast()
     {
+        ParticleEffectCasted = false;
         GameObject NewSpell = Instantiate(CurrentSpell, PlayerCamera.transform.position, PlayerCamera.transform.rotation);
         NewSpell.GetComponent<Spell>().Caster = gameObject;
     }
@@ -114,8 +121,12 @@ public class SpellCast : MonoBehaviour
         return manaPlayer.manaPlayer>=CurrentSpell.GetComponent<Spell>().ManaConsumption; 
     }
 
-    private void OnSpellChange()
+    private void ChangeSpellIcon()
     {
-        iconsChange.ChangeIcon(CurrentSpell);
+        spellRecognizedEffects.ChangeIcon(CurrentSpell);
+    }
+    private void CreateParticles()
+    {
+        spellRecognizedEffects.SpawnParticles(CurrentSpell);
     }
 }

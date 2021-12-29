@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class SpellIconsChange : MonoBehaviour
 {
+    [SerializeField] private Transform ParticlesSpawnPoint;
+
     [SerializeField] private Sprite DefaultImage;
 
     [SerializeField] private GameObject IconPanel;
@@ -35,6 +37,11 @@ public class SpellIconsChange : MonoBehaviour
         }
 
         IconImage.sprite = CurrentSpellPicture;
+    }
+    public void SpawnParticles(GameObject CurrentSpell)
+    {
+        GameObject particle = Instantiate(CurrentSpell.GetComponent<Spell>().ParticlesOnRecognize, ParticlesSpawnPoint.position, Quaternion.identity);
+        particle.transform.SetParent(ParticlesSpawnPoint);
     }
 
     public void DisableIconPanel()
