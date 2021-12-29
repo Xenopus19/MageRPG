@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 712854308040321455, guid: 522e53b0724cb484ab3d44657e0a07ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1633573154182416864, guid: 522e53b0724cb484ab3d44657e0a07ae, type: 3}
       propertyPath: m_Text
       value: Kill me
