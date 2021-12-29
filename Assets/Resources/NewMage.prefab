@@ -1191,6 +1191,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 1226905845954351648}
   - {fileID: -6901316953023894094}
+  - {fileID: 1163511663434762575}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -2316,6 +2317,7 @@ GameObject:
   - component: {fileID: 1605429851071802825}
   - component: {fileID: 5761249188903153323}
   - component: {fileID: 7159195746812393236}
+  - component: {fileID: 1163511663434762575}
   m_Layer: 0
   m_Name: MageCamera
   m_TagString: Untagged
@@ -2368,7 +2370,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8183
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2427,6 +2429,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttons: {fileID: 0}
+--- !u!114 &1163511663434762575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6181242060210911719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &6189025152229193060
 GameObject:
   m_ObjectHideFlags: 0
