@@ -14,6 +14,9 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public GameObject joiningRoom;
     public GameObject roomList;
 
+    public GameObject creatingRoomPanel;
+    private CreatingRoom creatingRoom; 
+
     private JoiningRoomText joiningRoomText;
     private GameObject LoadingPlane;
     private TypedLobby defaultLobby = new TypedLobby("default", LobbyType.Default);
@@ -36,6 +39,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
             LoadingPlane.SetActive(false);
         }
 
+        creatingRoom = creatingRoomPanel.GetComponent<CreatingRoom>();
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
         //joiningRoomText.Init();
     }
@@ -109,8 +113,12 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     
     [PunRPC]
     private void MakeMaster() {
-        if (PhotonNetwork.IsMasterClient) {
-            playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
+        if (PhotonNetwork.PlayerList.Length > 1) {
+            if (PhotonNetwork.PlayerList[1].NickName == PhotonNetwork.NickName) {
+                print("master");
+                creatingRoom.MakeMasterRoomPanel(PhotonNetwork.CurrentRoom.Name);
+                playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
+            }
         }
     }
 

@@ -3733,6 +3733,7 @@ MonoBehaviour:
   playerAmountTextJR: {fileID: 1653941695}
   joiningRoom: {fileID: 1890268851}
   roomList: {fileID: 1496897314}
+  creatingRoomPanel: {fileID: 823376760}
 --- !u!4 &1623529920
 Transform:
   m_ObjectHideFlags: 0

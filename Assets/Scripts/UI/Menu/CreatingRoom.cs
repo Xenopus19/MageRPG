@@ -27,6 +27,13 @@ public class CreatingRoom : MonoBehaviour {
         roomButtons.SetActive(false);
     }
 
+    public void MakeMasterRoomPanel(string RoomName) {
+        Init();
+        print("makepanel");
+        roomText.ChangeRoomText(RoomName);
+        gameObject.SetActive(true);
+    }
+
     public void Cancel() {
         lobbyNetwork.LeaveRoom();
     }  
