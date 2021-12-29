@@ -139,8 +139,13 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public void LoadLevel() 
     {
         PhotonNetwork.CurrentRoom.IsVisible = false;
-        LoadingPlane.SetActive(true);
+        photonView.RPC("MakeLoadingPanel", RpcTarget.All);
         PhotonNetwork.LoadLevel("Arena3");
+    }
+
+    [PunRPC]
+    public void MakeLoadingPanel() {
+        LoadingPlane.SetActive(true);
     }
 
     private void Update() 

@@ -6,6 +6,7 @@ public class MenuButtons : MonoBehaviour {
 
     [SerializeField] Button StartGameButton = null;
     [SerializeField] Button QuitGameButton = null;
+    public GameObject loadingPanel;
 
     void Start() {
         Cursor.visible = (true);
@@ -23,6 +24,12 @@ public class MenuButtons : MonoBehaviour {
     }
 
     public void StartGame() {
+        MakeLoadingPanel();
         SceneManager.LoadScene("NetworkLobby");
+    }
+
+    private void MakeLoadingPanel() {
+        loadingPanel.SetActive(true);
+        ;
     }
 }
