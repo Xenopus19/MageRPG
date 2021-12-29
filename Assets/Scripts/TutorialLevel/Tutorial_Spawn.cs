@@ -39,7 +39,7 @@ public class Tutorial_Spawn : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPoint.position, Quaternion.identity);
+        PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPoint.position, Quaternion.identity).name = "Mage";
     }
 }
 

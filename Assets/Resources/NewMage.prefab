@@ -1024,7 +1024,7 @@ MonoBehaviour:
   MeleeAttackButton: 102
   SpellCastButton: 0
   JumpKey: 32
-  BasicShotKey: 103
+  BasicShotKey: 114
 --- !u!114 &8356878512950559632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BasicShotPrefab: {fileID: 136410, guid: 344318c7f70ab9d4d89b6389429c887f, type: 3}
   ShotCooldown: 1
-  PlayerCamera: {fileID: 0}
+  PlayerCamera: {fileID: 6181242060210911719}
 --- !u!114 &-6901316953023894094
 MonoBehaviour:
   m_ObjectHideFlags: 0
