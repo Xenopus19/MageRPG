@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a629bca100360184fbb196481403d3a9, type: 3}
   m_Name: IceBarrierData
   m_EditorClassIdentifier: 
-  SpellName: 
-  SpellImage: {fileID: 0}
-  SpellDescription: 
-  SpellManaCost: 
-  SpellDamage: 
-  SpellCastingCode: {fileID: 0}
+  SpellName: Glacies Obex
+  SpellImage: {fileID: 21300000, guid: af19f5d462d01854e8a83d40bd157be7, type: 3}
+  SpellDescription: Creates a lot of ice around you. which protects and damages anybody
+    close to you.
+  SpellManaCost: 'Mana Cost: 50'
+  SpellDamage: 'Damage: 5 per tile'
+  SpellCastingCode: {fileID: 21300000, guid: 5ddb4f6cf18230d43bdd01ce3e3f533d, type: 3}

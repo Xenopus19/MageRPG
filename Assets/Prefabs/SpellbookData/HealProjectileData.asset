@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a629bca100360184fbb196481403d3a9, type: 3}
+  m_Name: HealProjectileData
+  m_EditorClassIdentifier: 
+  SpellName: Medico Procul
+  SpellImage: {fileID: 21300000, guid: 502d14834f52972448f98ae51f635223, type: 3}
+  SpellDescription: Releases a heart-shaped projectile, that heals the one who it
+    hits (even enemies).
+  SpellManaCost: 'Mana Cost: 30'
+  SpellDamage: 'Heal: 10'
+  SpellCastingCode: {fileID: 21300000, guid: d83a3489d4dc01a49ba29949b02484c6, type: 3}
