@@ -1166,7 +1166,7 @@ MonoBehaviour:
   MeleeAttackButton: 102
   SpellCastButton: 0
   JumpKey: 32
-  BasicShotKey: 103
+  BasicShotKey: 114
 --- !u!114 &8356878512950559632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7c72e8f1a2fce4699830939bcfdc73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParticlesSpawnPoint: {fileID: 0}
+  ParticlesSpawnPoint: {fileID: 8626583890921853490}
   DefaultImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   IconPanel: {fileID: 0}
   IconImage: {fileID: 0}
