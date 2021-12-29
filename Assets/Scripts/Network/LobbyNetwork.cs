@@ -15,7 +15,8 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public GameObject roomList;
 
     public GameObject creatingRoomPanel;
-    private CreatingRoom creatingRoom; 
+    private CreatingRoom creatingRoom;
+    public GameObject startButton;
 
     private JoiningRoomText joiningRoomText;
     private GameObject LoadingPlane;
@@ -151,5 +152,10 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     private void Update() 
     {
         playerAmountText?.ChangePlayerAmountText(PhotonNetwork.CurrentRoom?.PlayerCount.ToString());
+        if (PhotonNetwork.CurrentRoom?.PlayerCount % 2 == 0 || PhotonNetwork.CurrentRoom?.PlayerCount == 1) {
+            startButton.SetActive(true);
+        } else {
+            startButton.SetActive(false);
+        }
     }
 }
