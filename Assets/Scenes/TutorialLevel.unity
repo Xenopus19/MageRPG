@@ -33,7 +33,7 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 128
+  m_DefaultReflectionResolution: 16
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 98f5e4bad307a4b47a9c1a40988917a2, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 60ef293b1a6b51c47b6dc971c9849ca7, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1680,6 +1680,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1282934864630140779, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.6037598
+      objectReference: {fileID: 0}
     - target: {fileID: 8546971626609802716, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2839,7 +2843,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -5331,7 +5335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.7866211, y: 0.00091552734}
+  m_AnchoredPosition: {x: -0.7866211, y: 0.0009765625}
   m_SizeDelta: {x: 0.9000244, y: 0.19995117}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &4288869180711125487
