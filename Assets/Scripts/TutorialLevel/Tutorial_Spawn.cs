@@ -29,7 +29,6 @@ public class Tutorial_Spawn : MonoBehaviourPunCallbacks
     private void LoadLevel()
     {
         PhotonNetwork.CreateRoom("tutorial");
-        LoadingScreen.SetActive(false);
     }    
 
     public override void OnConnectedToMaster()
@@ -40,6 +39,7 @@ public class Tutorial_Spawn : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPoint.position, Quaternion.identity).name = "Mage";
+        LoadingScreen.SetActive(false);
     }
 }
 
