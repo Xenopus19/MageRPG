@@ -21,6 +21,7 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject FrozenOrb;
     [SerializeField] private GameObject HealingProjectile;
     [SerializeField] private GameObject Meteor;
+    [SerializeField] private GameObject Spikes;
 
     [SerializeField] private GameObject PlayerCamera;
 
@@ -45,6 +46,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add("1243", FrozenOrb);
         Spells.Add("8127", HealingProjectile);
         Spells.Add("86275", Meteor);
+        Spells.Add("142", Spikes);
     }    
 
     private void Start()

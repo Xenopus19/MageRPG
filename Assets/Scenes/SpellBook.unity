@@ -738,6 +738,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35033282279102841a9b73bba98ee717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartGameButton: {fileID: 0}
+  QuitGameButton: {fileID: 0}
 --- !u!1001 &485718053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1177,6 +1179,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3dac1c53ad583a4458503e38fd020160, type: 2}
   - {fileID: 11400000, guid: bddb51a987c2b20419dad769a25241d5, type: 2}
   - {fileID: 11400000, guid: 25f7b9f490703294ba686476a2ef3a86, type: 2}
+  - {fileID: 11400000, guid: 66396362742d9f74d93124e6b952fc31, type: 2}
+  - {fileID: 11400000, guid: bd20747a602981f4a81801d2269ef749, type: 2}
+  - {fileID: 11400000, guid: 9784007e1f22aa545bf43bed60715932, type: 2}
+  - {fileID: 11400000, guid: a2e31a5b2010d1d4fb58633f6b8216f6, type: 2}
   Page1: {fileID: 1467727214}
   Page2: {fileID: 514481234}
 --- !u!224 &990843357 stripped

@@ -54,7 +54,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   ParticlesOnRecognize: {fileID: 444980896685190376, guid: 0ac14edfa9d7dbb47a30e1df5bda8ac5, type: 3}
   StructureToInstantiate: {fileID: 9052380765520134069, guid: 20ab5a86342b3ce419c9564a99f3e1cf, type: 3}
-  MaxInstantiateDistance: 30
+  MaxInstantiateDistance: 10
 --- !u!114 &-6340659324996111010
 MonoBehaviour:
   m_ObjectHideFlags: 0
