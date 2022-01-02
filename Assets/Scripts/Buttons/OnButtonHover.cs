@@ -8,20 +8,30 @@ public class OnButtonHover : MonoBehaviour
     public int AmountToAdd;
 
     public SpellCast spellCast;
-    //public SpellCodeVisualisation spellCodeVisualisation;
+
+    [SerializeField] private GameObject GlowingPrefab;
 
     public void Start()
     {
-        //spellCodeVisualisation = GameObject.Find("buttons").GetComponent<SpellCodeVisualisation>();
+
     }
     public void ifHoveredOn()
     {
         if (spellCast == null) return;
-            //spellCast.SpellCode *= 10;
+        {
             if (!spellCast.SpellCode.EndsWith(AmountToAdd.ToString()))
-        spellCast.SpellCode += AmountToAdd.ToString();
-        //spellCodeVisualisation.CodeRefresh(AmountToAdd);
+            {
+                spellCast.SpellCode += AmountToAdd.ToString();
+                CreateGlowingEffect();
+            }
+        }
+
         
         Debug.Log(spellCast.SpellCode);
+    }
+
+    private void CreateGlowingEffect()
+    {
+        Instantiate(GlowingPrefab, gameObject.transform);
     }
 }
