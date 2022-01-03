@@ -3,16 +3,13 @@ using UnityEngine;
 
 public class Network3DTextTurner : MonoBehaviour
 {
-    [SerializeField] public static GameObject LocalPlayerGO;
-
     [SerializeField] GameObject[] Texts3D;
+
+    private GameObject LocalPlayerGO;
 
     private void Start()
     {
-        if(GetComponent<PhotonView>().IsMine)
-        {
-            LocalPlayerGO = gameObject;
-        }
+        LocalPlayerGO = PlayerNetwork.LocalPlayerGO;
     }
 
     private void Update()
