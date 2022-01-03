@@ -12,7 +12,7 @@ public class RoomListing : MonoBehaviour
     public void SetRoomInfo(RoomInfo info)
     {
         int MaxPlayers = info.MaxPlayers - 1;
-        text.text += info.Name + " " + info.PlayerCount + "/" + MaxPlayers;
+        text.text = info.Name + " " + info.PlayerCount + "/" + MaxPlayers;
         roomInfo = info;
     }
 

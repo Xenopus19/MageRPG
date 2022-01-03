@@ -26,7 +26,7 @@ public class Tutorial_Cast : MonoBehaviour
             
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && OpenCastConsoleText.activeInHierarchy == false)
         {
             if(!CodeEraseInstructionShown)
             {

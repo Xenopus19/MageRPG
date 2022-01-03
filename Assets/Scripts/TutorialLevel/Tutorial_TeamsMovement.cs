@@ -20,7 +20,7 @@ public class Tutorial_TeamsMovement : MonoBehaviour
         if(AnyMovementKeyPressed())
         {
             WalkingKeysPressed++;
-            if(WalkingKeysPressed >= 4)
+            if(WalkingKeysPressed >= 1)
             {
                 WalkText.SetActive(false);
             }
