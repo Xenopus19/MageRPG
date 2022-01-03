@@ -5,8 +5,7 @@ using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class GameNetwork : MonoBehaviourPunCallbacks
-{
+public class GameNetwork : MonoBehaviourPunCallbacks {
     [SerializeField] private GameObject PlayerPrefab;
     [SerializeField] private GameObject DeadPlayerPrefab;
     [SerializeField] private List<GameObject> SpawnPositions = new List<GameObject>();
@@ -17,9 +16,11 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     public float LifesForSecondTeam = 0;
     public float AmountOfLosses = 0;
 
+    [SerializeField] private GameObject LifeManagerObject;
+    public LifeManager lifeManager;
     private GameObject Player;
-    void Start() 
-    {
+    void Start() {
+        lifeManager = LifeManagerObject.GetComponent<LifeManager>();
         MakeNickNamesDifferent();
         DefineTeam();
         DefineNickName();
@@ -73,28 +74,27 @@ public class GameNetwork : MonoBehaviourPunCallbacks
                     nickName.text = PhotonNetwork.PlayerList[i].NickName;
                     continue;
                 }
-                
+
             }
         }
     }
 
-    public void LeaveRoom()
-    {
+    public void LeaveRoom() {
+        if (!lifeManager.IsDead) {
+            lifeManager.EndGameForPlayer();
+        }
         PhotonNetwork.LeaveRoom();
     }
 
-    public override void OnLeftRoom()
-    {
+    public override void OnLeftRoom() {
         SceneManager.LoadScene("NetworkLobby");
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
+    public override void OnPlayerEnteredRoom(Player newPlayer) {
         Debug.Log(newPlayer.NickName + " joined the room.");
     }
 
-    public override void OnPlayerLeftRoom(Player otherPlayer)
-    {
+    public override void OnPlayerLeftRoom(Player otherPlayer) {
         Debug.Log(otherPlayer.NickName + " left the room.");
     }
 

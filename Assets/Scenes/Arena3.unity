@@ -1933,6 +1933,7 @@ MonoBehaviour:
   gameUI: {fileID: 8392816189105864556}
   endGameUI: {fileID: 1093520840}
   GameNetworkManager: {fileID: 1591645410}
+  IsDead: 0
 --- !u!4 &343020004
 Transform:
   m_ObjectHideFlags: 0
@@ -9951,6 +9952,8 @@ MonoBehaviour:
   LifesForFirstTeam: 0
   LifesForSecondTeam: 0
   AmountOfLosses: 0
+  LifeManagerObject: {fileID: 343020001}
+  lifeManager: {fileID: 0}
 --- !u!4 &1591645412
 Transform:
   m_ObjectHideFlags: 0

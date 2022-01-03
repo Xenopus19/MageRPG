@@ -16,6 +16,7 @@ public class LifeManager : MonoBehaviour {
     private GameNetwork gameNetwork;
 
     private TurningDeathStatus deathStatus;
+    public bool IsDead = false;
 
     public void Init(GameObject player) {
         deathStatus = GetComponent<TurningDeathStatus>();
@@ -43,6 +44,7 @@ public class LifeManager : MonoBehaviour {
 
     public void EndGameForPlayer() {
         deathStatus.TurnOnDeathStatus(gameNetwork);
+        IsDead = true;
         if (gameNetwork.IsFirstTeam) {
            photonView.RPC("MakeLossForTeam", RpcTarget.All, gameNetwork.IsFirstTeam);
             if (gameNetwork.AmountOfLosses == gameNetwork.LifesForFirstTeam) {
