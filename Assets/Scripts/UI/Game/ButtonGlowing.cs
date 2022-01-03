@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonGlowing : MonoBehaviour
 {
-    private static int GlowingsAmount = 0;
+    public static int GlowingsAmount = 0;
 
     [SerializeField] private List<Color> colors;
     private ButtonsGlowingManager glowingManager;
