@@ -14,7 +14,7 @@ public class MenuButtons : MonoBehaviour {
             StartGameButton.onClick.AddListener(StartGame);
         }
         if (QuitGameButton != null) {
-            QuitGameButton.onClick.AddListener(StartGame);
+            QuitGameButton.onClick.AddListener(QuitGame);
         }
     }
 
