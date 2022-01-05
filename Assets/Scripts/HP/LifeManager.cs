@@ -16,7 +16,7 @@ public class LifeManager : MonoBehaviour {
     private GameNetwork gameNetwork;
 
     private TurningDeathStatus deathStatus;
-    public bool IsDead = false;
+    //public bool IsDead = false;
 
     public void Init(GameObject player) {
         deathStatus = GetComponent<TurningDeathStatus>();
@@ -45,18 +45,19 @@ public class LifeManager : MonoBehaviour {
     public void EndGameForPlayer() {
         Debug.Log("Smert'");
         deathStatus.TurnOnDeathStatus(gameNetwork);
-        IsDead = true;
-        gameNetwork.UpdateTeamsPanel();
+        //IsDead = true;
+        //gameNetwork.UpdateTeamsPanel();
         if (gameNetwork.IsFirstTeam) {
-           photonView.RPC("MakeLossForTeam", RpcTarget.All, gameNetwork.IsFirstTeam);
-            if (gameNetwork.AmountOfLosses == gameNetwork.LifesForFirstTeam) {
-                EndGame();
-            }
+            CheckEndGame(gameNetwork.AmountOfLosses, gameNetwork.LifesForFirstTeam, gameNetwork.IsFirstTeam);
         } else {
-           photonView.RPC("MakeLossForTeam", RpcTarget.All, !gameNetwork.IsFirstTeam);
-            if (gameNetwork.AmountOfLosses == gameNetwork.LifesForSecondTeam) {
-                EndGame();
-            }
+            CheckEndGame(gameNetwork.AmountOfLosses, gameNetwork.LifesForSecondTeam, gameNetwork.IsFirstTeam);
+        }
+    }
+
+    public void CheckEndGame(float AmountOfLosses, float LifesForTeam, bool IsFirstTeam) {
+        photonView.RPC("MakeLossForTeam", RpcTarget.All, IsFirstTeam);
+        if (AmountOfLosses == LifesForTeam) {
+            EndGame();
         }
     }
 

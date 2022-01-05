@@ -15,6 +15,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     public float LifesForFirstTeam = 0;
     public float LifesForSecondTeam = 0;
     public float AmountOfLosses = 0;
+    private Photon.Realtime.Player[] Players;
 
     [SerializeField] private GameObject LifeManagerObject;
     public LifeManager lifeManager;
@@ -23,6 +24,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     void Start() 
     {
         lifeManager = LifeManagerObject.GetComponent<LifeManager>();
+        Players = PhotonNetwork.PlayerList;
         MakeNickNamesDifferent();
         DefineTeam();
         DefineNickName();
@@ -64,19 +66,20 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     [PunRPC]
     public void DefineNickName() {
         Text nickName;
-        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
+        Debug.LogWarning("DefineNickNamesStart");
+        for (int i = 0; i < Players.Length; i++) {
             if (IsFirstTeam) {
                 nickName = NickNameTexts[i].GetComponent<Text>();
-                nickName.text = PhotonNetwork.PlayerList[i].NickName;
+                nickName.text = Players[i].NickName;
                 continue;
             } else {
                 if (i % 2 == 1) {
                     nickName = NickNameTexts[i - 1].GetComponent<Text>();
-                    nickName.text = PhotonNetwork.PlayerList[i].NickName;
+                    nickName.text = Players[i].NickName;
                     continue;
                 } else {
                     nickName = NickNameTexts[i + 1].GetComponent<Text>();
-                    nickName.text = PhotonNetwork.PlayerList[i].NickName;
+                    nickName.text = Players[i].NickName;
                     continue;
                 }
 
@@ -85,17 +88,38 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
         Debug.Log("DefineNickName");
     }
 
-    public void UpdateTeamsPanel() {
-        Debug.Log("UpdateTeamsPanel");
-        PhotonNetwork.NickName += " (Dead)";
-        _photonView.RPC("DefineNickName", RpcTarget.All);
+    //public void UpdateTeamsPanel() {
+    //    Debug.Log("UpdateTeamsPanel");
+    //    PhotonNetwork.NickName += " (Dead)";
+    //    _photonView.RPC("DefineNickName", RpcTarget.All);
+    //}
+
+    private void FindGone() {
+        Debug.LogWarning("FindGoneStart");
+        for (int i = 0; i < Players.Length; i++) {
+            string nickname = Players[i].NickName;
+            for (int j = 0; j < PhotonNetwork.PlayerList.Length; j++) {
+                if (PhotonNetwork.PlayerList[j].NickName == nickname) {
+                    break;
+                }
+                if (j + 1 == PhotonNetwork.PlayerList.Length) {
+                    Players[i].NickName += " (Dead)";
+                    if (IsFirstTeam && i % 2 == 0) {
+                        lifeManager.CheckEndGame(AmountOfLosses, LifesForFirstTeam, IsFirstTeam);
+                    } else if (!IsFirstTeam && i % 2 == 1) {
+                        lifeManager.CheckEndGame(AmountOfLosses, LifesForSecondTeam, IsFirstTeam);
+                    }
+                }
+            }
+        }
+        Debug.LogWarning("FindGoneEnd");
     }
 
     public void LeaveRoom() {
-        if (!lifeManager.IsDead) {
-            Debug.Log("LeaveRoom");
-            lifeManager.EndGameForPlayer();
-        }
+        //if (!lifeManager.IsDead) {
+        //    Debug.Log("LeaveRoom");
+        //    //lifeManager.EndGameForPlayer();
+        //}
         PhotonNetwork.LeaveRoom();
     }
 
@@ -109,6 +133,8 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
 
     public override void OnPlayerLeftRoom(Player otherPlayer) {
         Debug.Log(otherPlayer.NickName + " left the room.");
+        FindGone();
+        _photonView.RPC("DefineNickName", RpcTarget.All);
     }
 
     public void OnDie() {
