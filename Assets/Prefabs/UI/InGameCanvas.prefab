@@ -500,7 +500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Player1
+  m_Text: 
 --- !u!1 &1487932792029307493
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +617,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Player4
+  m_Text: 
 --- !u!82 &208771634649913348
 AudioSource:
   m_ObjectHideFlags: 0
@@ -792,7 +792,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Player5
+  m_Text: 
 --- !u!1 &2840320364445802477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,7 +1583,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Player2
+  m_Text: 
 --- !u!1 &5970492593753198404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Player3
+  m_Text: 
 --- !u!1 &6472562781149991109
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +2042,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Player6
+  m_Text: 
 --- !u!1 &8383569555551775856
 GameObject:
   m_ObjectHideFlags: 0
