@@ -5,8 +5,7 @@ using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class GameNetwork : MonoBehaviourPunCallbacks
-{
+public class GameNetwork : MonoBehaviourPunCallbacks {
     [SerializeField] private GameObject PlayerPrefab;
     [SerializeField] private GameObject DeadPlayerPrefab;
     [SerializeField] private List<GameObject> SpawnPositions = new List<GameObject>();
@@ -17,17 +16,20 @@ public class GameNetwork : MonoBehaviourPunCallbacks
     public float LifesForSecondTeam = 0;
     public float AmountOfLosses = 0;
 
-    private GameObject PlayerGO;
-    void Start() 
-    {
+    [SerializeField] private GameObject LifeManagerObject;
+    public LifeManager lifeManager;
+    private GameObject Player;
+    private PhotonView _photonView;
+    void Start() {
+        lifeManager = LifeManagerObject.GetComponent<LifeManager>();
         MakeNickNamesDifferent();
         DefineTeam();
         DefineNickName();
-        PlayerGO = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
-        PhotonNetwork.LocalPlayer.TagObject = PlayerGO;
-        PlayerGO.GetComponent<PlayerNetwork>().team = IsFirstTeam;
-        PlayerGO.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
-        PlayerGO.name += SpawnPosition.name;
+        Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
+        PhotonNetwork.LocalPlayer.TagObject = Player;
+        Player.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
+        Player.name += SpawnPosition.name;
+        _photonView = GetComponent<PhotonView>();
     }
 
     private void MakeNickNamesDifferent() {
@@ -57,7 +59,8 @@ public class GameNetwork : MonoBehaviourPunCallbacks
         }
     }
 
-    private void DefineNickName() {
+    [PunRPC]
+    public void DefineNickName() {
         Text nickName;
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
             if (IsFirstTeam) {
@@ -74,33 +77,40 @@ public class GameNetwork : MonoBehaviourPunCallbacks
                     nickName.text = PhotonNetwork.PlayerList[i].NickName;
                     continue;
                 }
-                
+
             }
         }
+        Debug.Log("DefineNickName");
     }
 
-    public void LeaveRoom()
-    {
+    public void UpdateTeamsPanel() {
+        Debug.Log("UpdateTeamsPanel");
+        PhotonNetwork.NickName += " (Dead)";
+        _photonView.RPC("DefineNickName", RpcTarget.All);
+    }
+
+    public void LeaveRoom() {
+        if (!lifeManager.IsDead) {
+            Debug.Log("LeaveRoom");
+            lifeManager.EndGameForPlayer();
+        }
         PhotonNetwork.LeaveRoom();
     }
 
-    public override void OnLeftRoom()
-    {
+    public override void OnLeftRoom() {
         SceneManager.LoadScene("NetworkLobby");
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
-    {
+    public override void OnPlayerEnteredRoom(Player newPlayer) {
         Debug.Log(newPlayer.NickName + " joined the room.");
     }
 
-    public override void OnPlayerLeftRoom(Player otherPlayer)
-    {
+    public override void OnPlayerLeftRoom(Player otherPlayer) {
         Debug.Log(otherPlayer.NickName + " left the room.");
     }
 
     public void OnDie() {
-        GameObject DeadPlayer = PhotonNetwork.Instantiate(DeadPlayerPrefab.name, PlayerGO.transform.position, PlayerGO.transform.rotation);
-        PhotonNetwork.Destroy(PlayerGO);
+        GameObject DeadPlayer = PhotonNetwork.Instantiate(DeadPlayerPrefab.name, Player.transform.position, Player.transform.rotation);
+        PhotonNetwork.Destroy(Player);
     }
 }
