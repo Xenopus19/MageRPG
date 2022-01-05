@@ -18,17 +18,19 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
 
     [SerializeField] private GameObject LifeManagerObject;
     public LifeManager lifeManager;
-    private GameObject Player;
+    private GameObject PlayerObject;
     private PhotonView _photonView;
-    void Start() {
+    void Start() 
+    {
         lifeManager = LifeManagerObject.GetComponent<LifeManager>();
         MakeNickNamesDifferent();
         DefineTeam();
         DefineNickName();
-        Player = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
-        PhotonNetwork.LocalPlayer.TagObject = Player;
-        Player.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
-        Player.name += SpawnPosition.name;
+        PlayerObject = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
+        PhotonNetwork.LocalPlayer.TagObject = PlayerObject;
+        PlayerObject.GetComponent<PlayerNetwork>().team = IsFirstTeam;
+        PlayerObject.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
+        PlayerObject.name += SpawnPosition.name;
         _photonView = GetComponent<PhotonView>();
     }
 
@@ -110,7 +112,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     }
 
     public void OnDie() {
-        GameObject DeadPlayer = PhotonNetwork.Instantiate(DeadPlayerPrefab.name, Player.transform.position, Player.transform.rotation);
-        PhotonNetwork.Destroy(Player);
+        GameObject DeadPlayer = PhotonNetwork.Instantiate(DeadPlayerPrefab.name, PlayerObject.transform.position, PlayerObject.transform.rotation);
+        PhotonNetwork.Destroy(PlayerObject);
     }
 }
