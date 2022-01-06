@@ -16,7 +16,7 @@ public class LifeManager : MonoBehaviour {
     private GameNetwork gameNetwork;
 
     private TurningDeathStatus deathStatus;
-    //public bool IsDead = false;
+    public bool IsEndGame = false;
 
     public void Init(GameObject player) {
         deathStatus = GetComponent<TurningDeathStatus>();
@@ -45,7 +45,6 @@ public class LifeManager : MonoBehaviour {
     public void EndGameForPlayer() {
         Debug.Log("Smert'");
         deathStatus.TurnOnDeathStatus(gameNetwork);
-        //IsDead = true;
         gameNetwork.UpdateTeamsPanel();
         if (gameNetwork.IsFirstTeam) {
             CheckEndGame(gameNetwork.LifesForFirstTeam, gameNetwork.IsFirstTeam);
@@ -62,7 +61,7 @@ public class LifeManager : MonoBehaviour {
             photonView.RPC("MakeLossForTeam", RpcTarget.All, !IsFirstTeam);
         }
         if (gameNetwork.AmountOfLosses == LifesForTeam) {
-            EndGame();
+            EndGame(IsLosingTeam: true);
         }
     }
 
@@ -73,12 +72,21 @@ public class LifeManager : MonoBehaviour {
         }
     }
 
-    private void EndGame() {
+    public void EndGame(bool IsLosingTeam) {
         Debug.Log("EndGame");
-        if (!gameNetwork.IsFirstTeam) {
-            photonView.RPC("WinFirstTeam", RpcTarget.All);
+        IsEndGame = true;
+        if (IsLosingTeam) {
+            if (!gameNetwork.IsFirstTeam) {
+                photonView.RPC("WinFirstTeam", RpcTarget.All);
+            } else {
+                photonView.RPC("WinSecondTeam", RpcTarget.All);
+            }
         } else {
-            photonView.RPC("WinSecondTeam", RpcTarget.All);
+            if (gameNetwork.IsFirstTeam) {
+                photonView.RPC("WinFirstTeam", RpcTarget.All);
+            } else {
+                photonView.RPC("WinSecondTeam", RpcTarget.All);
+            }
         }
     }
 

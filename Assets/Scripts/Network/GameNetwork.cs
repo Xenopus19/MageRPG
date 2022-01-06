@@ -117,6 +117,17 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
                             IndexDeadPlayers.Add(i);
                         }
                     }
+                    for (int k = 0, amountOfEven = 0, amountOfOdd = -1; k < IndexDeadPlayers.Count; k++) {
+                        if (IndexDeadPlayers[k] % 2 == 0) {
+                            amountOfEven++;
+                        } else {
+                            amountOfOdd++;
+                        }
+                        Debug.Log($"{amountOfEven} {amountOfOdd}");
+                        if (k + 1 == IndexDeadPlayers.Count && (amountOfEven == Players.Length / 2 || amountOfOdd == Players.Length / 2)) {
+                            lifeManager.EndGame(IsLosingTeam: false);
+                        }
+                    }
                     if (IsFirstTeam && i % 2 == 0) {
                         lifeManager.CheckEndGame(LifesForFirstTeam, IsFirstTeam);
                     } else if (!IsFirstTeam && i % 2 == 1) {
@@ -129,10 +140,6 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     }
 
     public void LeaveRoom() {
-        //if (!lifeManager.IsDead) {
-        //    Debug.Log("LeaveRoom");
-        //    //lifeManager.EndGameForPlayer();
-        //}
         PhotonNetwork.LeaveRoom();
     }
 
@@ -146,8 +153,10 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
 
     public override void OnPlayerLeftRoom(Player otherPlayer) {
         Debug.Log(otherPlayer.NickName + " left the room.");
-        FindGone();
-        _photonView.RPC("DefineNickName", RpcTarget.All);
+        if (!lifeManager.IsEndGame) {
+            FindGone();
+            _photonView.RPC("DefineNickName", RpcTarget.All);
+        }
     }
 
     public void OnDie() {
