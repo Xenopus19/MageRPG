@@ -14,6 +14,7 @@ public class Network3DTextTurner : MonoBehaviour
 
     private void Update()
     {
+        if(Texts3D!=null)
         TurnText();
     }
 

@@ -32,10 +32,14 @@ public class AboveObjectHPBar : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void ShowHealth(float health) {
-        if (health >= 0) {
+    public void ShowHealth(float health) 
+    {
+        if (health >= 0) 
+        {
             HPText.GetComponent<TextMesh>().text = health.ToString();
-        } else {
+        } 
+        else 
+        {
             HPText.GetComponent<TextMesh>().text = "Dead";
         }
     }

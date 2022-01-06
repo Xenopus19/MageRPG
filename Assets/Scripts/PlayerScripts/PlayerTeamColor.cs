@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerTeamColor : MonoBehaviour
 {
-    [SerializeField] private Light TeamHalo;
+    [SerializeField] private Light TeamColoredLight;
 
     private void Start()
     {
@@ -14,7 +14,7 @@ public class PlayerTeamColor : MonoBehaviour
 
         if(team != LocalPlayerTeam)
         {
-            TeamHalo.color = Color.red;
+            TeamColoredLight.color = Color.red;
         }
     }
 }

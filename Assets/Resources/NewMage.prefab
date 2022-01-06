@@ -337,6 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629c2e9b8ac51de408a58a06897be641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AboveTexts: {fileID: 7889966662918690828}
+  TeamColoredLight: {fileID: -5409158173025806609}
 --- !u!81 &8903893092853342413
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1666,7 +1668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1c3bbbaf3b962b44859df65c333af10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TeamHalo: {fileID: -5409158173025806609}
+  TeamColoredLight: {fileID: -5409158173025806609}
 --- !u!1 &3555844993184216359
 GameObject:
   m_ObjectHideFlags: 0
