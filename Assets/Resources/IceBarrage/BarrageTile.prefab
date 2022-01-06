@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Caster: {fileID: 0}
-  ActionAmount: 5
+  ActionAmount: 100
   ManaConsumption: 0
   SpellIcon: {fileID: 0}
   anim: {fileID: 0}

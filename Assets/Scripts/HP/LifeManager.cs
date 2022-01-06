@@ -9,11 +9,13 @@ public class LifeManager : MonoBehaviour {
 
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject endGameUI;
+    [SerializeField] private GameObject scoreTextObject;
     private Transform spawnPoint;
 
     private PhotonView photonView;
     public GameObject GameNetworkManager;
     private GameNetwork gameNetwork;
+    private ScoreText scoreText;
 
     private TurningDeathStatus deathStatus;
     public bool IsEndGame = false;
@@ -28,6 +30,7 @@ public class LifeManager : MonoBehaviour {
         playerHP = Player.GetComponent<PlayerHP>();
         manaPlayer = Player.GetComponent<ManaPlayer>();
         playerHPText = Player.GetComponent<PlayerHPText>();
+        scoreText = scoreTextObject.GetComponent<ScoreText>();
     }
 
     public void EndLife() {
@@ -96,6 +99,7 @@ public class LifeManager : MonoBehaviour {
         endGameUI.SetActive(true);
         if (gameNetwork.IsFirstTeam) {
             endGameUI.GetComponent<EndGameCanvasManager>().MakeWinText();
+            scoreText.SaveScore();
         } else {
             endGameUI.GetComponent<EndGameCanvasManager>().MakeLoseText();
         }
@@ -108,6 +112,7 @@ public class LifeManager : MonoBehaviour {
         endGameUI.SetActive(true);
         if (!gameNetwork.IsFirstTeam) {
             endGameUI.GetComponent<EndGameCanvasManager>().MakeWinText();
+            scoreText.SaveScore();
         } else {
             endGameUI.GetComponent<EndGameCanvasManager>().MakeLoseText();
         }
