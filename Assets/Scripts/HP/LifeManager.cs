@@ -46,11 +46,11 @@ public class LifeManager : MonoBehaviour {
         Debug.Log("Smert'");
         deathStatus.TurnOnDeathStatus(gameNetwork);
         //IsDead = true;
-        //gameNetwork.UpdateTeamsPanel();
+        gameNetwork.UpdateTeamsPanel();
         if (gameNetwork.IsFirstTeam) {
             CheckEndGame(gameNetwork.AmountOfLosses, gameNetwork.LifesForFirstTeam, gameNetwork.IsFirstTeam);
         } else {
-            CheckEndGame(gameNetwork.AmountOfLosses, gameNetwork.LifesForSecondTeam, gameNetwork.IsFirstTeam);
+            CheckEndGame(gameNetwork.AmountOfLosses, gameNetwork.LifesForSecondTeam, !gameNetwork.IsFirstTeam);
         }
     }
 
