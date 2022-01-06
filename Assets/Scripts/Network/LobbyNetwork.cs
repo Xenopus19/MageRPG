@@ -23,7 +23,9 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     private TypedLobby defaultLobby = new TypedLobby("default", LobbyType.Default);
     private void Start()
     {
-            
+        Cursor.visible = (true);
+        Cursor.lockState = CursorLockMode.None;
+
         playerName = PhotonNetwork.NickName;
         PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = "1";
@@ -42,7 +44,6 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
         creatingRoom = creatingRoomPanel.GetComponent<CreatingRoom>();
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
-        //joiningRoomText.Init();
     }
 
     

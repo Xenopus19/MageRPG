@@ -67,7 +67,6 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     [PunRPC]
     public void DefineNickName() {
         Text nickName;
-        Debug.LogWarning("DefineNickNamesStart");
         for (int i = 0; i < Players.Length; i++) {
             if (IsFirstTeam) {
                 nickName = NickNameTexts[i].GetComponent<Text>();
@@ -86,11 +85,9 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
 
             }
         }
-        Debug.Log("DefineNickName");
     }
 
     public void UpdateTeamsPanel() {
-        Debug.Log("UpdateTeamsPanel");
         PhotonNetwork.NickName += " (Dead)";
         for (int i = 0; i < Players.Length; i++) {
             if (PhotonNetwork.NickName == Players[i].NickName) {
@@ -101,7 +98,6 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     }
 
     private void FindGone() {
-        Debug.LogWarning("FindGoneStart");
         for (int i = 0; i < Players.Length; i++) {
             string nickname = Players[i].NickName;
             for (int j = 0; j < PhotonNetwork.PlayerList.Length; j++) {
@@ -123,7 +119,6 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
                         } else {
                             amountOfOdd++;
                         }
-                        Debug.Log($"{amountOfEven} {amountOfOdd}");
                         if (k + 1 == IndexDeadPlayers.Count && (amountOfEven == Players.Length / 2 || amountOfOdd == Players.Length / 2)) {
                             lifeManager.EndGame(IsLosingTeam: false);
                         }
@@ -136,7 +131,6 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
                 }
             }
         }
-        Debug.LogWarning("FindGoneEnd");
     }
 
     public void LeaveRoom() {
