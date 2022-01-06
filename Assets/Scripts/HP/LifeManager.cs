@@ -48,15 +48,20 @@ public class LifeManager : MonoBehaviour {
         //IsDead = true;
         gameNetwork.UpdateTeamsPanel();
         if (gameNetwork.IsFirstTeam) {
-            CheckEndGame(gameNetwork.AmountOfLosses, gameNetwork.LifesForFirstTeam, gameNetwork.IsFirstTeam);
+            CheckEndGame(gameNetwork.LifesForFirstTeam, gameNetwork.IsFirstTeam);
         } else {
-            CheckEndGame(gameNetwork.AmountOfLosses, gameNetwork.LifesForSecondTeam, !gameNetwork.IsFirstTeam);
+            CheckEndGame(gameNetwork.LifesForSecondTeam, gameNetwork.IsFirstTeam);
         }
     }
 
-    public void CheckEndGame(float AmountOfLosses, float LifesForTeam, bool IsFirstTeam) {
-        photonView.RPC("MakeLossForTeam", RpcTarget.All, IsFirstTeam);
-        if (AmountOfLosses == LifesForTeam) {
+    public void CheckEndGame(float LifesForTeam, bool IsFirstTeam) {
+        Debug.Log(IsFirstTeam);
+        if (IsFirstTeam) {
+            photonView.RPC("MakeLossForTeam", RpcTarget.All, IsFirstTeam);
+        } else {
+            photonView.RPC("MakeLossForTeam", RpcTarget.All, !IsFirstTeam);
+        }
+        if (gameNetwork.AmountOfLosses == LifesForTeam) {
             EndGame();
         }
     }

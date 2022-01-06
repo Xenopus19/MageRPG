@@ -118,9 +118,9 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
                         }
                     }
                     if (IsFirstTeam && i % 2 == 0) {
-                        lifeManager.CheckEndGame(AmountOfLosses, LifesForFirstTeam, IsFirstTeam);
+                        lifeManager.CheckEndGame(LifesForFirstTeam, IsFirstTeam);
                     } else if (!IsFirstTeam && i % 2 == 1) {
-                        lifeManager.CheckEndGame(AmountOfLosses, LifesForSecondTeam, IsFirstTeam);
+                        lifeManager.CheckEndGame(LifesForSecondTeam, IsFirstTeam);
                     }
                 }
             }
