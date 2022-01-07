@@ -120,6 +120,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
                             amountOfOdd++;
                         }
                         if (k + 1 == IndexDeadPlayers.Count && (amountOfEven == Players.Length / 2 || amountOfOdd == Players.Length / 2)) {
+                            Debug.Log("EndGameInFor");
                             lifeManager.EndGame(IsLosingTeam: false);
                         }
                     }
@@ -147,6 +148,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
 
     public override void OnPlayerLeftRoom(Player otherPlayer) {
         Debug.Log(otherPlayer.NickName + " left the room.");
+        Debug.Log($"OnLeft {lifeManager.IsEndGame}");
         if (!lifeManager.IsEndGame) {
             FindGone();
             _photonView.RPC("DefineNickName", RpcTarget.All);

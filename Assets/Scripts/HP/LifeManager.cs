@@ -77,16 +77,17 @@ public class LifeManager : MonoBehaviour {
 
     public void EndGame(bool IsLosingTeam) {
         Debug.Log("EndGame");
-        IsEndGame = true;
         if (IsLosingTeam) {
             if (!gameNetwork.IsFirstTeam) {
+                Debug.Log("Win1");
                 photonView.RPC("WinFirstTeam", RpcTarget.All);
             } else {
                 photonView.RPC("WinSecondTeam", RpcTarget.All);
             }
         } else {
             if (gameNetwork.IsFirstTeam) {
-                photonView.RPC("WinFirstTeam", RpcTarget.All);
+                Debug.Log("Win1");
+                IsEndGame = true;photonView.RPC("WinFirstTeam", RpcTarget.All);
             } else {
                 photonView.RPC("WinSecondTeam", RpcTarget.All);
             }
@@ -95,6 +96,7 @@ public class LifeManager : MonoBehaviour {
 
     [PunRPC]
     public void WinFirstTeam() {
+        IsEndGame = true;
         gameUI.SetActive(false);
         endGameUI.SetActive(true);
         if (gameNetwork.IsFirstTeam) {
@@ -108,6 +110,7 @@ public class LifeManager : MonoBehaviour {
 
     [PunRPC]
     public void WinSecondTeam() {
+        IsEndGame = true;
         gameUI.SetActive(false);
         endGameUI.SetActive(true);
         if (!gameNetwork.IsFirstTeam) {

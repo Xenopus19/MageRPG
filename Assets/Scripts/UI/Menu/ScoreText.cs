@@ -11,11 +11,13 @@ public class ScoreText : MonoBehaviour {
 
         score = PlayerPrefs.GetFloat("Score");
         gameObject.GetComponent<Text>().text = $"Victories: {score}";
+        Debug.Log($"Start{score}");
     }
 
     public void SaveScore() {
         score = PlayerPrefs.GetFloat("Score") + 1;
         PlayerPrefs.SetFloat("Score", score);
+        Debug.Log($"SaveScore{score}");
         ShowScore();
     }
 
