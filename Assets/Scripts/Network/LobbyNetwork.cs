@@ -21,6 +21,9 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     private JoiningRoomText joiningRoomText;
     private GameObject LoadingPlane;
     private TypedLobby defaultLobby = new TypedLobby("default", LobbyType.Default);
+
+    public GameObject ChoosingMapObject;
+    private ChoosingMap choosingMap;
     private void Start()
     {
         Cursor.visible = (true);
@@ -44,6 +47,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
         creatingRoom = creatingRoomPanel.GetComponent<CreatingRoom>();
         joiningRoomText = joiningRoom.GetComponent<JoiningRoomText>();
+        choosingMap = ChoosingMapObject.GetComponent<ChoosingMap>();
     }
 
     
@@ -142,7 +146,8 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.CurrentRoom.IsVisible = false;
         photonView.RPC("MakeLoadingPanel", RpcTarget.All);
-        PhotonNetwork.LoadLevel("Arena3");
+
+        PhotonNetwork.LoadLevel($"{choosingMap.mapName}");
     }
 
     [PunRPC]
