@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using Photon.Pun;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class Health : MonoBehaviour
 
     public PhotonView photonView;
 
-    public event Action OnDamageReceived; 
+    public event Action OnDamageReceived;
+    public UnityEvent OnDied = new UnityEvent();
 
     private void Awake()
     {
@@ -55,6 +57,7 @@ public class Health : MonoBehaviour
 
     public virtual void Die()
     {
+        OnDied.Invoke();
         Destroy(gameObject);
     }
 }

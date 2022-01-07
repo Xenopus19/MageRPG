@@ -10,7 +10,10 @@ public class SpellCast : MonoBehaviour
 {
     public Dictionary<string, GameObject> Spells = new Dictionary<string, GameObject>();
     public string SpellCode;
+    [SerializeField] private GameObject PlayerCamera;
+    [SerializeField] private AdditionalMagicAttack magicAttack;
 
+    [Header("Spells")]
     [SerializeField] private GameObject FireBall;
     [SerializeField] private GameObject HealSpell;
     [SerializeField] private GameObject Frostbolt;
@@ -22,18 +25,17 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject HealingProjectile;
     [SerializeField] private GameObject Meteor;
     [SerializeField] private GameObject Spikes;
-
-    [SerializeField] private GameObject PlayerCamera;
+    [SerializeField] private GameObject Monolith;
 
     private ManaPlayer manaPlayer;
     private SpellIconsChange spellRecognizedEffects;
     //private SpellCodeVisualisation spellCodeVisualisation;
     private PhotonView photonView;
 
-    public bool IsUsingVampirism;
+    [HideInInspector]public bool IsUsingVampirism;
     private bool ParticleEffectCasted;
 
-    [SerializeField] private GameObject CurrentSpell;
+    private GameObject CurrentSpell;
     private void Awake()
     {
         Spells.Add("12", FireBall);
@@ -47,6 +49,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add("8127", HealingProjectile);
         Spells.Add("86275", Meteor);
         Spells.Add("142", Spikes);
+        Spells.Add("21", Monolith);
     }    
 
     private void Start()
@@ -115,7 +118,11 @@ public class SpellCast : MonoBehaviour
     {
         ParticleEffectCasted = false;
         GameObject NewSpell = Instantiate(CurrentSpell, PlayerCamera.transform.position, PlayerCamera.transform.rotation);
-        NewSpell.GetComponent<Spell>().Caster = gameObject;
+
+        Spell SpellData = NewSpell.GetComponent<Spell>();
+        SpellData.Caster = gameObject;
+        SpellData.ActionAmount += magicAttack.CountMagicAttack();
+        
     }
 
     private bool CanCast()
