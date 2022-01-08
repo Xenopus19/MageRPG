@@ -18,11 +18,22 @@ public class RayInstantiateSpell : Spell
                 else
                 {
                     GameObject NewStructure = Instantiate(StructureToInstantiate, hit.point, Caster.transform.rotation);
+                    SetupStructure(NewStructure);
                     return NewStructure;
                 }
             }
         }
         return null;
+    }
+
+    private void SetupStructure(GameObject structure)
+    {
+        Spell structureData = structure.GetComponent<Spell>();
+        if(structureData != null)
+        {
+            structureData.Caster = Caster;
+            structureData.ActionAmount += ActionAmount;
+        }
     }
     public Ray CreateRay()
     {
