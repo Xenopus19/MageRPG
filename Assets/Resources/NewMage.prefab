@@ -337,6 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629c2e9b8ac51de408a58a06897be641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AboveTexts: {fileID: 7889966662918690828}
+  TeamColoredLight: {fileID: -5409158173025806609}
 --- !u!81 &8903893092853342413
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1108,6 +1110,7 @@ GameObject:
   - component: {fileID: 508568355979576633}
   - component: {fileID: 8985282694595273510}
   - component: {fileID: 1655343511269407535}
+  - component: {fileID: 8138300566906045946}
   - component: {fileID: -6584478467838854892}
   - component: {fileID: 7117773000955201570}
   - component: {fileID: 1226905845954351648}
@@ -1118,8 +1121,8 @@ GameObject:
   - component: {fileID: 2167351071766948296}
   - component: {fileID: 6841518321008862814}
   - component: {fileID: -849659358603835564}
-  - component: {fileID: -5409158173025806609}
   - component: {fileID: 7876739413561208764}
+  - component: {fileID: -5409158173025806609}
   m_Layer: 0
   m_Name: NewMage
   m_TagString: Untagged
@@ -1180,13 +1183,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 2.03
   m_Radius: 0.5
-  m_SlopeLimit: 45
+  m_SlopeLimit: 45.21
   m_StepOffset: 0.7
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.78, z: 0}
 --- !u!114 &-1868130329698654006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,6 +1243,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 100
   photonView: {fileID: 0}
+  OnDied:
+    m_PersistentCalls:
+      m_Calls: []
   amountOfLifes: 3
   audioSource: {fileID: 0}
 --- !u!114 &-5684534997934936668
@@ -1319,6 +1325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpellCode: 0
+  PlayerCamera: {fileID: 712854308040321455}
+  magicAttack: {fileID: 8138300566906045946}
   FireBall: {fileID: 179432, guid: 965716b1b5cefa948bbf456c7b433186, type: 3}
   HealSpell: {fileID: 137782, guid: cdea235694a86bd4eb61ae7cffd8de49, type: 3}
   Frostbolt: {fileID: 7352676846187088993, guid: f48810e3231a4674ea57adb09f61e579, type: 3}
@@ -1330,9 +1338,21 @@ MonoBehaviour:
   HealingProjectile: {fileID: 3136297729522583036, guid: 48a4404e3c74e5f468d9c214f51353b0, type: 3}
   Meteor: {fileID: 5272016879970276331, guid: 056f31d2100ccf345b2b89b4ff4ddcc4, type: 3}
   Spikes: {fileID: 2429358459969404064, guid: 1e9f166a6893c7c4095bda011e35bbfb, type: 3}
-  PlayerCamera: {fileID: 712854308040321455}
+  Monolith: {fileID: 1883299687789156477, guid: 2652a02d677f9ea469cf1a69cc31f147, type: 3}
+  Overdrive: {fileID: 3501929966750955604, guid: f50618629b2ccd5428616af2a0ddf9de, type: 3}
   IsUsingVampirism: 0
-  CurrentSpell: {fileID: 0}
+--- !u!114 &8138300566906045946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485778871360351862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b46b1e742af174495832acb5cb7a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &-6584478467838854892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1592,6 +1612,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   team: 0
+--- !u!114 &7876739413561208764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485778871360351862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c3bbbaf3b962b44859df65c333af10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TeamColoredLight: {fileID: -5409158173025806609}
 --- !u!108 &-5409158173025806609
 Light:
   m_ObjectHideFlags: 0
@@ -1654,19 +1687,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &7876739413561208764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3485778871360351862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1c3bbbaf3b962b44859df65c333af10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TeamHalo: {fileID: -5409158173025806609}
 --- !u!1 &3555844993184216359
 GameObject:
   m_ObjectHideFlags: 0
