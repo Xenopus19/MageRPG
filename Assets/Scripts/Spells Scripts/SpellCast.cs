@@ -26,6 +26,7 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject Meteor;
     [SerializeField] private GameObject Spikes;
     [SerializeField] private GameObject Monolith;
+    [SerializeField] private GameObject Overdrive;
 
     private ManaPlayer manaPlayer;
     private SpellIconsChange spellRecognizedEffects;
@@ -39,7 +40,7 @@ public class SpellCast : MonoBehaviour
     private void Awake()
     {
         Spells.Add("12", FireBall);
-        Spells.Add("175", HealSpell);
+        //Spells.Add("175", HealSpell);
         Spells.Add("43", Frostbolt);
         Spells.Add("8576", StoneWall);
         Spells.Add("34", IceBarrage);
@@ -50,6 +51,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add("86275", Meteor);
         Spells.Add("142", Spikes);
         Spells.Add("21", Monolith);
+        Spells.Add("46173", Overdrive);
     }    
 
     private void Start()
