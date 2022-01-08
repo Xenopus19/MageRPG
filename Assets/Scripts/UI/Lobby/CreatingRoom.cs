@@ -5,6 +5,7 @@ public class CreatingRoom : MonoBehaviour {
     public GameObject roomButtons;
     public GameObject lobbyNetworkManager;
     public GameObject roomTextObject;
+    public GameObject ChoosingMapPanel;
 
     private LobbyNetwork lobbyNetwork;
     private RoomText roomText;
@@ -18,6 +19,7 @@ public class CreatingRoom : MonoBehaviour {
 
     public void CreateRoomPanel() {
         Init();
+        ChoosingMapPanel.SetActive(true);
         string playerName = PlayerPrefs.GetString("PlayerName");
         string randomRoomName = $"{playerName}{Random.Range(1000, 9999)}";
         lobbyNetwork.CreateRoom(randomRoomName);

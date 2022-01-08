@@ -9,14 +9,16 @@ public class LifeManager : MonoBehaviour {
 
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject endGameUI;
+    [SerializeField] private GameObject scoreTextObject;
     private Transform spawnPoint;
 
     private PhotonView photonView;
     public GameObject GameNetworkManager;
     private GameNetwork gameNetwork;
+    private ScoreText scoreText;
 
     private TurningDeathStatus deathStatus;
-    public bool IsDead = false;
+    public bool IsEndGame = false;
 
     public void Init(GameObject player) {
         deathStatus = GetComponent<TurningDeathStatus>();
@@ -28,6 +30,7 @@ public class LifeManager : MonoBehaviour {
         playerHP = Player.GetComponent<PlayerHP>();
         manaPlayer = Player.GetComponent<ManaPlayer>();
         playerHPText = Player.GetComponent<PlayerHPText>();
+        scoreText = scoreTextObject.GetComponent<ScoreText>();
     }
 
     public void EndLife() {
@@ -45,18 +48,23 @@ public class LifeManager : MonoBehaviour {
     public void EndGameForPlayer() {
         Debug.Log("Smert'");
         deathStatus.TurnOnDeathStatus(gameNetwork);
-        IsDead = true;
         gameNetwork.UpdateTeamsPanel();
         if (gameNetwork.IsFirstTeam) {
-           photonView.RPC("MakeLossForTeam", RpcTarget.All, gameNetwork.IsFirstTeam);
-            if (gameNetwork.AmountOfLosses == gameNetwork.LifesForFirstTeam) {
-                EndGame();
-            }
+            CheckEndGame(gameNetwork.LifesForFirstTeam, gameNetwork.IsFirstTeam);
         } else {
-           photonView.RPC("MakeLossForTeam", RpcTarget.All, !gameNetwork.IsFirstTeam);
-            if (gameNetwork.AmountOfLosses == gameNetwork.LifesForSecondTeam) {
-                EndGame();
-            }
+            CheckEndGame(gameNetwork.LifesForSecondTeam, gameNetwork.IsFirstTeam);
+        }
+    }
+
+    public void CheckEndGame(float LifesForTeam, bool IsFirstTeam) {
+        Debug.Log(IsFirstTeam);
+        if (IsFirstTeam) {
+            photonView.RPC("MakeLossForTeam", RpcTarget.All, IsFirstTeam);
+        } else {
+            photonView.RPC("MakeLossForTeam", RpcTarget.All, !IsFirstTeam);
+        }
+        if (gameNetwork.AmountOfLosses == LifesForTeam) {
+            EndGame(IsLosingTeam: true);
         }
     }
 
@@ -67,21 +75,33 @@ public class LifeManager : MonoBehaviour {
         }
     }
 
-    private void EndGame() {
+    public void EndGame(bool IsLosingTeam) {
         Debug.Log("EndGame");
-        if (!gameNetwork.IsFirstTeam) {
-            photonView.RPC("WinFirstTeam", RpcTarget.All);
+        if (IsLosingTeam) {
+            if (!gameNetwork.IsFirstTeam) {
+                Debug.Log("Win1");
+                photonView.RPC("WinFirstTeam", RpcTarget.All);
+            } else {
+                photonView.RPC("WinSecondTeam", RpcTarget.All);
+            }
         } else {
-            photonView.RPC("WinSecondTeam", RpcTarget.All);
+            if (gameNetwork.IsFirstTeam) {
+                Debug.Log("Win1");
+                IsEndGame = true;photonView.RPC("WinFirstTeam", RpcTarget.All);
+            } else {
+                photonView.RPC("WinSecondTeam", RpcTarget.All);
+            }
         }
     }
 
     [PunRPC]
     public void WinFirstTeam() {
+        IsEndGame = true;
         gameUI.SetActive(false);
         endGameUI.SetActive(true);
         if (gameNetwork.IsFirstTeam) {
             endGameUI.GetComponent<EndGameCanvasManager>().MakeWinText();
+            scoreText.SaveScore();
         } else {
             endGameUI.GetComponent<EndGameCanvasManager>().MakeLoseText();
         }
@@ -90,10 +110,12 @@ public class LifeManager : MonoBehaviour {
 
     [PunRPC]
     public void WinSecondTeam() {
+        IsEndGame = true;
         gameUI.SetActive(false);
         endGameUI.SetActive(true);
         if (!gameNetwork.IsFirstTeam) {
             endGameUI.GetComponent<EndGameCanvasManager>().MakeWinText();
+            scoreText.SaveScore();
         } else {
             endGameUI.GetComponent<EndGameCanvasManager>().MakeLoseText();
         }
