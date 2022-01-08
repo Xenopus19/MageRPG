@@ -4826,6 +4826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8484542667647281570}
   - component: {fileID: 2311354540605427688}
+  - component: {fileID: -8461847749289676428}
   m_Layer: 0
   m_Name: Overdrive
   m_TagString: Untagged
@@ -4870,6 +4871,19 @@ MonoBehaviour:
   ManaRefillNumber: 50
   MatkBonus: 7
   VisualEffect: {fileID: 8202384990349644833, guid: 54cdeb0f9961e344cb1cd38ca3e57fb9, type: 3}
+--- !u!114 &-8461847749289676428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3501929966750955604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ff8619c7e23294b8360dbca97ebfe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Lifetime: 2
 --- !u!1 &5604716483737201086
 GameObject:
   m_ObjectHideFlags: 0

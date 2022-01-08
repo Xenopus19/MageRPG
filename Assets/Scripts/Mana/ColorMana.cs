@@ -21,6 +21,7 @@ public class ColorMana : MonoBehaviour {
             MaxMana = playerMana.MaxMana;
             manaPercent = CurrentMana / MaxMana;
             ManaBarImage.color = ManaGradient.Evaluate(manaPercent);
+            ManaBarImage.fillAmount = manaPercent;
         }
     }
 }
