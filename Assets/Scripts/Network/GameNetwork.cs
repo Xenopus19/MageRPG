@@ -15,6 +15,8 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     public float LifesForFirstTeam = 0;
     public float LifesForSecondTeam = 0;
     public float AmountOfLosses = 0;
+    private Photon.Realtime.Player[] Players;
+    private List<int> IndexDeadPlayers = new List<int>() { -1 };
 
     [SerializeField] private GameObject LifeManagerObject;
     public LifeManager lifeManager;
@@ -23,6 +25,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     void Start() 
     {
         lifeManager = LifeManagerObject.GetComponent<LifeManager>();
+        Players = PhotonNetwork.PlayerList;
         MakeNickNamesDifferent();
         DefineTeam();
         DefineNickName();
@@ -64,38 +67,74 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     [PunRPC]
     public void DefineNickName() {
         Text nickName;
-        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++) {
+        for (int i = 0; i < Players.Length; i++) {
             if (IsFirstTeam) {
                 nickName = NickNameTexts[i].GetComponent<Text>();
-                nickName.text = PhotonNetwork.PlayerList[i].NickName;
+                nickName.text = Players[i].NickName;
                 continue;
             } else {
                 if (i % 2 == 1) {
                     nickName = NickNameTexts[i - 1].GetComponent<Text>();
-                    nickName.text = PhotonNetwork.PlayerList[i].NickName;
+                    nickName.text = Players[i].NickName;
                     continue;
                 } else {
                     nickName = NickNameTexts[i + 1].GetComponent<Text>();
-                    nickName.text = PhotonNetwork.PlayerList[i].NickName;
+                    nickName.text = Players[i].NickName;
                     continue;
                 }
 
             }
         }
-        Debug.Log("DefineNickName");
     }
 
     public void UpdateTeamsPanel() {
-        Debug.Log("UpdateTeamsPanel");
         PhotonNetwork.NickName += " (Dead)";
+        for (int i = 0; i < Players.Length; i++) {
+            if (PhotonNetwork.NickName == Players[i].NickName) {
+                IndexDeadPlayers.Add(i);
+            }
+        }
         _photonView.RPC("DefineNickName", RpcTarget.All);
     }
 
-    public void LeaveRoom() {
-        if (!lifeManager.IsDead) {
-            Debug.Log("LeaveRoom");
-            lifeManager.EndGameForPlayer();
+    private void FindGone() {
+        for (int i = 0; i < Players.Length; i++) {
+            string nickname = Players[i].NickName;
+            for (int j = 0; j < PhotonNetwork.PlayerList.Length; j++) {
+                if (PhotonNetwork.PlayerList[j].NickName == nickname) {
+                    break;
+                }
+                if (j + 1 == PhotonNetwork.PlayerList.Length) {
+                    for (int k = 0; k < IndexDeadPlayers.Count; k++) {
+                        if (i == IndexDeadPlayers[k]) {
+                            break;
+                        } if (k + 1 == IndexDeadPlayers.Count) {
+                            Players[i].NickName += " (Dead)";
+                            IndexDeadPlayers.Add(i);
+                        }
+                    }
+                    for (int k = 0, amountOfEven = 0, amountOfOdd = -1; k < IndexDeadPlayers.Count; k++) {
+                        if (IndexDeadPlayers[k] % 2 == 0) {
+                            amountOfEven++;
+                        } else {
+                            amountOfOdd++;
+                        }
+                        if (k + 1 == IndexDeadPlayers.Count && (amountOfEven == Players.Length / 2 || amountOfOdd == Players.Length / 2)) {
+                            Debug.Log("EndGameInFor");
+                            lifeManager.EndGame(IsLosingTeam: false);
+                        }
+                    }
+                    if (IsFirstTeam && i % 2 == 0) {
+                        lifeManager.CheckEndGame(LifesForFirstTeam, IsFirstTeam);
+                    } else if (!IsFirstTeam && i % 2 == 1) {
+                        lifeManager.CheckEndGame(LifesForSecondTeam, IsFirstTeam);
+                    }
+                }
+            }
         }
+    }
+
+    public void LeaveRoom() {
         PhotonNetwork.LeaveRoom();
     }
 
@@ -109,6 +148,11 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
 
     public override void OnPlayerLeftRoom(Player otherPlayer) {
         Debug.Log(otherPlayer.NickName + " left the room.");
+        Debug.Log($"OnLeft {lifeManager.IsEndGame}");
+        if (!lifeManager.IsEndGame) {
+            FindGone();
+            _photonView.RPC("DefineNickName", RpcTarget.All);
+        }
     }
 
     public void OnDie() {

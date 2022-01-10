@@ -42,7 +42,7 @@ public class ManaPlayer : MonoBehaviour
         ChangeManaText();
     }
 
-    public void RecoveryMana() 
+    private void RecoveryMana() 
     {
         time += Time.deltaTime;
         if (time > 0.4) {
