@@ -47,7 +47,7 @@ Shader "Unlit/Lava"
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                i.uv += sqrt(i.uv.x * 0.5 + _Time.y * 0.2) + sin(i.uv.x * 0.5 + _Time.y * 0.2);
+                i.uv += _Time.y * 0.05;
                 fixed4 col = tex2D(_MainTex, i.uv);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
