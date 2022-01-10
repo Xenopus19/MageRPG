@@ -1092,19 +1092,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316409528}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 235.38148}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 890768770}
   - {fileID: 102705564}
-  m_Father: {fileID: 497627996}
-  m_RootOrder: 2
+  m_Father: {fileID: 991298756}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -855.44824}
-  m_SizeDelta: {x: 0, y: -212.8965}
+  m_AnchoredPosition: {x: -77.92061, y: -294.44818}
+  m_SizeDelta: {x: 654.00006, y: 109.22566}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316409530
 MonoBehaviour:
@@ -1867,7 +1867,6 @@ RectTransform:
   m_Children:
   - {fileID: 871282875}
   - {fileID: 991298756}
-  - {fileID: 316409529}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5109,6 +5108,7 @@ RectTransform:
   - {fileID: 1354255723}
   - {fileID: 1936363248}
   - {fileID: 1784906108}
+  - {fileID: 316409529}
   m_Father: {fileID: 497627996}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6248,8 +6248,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 991298759}
         m_TargetAssemblyTypeName: GraphicsSettingsScript, Assembly-CSharp
-        m_MethodName: SetQuality
-        m_Mode: 0
+        m_MethodName: SetResolution
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
