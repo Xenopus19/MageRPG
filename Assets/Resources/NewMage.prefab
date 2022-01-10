@@ -1228,6 +1228,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   jumpCode: 32
+  MovingBackPenalty: 1.5
   isGrounded: 0
 --- !u!114 &-411178801015928706
 MonoBehaviour:
