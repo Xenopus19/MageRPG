@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 
 public class GameNetwork : MonoBehaviourPunCallbacks {
     [SerializeField] private GameObject PlayerPrefab;
@@ -22,8 +23,16 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     public LifeManager lifeManager;
     private GameObject PlayerObject;
     private PhotonView _photonView;
+
+    [SerializeField] private GameObject LoadingPanel;
     void Start() 
     {
+        Debug.Log($"{PhotonNetwork.PlayerList.Length} {PhotonNetwork.CurrentRoom.PlayerCount}");
+        if (PhotonNetwork.PlayerList.Length != PhotonNetwork.CurrentRoom.PlayerCount) {
+            LoadingPanel.SetActive(true);
+        } else {
+            LoadingPanel.SetActive(false);
+        }
         lifeManager = LifeManagerObject.GetComponent<LifeManager>();
         Players = PhotonNetwork.PlayerList;
         MakeNickNamesDifferent();
@@ -144,6 +153,11 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
 
     public override void OnPlayerEnteredRoom(Player newPlayer) {
         Debug.Log(newPlayer.NickName + " joined the room.");
+        if (PhotonNetwork.PlayerList.Length != PhotonNetwork.CurrentRoom.PlayerCount) {
+            LoadingPanel.SetActive(true);
+        } else {
+            LoadingPanel.SetActive(false);
+        }
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer) {
