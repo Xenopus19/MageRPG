@@ -25,14 +25,10 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     private PhotonView _photonView;
 
     [SerializeField] private GameObject LoadingPanel;
+    private int playersCount = 0;
     void Start() 
     {
-        Debug.Log($"{PhotonNetwork.PlayerList.Length} {PhotonNetwork.CurrentRoom.PlayerCount}");
-        if (PhotonNetwork.PlayerList.Length != PhotonNetwork.CurrentRoom.PlayerCount) {
-            LoadingPanel.SetActive(true);
-        } else {
-            LoadingPanel.SetActive(false);
-        }
+        photonView.RPC("ChangeActivenessPanel", RpcTarget.All);
         lifeManager = LifeManagerObject.GetComponent<LifeManager>();
         Players = PhotonNetwork.PlayerList;
         MakeNickNamesDifferent();
@@ -153,11 +149,6 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
 
     public override void OnPlayerEnteredRoom(Player newPlayer) {
         Debug.Log(newPlayer.NickName + " joined the room.");
-        if (PhotonNetwork.PlayerList.Length != PhotonNetwork.CurrentRoom.PlayerCount) {
-            LoadingPanel.SetActive(true);
-        } else {
-            LoadingPanel.SetActive(false);
-        }
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer) {
@@ -166,6 +157,16 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
         if (!lifeManager.IsEndGame) {
             FindGone();
             _photonView.RPC("DefineNickName", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    public void ChangeActivenessPanel() {
+        playersCount++;
+        if (playersCount == PhotonNetwork.PlayerList.Length) {
+            LoadingPanel.SetActive(false);
+        } else {
+            LoadingPanel.SetActive(true);
         }
     }
 
