@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Photon.Pun;
-public class FireballScript : Projectiles
-{
-    private PhotonView photonView;
+using System;
+using UnityEngine;
 
+public class PunchScript : Projectiles
+{
+    [SerializeField] private float Impact;
     private void Start()
-    {   
-        photonView = GetComponent<PhotonView>();
-        GetAnimator();
-        anim.Play("FireBallAndFrostboltCastAnim");
-        FlyForward();
+    {
         IgnoreCollisionWithCaster();
+        FlyForward();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -31,13 +27,17 @@ public class FireballScript : Projectiles
         {
             if (PhotonNetwork.IsMasterClient)
             {
+                ImpactReceiver impactReceiver = Target.GetComponent<ImpactReceiver>();
+                if(impactReceiver)
+                {
+                    Debug.Log("Impact added");
+                    impactReceiver.AddImpact(transform.forward, Impact);
+                }
                 DamageTarget(Target);
             }
 
             DestroySpell();
         }
-        
-        //Debug.LogWarning(Target.name);
     }
 
     private void DestroySpell()
@@ -46,6 +46,4 @@ public class FireballScript : Projectiles
         isAlive = false;
         Destroy(gameObject);
     }
-
-
 }
