@@ -286,7 +286,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2039
+    m_Bits: 10231
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -1123,6 +1123,7 @@ GameObject:
   - component: {fileID: -849659358603835564}
   - component: {fileID: 7876739413561208764}
   - component: {fileID: -5409158173025806609}
+  - component: {fileID: -910784912824279658}
   m_Layer: 13
   m_Name: NewMage
   m_TagString: Untagged
@@ -1341,6 +1342,7 @@ MonoBehaviour:
   Spikes: {fileID: 2429358459969404064, guid: 1e9f166a6893c7c4095bda011e35bbfb, type: 3}
   Monolith: {fileID: 1883299687789156477, guid: 2652a02d677f9ea469cf1a69cc31f147, type: 3}
   Overdrive: {fileID: 3501929966750955604, guid: f50618629b2ccd5428616af2a0ddf9de, type: 3}
+  Punch: {fileID: 3222684598777068905, guid: 980d54cef0eb4d74eb283825988f5ece, type: 3}
   IsUsingVampirism: 0
 --- !u!114 &8138300566906045946
 MonoBehaviour:
@@ -1688,6 +1690,18 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &-910784912824279658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485778871360351862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfb8f2bd4e958a49bc7c22caf7fae71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3555844993184216359
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,6 +49,7 @@ public class Spell : MonoBehaviour
         }
     }
 
+
     public void IgnoreCollisionWithCaster()
     {
         if (Caster.GetComponent<Collider>() != null)
@@ -91,5 +92,10 @@ public class Spell : MonoBehaviour
         {
             DamagingSpellCaster.GetComponent<PlayerHP>().ReceiveHealing(this.ActionAmount * 0.2f);
         }
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
     }
 }
