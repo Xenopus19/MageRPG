@@ -8,6 +8,6 @@ public class ChoosingMap : MonoBehaviour {
     }
     public void ChooseMap2() {
         gameObject.SetActive(false);
-        mapName = "Other";
+        mapName = "Arena4";
     }
 }
