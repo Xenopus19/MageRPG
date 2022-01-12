@@ -33,13 +33,19 @@ public class FireballScript : Projectiles
             {
                 DamageTarget(Target);
             }
-            CreateCollisionEffects();
-            isAlive = false;
-            Destroy(gameObject);
+
+            DestroySpell();
         }
         
         //Debug.LogWarning(Target.name);
     }
 
-    
+    private void DestroySpell()
+    {
+        CreateCollisionEffects();
+        isAlive = false;
+        Destroy(gameObject);
+    }
+
+
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   SpellName: Bothynus
   SpellImage: {fileID: 21300000, guid: 00e8783f2adc24940a8669a66b7b7f25, type: 3}
   SpellDescription: Creates a big fireball, that strikes place you are looking at,
-    leaving a burning field.
+    leaving a burning field. More effective against players.
   SpellManaCost: 'Mana Cost: 20'
   SpellDamage: 'Damage: 10 + 2/s'
   SpellCastingCode: {fileID: 21300000, guid: 2f2f7c4ccd4f8ed42bc9c8343a480869, type: 3}

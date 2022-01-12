@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 
 public class GameNetwork : MonoBehaviourPunCallbacks {
     [SerializeField] private GameObject PlayerPrefab;
@@ -22,8 +23,12 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     public LifeManager lifeManager;
     private GameObject PlayerObject;
     private PhotonView _photonView;
+
+    [SerializeField] private GameObject LoadingPanel;
+    private int playersCount = 0;
     void Start() 
     {
+        photonView.RPC("ChangeActivenessPanel", RpcTarget.All);
         lifeManager = LifeManagerObject.GetComponent<LifeManager>();
         Players = PhotonNetwork.PlayerList;
         MakeNickNamesDifferent();
@@ -152,6 +157,16 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
         if (!lifeManager.IsEndGame) {
             FindGone();
             _photonView.RPC("DefineNickName", RpcTarget.All);
+        }
+    }
+
+    [PunRPC]
+    public void ChangeActivenessPanel() {
+        playersCount++;
+        if (playersCount == PhotonNetwork.PlayerList.Length) {
+            LoadingPanel.SetActive(false);
+        } else {
+            LoadingPanel.SetActive(true);
         }
     }
 

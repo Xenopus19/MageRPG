@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public KeyCode jumpCode = KeyCode.Space;
+    public float MovingBackPenalty;
     
     Vector3 velocity;
     public bool isGrounded;
@@ -106,6 +107,10 @@ public class PlayerMovement : MonoBehaviour
     }
     public void MovePlayer(float directionX, float directionZ) 
     {
+        if(directionZ<0)
+        {
+            directionZ /= MovingBackPenalty;
+        }
         Vector3 move = transform.right * directionX + transform.forward * directionZ;
 
         float speed = GetCurrentSpeed(baseSpeed);

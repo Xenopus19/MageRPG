@@ -13,7 +13,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - player
+  - LocalPlayer
   - Water
   - UI
   - IgnoreGround
@@ -23,7 +23,7 @@ TagManager:
   - Ground
   - PostProcessing
   - DeadPlayers
-  - 
+  - OtherPlayers
   - 
   - 
   - 

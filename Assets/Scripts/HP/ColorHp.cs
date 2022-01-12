@@ -24,6 +24,7 @@ public class ColorHp : MonoBehaviour
             MaxHealth = playerhp.MaxHealth;
             healthPercent = CurrentHealth / MaxHealth;
             HealthBarImage.color = healthGradient.Evaluate(healthPercent);
+            HealthBarImage.fillAmount = healthPercent;
         }
     }
 }

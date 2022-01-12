@@ -1216,6 +1216,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bd20747a602981f4a81801d2269ef749, type: 2}
   - {fileID: 11400000, guid: 9784007e1f22aa545bf43bed60715932, type: 2}
   - {fileID: 11400000, guid: a2e31a5b2010d1d4fb58633f6b8216f6, type: 2}
+  - {fileID: 11400000, guid: bc52e836d9ab9634985c40cf9fc5aa2f, type: 2}
+  - {fileID: 11400000, guid: 5be4083863f392e4389ac94b45ff8c5c, type: 2}
   Page1: {fileID: 1467727214}
   Page2: {fileID: 514481234}
 --- !u!224 &990843357 stripped
