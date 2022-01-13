@@ -1343,6 +1343,7 @@ MonoBehaviour:
   Monolith: {fileID: 1883299687789156477, guid: 2652a02d677f9ea469cf1a69cc31f147, type: 3}
   Overdrive: {fileID: 3501929966750955604, guid: f50618629b2ccd5428616af2a0ddf9de, type: 3}
   Punch: {fileID: 3222684598777068905, guid: 980d54cef0eb4d74eb283825988f5ece, type: 3}
+  Teleport: {fileID: 7849646999642029291, guid: 9bbe9b46c3ac60a40b7d48310f5bf75f, type: 3}
   IsUsingVampirism: 0
 --- !u!114 &8138300566906045946
 MonoBehaviour:
