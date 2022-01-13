@@ -28,6 +28,7 @@ public class SpellCast : MonoBehaviour
     [SerializeField] private GameObject Monolith;
     [SerializeField] private GameObject Overdrive;
     [SerializeField] private GameObject Punch;
+    [SerializeField] private GameObject Teleport;
 
     private ManaPlayer manaPlayer;
     private SpellIconsChange spellRecognizedEffects;
@@ -54,6 +55,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add("4134", Monolith);
         Spells.Add("46173", Overdrive);
         Spells.Add("56", Punch);
+        Spells.Add("8756", Teleport);
     }    
 
     private void Start()
