@@ -5,10 +5,15 @@ using UnityEngine;
 public class Arena4LavaScript : MonoBehaviour
 {
     public int LavaDamage = 10;
+    float time = 0f;
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        float time = 0f;
-        time += Time.deltaTime;
         GameObject CollidedGO = other.gameObject;
         if (CollidedGO.GetComponent<Health>() != null)
         {
