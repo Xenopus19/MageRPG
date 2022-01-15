@@ -10,10 +10,11 @@ public class VolumeSliders : MonoBehaviour
     private string EffectsExposedParam = "Effects";
 
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioSource audioSourceBGM;
 
     [SerializeField] private int VolumeMultiplier;
 
-    private void Start()
+    private void Awake()
     {
         if(PlayerPrefs.HasKey("MusicVolume"))
         {
@@ -24,6 +25,11 @@ public class VolumeSliders : MonoBehaviour
         {
             SetGroupVolume(EffectsExposedParam, PlayerPrefs.GetFloat("EffectsVolume"));
         }
+    }
+
+    private void Start()
+    {
+        audioSourceBGM.Play();
     }
 
     public void SetGroupVolume(string ExposedParam, float newVolume)

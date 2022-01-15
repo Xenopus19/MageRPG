@@ -3353,10 +3353,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7055022121700936411, guid: d96d561cc1eb6204d9e924807fd5ba59, type: 2}
   m_audioClip: {fileID: 8300000, guid: 27ae589d4af618948ad65f4a5f4215f4, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -7052,6 +7052,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 800354886}
+    - target: {fileID: 5359672183900756164, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
+      propertyPath: audioSourceBGM
+      value: 
+      objectReference: {fileID: 1191426559}
     - target: {fileID: 5359672184062181263, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
