@@ -57,6 +57,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 20
   photonView: {fileID: 0}
+  OnDied:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8169359754252103580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77,8 +80,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5409158173025806609, guid: 522e53b0724cb484ab3d44657e0a07ae, type: 3}
-      propertyPath: m_Enabled
+      propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5409158173025806609, guid: 522e53b0724cb484ab3d44657e0a07ae, type: 3}
+      propertyPath: m_Color.g
+      value: 0.08203981
+      objectReference: {fileID: 0}
+    - target: {fileID: -5409158173025806609, guid: 522e53b0724cb484ab3d44657e0a07ae, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5409158173025806609, guid: 522e53b0724cb484ab3d44657e0a07ae, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3629093619896889983, guid: 522e53b0724cb484ab3d44657e0a07ae, type: 3}
       propertyPath: m_Enabled

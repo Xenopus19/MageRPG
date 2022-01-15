@@ -9,18 +9,28 @@ public class GraphicsSettingsScript : MonoBehaviour
     [SerializeField] private Dropdown QualitySettingsObject;
     [SerializeField] private Dropdown ResolutionDropdown;
 
+    private bool LastFullScreenSettings;
     private Resolution[] resolutions;
     private void Start()
     {
+        LastFullScreenSettings = Screen.fullScreen;
         FullscreenToggleObject.isOn = Screen.fullScreen;
         QualitySettingsObject.value = QualitySettings.GetQualityLevel();
         AddResolutionOptions();
         
     }
+    private void Update()
+    {
+        if(LastFullScreenSettings != Screen.fullScreen)
+        {
+            FullscreenToggleObject.isOn = Screen.fullScreen;
+            LastFullScreenSettings = Screen.fullScreen;
+        }
+    }
     private void AddResolutionOptions()
     {
         Resolution[] res = Screen.resolutions;
-        resolutions= res.Distinct().ToArray();
+        resolutions = res.Distinct().ToArray();
 
         string[] stringResolutions = new string[resolutions.Length];
 
