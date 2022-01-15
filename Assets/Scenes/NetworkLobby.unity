@@ -4946,7 +4946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8474746788094543507, guid: c67045e2da8d63a40b05ab92f7e62f58, type: 3}
       propertyPath: m_Text
-      value: Other
+      value: Volcano
       objectReference: {fileID: 0}
     - target: {fileID: 8474746788094543507, guid: c67045e2da8d63a40b05ab92f7e62f58, type: 3}
       propertyPath: m_FontData.m_FontSize
