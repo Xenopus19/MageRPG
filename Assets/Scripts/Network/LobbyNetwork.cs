@@ -101,6 +101,11 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         {
             playerAmountText = playerAmountTextCR.GetComponent<PlayerAmountText>();
         }
+        
+        if (PhotonNetwork.CountOfPlayers == 6) 
+        {
+            PhotonNetwork.CurrentRoom.IsVisible = false;
+        }
     }
 
     public void LeaveRoom() 
