@@ -3707,6 +3707,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1498741508512288188, guid: aed3ff31c5472004c93310e50184ab3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1836098473143820267, guid: aed3ff31c5472004c93310e50184ab3c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
@@ -3719,6 +3723,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 3913101239991508157, guid: aed3ff31c5472004c93310e50184ab3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4006700243457692222, guid: aed3ff31c5472004c93310e50184ab3c, type: 3}
       propertyPath: m_Name
       value: FullWall (1)
@@ -3730,6 +3738,10 @@ PrefabInstance:
     - target: {fileID: 5509930036674761180, guid: aed3ff31c5472004c93310e50184ab3c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5984074485896143857, guid: aed3ff31c5472004c93310e50184ab3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7301542533951024965, guid: aed3ff31c5472004c93310e50184ab3c, type: 3}
       propertyPath: m_RootOrder
@@ -3774,6 +3786,10 @@ PrefabInstance:
     - target: {fileID: 7301542533951024965, guid: aed3ff31c5472004c93310e50184ab3c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549327632068858838, guid: aed3ff31c5472004c93310e50184ab3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7645788405021401559, guid: aed3ff31c5472004c93310e50184ab3c, type: 3}
       propertyPath: m_StaticEditorFlags
