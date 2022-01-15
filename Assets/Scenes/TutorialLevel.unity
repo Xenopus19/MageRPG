@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 977034577}
   m_IndirectSpecularColor: {r: 0.039728265, g: 0.07261378, b: 0.12472587, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -1907,10 +1907,10 @@ Light:
   m_GameObject: {fileID: 977034576}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 2
+  m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.7137255, g: 0.9505889, b: 1, a: 1}
-  m_Intensity: 2.6
+  m_Intensity: 1
   m_Range: 45.3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

@@ -1443,6 +1443,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 886637332}
     m_Modifications:
+    - target: {fileID: 1101334985514956425, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -12
+      objectReference: {fileID: 0}
     - target: {fileID: 8022922212407627976, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
       propertyPath: m_Name
       value: Page1
@@ -1696,6 +1700,10 @@ PrefabInstance:
       propertyPath: ThisSpellData
       value: 
       objectReference: {fileID: 11400000, guid: 9ba97ceacdc92464c855a123cd486562, type: 2}
+    - target: {fileID: 1101334985514956425, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -12
+      objectReference: {fileID: 0}
     - target: {fileID: 1721327334451904028, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
