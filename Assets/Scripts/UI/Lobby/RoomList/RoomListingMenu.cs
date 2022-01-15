@@ -12,6 +12,7 @@ public class RoomListingMenu : MonoBehaviourPunCallbacks
 
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
+        Debug.LogError("Room list updated");
         if(roomList.Count!=0)
         foreach(RoomInfo info in roomList)
         {
