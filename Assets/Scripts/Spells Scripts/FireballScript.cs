@@ -7,18 +7,19 @@ public class FireballScript : Projectiles
     private PhotonView photonView;
 
     private void Start()
-    {   
+    {
         photonView = GetComponent<PhotonView>();
         GetAnimator();
         anim.Play("FireBallAndFrostboltCastAnim");
         FlyForward();
         IgnoreCollisionWithCaster();
     }
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider collision)
     {
         if (!isAlive)
             return;
-
+        gameObject.GetComponent<Collider>().enabled = false;
         GameObject Target = collision.gameObject;
         Debug.Log(Target.name);
         if (Target.GetComponent<Spell>()?.Caster == Caster)

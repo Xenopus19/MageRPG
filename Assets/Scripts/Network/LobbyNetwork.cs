@@ -150,8 +150,12 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public void ReturnToMenu()
     {
+        if(PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.LeaveRoom();
+        }
         LeaveLobby();
-        SceneManager.LoadScene("Menu");
+        PhotonNetwork.LoadLevel("Menu");
         //PhotonNetwork.LoadLevel("Menu");
     }
 
