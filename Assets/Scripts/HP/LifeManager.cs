@@ -15,7 +15,7 @@ public class LifeManager : MonoBehaviour {
     private PhotonView photonView;
     public GameObject GameNetworkManager;
     private GameNetwork gameNetwork;
-    private ScoreText scoreText;
+    public ScoreText scoreText;
 
     private TurningDeathStatus deathStatus;
     public bool IsEndGame = false;
@@ -33,14 +33,15 @@ public class LifeManager : MonoBehaviour {
         scoreText = scoreTextObject.GetComponent<ScoreText>();
     }
 
-    public void EndLife() {
+    public void EndLife(int PlayerID) {
         Debug.Log("EndLife");
         playerHP.ResetHealth();
         playerHPText.ChangeHealthText();
-        TeleportToSpawnPoint();
+        TeleportToSpawnPoint(PlayerID);
     }
-
-    private void TeleportToSpawnPoint() {
+    [PunRPC]
+    public void TeleportToSpawnPoint(int PlayerID) {
+        Player = PhotonView.Find(PlayerID).gameObject;
         Player.transform.position = spawnPoint.position;
         Player.transform.rotation = spawnPoint.rotation;
     }
