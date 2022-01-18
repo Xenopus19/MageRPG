@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629c2e9b8ac51de408a58a06897be641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AboveTexts: {fileID: 0}
+  TeamColoredLight: {fileID: 0}
 --- !u!114 &6418578395838192414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +289,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   jumpCode: 32
+  MovingBackPenalty: 0
   isGrounded: 0
 --- !u!143 &4629305385025826867
 CharacterController:

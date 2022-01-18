@@ -9814,7 +9814,7 @@ MonoBehaviour:
   OnCollisionParticle: {fileID: 100010, guid: bf6ce3cd3c47ff64cb9bcdfc16964bd6, type: 3}
   GODestroySFX: {fileID: 7587097764356830660, guid: 7b80c0c1192a8f346a10ebbf683e7f82, type: 3}
   Force: 2500
-  Impact: 300
+  Impact: 150
 --- !u!1 &4000449120116046271
 GameObject:
   m_ObjectHideFlags: 0

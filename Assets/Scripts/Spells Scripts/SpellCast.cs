@@ -55,7 +55,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add("4134", Monolith);
         Spells.Add("46173", Overdrive);
         Spells.Add("56", Punch);
-        Spells.Add("8756", Teleport);
+        Spells.Add("87", Teleport);
     }    
 
     private void Start()

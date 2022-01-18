@@ -26,7 +26,7 @@ public class PlayerHP : Health {
         if(photonView.IsMine)
         {
             amountOfLifes--;
-            lifeManager.EndLife();
+            lifeManager.EndLife(photonView.ViewID);
             if (amountOfLifes == 0)
             {
                 lifeManager.EndGameForPlayer();
