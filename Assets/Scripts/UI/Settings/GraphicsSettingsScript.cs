@@ -17,7 +17,14 @@ public class GraphicsSettingsScript : MonoBehaviour
         FullscreenToggleObject.isOn = Screen.fullScreen;
         QualitySettingsObject.value = QualitySettings.GetQualityLevel();
         AddResolutionOptions();
-        
+        if (!PlayerPrefs.HasKey("QualityLevel")) 
+        {
+            PlayerPrefs.SetInt("QualityLevel", QualitySettingsObject.value);
+        }
+        else 
+        {
+            QualitySettingsObject.value = PlayerPrefs.GetInt("QualityLevel");
+        }
     }
     private void Update()
     {
@@ -41,14 +48,24 @@ public class GraphicsSettingsScript : MonoBehaviour
 
         ResolutionDropdown.ClearOptions();
         ResolutionDropdown.AddOptions(stringResolutions.ToList());
+
+        if (PlayerPrefs.HasKey("Resolution")) 
+        { 
+            Debug.Log("has");
+            ResolutionDropdown.value = PlayerPrefs.GetInt("Resolution");
+            //int resolution = PlayerPrefs.GetInt("Resolution");
+            //Screen.SetResolution(resolutions[resolution].width, resolutions[resolution].height, true);
+        }
     }
     public void SetResolution()
     {
         Screen.SetResolution(resolutions[ResolutionDropdown.value].width, resolutions[ResolutionDropdown.value].height, true);
+        PlayerPrefs.SetInt("Resolution", ResolutionDropdown.value);
     }
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+        PlayerPrefs.SetInt("QualityLevel", qualityIndex);
     }
 
     public void SetFullscreen(bool isFullscreen)

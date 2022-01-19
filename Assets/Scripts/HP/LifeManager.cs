@@ -39,7 +39,7 @@ public class LifeManager : MonoBehaviour {
         playerHPText.ChangeHealthText();
         TeleportToSpawnPoint(PlayerID);
     }
-    [PunRPC]
+
     public void TeleportToSpawnPoint(int PlayerID) {
         Player = PhotonView.Find(PlayerID).gameObject;
         Player.transform.position = spawnPoint.position;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MouseSettings : MonoBehaviour
 {
-    [SerializeField] string PrefsKey;
+    [SerializeField] string PrefsKey = "MouseSensitivity";
 
     private MouseLook PlayerMouse;
 
@@ -37,6 +37,7 @@ public class MouseSettings : MonoBehaviour
     {
         if(PlayerPrefs.HasKey(PrefsKey))
         {
+            Debug.Log("has");
             return PlayerPrefs.GetFloat(PrefsKey);
         }
         return 350f;
