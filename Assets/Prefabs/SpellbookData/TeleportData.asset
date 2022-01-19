@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a629bca100360184fbb196481403d3a9, type: 3}
-  m_Name: HealData
+  m_Name: TeleportData
   m_EditorClassIdentifier: 
-  SpellName: Medico
-  SpellImage: {fileID: 21300000, guid: ac41923b12f708c408b7a31390059c5b, type: 3}
-  SpellDescription: By accelerating metabolism processes, your wounds start healing
-    a lot faster.
-  SpellManaCost: 'Mana Cost: 50'
-  SpellDamage: 'Heal: 15'
-  SpellCastingCode: {fileID: 21300000, guid: 2cd22de441ba071469135b443e63dfb5, type: 3}
+  SpellName: Lanuae
+  SpellImage: {fileID: 21300000, guid: ebf69e23a09ede9468dfbf4a6d60eee7, type: 3}
+  SpellDescription: Teleports you to point you are looking at.
+  SpellManaCost: 'Mana Cost: 15'
+  SpellDamage: 
+  SpellCastingCode: {fileID: 21300000, guid: 210ded3289017f944a571f05959d6eeb, type: 3}

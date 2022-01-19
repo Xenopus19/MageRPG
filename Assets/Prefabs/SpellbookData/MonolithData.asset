@@ -18,4 +18,4 @@ MonoBehaviour:
     their spells.
   SpellManaCost: 'Mana Cost: 15'
   SpellDamage: 'Damage: -5, Speed: -5'
-  SpellCastingCode: {fileID: 21300000, guid: 941ff4237be6449408581a005c04cb66, type: 3}
+  SpellCastingCode: {fileID: 21300000, guid: 32af73b74e095bb4ebb30d6634e3bce2, type: 3}
