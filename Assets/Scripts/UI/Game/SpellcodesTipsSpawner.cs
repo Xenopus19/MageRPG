@@ -11,6 +11,10 @@ public class SpellcodesTipsSpawner : MonoBehaviour
     {
         SetImageOnPanel(FirstPanel);
         SetImageOnPanel(SecondPanel);
+        while(SecondPanel.sprite.Equals(FirstPanel.sprite))
+        {
+            SetImageOnPanel(SecondPanel);
+        }
     }
 
     private void SetImageOnPanel(Image panel)
