@@ -1207,7 +1207,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpellDatas:
   - {fileID: 11400000, guid: 21466e4789b19a5489af664cd61de5a2, type: 2}
-  - {fileID: 11400000, guid: 9ba97ceacdc92464c855a123cd486562, type: 2}
   - {fileID: 11400000, guid: c889b17921a70dc429da15ed6d773e30, type: 2}
   - {fileID: 11400000, guid: 3dac1c53ad583a4458503e38fd020160, type: 2}
   - {fileID: 11400000, guid: bddb51a987c2b20419dad769a25241d5, type: 2}
@@ -1218,6 +1217,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a2e31a5b2010d1d4fb58633f6b8216f6, type: 2}
   - {fileID: 11400000, guid: bc52e836d9ab9634985c40cf9fc5aa2f, type: 2}
   - {fileID: 11400000, guid: 5be4083863f392e4389ac94b45ff8c5c, type: 2}
+  - {fileID: 11400000, guid: 69aa4aff0798d7b43b94d40a687d5c85, type: 2}
+  - {fileID: 11400000, guid: 4808e9e9dd05bd14a9315fa2b9f75e2f, type: 2}
   Page1: {fileID: 1467727214}
   Page2: {fileID: 514481234}
 --- !u!1001 &907484707
