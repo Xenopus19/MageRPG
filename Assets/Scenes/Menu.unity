@@ -3900,6 +3900,26 @@ PrefabInstance:
       propertyPath: m_FontData.m_HorizontalOverflow
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5359672182668176111, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359672182668176111, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359672182668176111, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359672182668176111, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5359672182668176111, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 5359672183025288830, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
