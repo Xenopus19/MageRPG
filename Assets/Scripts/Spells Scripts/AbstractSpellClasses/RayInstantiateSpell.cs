@@ -32,7 +32,9 @@ public class RayInstantiateSpell : Spell
         RaycastHit[] hits = Physics.RaycastAll(ray);
         foreach (RaycastHit hit in hits)
         {
-            if (hit.collider.gameObject.layer == RequiredLayer)
+            if (hit.collider.gameObject.layer != RequiredLayer)
+                break;
+            else 
             {
                 if (IsNetworkInstantiate)
                 {

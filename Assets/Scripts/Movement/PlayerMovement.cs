@@ -29,17 +29,21 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     public KeyCode jumpCode = KeyCode.Space;
     public float MovingBackPenalty;
-    
+    public Collider[] colliders;
+
     Vector3 velocity;
     public bool isGrounded;
 
     private PhotonView photonView;
 
     private Animator anim;
+    private Quaternion basicRotation;
+    
 
     private List<Buff> buffs;
     private void Start()
     {
+        basicRotation = transform.rotation;
         photonView = GetComponent<PhotonView>();
         anim = gameObject.GetComponent<Animator>();
         buffs = new List<Buff>();
@@ -104,6 +108,31 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+    public void TeleportPlayer(Vector3 newPosition)
+    {
+        Debug.LogWarning("Teleport Player Called");
+        /*
+        foreach(Collider collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        */
+        controller.enabled = false;
+        transform.LookAt(newPosition);
+        while(!transform.position.AlmostEquals(newPosition, 0.5f))
+        {
+            transform.position = newPosition;
+        }
+        transform.rotation = basicRotation;
+        controller.enabled = true;
+        Debug.LogWarning("Player teleported");
+        /*
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        */
     }
     public void MovePlayer(float directionX, float directionZ) 
     {

@@ -75,6 +75,7 @@ MonoBehaviour:
   - DefineNickName
   - ChangeActivenessPanel
   - RPC_AddImpact
+  - RPC_TeleportPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

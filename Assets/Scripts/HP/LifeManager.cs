@@ -37,17 +37,22 @@ public class LifeManager : MonoBehaviour {
         Debug.Log("EndLife");
         playerHP.ResetHealth();
         playerHPText.ChangeHealthText();
-        TeleportToSpawnPoint(PlayerID);
+        photonView.RPC("TeleportToSpawnPoint", RpcTarget.All, PlayerID);
     }
     [PunRPC]
-    public void TeleportToSpawnPoint(int PlayerID) {
+    public void TeleportToSpawnPoint(int PlayerID) 
+    {
+
+        Debug.LogWarning("RPC called");
         Player = PhotonView.Find(PlayerID).gameObject;
-        Player.transform.position = spawnPoint.position;
-        Player.transform.rotation = spawnPoint.rotation;
+        Debug.LogWarning(Player.name);
+        Player.GetComponent<PlayerMovement>().TeleportPlayer(spawnPoint.position);
+        //Player.transform.position = spawnPoint.position;
+        //Player.transform.rotation = spawnPoint.rotation;
     }
 
     public void EndGameForPlayer() {
-        Debug.Log("Smert'");
+        Debug.Log("Smert");
         deathStatus.TurnOnDeathStatus(gameNetwork);
         gameNetwork.UpdateTeamsPanel();
         if (gameNetwork.IsFirstTeam) {
