@@ -27,7 +27,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     private ChoosingMap choosingMap;
     private void Start()
     {
-        Debug.LogError("In lobby: " + PhotonNetwork.InLobby);
+        //Debug.LogError("In lobby: " + PhotonNetwork.InLobby);
         Cursor.visible = (true);
         Cursor.lockState = CursorLockMode.None;
 
@@ -43,7 +43,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
         }
         else
         {
-            Debug.LogError("Is connected to master");
+            //Debug.LogError("Is connected to master");
             JoinDefaultLobby();
             LoadingPlane.SetActive(false);
         }
@@ -57,13 +57,13 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
 
     public override void OnConnectedToMaster()
     {
-        Debug.Log("Connected to master.");
+        //Debug.Log("Connected to master.");
         LoadingPlane.SetActive(false);
         JoinDefaultLobby();
     }
     private void JoinDefaultLobby()
     {
-        Debug.LogError("Joined lobby");
+        //Debug.LogError("Joined lobby");
         PhotonNetwork.JoinLobby(defaultLobby);
     }
 
@@ -77,7 +77,7 @@ public class LobbyNetwork : MonoBehaviourPunCallbacks
     public void AddNickName(string name) 
     {
         PhotonNetwork.NickName = name;
-        Debug.Log("Player is " + PhotonNetwork.NickName);
+        //Debug.Log("Player is " + PhotonNetwork.NickName);
     }
 
     public void CreateRoom(string nameOfRoom) 

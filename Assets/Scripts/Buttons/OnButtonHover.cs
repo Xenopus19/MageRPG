@@ -10,11 +10,6 @@ public class OnButtonHover : MonoBehaviour
     public SpellCast spellCast;
 
     [SerializeField] private GameObject GlowingPrefab;
-
-    public void Start()
-    {
-
-    }
     public void ifHoveredOn()
     {
         if (spellCast == null) return;
@@ -22,6 +17,7 @@ public class OnButtonHover : MonoBehaviour
             if (!spellCast.SpellCode.EndsWith(AmountToAdd.ToString()))
             {
                 spellCast.SpellCode += AmountToAdd.ToString();
+                if(transform.childCount==0)
                 CreateGlowingEffect();
             }
         }

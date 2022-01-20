@@ -1934,6 +1934,7 @@ MonoBehaviour:
   endGameUI: {fileID: 1093520840}
   scoreTextObject: {fileID: 1093520842}
   GameNetworkManager: {fileID: 1591645410}
+  scoreText: {fileID: 0}
   IsEndGame: 0
 --- !u!4 &343020004
 Transform:
@@ -13315,7 +13316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ManaItem: {fileID: 6298019205335149024, guid: 6659a7dcf4094314aa41e7bf99c3c885, type: 3}
-  SpawnCooldown: 7
+  SpawnCooldown: 1
 --- !u!4 &1906338877
 Transform:
   m_ObjectHideFlags: 0

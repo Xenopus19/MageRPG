@@ -3675,6 +3675,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.6666667
       objectReference: {fileID: 0}
+    - target: {fileID: 8924887373326495262, guid: 096cc028b9dc9fd47bbd2514b56f3a98, type: 3}
+      propertyPath: PrefsKey
+      value: mouseSens
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 096cc028b9dc9fd47bbd2514b56f3a98, type: 3}
 --- !u!1 &4142491792290841941 stripped
