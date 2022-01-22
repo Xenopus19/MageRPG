@@ -1700,7 +1700,7 @@ PrefabInstance:
     - target: {fileID: -4750424981700814483, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
       propertyPath: ThisSpellData
       value: 
-      objectReference: {fileID: 11400000, guid: 9ba97ceacdc92464c855a123cd486562, type: 2}
+      objectReference: {fileID: 11400000, guid: c889b17921a70dc429da15ed6d773e30, type: 2}
     - target: {fileID: 1101334985514956425, guid: a38783ab8b37fc742b1def0b135b0e61, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -12

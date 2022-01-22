@@ -16603,6 +16603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonsGlowingManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1121366103239551658, guid: 7ef4945460dc2764e91672e6eef013a5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1324915577552083628, guid: 7ef4945460dc2764e91672e6eef013a5, type: 3}
       propertyPath: m_RootOrder
       value: 14
