@@ -53,8 +53,6 @@ public class GraphicsSettingsScript : MonoBehaviour
         { 
             Debug.Log("has");
             ResolutionDropdown.value = PlayerPrefs.GetInt("Resolution");
-            //int resolution = PlayerPrefs.GetInt("Resolution");
-            //Screen.SetResolution(resolutions[resolution].width, resolutions[resolution].height, true);
         }
     }
     public void SetResolution()
