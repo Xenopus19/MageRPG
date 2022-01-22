@@ -8,6 +8,7 @@ public class BasicShot : MonoBehaviour
     [SerializeField] private GameObject BasicShotPrefab;
     [SerializeField] private float ShotCooldown;
     [SerializeField] private GameObject PlayerCamera;
+    [SerializeField] private Transform LaunchPoint;
 
     private float TimeSinceLastShot;
     private PhotonView photonView;
@@ -35,7 +36,7 @@ public class BasicShot : MonoBehaviour
     [PunRPC]
     private void Shoot()
     {
-        GameObject NewSpell = Instantiate(BasicShotPrefab, PlayerCamera.transform.position, PlayerCamera.transform.rotation);
+        GameObject NewSpell = Instantiate(BasicShotPrefab, LaunchPoint.transform.position, PlayerCamera.transform.rotation);
         NewSpell.GetComponent<Spell>().Caster = gameObject;
     }
 }

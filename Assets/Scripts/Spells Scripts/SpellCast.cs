@@ -11,6 +11,7 @@ public class SpellCast : MonoBehaviour
     public Dictionary<string, GameObject> Spells = new Dictionary<string, GameObject>();
     public string SpellCode;
     [SerializeField] private GameObject PlayerCamera;
+    [SerializeField] private Transform LaunchPoint;
     [SerializeField] private AdditionalMagicAttack magicAttack;
 
     [Header("Spells")]
@@ -123,7 +124,7 @@ public class SpellCast : MonoBehaviour
     private void Cast()
     {
         ParticleEffectCasted = false;
-        GameObject NewSpell = Instantiate(CurrentSpell, PlayerCamera.transform.position, PlayerCamera.transform.rotation);
+        GameObject NewSpell = Instantiate(CurrentSpell, LaunchPoint.transform.position, PlayerCamera.transform.rotation);
 
         Spell SpellData = NewSpell.GetComponent<Spell>();
         SpellData.Caster = gameObject;

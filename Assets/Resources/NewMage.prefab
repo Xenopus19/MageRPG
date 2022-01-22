@@ -1151,6 +1151,7 @@ Transform:
   - {fileID: 106771302036630208}
   - {fileID: 5579987393824350838}
   - {fileID: 8626583890921853490}
+  - {fileID: 5267020157819517214}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1331,6 +1332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpellCode: 0
   PlayerCamera: {fileID: 712854308040321455}
+  LaunchPoint: {fileID: 5267020157819517214}
   magicAttack: {fileID: 8138300566906045946}
   FireBall: {fileID: 179432, guid: 965716b1b5cefa948bbf456c7b433186, type: 3}
   HealSpell: {fileID: 137782, guid: cdea235694a86bd4eb61ae7cffd8de49, type: 3}
@@ -1432,6 +1434,7 @@ MonoBehaviour:
   BasicShotPrefab: {fileID: 136410, guid: 344318c7f70ab9d4d89b6389429c887f, type: 3}
   ShotCooldown: 1
   PlayerCamera: {fileID: 712854308040321455}
+  LaunchPoint: {fileID: 5267020157819517214}
 --- !u!114 &-6901316953023894094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2608,6 +2611,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1633894306734982313}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6180831981344164786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5267020157819517214}
+  m_Layer: 0
+  m_Name: SpellLaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5267020157819517214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6180831981344164786}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.798, z: 0.604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4257073481814815948}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6189025152229193060
 GameObject:

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpellName: Lanuae
   SpellImage: {fileID: 21300000, guid: ebf69e23a09ede9468dfbf4a6d60eee7, type: 3}
-  SpellDescription: Teleports you to point you are looking at.
+  SpellDescription: Teleports you to point you are looking at if it's ground.
   SpellManaCost: 'Mana Cost: 15'
   SpellDamage: 
   SpellCastingCode: {fileID: 21300000, guid: 210ded3289017f944a571f05959d6eeb, type: 3}
