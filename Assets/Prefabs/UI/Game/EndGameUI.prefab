@@ -638,6 +638,10 @@ PrefabInstance:
       value: MenuButton
       objectReference: {fileID: 0}
     - target: {fileID: 4475336393030032516, guid: 027667a759baf5a40b96b10070ecb2f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475336393030032516, guid: 027667a759baf5a40b96b10070ecb2f8, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.00039672852
       objectReference: {fileID: 0}
