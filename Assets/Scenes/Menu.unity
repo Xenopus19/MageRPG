@@ -3932,6 +3932,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 871282879}
+    - target: {fileID: 5144407583132348367, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5359672182581605406, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
       propertyPath: m_FontData.m_VerticalOverflow
       value: 1
@@ -4090,7 +4094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5359672184460439205, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -235.38148
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5359672184460439205, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4126,6 +4130,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5359672184460439205, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8393293297701145638, guid: b712383a2c7746d409684e9d18a257bc, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
