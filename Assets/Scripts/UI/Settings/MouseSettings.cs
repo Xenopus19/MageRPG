@@ -6,6 +6,13 @@ public class MouseSettings : MonoBehaviour
     [SerializeField] string PrefsKey = "MouseSensitivity";
 
     private MouseLook PlayerMouse;
+    public Slider slider;
+
+    public void Init(GameObject Player) {
+        PlayerMouse = Player.GetComponentInChildren<MouseLook>();
+        SetSensitivity(LoadValue());
+        slider.value = LoadValue();
+    }
 
     private void Update()
     {

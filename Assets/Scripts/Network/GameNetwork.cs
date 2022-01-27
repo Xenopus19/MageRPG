@@ -25,6 +25,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
     private PhotonView _photonView;
 
     [SerializeField] private GameObject LoadingPanel;
+    [SerializeField] private GameObject Settings;
     private int playersCount = 0;
     void Start() 
     {
@@ -40,6 +41,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
         PlayerObject.GetComponent<AboveObjectHPBar>().InFirstTeam = IsFirstTeam;
         PlayerObject.name += SpawnPosition.name;
         _photonView = GetComponent<PhotonView>();
+        Settings.GetComponent<MouseSettings>().Init(PlayerObject);
     }
 
     private void MakeNickNamesDifferent() {

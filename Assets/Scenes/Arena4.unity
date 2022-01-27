@@ -2695,6 +2695,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3565601555828671275, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 1111722068}
     - target: {fileID: 5820725864951984105, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
       propertyPath: m_LocalPosition.z
       value: -31
@@ -2853,6 +2857,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8546971626645264069, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
   m_PrefabInstance: {fileID: 1111722058}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1111722067 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 435811887001067074, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+  m_PrefabInstance: {fileID: 1111722058}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1111722068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5752849051053796991, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+  m_PrefabInstance: {fileID: 1111722058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1131040026
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,6 +3087,7 @@ MonoBehaviour:
   endGameUI: {fileID: 1601979814}
   scoreTextObject: {fileID: 1601979816}
   GameNetworkManager: {fileID: 1729088578}
+  scoreText: {fileID: 0}
   IsEndGame: 0
 --- !u!4 &1159824999
 Transform:
@@ -4800,6 +4821,7 @@ MonoBehaviour:
   LifeManagerObject: {fileID: 1159824995}
   lifeManager: {fileID: 0}
   LoadingPanel: {fileID: 762784698}
+  Settings: {fileID: 1111722067}
 --- !u!4 &1729088581
 Transform:
   m_ObjectHideFlags: 0
