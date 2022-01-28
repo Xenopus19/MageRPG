@@ -35,6 +35,10 @@ public class Tutorial_Cast : MonoBehaviour
                 CodeEraseInstructionShown = true;
             }
         }
+        if(Input.GetKeyDown(KeyCode.H) && EraseCodeAndSpellbookText.activeInHierarchy)
+        {
+            MoveToNextScreen();
+        }
     }
 
     public void MoveToNextScreen()
