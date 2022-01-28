@@ -35,6 +35,7 @@ public class GameNetwork : MonoBehaviourPunCallbacks {
         MakeNickNamesDifferent();
         DefineTeam();
         DefineNickName();
+        
         PlayerObject = PhotonNetwork.Instantiate(PlayerPrefab.name, SpawnPosition.position, SpawnPosition.rotation);
         PhotonNetwork.LocalPlayer.TagObject = PlayerObject;
         PlayerObject.GetComponent<PlayerNetwork>().team = IsFirstTeam;

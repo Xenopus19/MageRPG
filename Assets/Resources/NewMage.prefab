@@ -1124,6 +1124,7 @@ GameObject:
   - component: {fileID: 7876739413561208764}
   - component: {fileID: -5409158173025806609}
   - component: {fileID: -910784912824279658}
+  - component: {fileID: 8528211127065049009}
   m_Layer: 13
   m_Name: NewMage
   m_TagString: Untagged
@@ -1709,6 +1710,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bfb8f2bd4e958a49bc7c22caf7fae71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8528211127065049009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485778871360351862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2256fe76d8fc1543bafd5eb8aa8f361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeKey: 106
+  FlyingCamera: {fileID: 7944255951163138915, guid: bce2d322ede24d647a1c545e1f36a50e, type: 3}
 --- !u!1 &3555844993184216359
 GameObject:
   m_ObjectHideFlags: 0
