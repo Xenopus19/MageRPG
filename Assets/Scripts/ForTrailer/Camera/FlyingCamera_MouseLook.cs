@@ -15,7 +15,10 @@ public class FlyingCamera_MouseLook : MonoBehaviour
     public float smoothTime = 0.1f;
     float currentVelosityX;
     float currentVelosityY;
-
+    private void Start()
+    {
+        GetComponent<Camera>().enabled = GetComponent<PhotonView>().IsMine;
+    }
     void Update()
     {
         if(GetComponent<PhotonView>().IsMine)

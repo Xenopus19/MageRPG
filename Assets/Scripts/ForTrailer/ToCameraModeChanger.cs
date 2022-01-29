@@ -12,6 +12,7 @@ public class ToCameraModeChanger : MonoBehaviour
         if(Input.GetKeyDown(ChangeKey))
         {
             PhotonNetwork.Instantiate(FlyingCamera.name, transform.position, Quaternion.identity);
+            if(GetComponent<PhotonView>().IsMine)
             gameObject.SetActive(false);
         }
     }
