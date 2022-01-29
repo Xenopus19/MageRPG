@@ -14292,7 +14292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ManaItem: {fileID: 6298019205335149024, guid: 6659a7dcf4094314aa41e7bf99c3c885, type: 3}
-  SpawnCooldown: 1
+  SpawnCooldown: 7
 --- !u!4 &1906338877
 Transform:
   m_ObjectHideFlags: 0
@@ -16407,6 +16407,30 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -76
       objectReference: {fileID: 0}
+    - target: {fileID: 1844177818208419992, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+      propertyPath: spellcodes.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844177818208419992, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+      propertyPath: spellcodes.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: ff76eb12c9490d94e912629c5ca6bc34, type: 3}
+    - target: {fileID: 1844177818208419992, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+      propertyPath: spellcodes.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 32af73b74e095bb4ebb30d6634e3bce2, type: 3}
+    - target: {fileID: 1844177818208419992, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+      propertyPath: spellcodes.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: 908f545256c67cd4681d1b5c6d2d1566, type: 3}
+    - target: {fileID: 1844177818208419992, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+      propertyPath: spellcodes.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: 210ded3289017f944a571f05959d6eeb, type: 3}
+    - target: {fileID: 1844177818208419992, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+      propertyPath: spellcodes.Array.data[13]
+      value: 
+      objectReference: {fileID: 21300000, guid: 76c54232620f4314995d2241088a09aa, type: 3}
     - target: {fileID: 3374868563015837435, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
