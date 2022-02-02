@@ -11,6 +11,10 @@ public class VampirismScript : Spell
     {
         CastersSpellCast = Caster.GetComponent<SpellCast>();
         CastersSpellCast.IsUsingVampirism = true;
+        GetComponent<DestroyOverTime>().Lifetime = EffectTime;
+        transform.SetParent(Caster.transform);
+        transform.localPosition = Vector3.zero;
+        transform.rotation = Caster.transform.rotation;
     }
     void Update()
     {
