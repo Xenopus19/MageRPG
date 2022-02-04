@@ -11,7 +11,9 @@ public class OverdriveScript : Spell
 
     private void Start()
     {
-        if(PhotonNetwork.IsMasterClient)
+        GetAnimator();
+        anim.Play("StoneWallCastingAnim");
+        if (PhotonNetwork.IsMasterClient)
         {
             GetTargetHealth(Caster).ReceiveDamage(ActionAmount);
         }

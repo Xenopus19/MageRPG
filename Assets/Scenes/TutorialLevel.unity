@@ -1268,6 +1268,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8546971626645264065, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8546971626645264069, guid: f06e067d7bc9fd64883f9fbb880f45f5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3367,6 +3371,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 654702982}
+    - target: {fileID: 6062782662260109921, guid: 2535b0f554c50e2439af3b3a8b622022, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -201
+      objectReference: {fileID: 0}
+    - target: {fileID: 6062782662260109921, guid: 2535b0f554c50e2439af3b3a8b622022, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2907
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110576021391371849, guid: 2535b0f554c50e2439af3b3a8b622022, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6424013994639079346, guid: 2535b0f554c50e2439af3b3a8b622022, type: 3}
       propertyPath: m_Name
       value: TutorialMessagesCanvas
@@ -3463,5 +3479,13 @@ PrefabInstance:
       propertyPath: SpawnPoint
       value: 
       objectReference: {fileID: 1970091611}
+    - target: {fileID: 7828418160864185397, guid: 2535b0f554c50e2439af3b3a8b622022, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 18.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7828418160864185397, guid: 2535b0f554c50e2439af3b3a8b622022, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 272.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2535b0f554c50e2439af3b3a8b622022, type: 3}
