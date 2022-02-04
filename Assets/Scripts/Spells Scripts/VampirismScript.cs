@@ -9,6 +9,8 @@ public class VampirismScript : Spell
     private SpellCast CastersSpellCast;
     private void Start()
     {
+        GetAnimator();
+        anim.Play("HealCastAnim");
         CastersSpellCast = Caster.GetComponent<SpellCast>();
         CastersSpellCast.IsUsingVampirism = true;
         GetComponent<DestroyOverTime>().Lifetime = EffectTime;

@@ -52,7 +52,7 @@ public class SpellCast : MonoBehaviour
         Spells.Add("1243", FrozenOrb);
         Spells.Add("8127", HealingProjectile);
         Spells.Add("86275", Meteor);
-        Spells.Add("142", Spikes);
+        //Spells.Add("142", Spikes);
         Spells.Add("4134", Monolith);
         Spells.Add("46173", Overdrive);
         Spells.Add("56", Punch);

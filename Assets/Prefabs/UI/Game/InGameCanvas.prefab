@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PrefsKey: MouseSensitivity
+  slider: {fileID: 0}
 --- !u!1 &705017916518758366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3696,6 +3697,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7999908087227716789, guid: 096cc028b9dc9fd47bbd2514b56f3a98, type: 3}
+      propertyPath: spellcodes.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7999908087227716789, guid: 096cc028b9dc9fd47bbd2514b56f3a98, type: 3}
+      propertyPath: spellcodes.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: ff76eb12c9490d94e912629c5ca6bc34, type: 3}
+    - target: {fileID: 7999908087227716789, guid: 096cc028b9dc9fd47bbd2514b56f3a98, type: 3}
+      propertyPath: spellcodes.Array.data[10]
+      value: 
+      objectReference: {fileID: 21300000, guid: 210ded3289017f944a571f05959d6eeb, type: 3}
+    - target: {fileID: 7999908087227716789, guid: 096cc028b9dc9fd47bbd2514b56f3a98, type: 3}
+      propertyPath: spellcodes.Array.data[11]
+      value: 
+      objectReference: {fileID: 21300000, guid: 908f545256c67cd4681d1b5c6d2d1566, type: 3}
+    - target: {fileID: 7999908087227716789, guid: 096cc028b9dc9fd47bbd2514b56f3a98, type: 3}
+      propertyPath: spellcodes.Array.data[12]
+      value: 
+      objectReference: {fileID: 21300000, guid: 32af73b74e095bb4ebb30d6634e3bce2, type: 3}
     - target: {fileID: 8714430593297598456, guid: 096cc028b9dc9fd47bbd2514b56f3a98, type: 3}
       propertyPath: m_Color.a
       value: 0.6666667
