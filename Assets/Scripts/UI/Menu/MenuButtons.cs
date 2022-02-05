@@ -6,6 +6,8 @@ public class MenuButtons : MonoBehaviour {
 
     [SerializeField] Button StartGameButton = null;
     [SerializeField] Button QuitGameButton = null;
+    [SerializeField] Button DevelopersButton = null;
+    [SerializeField] GameObject Developers;
 
     void Start() {
         Cursor.visible = (true);
@@ -15,6 +17,9 @@ public class MenuButtons : MonoBehaviour {
         }
         if (QuitGameButton != null) {
             QuitGameButton.onClick.AddListener(QuitGame);
+        }
+        if (DevelopersButton != null) {
+            DevelopersButton.onClick.AddListener(OpenDevelopers);
         }
     }
 
@@ -32,5 +37,15 @@ public class MenuButtons : MonoBehaviour {
     public void LoadTutorial()
     {
         SceneManager.LoadScene("TutorialLevel");
+    }
+
+    public void OpenDevelopers() {
+        Developers.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
+    public void CloseDevelopers() {
+        Developers.SetActive(false);
+        gameObject.SetActive(true);
     }
 }
