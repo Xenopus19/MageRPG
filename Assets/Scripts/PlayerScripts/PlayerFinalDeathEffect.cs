@@ -5,7 +5,8 @@ public class PlayerFinalDeathEffect : MonoBehaviour
 {
     [SerializeField] GameObject DeathEffect;
 
-    private void Start()
+    private PhotonView photonView;
+    public void CreateEffects()
     {
         PhotonNetwork.Instantiate(DeathEffect.name, transform.position, Quaternion.identity);
     }

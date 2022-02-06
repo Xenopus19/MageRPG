@@ -26,6 +26,8 @@ public class PlayerHP : Health {
         if(photonView.IsMine)
         {
             amountOfLifes--;
+            if(amountOfLifes == 0)
+                GetComponent<PlayerFinalDeathEffect>().CreateEffects();
             lifeManager.EndLife(photonView.ViewID);
             if (amountOfLifes == 0)
             {
