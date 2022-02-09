@@ -14250,6 +14250,7 @@ GameObject:
   - component: {fileID: 1906338877}
   - component: {fileID: 1906338876}
   - component: {fileID: 1906338875}
+  - component: {fileID: 1906338878}
   m_Layer: 0
   m_Name: ManaItemsCreator
   m_TagString: Untagged
@@ -14307,6 +14308,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1906338878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906338874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2256fe76d8fc1543bafd5eb8aa8f361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeKey: 106
+  FlyingCamera: {fileID: 7944255951163138915, guid: bce2d322ede24d647a1c545e1f36a50e, type: 3}
 --- !u!1001 &1930870254
 PrefabInstance:
   m_ObjectHideFlags: 0
