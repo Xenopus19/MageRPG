@@ -7,6 +7,7 @@ public class ManaItemsCreator : MonoBehaviour
 {
     [SerializeField] private GameObject ManaItem;
     [SerializeField] private float SpawnCooldown;
+    [SerializeField] private GameObject Fireworks;
 
     private PhotonView photonView;
 
@@ -14,6 +15,14 @@ public class ManaItemsCreator : MonoBehaviour
     {
         photonView = GetComponent<PhotonView>();
         InvokeRepeating("CreateManaItem", SpawnCooldown, SpawnCooldown);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Fireworks.SetActive(true);
+        }
     }
 
     private void CreateManaItem()

@@ -1125,6 +1125,7 @@ GameObject:
   - component: {fileID: -5409158173025806609}
   - component: {fileID: -910784912824279658}
   - component: {fileID: 6513439516538340400}
+  - component: {fileID: 6117543945699952769}
   m_Layer: 13
   m_Name: NewMage
   m_TagString: Untagged
@@ -1473,7 +1474,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3485778871360351862}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -9039990162309823103, guid: d96d561cc1eb6204d9e924807fd5ba59, type: 2}
   m_audioClip: {fileID: 0}
@@ -1643,7 +1644,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3485778871360351862}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -1723,6 +1724,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeathEffect: {fileID: 4513360073705985792, guid: 3305dd52101fb1941b4b1a3978bf99b2, type: 3}
+--- !u!114 &6117543945699952769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3485778871360351862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2256fe76d8fc1543bafd5eb8aa8f361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeKey: 106
+  FlyingCamera: {fileID: 7944255951163138915, guid: bce2d322ede24d647a1c545e1f36a50e, type: 3}
 --- !u!1 &3555844993184216359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,7 +2807,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6374525089076809013}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -9039990162309823103, guid: d96d561cc1eb6204d9e924807fd5ba59, type: 2}
   m_audioClip: {fileID: 8300000, guid: c8657061120b2da4fb645654b16201f6, type: 3}
@@ -3371,7 +3386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5579987393824350838
 Transform:
   m_ObjectHideFlags: 0
