@@ -42,13 +42,10 @@ public class LifeManager : MonoBehaviour {
     [PunRPC]
     public void TeleportToSpawnPoint(int PlayerID) 
     {
-
         Debug.LogWarning("RPC called");
         Player = PhotonView.Find(PlayerID).gameObject;
         Debug.LogWarning(Player.name);
         Player.GetComponent<PlayerMovement>().TeleportPlayer(spawnPoint.position);
-        //Player.transform.position = spawnPoint.position;
-        //Player.transform.rotation = spawnPoint.rotation;
     }
 
     public void EndGameForPlayer() {
